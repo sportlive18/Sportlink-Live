@@ -979,86 +979,7 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
-  
-    /* ====== TELEGRAM POPUP ====== */
-    #waOverlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999999;
-      padding: 20px;
-      animation: fadeInPopup 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    #waOverlay.show { display: flex; }
-
-    #waCard {
-      width: 100%; max-width: 400px;
-      background: linear-gradient(160deg, #121821, #0a0c0f);
-      border: 1px solid rgba(0, 136, 204, 0.25);
-      border-radius: 24px; padding: 36px 28px 28px;
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(0, 136, 204, 0.06);
-      text-align: center; position: relative; overflow: hidden;
-    }
-
-    #waCard::before {
-      content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: radial-gradient(circle at 30% 20%, rgba(0, 136, 204, 0.06), transparent 60%);
-      pointer-events: none;
-    }
-
-    #waIcon {
-      width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, #0088cc, #006aaa);
-      box-shadow: 0 0 40px rgba(0, 136, 204, 0.3); position: relative; z-index: 1;
-    }
-
-    #waIcon svg { width: 36px; height: 36px; }
-
-    #waCard h2 {
-      margin: 0 0 8px; font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700;
-      color: #ffffff; font-family: 'Inter', system-ui, sans-serif;
-      position: relative; z-index: 1; letter-spacing: -0.01em;
-    }
-
-    #waCard p {
-      margin: 0 0 24px; color: #8e9baf; font-size: clamp(0.9rem, 1.2vw, 1.05rem);
-      line-height: 1.6; position: relative; z-index: 1;
-    }
-
-    .waBtns { display: flex; gap: 12px; position: relative; z-index: 1; }
-
-    .waBtn {
-      flex: 1; height: 48px; border-radius: 40px; font-weight: 700;
-      font-size: clamp(0.85rem, 1vw, 1rem); cursor: pointer; transition: all 0.25s ease;
-      border: none; font-family: 'Inter', sans-serif; letter-spacing: 0.01em;
-    }
-
-    #joinNow {
-      background: linear-gradient(135deg, #4fc3f7, #2196f3); color: #ffffff;
-      box-shadow: 0 6px 24px rgba(79, 195, 247, 0.25);
-    }
-
-    #joinNow:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(79, 195, 247, 0.35); }
-
-    #joinedBtn {
-      background: rgba(255, 255, 255, 0.05); color: #8e9baf;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    #joinedBtn:hover { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
-
-    @keyframes fadeInPopup {
-      from { opacity: 0; transform: scale(0.95) translateY(12px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-</style>
+  </style>
 </head>
 <body>
 
@@ -1232,25 +1153,7 @@
   <!-- ====== HLS.JS ====== -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.17/dist/hls.min.js"></script>
 
-  
-  <!-- ====== TELEGRAM POPUP ====== -->
-  <div id="waOverlay">
-    <div id="waCard">
-      <div id="waIcon">
-        <svg viewBox="0 0 24 24" fill="white" width="36" height="36">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 13.63l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.462c.537-.194 1.006.131.833.93z"/>
-        </svg>
-      </div>
-      <h2>Join Telegram Channel</h2>
-      <p>Get live match links &amp; instant updates on our Telegram channel.</p>
-      <div class="waBtns">
-        <button class="waBtn" id="joinedBtn">Already Joined</button>
-        <button class="waBtn" id="joinNow">Join Now</button>
-      </div>
-    </div>
-  </div>
-
-<script>
+  <script>
     (function() {
       // ============================================================
       // ========== GET MATCH DATA FROM URL PARAMETERS ==========
@@ -1742,29 +1645,6 @@
         alert('Report this content?');
       });
 
-    
-      // ====== TELEGRAM POPUP ======
-      const waOverlay = document.getElementById('waOverlay');
-      if (waOverlay) {
-        setTimeout(function() {
-          waOverlay.classList.add('show');
-        }, 3000);
-
-        document.getElementById('joinNow').onclick = function() {
-          window.open('https://t.me/sportlink10', '_blank');
-          waOverlay.classList.remove('show');
-        };
-
-        document.getElementById('joinedBtn').onclick = function() {
-          waOverlay.classList.remove('show');
-        };
-
-        waOverlay.addEventListener('click', function(e) {
-          if (e.target === waOverlay) {
-            waOverlay.classList.remove('show');
-          }
-        });
-      }
     })();
   </script>
 
