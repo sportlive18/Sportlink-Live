@@ -1,6 +1,3 @@
-# CREDIT - ALL ROUNDER (𝗗𝗜𝗟𝗟𝗭𝗬) [https://github.com/dilzyking]
-# I Changed Little bit 
-
 ## Support This Project
 Your single click = big help ☕
 
