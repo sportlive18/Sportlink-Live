@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-10T17:24:28.459728",
-  "total_matches": 46,
+  "timestamp": "2026-10-10T18:10:52.871040",
+  "total_matches": 45,
   "live_count": 5,
-  "upcoming_count": 41,
+  "upcoming_count": 40,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249220_53069_IAC_SAC_FC-Web_1790764440585.png?hash=eyJrZXkiOiJza2lsbHVwLXVwbG9hZHMvY21zLW1lZGlhLzQyNDkyMjBfNTMwNjlfSUFDX1NBQ19GQy1XZWJfMTc5MDc2NDQ0MDU4NS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsiZml0IjoiY292ZXIiLCJwb3NpdGlvbiI6InRvcCIsIndpZHRoIjo3MDQsImhlaWdodCI6MzYwfSwid2VicCI6eyJxdWFsaXR5Ijo2MCwibG9zc2xlc3MiOmZhbHNlfX0sIm91dHB1dEZvcm1hdCI6IndlYnAifQ==",
       "league": "World Championship of Legends, 2026",
-      "viewers": "46",
+      "viewers": "68",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -29,7 +29,7 @@
         "https://tvsen7.aynaott.com/ssport2hd/tracks-v1a1/mono.ts.m3u8",
         "https://tvsen5.aynaott.com/TnMn5kZz8aLmjkl/index.m3u8"
       ],
-      "last_updated": "2026-10-10T17:20:33.043297"
+      "last_updated": "2026-10-10T18:06:29.800037"
     },
     {
       "match_id": "1269",
@@ -42,7 +42,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Q2YwXon6Bhsz5zuF80aSWwOYb-I0Qi2YExJjBIi4_fUs-P55GsMOvdov&s=10",
       "league": "Premier League",
-      "viewers": "6",
+      "viewers": "23",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -55,7 +55,7 @@
         "https://www.rtmpcdn.com/live/2a1ac868-88c1-4ea6-b2be-cc14a109a69b.m3u8",
         "https://play.aarray.cn/rrty/hd-zh-1-4558593_gqzm.m3u8?auth_key=1791655271-0-0-6c790b6836914835bc06267fc96272a2&token=3780a0c9519708cc&device=4&platform=rrty"
       ],
-      "last_updated": "2026-10-10T17:20:33.438304"
+      "last_updated": "2026-10-10T18:06:30.873284"
     },
     {
       "match_id": "1268",
@@ -68,7 +68,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://www.fancode.com/skillup-uploads/cms-media/4247647_53004_BAR_GEF_FC-WebTVBG.png",
       "league": "LaLiga 2026",
-      "viewers": "13",
+      "viewers": "38",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -83,32 +83,30 @@
         "https://www.rtmpcdn.com/live/275da0d5-95c3-4151-af22-781d4a602b26.m3u8",
         "https://play.aarray.cn/rrty/hd-zh-1-4565436_gqzm.m3u8?auth_key=1791655149-0-0-ea1fc16873791fdd840eed7a43514d7b&token=d65e06d0a19d0004&device=4&platform=rrty"
       ],
-      "last_updated": "2026-10-10T17:20:33.754405"
+      "last_updated": "2026-10-10T18:06:31.185783"
     },
     {
-      "match_id": "1238",
-      "title": "LOSC vs Le Havre",
-      "teams": "LOSC vs Le Havre",
+      "match_id": "1042",
+      "title": "Al Hilal SFC vs Al-Ittihad",
+      "teams": "Al Hilal SFC vs Al-Ittihad",
       "sport": "football",
       "sport_display": "Football",
       "status": "live",
       "status_display": "LIVE",
       "runtime": "00h 00m 00s",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791191670540x302.jpg",
-      "league": "Ligue 1",
-      "viewers": "27",
+      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249139_53025_AHS_ITT_FC-Web.png",
+      "league": "Roshn Saudi League 2026-2027",
+      "viewers": "29",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
-      "page_url": "/world-sports/player.html?id=1238",
-      "match_url": "live/losc-vs-le-havre-1238",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=0UwWPzX3KZwZFH3od3TzLGa89P31X5nLBR5zYp_DLETYy4j3dUeegq4Od-aMMBTf9uAfXN2FB3qR-MPoxdwtXbu_yrMEAXsGOtRsegVqQ9x6Bu3q2ih1Nz9uskk3W_NHjOguWWyvphgL_8Dy6dVzrLdS55-qi2bUDhTXRQmfsp9WxpaiH5PszRegXHvRnczpBLRuboBx0jy9b-9rEMvS9Gvhydo053OWF5EmpmhB59KeEIgogGplLUUAzGS2B-ygoLN5VIIWGxKxD4R_3-DDVn4",
-      "server_count": 1,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=0UwWPzX3KZwZFH3od3TzLGa89P31X5nLBR5zYp_DLETYy4j3dUeegq4Od-aMMBTf9uAfXN2FB3qR-MPoxdwtXbu_yrMEAXsGOtRsegVqQ9x6Bu3q2ih1Nz9uskk3W_NHjOguWWyvphgL_8Dy6dVzrLdS55-qi2bUDhTXRQmfsp9WxpaiH5PszRegXHvRnczpBLRuboBx0jy9b-9rEMvS9Gvhydo053OWF5EmpmhB59KeEIgogGplLUUAzGS2B-ygoLN5VIIWGxKxD4R_3-DDVn4"
-      ],
-      "last_updated": "2026-10-10T17:20:34.107073"
+      "page_url": "/world-sports/player.html?id=1042",
+      "match_url": "live/al-hilal-sfc-vs-al-ittihad-1042",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-10T18:06:31.483716"
     },
     {
       "match_id": "1081",
@@ -121,7 +119,7 @@
       "runtime": "--",
       "thumbnail": "https://myimgs.org/storage/images/44609/AsianGames2026.jpg",
       "league": "Asian Games 2026",
-      "viewers": "466",
+      "viewers": "475",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -144,30 +142,7 @@
         "https://alixbd.com/playlistconfig/toffee.php?ts_proxy=aHR0cHM6Ly9wcm9kLWxpbmVhci1tZWRpYS50b2ZmZWVsaXZlLmNvbS9jZG4vbGl2ZS9zb255X3Nwb3J0c18yX2hkLzU3Ni81NzYubTN1OD9oZG50bD1FeHBpcmVzPTE3OTA4ODY0OTB%2BX0dPPUdlbmVyYXRlZH5VUkxQcmVmaXg9YUhSMGNITTZMeTl3Y205a0xXeHBibVZoY2kxdFpXUnBZUzUwYjJabVpXVnNhWFpsTG1OdmJRfkRhdGE9ZXlKemRXSnpZM0pwWW1WeVgybGtJam9pTW1ZeU5tRXlabVl0T0RSa1lTMDBOelJpTFdKaU4yRXRNakZsWTJWaFpUSXlOREJtSW4wflNpZ25hdHVyZT1BZGhCMkxjWUtzR2k5Mzd3QnIxU0l6T0RHUzVlVVNIdEVla1FEbGNENlY1RDQtczFHM1E4Y25xYnFJN1Q0NEVhVG1LTkVlOUlPZkZKVUtUcVJlU2hHN0xueW5nSw%3D%3D",
         "https://alixbd.com/playlistconfig/toffee.php?channel=Sony%20Ten%20Sports%202%20HD&raw=1"
       ],
-      "last_updated": "2026-10-10T17:20:34.417031"
-    },
-    {
-      "match_id": "1042",
-      "title": "Al Hilal SFC vs Al-Ittihad",
-      "teams": "Al Hilal SFC vs Al-Ittihad",
-      "sport": "football",
-      "sport_display": "Football",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249139_53025_AHS_ITT_FC-Web.png",
-      "league": "Roshn Saudi League 2026-2027",
-      "viewers": "28",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1042",
-      "match_url": "live/al-hilal-sfc-vs-al-ittihad-1042",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.739730"
+      "last_updated": "2026-10-10T18:06:31.796295"
     },
     {
       "match_id": "1240",
@@ -190,7 +165,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.740409"
+      "last_updated": "2026-10-10T18:06:32.097479"
     },
     {
       "match_id": "1225",
@@ -203,7 +178,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17914675091020x576.jpg",
       "league": "Test Series 2026",
-      "viewers": "490",
+      "viewers": "491",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -213,7 +188,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.741036"
+      "last_updated": "2026-10-10T18:06:32.098108"
     },
     {
       "match_id": "1100",
@@ -236,7 +211,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.741635"
+      "last_updated": "2026-10-10T18:06:32.098664"
     },
     {
       "match_id": "1196",
@@ -259,7 +234,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.742256"
+      "last_updated": "2026-10-10T18:06:32.099211"
     },
     {
       "match_id": "1241",
@@ -272,7 +247,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247641_53004_ELC_CEV_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "217",
+      "viewers": "1",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -282,7 +257,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.742872"
+      "last_updated": "2026-10-10T18:06:32.099752"
     },
     {
       "match_id": "1242",
@@ -295,7 +270,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247642_53004_RS_COR_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "1",
+      "viewers": "2",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -305,7 +280,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.743478"
+      "last_updated": "2026-10-10T18:06:32.100299"
     },
     {
       "match_id": "1197",
@@ -328,7 +303,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.744094"
+      "last_updated": "2026-10-10T18:06:32.100838"
     },
     {
       "match_id": "1247",
@@ -351,7 +326,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.744688"
+      "last_updated": "2026-10-10T18:06:32.101387"
     },
     {
       "match_id": "1248",
@@ -374,7 +349,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.745293"
+      "last_updated": "2026-10-10T18:06:32.101927"
     },
     {
       "match_id": "1049",
@@ -397,7 +372,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.745902"
+      "last_updated": "2026-10-10T18:06:32.102535"
     },
     {
       "match_id": "1043",
@@ -420,7 +395,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.746497"
+      "last_updated": "2026-10-10T18:06:32.103110"
     },
     {
       "match_id": "1198",
@@ -443,7 +418,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.747160"
+      "last_updated": "2026-10-10T18:06:32.103655"
     },
     {
       "match_id": "1249",
@@ -466,7 +441,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.747763"
+      "last_updated": "2026-10-10T18:06:32.104203"
     },
     {
       "match_id": "1199",
@@ -489,7 +464,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.748399"
+      "last_updated": "2026-10-10T18:06:32.104741"
     },
     {
       "match_id": "1200",
@@ -512,7 +487,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.749012"
+      "last_updated": "2026-10-10T18:06:32.105288"
     },
     {
       "match_id": "1201",
@@ -535,7 +510,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.749604"
+      "last_updated": "2026-10-10T18:06:32.105830"
     },
     {
       "match_id": "1202",
@@ -558,7 +533,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.750220"
+      "last_updated": "2026-10-10T18:06:32.106384"
     },
     {
       "match_id": "1250",
@@ -581,7 +556,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.750810"
+      "last_updated": "2026-10-10T18:06:32.106924"
     },
     {
       "match_id": "1251",
@@ -604,7 +579,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.751419"
+      "last_updated": "2026-10-10T18:06:32.107464"
     },
     {
       "match_id": "1252",
@@ -627,7 +602,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.752021"
+      "last_updated": "2026-10-10T18:06:32.108002"
     },
     {
       "match_id": "1253",
@@ -650,7 +625,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.752612"
+      "last_updated": "2026-10-10T18:06:32.108546"
     },
     {
       "match_id": "1254",
@@ -673,7 +648,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.753220"
+      "last_updated": "2026-10-10T18:06:32.109120"
     },
     {
       "match_id": "1101",
@@ -696,7 +671,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.753805"
+      "last_updated": "2026-10-10T18:06:32.109673"
     },
     {
       "match_id": "1255",
@@ -719,7 +694,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.754409"
+      "last_updated": "2026-10-10T18:06:32.110224"
     },
     {
       "match_id": "1256",
@@ -742,7 +717,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.755015"
+      "last_updated": "2026-10-10T18:06:32.110765"
     },
     {
       "match_id": "1257",
@@ -765,7 +740,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.755600"
+      "last_updated": "2026-10-10T18:06:32.111312"
     },
     {
       "match_id": "1258",
@@ -788,7 +763,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.756212"
+      "last_updated": "2026-10-10T18:06:32.111854"
     },
     {
       "match_id": "1259",
@@ -811,7 +786,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.756802"
+      "last_updated": "2026-10-10T18:06:32.112397"
     },
     {
       "match_id": "1260",
@@ -834,7 +809,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.757410"
+      "last_updated": "2026-10-10T18:06:32.112943"
     },
     {
       "match_id": "1261",
@@ -857,7 +832,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.758012"
+      "last_updated": "2026-10-10T18:06:32.113498"
     },
     {
       "match_id": "1262",
@@ -880,7 +855,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.758599"
+      "last_updated": "2026-10-10T18:06:32.114038"
     },
     {
       "match_id": "1263",
@@ -903,7 +878,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.759209"
+      "last_updated": "2026-10-10T18:06:32.114582"
     },
     {
       "match_id": "1264",
@@ -926,7 +901,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.759796"
+      "last_updated": "2026-10-10T18:06:32.115136"
     },
     {
       "match_id": "1265",
@@ -949,7 +924,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.760401"
+      "last_updated": "2026-10-10T18:06:32.115672"
     },
     {
       "match_id": "1266",
@@ -972,7 +947,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.761006"
+      "last_updated": "2026-10-10T18:06:32.116218"
     },
     {
       "match_id": "1267",
@@ -995,7 +970,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.761588"
+      "last_updated": "2026-10-10T18:06:32.116756"
     },
     {
       "match_id": "1246",
@@ -1018,7 +993,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.762186"
+      "last_updated": "2026-10-10T18:06:32.117308"
     },
     {
       "match_id": "1245",
@@ -1041,7 +1016,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.762780"
+      "last_updated": "2026-10-10T18:06:32.117841"
     },
     {
       "match_id": "1243",
@@ -1064,7 +1039,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.763392"
+      "last_updated": "2026-10-10T18:06:32.118379"
     },
     {
       "match_id": "1102",
@@ -1087,7 +1062,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-10T17:20:34.764005"
+      "last_updated": "2026-10-10T18:06:32.118913"
     }
   ]
 }
