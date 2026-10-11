@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-11T13:16:38.859667",
-  "total_matches": 40,
+  "timestamp": "2026-10-11T18:10:22.122562",
+  "total_matches": 37,
   "live_count": 5,
-  "upcoming_count": 35,
+  "upcoming_count": 32,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17914675091020x576.jpg",
       "league": "Test Series 2026",
-      "viewers": "631",
+      "viewers": "715",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -32,7 +32,7 @@
         "https://live.talkoraai.com/match/seg?t=Jh_rz-dbDVNP9UGdthV39oED40s7nAHedog2foku2ZS4RaPB2nKT063hrdUkAfKLAss7uFR9dblzXrmnFnZW7bmMKoU6WUEkbj_YWkrQ7XmgN2a_oP830Puj5GJRfHKdXmh0mNVzB0ysJ-Lkms3dnNDPN7RYmnuqAlv0jFG902qVMuho1X_fpVXfx68LE7zxdyZ4-KlSw7DXWyJvnTJPM5jiQtT5_s1vf4CFwnDG0pFsicWz0rUaNNDVJXAn5hV4dsqUt8VQeOYWTPrzoIV_HrUK3GINT6okdb73kWKYlW7dhy_id8Fm4iWDecTrEA",
         "https://devm3u.netlify.app/stream/devm3u-tsports/playlist.m3u8"
       ],
-      "last_updated": "2026-10-11T13:12:28.215334"
+      "last_updated": "2026-10-11T18:07:11.135387"
     },
     {
       "match_id": "1100",
@@ -45,7 +45,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "399",
+      "viewers": "469",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -59,53 +59,53 @@
         "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8?e=1784102512&u=ee5437a7-c16b-4700-b317-a41b77d5cba9&token=968935df4fd0678de5d7fe392c0610d9",
         "https://live.talkoraai.com/match/seg?t=TVH2L8u1uPy8tmJQ3WfthBeGjIKcSk8uY91cPXsOhvfXdNros1Ko3GWfN-j0eySTqdN9dLdbAl5K4lKVOPFJbSUn7G6tS4t0u6WvKW1IEng9tmvtNcKfV_TmQrsDTdOobPiiUZnEf0QlLRCdZdRHgeljAAtpINX9kCjCZuJFt-5uJK2VXNNp6tu6KD6afguHTF6yRyBPMuUeT7fevn9B5iPOakeIKku-kcRpDTA7tL9-RV3jn7pfYiQHA5znjBsIBTulzciHLLXw4gL7FEtefE-J9fq9prB9Iqg"
       ],
-      "last_updated": "2026-10-11T13:12:33.031021"
+      "last_updated": "2026-10-11T18:07:11.987200"
     },
     {
-      "match_id": "1196",
-      "title": "Australia Champions vs West Indies Champions",
-      "teams": "Australia Champions vs West Indies Champions",
+      "match_id": "1197",
+      "title": "India Champions vs Bangladesh Champions",
+      "teams": "India Champions vs Bangladesh Champions",
       "sport": "cricket",
       "sport_display": "Cricket",
       "status": "live",
       "status_display": "LIVE",
       "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249225_53069_AAC_WIC_FC-Web_1790764440714.png",
+      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249237_53069_IAC_BGC_FC-Web_1790764440982.png",
       "league": "World Championship of Legends, 2026",
-      "viewers": "38",
+      "viewers": "62",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
-      "page_url": "/world-sports/player.html?id=1196",
-      "match_url": "live/australia-champions-vs-west-indies-champions-1196",
+      "page_url": "/world-sports/player.html?id=1197",
+      "match_url": "live/india-champions-vs-bangladesh-champions-1197",
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:34.327182"
+      "last_updated": "2026-10-11T18:07:12.288500"
     },
     {
-      "match_id": "1241",
-      "title": "Elche CF vs RC Celta",
-      "teams": "Elche CF vs RC Celta",
+      "match_id": "1247",
+      "title": "Real Betis vs CA Osasuna",
+      "teams": "Real Betis vs CA Osasuna",
       "sport": "cricket",
       "sport_display": "Cricket",
       "status": "live",
       "status_display": "LIVE",
       "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247641_53004_ELC_CEV_FC-Web.png",
+      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247638_53004_RB_OSN_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "18",
+      "viewers": "29",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
-      "page_url": "/world-sports/player.html?id=1241",
-      "match_url": "live/elche-cf-vs-rc-celta-1241",
+      "page_url": "/world-sports/player.html?id=1247",
+      "match_url": "live/real-betis-vs-ca-osasuna-1247",
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:36.671296"
+      "last_updated": "2026-10-11T18:07:12.595972"
     },
     {
       "match_id": "1081",
@@ -118,7 +118,7 @@
       "runtime": "--",
       "thumbnail": "https://myimgs.org/storage/images/44609/AsianGames2026.jpg",
       "league": "Asian Games 2026",
-      "viewers": "642",
+      "viewers": "711",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -141,76 +141,7 @@
         "https://alixbd.com/playlistconfig/toffee.php?ts_proxy=aHR0cHM6Ly9wcm9kLWxpbmVhci1tZWRpYS50b2ZmZWVsaXZlLmNvbS9jZG4vbGl2ZS9zb255X3Nwb3J0c18yX2hkLzU3Ni81NzYubTN1OD9oZG50bD1FeHBpcmVzPTE3OTA4ODY0OTB%2BX0dPPUdlbmVyYXRlZH5VUkxQcmVmaXg9YUhSMGNITTZMeTl3Y205a0xXeHBibVZoY2kxdFpXUnBZUzUwYjJabVpXVnNhWFpsTG1OdmJRfkRhdGE9ZXlKemRXSnpZM0pwWW1WeVgybGtJam9pTW1ZeU5tRXlabVl0T0RSa1lTMDBOelJpTFdKaU4yRXRNakZsWTJWaFpUSXlOREJtSW4wflNpZ25hdHVyZT1BZGhCMkxjWUtzR2k5Mzd3QnIxU0l6T0RHUzVlVVNIdEVla1FEbGNENlY1RDQtczFHM1E4Y25xYnFJN1Q0NEVhVG1LTkVlOUlPZkZKVUtUcVJlU2hHN0xueW5nSw%3D%3D",
         "https://alixbd.com/playlistconfig/toffee.php?channel=Sony%20Ten%20Sports%202%20HD&raw=1"
       ],
-      "last_updated": "2026-10-11T13:12:37.016618"
-    },
-    {
-      "match_id": "1242",
-      "title": "Real Sociedad vs Deportivo de La Coruna",
-      "teams": "Real Sociedad vs Deportivo de La Coruna",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247642_53004_RS_COR_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "4",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1242",
-      "match_url": "live/real-sociedad-vs-deportivo-de-la-coruna-1242",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.154993"
-    },
-    {
-      "match_id": "1197",
-      "title": "India Champions vs Bangladesh Champions",
-      "teams": "India Champions vs Bangladesh Champions",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249237_53069_IAC_BGC_FC-Web_1790764440982.png",
-      "league": "World Championship of Legends, 2026",
-      "viewers": "15",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1197",
-      "match_url": "live/india-champions-vs-bangladesh-champions-1197",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.155492"
-    },
-    {
-      "match_id": "1247",
-      "title": "Real Betis vs CA Osasuna",
-      "teams": "Real Betis vs CA Osasuna",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247638_53004_RB_OSN_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "3",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1247",
-      "match_url": "live/real-betis-vs-ca-osasuna-1247",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.155936"
+      "last_updated": "2026-10-11T18:07:12.922766"
     },
     {
       "match_id": "1248",
@@ -233,7 +164,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.156362"
+      "last_updated": "2026-10-11T18:07:13.225166"
     },
     {
       "match_id": "1049",
@@ -246,7 +177,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/FC_Sports_Default_Football-old-copy.jpg",
       "league": "LALIGA 2026-27",
-      "viewers": "30",
+      "viewers": "31",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -256,7 +187,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.156792"
+      "last_updated": "2026-10-11T18:07:13.225756"
     },
     {
       "match_id": "1043",
@@ -279,7 +210,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.157235"
+      "last_updated": "2026-10-11T18:07:13.226278"
     },
     {
       "match_id": "1198",
@@ -302,7 +233,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.157660"
+      "last_updated": "2026-10-11T18:07:13.226768"
     },
     {
       "match_id": "1249",
@@ -325,7 +256,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.158093"
+      "last_updated": "2026-10-11T18:07:13.227268"
     },
     {
       "match_id": "1199",
@@ -348,7 +279,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.158522"
+      "last_updated": "2026-10-11T18:07:13.227760"
     },
     {
       "match_id": "1200",
@@ -371,7 +302,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.158956"
+      "last_updated": "2026-10-11T18:07:13.228250"
     },
     {
       "match_id": "1201",
@@ -394,7 +325,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.159387"
+      "last_updated": "2026-10-11T18:07:13.228736"
     },
     {
       "match_id": "1202",
@@ -417,7 +348,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.159823"
+      "last_updated": "2026-10-11T18:07:13.229232"
     },
     {
       "match_id": "1250",
@@ -440,7 +371,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.160255"
+      "last_updated": "2026-10-11T18:07:13.229718"
     },
     {
       "match_id": "1251",
@@ -463,7 +394,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.160677"
+      "last_updated": "2026-10-11T18:07:13.230212"
     },
     {
       "match_id": "1252",
@@ -486,7 +417,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.161123"
+      "last_updated": "2026-10-11T18:07:13.230691"
     },
     {
       "match_id": "1253",
@@ -509,7 +440,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.161547"
+      "last_updated": "2026-10-11T18:07:13.231175"
     },
     {
       "match_id": "1254",
@@ -532,7 +463,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.161979"
+      "last_updated": "2026-10-11T18:07:13.231647"
     },
     {
       "match_id": "1101",
@@ -555,7 +486,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.162411"
+      "last_updated": "2026-10-11T18:07:13.232115"
     },
     {
       "match_id": "1255",
@@ -578,7 +509,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.162850"
+      "last_updated": "2026-10-11T18:07:13.232601"
     },
     {
       "match_id": "1256",
@@ -601,7 +532,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.163274"
+      "last_updated": "2026-10-11T18:07:13.233065"
     },
     {
       "match_id": "1257",
@@ -624,7 +555,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.163699"
+      "last_updated": "2026-10-11T18:07:13.233558"
     },
     {
       "match_id": "1258",
@@ -647,7 +578,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.164138"
+      "last_updated": "2026-10-11T18:07:13.234047"
     },
     {
       "match_id": "1259",
@@ -670,7 +601,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.164580"
+      "last_updated": "2026-10-11T18:07:13.234547"
     },
     {
       "match_id": "1260",
@@ -693,7 +624,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.165013"
+      "last_updated": "2026-10-11T18:07:13.235033"
     },
     {
       "match_id": "1261",
@@ -716,7 +647,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.165443"
+      "last_updated": "2026-10-11T18:07:13.235533"
     },
     {
       "match_id": "1262",
@@ -739,7 +670,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.165878"
+      "last_updated": "2026-10-11T18:07:13.236016"
     },
     {
       "match_id": "1263",
@@ -762,7 +693,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.166306"
+      "last_updated": "2026-10-11T18:07:13.236508"
     },
     {
       "match_id": "1264",
@@ -785,7 +716,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.166730"
+      "last_updated": "2026-10-11T18:07:13.236984"
     },
     {
       "match_id": "1265",
@@ -808,7 +739,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.167169"
+      "last_updated": "2026-10-11T18:07:13.237489"
     },
     {
       "match_id": "1266",
@@ -831,7 +762,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.167598"
+      "last_updated": "2026-10-11T18:07:13.237973"
     },
     {
       "match_id": "1267",
@@ -854,7 +785,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.168033"
+      "last_updated": "2026-10-11T18:07:13.238465"
     },
     {
       "match_id": "1246",
@@ -877,7 +808,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.168457"
+      "last_updated": "2026-10-11T18:07:13.238937"
     },
     {
       "match_id": "1245",
@@ -900,7 +831,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.168890"
+      "last_updated": "2026-10-11T18:07:13.239431"
     },
     {
       "match_id": "1243",
@@ -923,7 +854,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.169310"
+      "last_updated": "2026-10-11T18:07:13.239912"
     },
     {
       "match_id": "1102",
@@ -946,7 +877,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-11T13:12:38.169735"
+      "last_updated": "2026-10-11T18:07:13.240403"
     }
   ]
 }
