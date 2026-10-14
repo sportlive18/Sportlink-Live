@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-14T18:35:32.626325",
+  "timestamp": "2026-10-14T18:40:35.501792",
   "total_matches": 30,
-  "live_count": 1,
-  "upcoming_count": 29,
+  "live_count": 3,
+  "upcoming_count": 27,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249240_53069_BGC_SAC_FC-Web_1790764441547.png",
       "league": "World Championship of Legends, 2026",
-      "viewers": "81",
+      "viewers": "82",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -26,53 +26,59 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:53.899561"
-    },
-    {
-      "match_id": "1279",
-      "title": "Roma vs Real Madrid",
-      "teams": "Roma vs Real Madrid",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791443810540x302.jpg",
-      "league": "Sports Tournament",
-      "viewers": "3",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1279",
-      "match_url": "live/roma-vs-real-madrid-1279",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.260055"
+      "last_updated": "2026-10-14T18:40:03.475843"
     },
     {
       "match_id": "1280",
       "title": "Bodo/Glimt vs Borussia Dortmund",
       "teams": "Bodo/Glimt vs Borussia Dortmund",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "sport": "football",
+      "sport_display": "Football",
+      "status": "live",
+      "status_display": "LIVE",
       "runtime": "00h 00m 00s",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791444315540x302.jpg",
-      "league": "Sports Tournament",
+      "league": "UEFA Champions League 2026",
       "viewers": "260",
-      "viewers_type": "Waiting",
+      "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
       "page_url": "/world-sports/player.html?id=1280",
       "match_url": "live/bodo-glimt-vs-borussia-dortmund-1280",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.260768"
+      "stream_url": "https://live.talkoraai.com/match/hls?t=snYS5Zkrqw4Sl67Z8Z9k3rb-vXAesPeZSc3Nkdt5n-MAlw4OWbpTKiEDt-Hq8drzloshxYJCnjev5Kt9dsw740oE4c-Ymzcn7G4L7vSxknLPFebCu7KP7VRdoesX_--uj4M6P4Qq19zzgFVhtghIRmt9AokPrHh36oSi7c3mJdh0UGLWUT0-QhtnOTHeuiAu0BpDMiwRdBZAnczCSXcmzdCDAXUYvN78nmCAGcIrFE8j04GUpMOSMJnBMhQWDFtx84eesmoH2HhGvYvEjJKM2zY2X6S_qAefn14FIxyjXlowzA",
+      "server_count": 2,
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=snYS5Zkrqw4Sl67Z8Z9k3rb-vXAesPeZSc3Nkdt5n-MAlw4OWbpTKiEDt-Hq8drzloshxYJCnjev5Kt9dsw740oE4c-Ymzcn7G4L7vSxknLPFebCu7KP7VRdoesX_--uj4M6P4Qq19zzgFVhtghIRmt9AokPrHh36oSi7c3mJdh0UGLWUT0-QhtnOTHeuiAu0BpDMiwRdBZAnczCSXcmzdCDAXUYvN78nmCAGcIrFE8j04GUpMOSMJnBMhQWDFtx84eesmoH2HhGvYvEjJKM2zY2X6S_qAefn14FIxyjXlowzA",
+        "https://live.talkoraai.com/match/seg?t=K8hl_DDyLWk1_tkiE2Qz-fAXn4mI12aThaKkAzdEgMA4N_KrjlP_ZuJ0KNberx_v_yzX4p1Z_ECdWHPXFfPRBHb_gMEXdkjBUTtCz4qZ21oo_w7uUyiBpCRP-Lf41T4GNYVBTyXrlk5ylFGrWJtquQEhygOcMihC5Gp_hK6boVsAcI_wOGW_UiBYcRiCMLNmVKqwAYdpVsEEATVy9u_huWj_A4BlLO-V_fA36kWwl7jH_qM_ipDH_GvyzxixeLOxYWcm4dvugysonWHV4Y8kP9CL2DuismEIUI_siQnGs9jPNRMHcqvf0xBE"
+      ],
+      "last_updated": "2026-10-14T18:40:04.088128"
+    },
+    {
+      "match_id": "1279",
+      "title": "Roma vs Real Madrid",
+      "teams": "Roma vs Real Madrid",
+      "sport": "football",
+      "sport_display": "Football",
+      "status": "live",
+      "status_display": "LIVE",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791443810540x302.jpg",
+      "league": "UEFA Nations League 2026/27",
+      "viewers": "3",
+      "viewers_type": "Watching",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1279",
+      "match_url": "live/roma-vs-real-madrid-1279",
+      "stream_url": "https://live.talkoraai.com/match/hls?t=_FQCfI0iwH1HL0qvCxFs3i7ZSJkP8m1mtnFObnT2woN_-aF12n3qRqXFR0KC_ot6ThqQsZuaY0i3tdY1-zdg5AhIPJeRhSwI6Zi8yH4Goe8lB0JqNb6aYzZDhuGDUtT1OEKKR9BvPa4U7_iymMwz_ODxZm2DOIrzDiPIys6C7BQC4vW4SirJRW0gMn74hG7GQRtE4lU6C5KmRelkEx_MqQ1IBtZ7AfdrwYrKSJ3LMp8z4FyIQBphjH-UbeOI2hd8hPgXFIFzHeVtZhzZQrEZnO4",
+      "server_count": 2,
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=_FQCfI0iwH1HL0qvCxFs3i7ZSJkP8m1mtnFObnT2woN_-aF12n3qRqXFR0KC_ot6ThqQsZuaY0i3tdY1-zdg5AhIPJeRhSwI6Zi8yH4Goe8lB0JqNb6aYzZDhuGDUtT1OEKKR9BvPa4U7_iymMwz_ODxZm2DOIrzDiPIys6C7BQC4vW4SirJRW0gMn74hG7GQRtE4lU6C5KmRelkEx_MqQ1IBtZ7AfdrwYrKSJ3LMp8z4FyIQBphjH-UbeOI2hd8hPgXFIFzHeVtZhzZQrEZnO4",
+        "https://live.talkoraai.com/match/seg?t=fDoIJ48TqqNCIgBIHYZYD-LwvHbXg5CDhuBBva50qLCCb-e4-6XuMJZpsVvxuucz18oVCIGvIRATmXJb7K3Zi2vGiaJcciMvIfv92YmY3clbir7OHIKafXV6EBfl9wfyeboXiSjgrAIsFbVmjkYdOYBwtIyZvzlWxEi7FT6T6tpXwsJELBnb83zO34kAd9uZJLwazjOwBW0d8Vi2FMJ84-NBXR_wZms1SiQ6zUTkCpXAQoxI3JtSK-YKeMerOWMQdhR7YIgU171Jf7aM0DlxU_poEJBtXEcm0w"
+      ],
+      "last_updated": "2026-10-14T18:40:04.743913"
     },
     {
       "match_id": "1281",
@@ -95,7 +101,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.261410"
+      "last_updated": "2026-10-14T18:40:05.272945"
     },
     {
       "match_id": "1282",
@@ -118,7 +124,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.262019"
+      "last_updated": "2026-10-14T18:40:05.273478"
     },
     {
       "match_id": "1283",
@@ -141,7 +147,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.262646"
+      "last_updated": "2026-10-14T18:40:05.273935"
     },
     {
       "match_id": "1284",
@@ -164,7 +170,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.263270"
+      "last_updated": "2026-10-14T18:40:05.274406"
     },
     {
       "match_id": "1250",
@@ -187,7 +193,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.263883"
+      "last_updated": "2026-10-14T18:40:05.274851"
     },
     {
       "match_id": "1251",
@@ -210,7 +216,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.264506"
+      "last_updated": "2026-10-14T18:40:05.275302"
     },
     {
       "match_id": "1252",
@@ -233,7 +239,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.265098"
+      "last_updated": "2026-10-14T18:40:05.275745"
     },
     {
       "match_id": "1253",
@@ -256,7 +262,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.265708"
+      "last_updated": "2026-10-14T18:40:05.276204"
     },
     {
       "match_id": "1254",
@@ -279,7 +285,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.266323"
+      "last_updated": "2026-10-14T18:40:05.276649"
     },
     {
       "match_id": "1101",
@@ -302,7 +308,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.266920"
+      "last_updated": "2026-10-14T18:40:05.277086"
     },
     {
       "match_id": "1255",
@@ -325,7 +331,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.267536"
+      "last_updated": "2026-10-14T18:40:05.277535"
     },
     {
       "match_id": "1256",
@@ -348,7 +354,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.268144"
+      "last_updated": "2026-10-14T18:40:05.277973"
     },
     {
       "match_id": "1257",
@@ -371,7 +377,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.268748"
+      "last_updated": "2026-10-14T18:40:05.278418"
     },
     {
       "match_id": "1258",
@@ -394,7 +400,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.269354"
+      "last_updated": "2026-10-14T18:40:05.278857"
     },
     {
       "match_id": "1259",
@@ -417,7 +423,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.269949"
+      "last_updated": "2026-10-14T18:40:05.279304"
     },
     {
       "match_id": "1260",
@@ -440,7 +446,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.270564"
+      "last_updated": "2026-10-14T18:40:05.279735"
     },
     {
       "match_id": "1261",
@@ -463,7 +469,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.271168"
+      "last_updated": "2026-10-14T18:40:05.280177"
     },
     {
       "match_id": "1262",
@@ -486,7 +492,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.271761"
+      "last_updated": "2026-10-14T18:40:05.280613"
     },
     {
       "match_id": "1263",
@@ -509,7 +515,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.272372"
+      "last_updated": "2026-10-14T18:40:05.281045"
     },
     {
       "match_id": "1264",
@@ -532,7 +538,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.272969"
+      "last_updated": "2026-10-14T18:40:05.281500"
     },
     {
       "match_id": "1265",
@@ -555,7 +561,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.273595"
+      "last_updated": "2026-10-14T18:40:05.281941"
     },
     {
       "match_id": "1266",
@@ -578,7 +584,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.274216"
+      "last_updated": "2026-10-14T18:40:05.282390"
     },
     {
       "match_id": "1267",
@@ -601,7 +607,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.274818"
+      "last_updated": "2026-10-14T18:40:05.282830"
     },
     {
       "match_id": "1246",
@@ -624,7 +630,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.275438"
+      "last_updated": "2026-10-14T18:40:05.283276"
     },
     {
       "match_id": "1245",
@@ -647,7 +653,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.276041"
+      "last_updated": "2026-10-14T18:40:05.283717"
     },
     {
       "match_id": "1243",
@@ -670,7 +676,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.276657"
+      "last_updated": "2026-10-14T18:40:05.284155"
     },
     {
       "match_id": "1102",
@@ -693,7 +699,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:34:54.277278"
+      "last_updated": "2026-10-14T18:40:05.284598"
     }
   ]
 }
