@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-14T18:20:32.882448",
-  "total_matches": 25,
+  "timestamp": "2026-10-14T18:25:33.801066",
+  "total_matches": 30,
   "live_count": 1,
-  "upcoming_count": 24,
+  "upcoming_count": 29,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249240_53069_BGC_SAC_FC-Web_1790764441547.png",
       "league": "World Championship of Legends, 2026",
-      "viewers": "75",
+      "viewers": "79",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -26,7 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.143929"
+      "last_updated": "2026-10-14T18:24:49.454050"
     },
     {
       "match_id": "1279",
@@ -49,7 +49,122 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.499099"
+      "last_updated": "2026-10-14T18:24:49.914656"
+    },
+    {
+      "match_id": "1280",
+      "title": "Bodo/Glimt vs Borussia Dortmund",
+      "teams": "Bodo/Glimt vs Borussia Dortmund",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791444315540x302.jpg",
+      "league": "Sports Tournament",
+      "viewers": "260",
+      "viewers_type": "Waiting",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1280",
+      "match_url": "live/bodo-glimt-vs-borussia-dortmund-1280",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-14T18:24:49.915154"
+    },
+    {
+      "match_id": "1281",
+      "title": "LASK vs Liverpool",
+      "teams": "LASK vs Liverpool",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791443458540x302.jpg",
+      "league": "Sports Tournament",
+      "viewers": "297",
+      "viewers_type": "Waiting",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1281",
+      "match_url": "live/lask-vs-liverpool-1281",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-14T18:24:49.915563"
+    },
+    {
+      "match_id": "1282",
+      "title": "Feyenoord vs Como",
+      "teams": "Feyenoord vs Como",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791443293540x302.jpg",
+      "league": "Sports Tournament",
+      "viewers": "334",
+      "viewers_type": "Waiting",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1282",
+      "match_url": "live/feyenoord-vs-como-1282",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-14T18:24:49.916032"
+    },
+    {
+      "match_id": "1283",
+      "title": "Manchester City vs Paris Saint-Germain",
+      "teams": "Manchester City vs Paris Saint-Germain",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791444600540x302.jpg",
+      "league": "Sports Tournament",
+      "viewers": "371",
+      "viewers_type": "Waiting",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1283",
+      "match_url": "live/manchester-city-vs-paris-saint-germain-1283",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-14T18:24:49.916470"
+    },
+    {
+      "match_id": "1284",
+      "title": "Real Betis vs Porto",
+      "teams": "Real Betis vs Porto",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791444744540x302.jpg",
+      "league": "Sports Tournament",
+      "viewers": "408",
+      "viewers_type": "Waiting",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1284",
+      "match_url": "live/real-betis-vs-porto-1284",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-14T18:24:49.916900"
     },
     {
       "match_id": "1250",
@@ -72,7 +187,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.499809"
+      "last_updated": "2026-10-14T18:24:49.917310"
     },
     {
       "match_id": "1251",
@@ -95,7 +210,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.500433"
+      "last_updated": "2026-10-14T18:24:49.917738"
     },
     {
       "match_id": "1252",
@@ -118,7 +233,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.501065"
+      "last_updated": "2026-10-14T18:24:49.918187"
     },
     {
       "match_id": "1253",
@@ -141,7 +256,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.501684"
+      "last_updated": "2026-10-14T18:24:49.918633"
     },
     {
       "match_id": "1254",
@@ -164,7 +279,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.502280"
+      "last_updated": "2026-10-14T18:24:49.919074"
     },
     {
       "match_id": "1101",
@@ -187,7 +302,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.502893"
+      "last_updated": "2026-10-14T18:24:49.919496"
     },
     {
       "match_id": "1255",
@@ -210,7 +325,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.503500"
+      "last_updated": "2026-10-14T18:24:49.919963"
     },
     {
       "match_id": "1256",
@@ -233,7 +348,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.504093"
+      "last_updated": "2026-10-14T18:24:49.920383"
     },
     {
       "match_id": "1257",
@@ -256,7 +371,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.504700"
+      "last_updated": "2026-10-14T18:24:49.920838"
     },
     {
       "match_id": "1258",
@@ -279,7 +394,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.505289"
+      "last_updated": "2026-10-14T18:24:49.921265"
     },
     {
       "match_id": "1259",
@@ -302,7 +417,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.505896"
+      "last_updated": "2026-10-14T18:24:49.921703"
     },
     {
       "match_id": "1260",
@@ -325,7 +440,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.506492"
+      "last_updated": "2026-10-14T18:24:49.922120"
     },
     {
       "match_id": "1261",
@@ -348,7 +463,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.507091"
+      "last_updated": "2026-10-14T18:24:49.922536"
     },
     {
       "match_id": "1262",
@@ -371,7 +486,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.507696"
+      "last_updated": "2026-10-14T18:24:49.922980"
     },
     {
       "match_id": "1263",
@@ -394,7 +509,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.508294"
+      "last_updated": "2026-10-14T18:24:49.923402"
     },
     {
       "match_id": "1264",
@@ -417,7 +532,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.508902"
+      "last_updated": "2026-10-14T18:24:49.923850"
     },
     {
       "match_id": "1265",
@@ -440,7 +555,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.509509"
+      "last_updated": "2026-10-14T18:24:49.924273"
     },
     {
       "match_id": "1266",
@@ -463,7 +578,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.510162"
+      "last_updated": "2026-10-14T18:24:49.924716"
     },
     {
       "match_id": "1267",
@@ -486,7 +601,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.510776"
+      "last_updated": "2026-10-14T18:24:49.925152"
     },
     {
       "match_id": "1246",
@@ -509,7 +624,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.511362"
+      "last_updated": "2026-10-14T18:24:49.925562"
     },
     {
       "match_id": "1245",
@@ -532,7 +647,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.511972"
+      "last_updated": "2026-10-14T18:24:49.926008"
     },
     {
       "match_id": "1243",
@@ -555,7 +670,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.512579"
+      "last_updated": "2026-10-14T18:24:49.926411"
     },
     {
       "match_id": "1102",
@@ -578,7 +693,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-14T18:19:46.513161"
+      "last_updated": "2026-10-14T18:24:49.926842"
     }
   ]
 }
