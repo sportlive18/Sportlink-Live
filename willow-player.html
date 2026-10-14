@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Willow Live Player</title>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Shaka Player -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQXW3DBDQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CQXW3DBDQL');
+</script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    /* ===== HEADER ===== */
+    .player-header {
+      background: rgba(11,13,15,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      flex-shrink: 0;
+      z-index: 10;
+      min-height: 56px;
+    }
+    .back-btn {
+      background: rgba(255,255,255,0.06);
+      border: none;
+      color: #f5af19;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+    .back-btn:hover { background: rgba(255,255,255,0.12); color: #ffc44d; }
+    .back-btn .material-icons { font-size: 1.3rem; }
+    .player-match-info { flex: 1; min-width: 0; padding: 0 4px; }
+    .player-match-title {
+      font-size: clamp(0.75rem, 1.1vw, 1rem);
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .player-match-subtitle {
+      font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+      color: #6b7a8a;
+      margin-top: 1px;
+    }
+    .player-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      background: rgba(231, 76, 60, 0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(231, 76, 60, 0.2);
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #e74c3c;
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+    .live-text {
+      color: #e74c3c;
+      font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.7); }
+    }
+
+    /* ===== VIDEO CONTAINER ===== */
+    .video-container {
+      flex: 1;
+      position: relative;
+      background: #000;
+      width: 100%;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+
+    /* Hide Shaka's default spinner */
+    .shaka-spinner-container,
+    .shaka-spinner,
+    .shaka-spinner-svg {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    /* ===== LOADING OVERLAY ===== */
+    .player-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #8892a0;
+      background: rgba(0,0,0,0.85);
+      z-index: 5;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: opacity 0.4s ease;
+    }
+    .player-loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .player-loading .spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(255,255,255,0.08);
+      border-top-color: #f5af19;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+      margin-bottom: 16px;
+    }
+    .player-loading .loading-text {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #e8edf2;
+    }
+    .player-loading .loading-sub {
+      font-size: 0.75rem;
+      color: #5f6b7e;
+      margin-top: 4px;
+    }
+    .player-loading .retry-info {
+      font-size: 0.7rem;
+      color: #4a5362;
+      margin-top: 8px;
+      background: rgba(255,255,255,0.04);
+      padding: 4px 14px;
+      border-radius: 12px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== ERROR OVERLAY ===== */
+    .player-error {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.9);
+      z-index: 6;
+      padding: 24px;
+      text-align: center;
+    }
+    .player-error.visible { display: flex; }
+    .player-error .error-icon {
+      font-size: 52px;
+      color: #e74c3c;
+      margin-bottom: 12px;
+    }
+    .player-error .error-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .player-error .error-desc {
+      font-size: 0.85rem;
+      color: #8892a0;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+    .player-error .error-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .player-error .error-btn {
+      padding: 10px 24px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s ease;
+    }
+    .player-error .error-btn.primary {
+      background: #f5af19;
+      color: #0b0d0f;
+    }
+    .player-error .error-btn.primary:hover {
+      background: #ffc44d;
+      transform: scale(1.02);
+    }
+    .player-error .error-btn.secondary {
+      background: rgba(255,255,255,0.08);
+      color: #e8edf2;
+    }
+    .player-error .error-btn.secondary:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ===== FOOTER ===== */
+    .player-footer {
+      background: rgba(11,13,15,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 6px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      flex-shrink: 0;
+      min-height: 40px;
+    }
+    .player-footer .info {
+      font-size: 0.6rem;
+      color: #4a5362;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .player-footer .info .material-icons {
+      font-size: 16px;
+    }
+    .player-footer .drm-badge {
+      font-size: 0.55rem;
+      color: #5f6b7e;
+      padding: 3px 12px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .player-footer .server-badge {
+      font-size: 0.55rem;
+      color: #f5af19;
+      padding: 3px 12px;
+      background: rgba(245, 175, 25, 0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(245, 175, 25, 0.1);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .player-header { padding: 6px 10px; min-height: 48px; gap: 8px; }
+      .back-btn { padding: 4px 10px; font-size: 0.75rem; }
+      .back-btn .back-text { display: none; }
+      .back-btn .material-icons { font-size: 1.1rem; }
+      .player-match-title { font-size: 0.7rem; }
+      .player-match-subtitle { font-size: 0.5rem; }
+      .player-status { padding: 3px 10px; }
+      .player-footer { padding: 4px 10px; flex-direction: column; gap: 2px; text-align: center; }
+      .player-footer .info { font-size: 0.5rem; }
+      .player-footer .drm-badge { font-size: 0.45rem; padding: 2px 8px; }
+      .player-footer .server-badge { font-size: 0.45rem; padding: 2px 8px; }
+      .player-loading .spinner { width: 36px; height: 36px; }
+      .player-loading .loading-text { font-size: 0.8rem; }
+      .player-error .error-icon { font-size: 40px; }
+      .player-error .error-title { font-size: 0.95rem; }
+      .player-error .error-desc { font-size: 0.75rem; }
+      .player-error .error-btn { padding: 8px 18px; font-size: 0.75rem; }
+    }
+
+    @media (max-width: 480px) {
+      .player-header { padding: 4px 8px; min-height: 42px; gap: 6px; }
+      .player-match-title { font-size: 0.6rem; }
+      .player-match-subtitle { font-size: 0.45rem; }
+      .live-dot { width: 6px; height: 6px; }
+      .live-text { font-size: 0.5rem; }
+      .player-status { padding: 2px 8px; }
+    }
+
+    /* ===== SHADOW DOM FIXES ===== */
+    video::-webkit-media-controls {
+      display: none !important;
+    }
+    video::-webkit-media-controls-enclosure {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="player-header">
+    <a href="index.html" class="back-btn" id="backToHome">
+      <span class="material-icons">arrow_back</span>
+      <span class="back-text">Back</span>
+    </a>
+    <div class="player-match-info">
+      <div class="player-match-title" id="playerTitle">Loading...</div>
+      <div class="player-match-subtitle" id="playerSubtitle">Willow Cricket</div>
+    </div>
+    <div class="player-status">
+      <span class="live-dot"></span>
+      <span class="live-text">LIVE</span>
+    </div>
+  </header>
+
+  <!-- ===== VIDEO ===== -->
+  <div class="video-container" id="videoContainer">
+    <video id="videoElement" playsinline preload="metadata" autoplay></video>
+
+    <!-- Loading Overlay -->
+    <div class="player-loading" id="loadingState">
+      <div class="spinner"></div>
+      <div class="loading-text" id="loadingText">Loading stream...</div>
+      <div class="loading-sub" id="loadingSub">Please wait</div>
+      <div class="retry-info" id="retryInfo"></div>
+    </div>
+
+    <!-- Error Overlay -->
+    <div class="player-error" id="errorState">
+      <span class="error-icon material-icons">error_outline</span>
+      <div class="error-title" id="errorTitle">Stream unavailable</div>
+      <div class="error-desc" id="errorDesc">The stream is currently not available. Please try again.</div>
+      <div class="error-actions">
+        <button class="error-btn primary" id="retryBtn">🔄 Try Again</button>
+        <button class="error-btn secondary" onclick="window.location.href='index.html'">← Back to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="player-footer">
+    <span class="info">
+      <span class="material-icons">sports_cricket</span>
+      Willow Live · Shaka Player
+    </span>
+    <span style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+      <span class="server-badge" id="serverBadge">🌐 Server 1</span>
+      <span class="drm-badge">🔒 DRM</span>
+    </span>
+  </footer>
+
+  <script>
+    // ================================================================
+    // ====== WILLOW PLAYER - FULL SELF-CONTAINED ======
+    // ================================================================
+
+    (function() {
+      'use strict';
+
+      // ====== CONFIG ======
+      const API_URL = 'https://willow-api.sayanwork-studioo.workers.dev/';
+      const MAX_RETRIES_PER_STREAM = 2;
+      const STREAM_STABLE_TIME = 60000; // 1 minute before considering stream stable
+      const LOAD_TIMEOUT = 15000; // 15 seconds timeout for loading
+
+      // ====== STATE ======
+      let allMatches = [];
+      let playerInstance = null;
+      let uiInstance = null;
+      let currentStreamIndex = 0;
+      let availableStreams = [];
+      let streamRetryCount = 0;
+      let currentDrmKey = null;
+      let isLoading = false;
+      let isStable = false;
+      let stableTimer = null;
+      let loadTimeoutTimer = null;
+      let currentServerName = '';
+
+      // ====== DOM ELEMENTS ======
+      const videoEl = document.getElementById('videoElement');
+      const videoContainer = document.getElementById('videoContainer');
+      const loadingState = document.getElementById('loadingState');
+      const errorState = document.getElementById('errorState');
+      const loadingText = document.getElementById('loadingText');
+      const loadingSub = document.getElementById('loadingSub');
+      const retryInfo = document.getElementById('retryInfo');
+      const playerTitle = document.getElementById('playerTitle');
+      const playerSubtitle = document.getElementById('playerSubtitle');
+      const serverBadge = document.getElementById('serverBadge');
+      const retryBtn = document.getElementById('retryBtn');
+
+      // ====== GET MATCH ID FROM URL ======
+      function getMatchIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id') || null;
+      }
+
+      // ====== SAFE ID HELPER ======
+      function getSafeStreamId(match) {
+        return match.tvgId || match.tvgName || match.title || match.match_id || '';
+      }
+
+      // ====== GET ALL STREAM URLS ======
+      function getAllStreamUrls(match) {
+        const urls = [];
+        const serverNames = [];
+
+        // Helper to add URLs with server names
+        function addUrls(obj, prefix) {
+          if (!obj) return;
+          if (typeof obj === 'string' && obj) {
+            urls.push(obj);
+            serverNames.push(prefix || 'Server');
+          } else if (typeof obj === 'object') {
+            const entries = Object.entries(obj);
+            for (const [name, url] of entries) {
+              if (url && typeof url === 'string' && url.startsWith('http')) {
+                urls.push(url);
+                serverNames.push(name);
+              }
+            }
+          }
+        }
+
+        addUrls(match.stream_url_alpha, 'Alpha');
+        addUrls(match.stream_url_bravo, 'Bravo');
+
+        // If no server names, use generic
+        if (serverNames.length === 0 && urls.length > 0) {
+          for (let i = 0; i < urls.length; i++) {
+            serverNames.push(`Server ${i + 1}`);
+          }
+        }
+
+        // Store server names with URLs
+        return urls.map((url, i) => ({
+          url: url,
+          name: serverNames[i] || `Server ${i + 1}`
+        }));
+      }
+
+      // ====== UPDATE UI ======
+      function updateLoading(message, subMessage = '', retry = null) {
+        loadingText.textContent = message;
+        loadingSub.textContent = subMessage || 'Please wait';
+        if (retry !== null) {
+          retryInfo.textContent = `Attempt ${retry + 1}`;
+          retryInfo.style.display = 'block';
+        } else {
+          retryInfo.style.display = 'none';
+        }
+        loadingState.classList.remove('hidden');
+        errorState.classList.remove('visible');
+      }
+
+      function showError(title, desc, showRetry = true) {
+        errorState.classList.add('visible');
+        loadingState.classList.add('hidden');
+        document.getElementById('errorTitle').textContent = title;
+        document.getElementById('errorDesc').textContent = desc;
+        retryBtn.style.display = showRetry ? 'inline-block' : 'none';
+        // Clear stable timer
+        if (stableTimer) {
+          clearTimeout(stableTimer);
+          stableTimer = null;
+        }
+        isStable = false;
+      }
+
+      function hideAllOverlays() {
+        loadingState.classList.add('hidden');
+        errorState.classList.remove('visible');
+      }
+
+      function updateServerBadge(name) {
+        currentServerName = name || 'Server';
+        serverBadge.textContent = `🌐 ${currentServerName}`;
+      }
+
+      // ====== SHOW POPUP ======
+      function showPopup(message, type = 'info') {
+        // Create a simple toast notification
+        const existing = document.querySelector('.willow-toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.className = 'willow-toast';
+        toast.style.cssText = `
+          position: fixed;
+          bottom: 80px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(11,13,15,0.95);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          padding: 12px 24px;
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.08);
+          color: ${type === 'error' ? '#e74c3c' : '#e8edf2'};
+          font-size: 0.9rem;
+          font-weight: 500;
+          font-family: 'Inter', sans-serif;
+          z-index: 100;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+          text-align: center;
+          max-width: 90%;
+          animation: toastIn 0.3s ease;
+          pointer-events: none;
+        `;
+        toast.textContent = message;
+
+        // Add animation keyframes
+        if (!document.querySelector('#toastStyles')) {
+          const style = document.createElement('style');
+          style.id = 'toastStyles';
+          style.textContent = `
+            @keyframes toastIn {
+              0% { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.95); }
+              100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+            }
+            @keyframes toastOut {
+              0% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+              100% { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.95); }
+            }
+          `;
+          document.head.appendChild(style);
+        }
+
+        document.body.appendChild(toast);
+
+        // Auto dismiss after 4 seconds
+        setTimeout(() => {
+          toast.style.animation = 'toastOut 0.3s ease forwards';
+          setTimeout(() => toast.remove(), 300);
+        }, 4000);
+      }
+
+      // ====== FETCH MATCH DATA ======
+      async function fetchMatchData() {
+        const matchId = getMatchIdFromUrl();
+        console.log('🔍 Looking for match:', matchId);
+
+        if (!matchId) {
+          showError('No match selected', 'Please go back and select a match.');
+          return;
+        }
+
+        try {
+          updateLoading('Fetching match data...', 'Connecting to server');
+
+          const response = await fetch(API_URL);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const data = await response.json();
+          console.log('📡 API Response received');
+
+          if (data.error) throw new Error(data.message || 'Unknown error');
+
+          allMatches = data.Matches || data.streams || [];
+
+          const match = allMatches.find(m => getSafeStreamId(m) === matchId);
+
+          if (!match) {
+            showError('Match not found', 'The selected match could not be found.');
+            return;
+          }
+
+          console.log('✅ Match found:', match.title);
+
+          if (match.status && match.status.toUpperCase() !== 'LIVE') {
+            showError(`Match is ${match.status}`, `This match is currently ${match.status}. Check back when it starts.`);
+            return;
+          }
+
+          // Update header
+          playerTitle.textContent = match.title || match.tvgName || 'Willow Live';
+          playerSubtitle.textContent = match.synopsis || match.groupTitle || 'Cricket';
+
+          // Get streams
+          const streamData = getAllStreamUrls(match);
+          availableStreams = streamData;
+          
+          if (availableStreams.length === 0) {
+            showError('No streams available', 'This match does not have any active streams.');
+            return;
+          }
+
+          console.log(`📡 Found ${availableStreams.length} streams`);
+
+          currentDrmKey = match.drm_key || null;
+          currentStreamIndex = 0;
+          streamRetryCount = 0;
+          isStable = false;
+
+          await loadStream();
+
+        } catch (error) {
+          console.error('❌ Fetch error:', error);
+          showError('Failed to load match data', error.message || 'Please check your connection and try again.');
+        }
+      }
+
+      // ====== LOAD STREAM ======
+      async function loadStream() {
+        if (isLoading) return;
+        isLoading = true;
+
+        // Clear any existing stable timer
+        if (stableTimer) {
+          clearTimeout(stableTimer);
+          stableTimer = null;
+        }
+        isStable = false;
+
+        const stream = availableStreams[currentStreamIndex];
+        
+        if (!stream || !stream.url) {
+          showError('No valid stream URL', 'The stream URL is invalid.');
+          isLoading = false;
+          return;
+        }
+
+        updateServerBadge(stream.name);
+
+        try {
+          const attempt = streamRetryCount + 1;
+          const total = availableStreams.length;
+          updateLoading(
+            `Loading stream ${currentStreamIndex + 1}/${total}...`,
+            `Connecting to ${stream.name}`,
+            streamRetryCount > 0 ? streamRetryCount : null
+          );
+
+          // Destroy existing player
+          if (playerInstance) {
+            try { await playerInstance.destroy(); } catch(e) {}
+            playerInstance = null;
+            uiInstance = null;
+          }
+
+          // Install polyfills
+          shaka.polyfill.installAll();
+          if (!shaka.Player.isBrowserSupported()) {
+            showError('Browser not supported', 'Your browser does not support the required features.');
+            isLoading = false;
+            return;
+          }
+
+          // Create player
+          playerInstance = new shaka.Player(videoEl);
+          await playerInstance.attach(videoEl);
+
+          // ====== SETUP UI ======
+          uiInstance = new shaka.ui.Overlay(playerInstance, videoContainer, videoEl);
+          uiInstance.configure({
+            controlPanelElements: [
+              'play_pause', 'time_and_duration', 'mute', 'volume',
+              'spacer', 'language', 'captions', 'picture_in_picture',
+              'quality', 'fullscreen'
+            ],
+            volumeBarColors: {
+              base: 'rgba(255,255,255,0.15)',
+              level: 'rgb(245, 175, 25)'
+            },
+            seekBarColors: {
+              base: 'rgba(255,255,255,0.1)',
+              buffered: 'rgba(245, 175, 25, 0.3)',
+              played: 'rgb(245, 175, 25)'
+            }
+          });
+
+          // ====== DRM CONFIG ======
+          let drmConfig = {};
+          if (currentDrmKey) {
+            const sepIndex = currentDrmKey.indexOf(':');
+            if (sepIndex > -1) {
+              const keyId = currentDrmKey.slice(0, sepIndex).trim();
+              const key = currentDrmKey.slice(sepIndex + 1).trim();
+              if (keyId && key) {
+                drmConfig = { clearKeys: { [keyId]: key } };
+                console.log('✅ DRM configured');
+              }
+            }
+          }
+
+          // ====== PLAYER CONFIG ======
+          playerInstance.configure({
+            drm: drmConfig,
+            streaming: {
+              lowLatencyMode: true,
+              bufferingGoal: 10,
+              rebufferingGoal: 2,
+              bufferBehind: 10,
+              retryParameters: {
+                timeout: 8000,
+                maxAttempts: 3,
+                baseDelay: 300,
+                backoffFactor: 1.5
+              },
+              segmentRequestTimeout: 6000,
+              segmentPrefetchLimit: 2,
+              useNativeHlsOnSafari: true
+            },
+            manifest: {
+              retryParameters: {
+                timeout: 8000,
+                maxAttempts: 3
+              }
+            }
+          });
+
+          // ====== LOAD TIMEOUT ======
+          if (loadTimeoutTimer) clearTimeout(loadTimeoutTimer);
+          loadTimeoutTimer = setTimeout(() => {
+            if (isLoading) {
+              console.warn('⏰ Load timeout reached');
+              handleStreamFailure('Load timeout');
+            }
+          }, LOAD_TIMEOUT);
+
+          // ====== ERROR HANDLER ======
+          playerInstance.addEventListener('error', (event) => {
+            const error = event.detail;
+            console.error('❌ Shaka Error:', error);
+            
+            if (loadTimeoutTimer) {
+              clearTimeout(loadTimeoutTimer);
+              loadTimeoutTimer = null;
+            }
+
+            // Check if we should try to recover
+            const isRetryable = error.code === 1002 || error.code === 1003 || 
+                               error.code === 1006 || error.code === 1007 ||
+                               error.code === 3001 || error.code === 3002;
+
+            if (isRetryable && streamRetryCount < MAX_RETRIES_PER_STREAM) {
+              streamRetryCount++;
+              console.log(`🔄 Retry ${streamRetryCount}/${MAX_RETRIES_PER_STREAM}`);
+              isLoading = false;
+              loadStream();
+              return;
+            }
+
+            handleStreamFailure(error.message || 'Stream error');
+          });
+
+          // ====== LOAD STREAM ======
+          console.log('🎯 Loading:', stream.url);
+          await playerInstance.load(stream.url);
+          
+          // Clear timeout
+          if (loadTimeoutTimer) {
+            clearTimeout(loadTimeoutTimer);
+            loadTimeoutTimer = null;
+          }
+
+          console.log('✅ Stream loaded!');
+
+          // Start playback
+          try {
+            await videoEl.play();
+          } catch (playErr) {
+            console.warn('⚠️ Autoplay blocked:', playErr);
+          }
+
+          // Hide loading
+          hideAllOverlays();
+          isLoading = false;
+          streamRetryCount = 0;
+
+          // ====== START STABLE TIMER ======
+          // Wait 1 minute before considering stream stable
+          if (stableTimer) clearTimeout(stableTimer);
+          stableTimer = setTimeout(() => {
+            isStable = true;
+            console.log('✅ Stream is now stable (1 minute reached)');
+            showPopup('✅ Stream is stable', 'info');
+          }, STREAM_STABLE_TIME);
+
+          // Show success message
+          showPopup(`▶️ Playing on ${stream.name}`, 'info');
+
+        } catch (err) {
+          console.error('❌ Load error:', err);
+          
+          if (loadTimeoutTimer) {
+            clearTimeout(loadTimeoutTimer);
+            loadTimeoutTimer = null;
+          }
+
+          handleStreamFailure(err.message || 'Unknown error');
+        }
+      }
+
+      // ====== HANDLE STREAM FAILURE ======
+      function handleStreamFailure(reason) {
+        isLoading = false;
+        
+        // Check if we should try next stream
+        if (currentStreamIndex < availableStreams.length - 1) {
+          // Check if we have a stable stream (don't switch if stable)
+          if (isStable) {
+            showPopup('⚠️ Stream issue, but stable stream is playing', 'error');
+            return;
+          }
+
+          // Check if current stream has been retried enough
+          if (streamRetryCount >= MAX_RETRIES_PER_STREAM) {
+            // Move to next stream
+            currentStreamIndex++;
+            streamRetryCount = 0;
+            console.log(`🔄 Switching to stream ${currentStreamIndex + 1}/${availableStreams.length}`);
+            showPopup(`🔄 Switching to ${availableStreams[currentStreamIndex]?.name || 'next server'}`, 'info');
+            loadStream();
+          } else {
+            // Retry current stream
+            streamRetryCount++;
+            console.log(`🔄 Retry ${streamRetryCount}/${MAX_RETRIES_PER_STREAM}`);
+            loadStream();
+          }
+        } else {
+          // All streams failed
+          showError(
+            'All streams failed',
+            'We tried all available servers. Please try again later or check your connection.',
+            true
+          );
+        }
+      }
+
+      // ====== RETRY BUTTON ======
+      retryBtn.addEventListener('click', function() {
+        errorState.classList.remove('visible');
+        // Reset and try again
+        if (availableStreams.length > 0) {
+          currentStreamIndex = 0;
+          streamRetryCount = 0;
+          isStable = false;
+          if (stableTimer) {
+            clearTimeout(stableTimer);
+            stableTimer = null;
+          }
+          loadStream();
+        } else {
+          fetchMatchData();
+        }
+      });
+
+      // ====== BACK BUTTON ======
+      document.getElementById('backToHome').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (playerInstance) {
+          try { playerInstance.destroy(); } catch(e) {}
+        }
+        if (stableTimer) {
+          clearTimeout(stableTimer);
+          stableTimer = null;
+        }
+        if (loadTimeoutTimer) {
+          clearTimeout(loadTimeoutTimer);
+          loadTimeoutTimer = null;
+        }
+        window.location.href = 'index.html';
+      });
+
+      // ====== KEYBOARD SHORTCUTS ======
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (playerInstance) {
+            try { playerInstance.destroy(); } catch(e) {}
+          }
+          window.location.href = 'index.html';
+        }
+        if ((e.key === 'f' || e.key === 'F') && !e.ctrlKey && !e.metaKey) {
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+          } else {
+            document.body.requestFullscreen().catch(() => {});
+          }
+        }
+      });
+
+      // ====== HANDLE VISIBILITY ======
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden && playerInstance && isStable) {
+          // Only pause if stable to avoid unnecessary switching
+          try { videoEl.pause(); } catch(e) {}
+        }
+      });
+
+      // ====== HANDLE ONLINE/OFFLINE ======
+      window.addEventListener('online', function() {
+        showPopup('🌐 Network reconnected', 'info');
+        if (!isStable && !isLoading) {
+          // Try to recover
+          loadStream();
+        }
+      });
+
+      // ====== INIT ======
+      console.log('🚀 Willow Player Starting...');
+      console.log('📋 URL:', window.location.href);
+      
+      // Start the player
+      fetchMatchData();
+
+      // ====== DEBUG ======
+      window.__willowPlayer = {
+        reload: fetchMatchData,
+        retry: loadStream,
+        switchStream: () => {
+          if (currentStreamIndex < availableStreams.length - 1) {
+            currentStreamIndex++;
+            streamRetryCount = 0;
+            isStable = false;
+            if (stableTimer) {
+              clearTimeout(stableTimer);
+              stableTimer = null;
+            }
+            loadStream();
+          }
+        },
+        getState: () => ({
+          currentStream: currentStreamIndex + 1,
+          totalStreams: availableStreams.length,
+          streamName: availableStreams[currentStreamIndex]?.name || 'Unknown',
+          retries: streamRetryCount,
+          isStable: isStable,
+          isLoading: isLoading,
+          hasPlayer: !!playerInstance
+        })
+      };
+
+      console.log('💡 Debug: window.__willowPlayer available');
+
+    })();
+  </script>
+   <!-- Ads Script -->
+  <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
+</body>
+</html>
