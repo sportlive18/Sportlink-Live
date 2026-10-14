@@ -1,844 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <meta name="referrer" content="no-referrer">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.16.2/dist/controls.css">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html,body{width:100%;height:100%;background:#0d1117;overflow:hidden;
-      font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-      -webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-
-    /* ════════════════════════════════════════════
-       TELEGRAM BADGE (top-left, BIG STYLE)
-    ════════════════════════════════════════════ */
-    #tgBadge{
-      position:fixed;
-      top:max(14px,env(safe-area-inset-top));
-      left:max(14px,env(safe-area-inset-left));
-      z-index:10001;
-      display:inline-flex;align-items:center;gap:10px;
-      padding:11px 20px;
-      background:linear-gradient(135deg,#1e88e5,#1565c0);
-      color:#fff;
-      font-size:15px;
-      font-weight:600;
-      letter-spacing:.3px;
-      text-decoration:none;
-      border-radius:12px;
-      box-shadow:0 4px 14px rgba(0,0,0,0.5);
-      transition:transform .2s ease,box-shadow .2s ease;
-      -webkit-tap-highlight-color:transparent;
-    }
-    #tgBadge:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(30,136,229,0.55)}
-    #tgBadge:active{transform:scale(.97)}
-    #tgBadge svg{width:20px;height:20px;flex-shrink:0;fill:#fff}
-    #tgBadge span{white-space:nowrap}
-
-    /* ── OVERLAY ── */
-    #overlay{position:fixed;inset:0;background:#0d1117;z-index:9999;
-      display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px}
-    #overlay svg{animation:spin 1s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    #overlay p{color:#4a5568;font-size:13px;letter-spacing:.4px;
-      text-align:center;padding:0 24px;font-weight:500}
-
-    /* ── CHANNEL LIST ── */
-    #channel-list{
-      position:fixed;inset:0;background:#0d1117;z-index:9998;
-      display:none;flex-direction:column;overflow-y:auto;
-      padding:0 0 max(24px,env(safe-area-inset-bottom));
-    }
-
-    /* ── TOP HEADER BAR ── */
-    .sw-header{
-      background:#0d1117;
-      padding:max(76px,calc(env(safe-area-inset-top) + 62px)) 20px 0;
-      text-align:center;
-      position:sticky;top:0;z-index:10;
-    }
-    .sw-brand-pill{
-      display:inline-flex;align-items:center;gap:10px;
-      border:1.5px solid #2d3748;border-radius:999px;
-      padding:10px 22px;margin-bottom:6px;
-      background:transparent;
-    }
-    .sw-brand-icon{
-      width:22px;height:22px;
-      background:#1e3a5f;border-radius:5px;
-      display:flex;align-items:center;justify-content:center;
-    }
-    .sw-brand-icon svg{width:14px;height:14px;fill:#4a90d9}
-    .sw-brand-text{font-size:16px;font-weight:700;color:#fff;letter-spacing:.2px}
-    .sw-brand-text span{color:#4a90d9}
-    .sw-sub{color:#4a5568;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;
-      margin-bottom:16px;margin-top:2px}
-
-    /* ── FILTER TABS ── */
-    .sw-tabs{display:flex;gap:10px;justify-content:center;padding-bottom:20px}
-    .sw-tab{
-      display:inline-flex;align-items:center;gap:7px;
-      border-radius:999px;padding:7px 18px;
-      font-size:13px;font-weight:600;letter-spacing:.3px;cursor:pointer;
-      border:1.5px solid #2d3748;background:transparent;color:#718096;
-      transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent;
-    }
-    .sw-tab.active{border-color:#fff;color:#fff}
-    .sw-tab .dot{width:7px;height:7px;border-radius:50%;background:#ef4444;
-      animation:pulse-dot 1.5s ease-in-out infinite}
-    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
-    .sw-tab .count{
-      font-size:11px;font-weight:700;
-      background:rgba(255,255,255,.08);
-      padding:1px 7px;border-radius:999px;
-    }
-
-    /* ── CARD GRID ── */
-    #ch-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-      gap:16px;
-      padding:0 16px;
-    }
-
-    /* ── MATCH CARD ── */
-    .ch-card{
-      background:#111827;
-      border:1px solid #1f2937;
-      border-radius:14px;
-      cursor:pointer;
-      text-decoration:none;
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
-      transition:transform .2s,border-color .2s,box-shadow .2s;
-      -webkit-tap-highlight-color:transparent;
-    }
-    .ch-card:hover{
-      border-color:#374151;
-      transform:translateY(-2px);
-      box-shadow:0 8px 24px rgba(0,0,0,.4);
-    }
-    .ch-card:active{transform:scale(.97)}
-
-    /* card image area */
-    .ch-img{
-      position:relative;width:100%;padding-top:52%;
-      background:#1f2937;overflow:hidden;
-    }
-    .ch-img img{
-      position:absolute;inset:0;width:100%;height:100%;
-      object-fit:cover;transition:opacity .3s;
-    }
-    .ch-img-placeholder{
-      position:absolute;inset:0;display:flex;align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,#1a2332 0%,#0f1923 100%);
-      font-size:22px;font-weight:700;color:#2d3748;letter-spacing:1px;
-    }
-
-    /* badge overlay */
-    .ch-img-badge{
-      position:absolute;top:10px;left:10px;
-      font-size:10px;font-weight:700;letter-spacing:.6px;
-      padding:3px 9px;border-radius:6px;
-      display:flex;align-items:center;gap:5px;
-    }
-    .ch-img-badge.live{background:rgba(239,68,68,.18);border:1px solid rgba(239,68,68,.4);color:#ef4444}
-    .ch-img-badge.live .b-dot{width:6px;height:6px;border-radius:50%;background:#ef4444;animation:pulse-dot 1.5s ease-in-out infinite}
-    .ch-img-badge.upcoming{background:rgba(15,23,42,.8);border:1px solid rgba(255,255,255,.12);color:#94a3b8}
-    .ch-img-badge.upcoming svg{width:11px;height:11px;stroke:#94a3b8;fill:none;stroke-width:2;flex-shrink:0}
-
-    /* free badge */
-    .ch-free{
-      position:absolute;top:10px;right:10px;
-      background:#16a34a;color:#fff;
-      font-size:9px;font-weight:700;letter-spacing:.8px;
-      padding:2px 8px;border-radius:4px;text-transform:uppercase;
-    }
-
-    /* card body */
-    .ch-body{padding:14px 14px 12px}
-    .ch-name{
-      color:#f1f5f9;font-size:13px;font-weight:600;
-      line-height:1.4;margin-bottom:5px;
-    }
-    .ch-time{
-      display:flex;align-items:center;gap:5px;
-      color:#64748b;font-size:11px;
-    }
-    .ch-time svg{width:12px;height:12px;stroke:#64748b;fill:none;stroke-width:2;flex-shrink:0}
-
-    /* CTA button */
-    .ch-cta{
-      margin:10px 14px 14px;
-      padding:9px;border-radius:8px;
-      font-size:12px;font-weight:700;letter-spacing:.4px;
-      text-align:center;
-      display:flex;align-items:center;justify-content:center;gap:6px;
-    }
-    .ch-cta.watch{background:#4a90d9;color:#fff}
-    .ch-cta.not-live{background:rgba(255,255,255,.06);color:#4a5568;border:1px solid rgba(255,255,255,.08)}
-    .ch-cta.not-live svg{width:13px;height:13px;stroke:#4a5568;fill:none;stroke-width:2}
-    .ch-cta.watch svg{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #fff}
-
-    /* ── PLAYER ── */
-    #pc{position:fixed;inset:0;background:#000;display:none;
-      align-items:center;justify-content:center;touch-action:manipulation}
-    video{width:100%;height:100%;object-fit:contain;background:#000;will-change:transform}
-    video.mode-fill{object-fit:fill}
-    video.mode-cover{object-fit:cover}
-
-    /* ── STATUS TOAST (pushed below the badge) ── */
-    #status{position:fixed;
-      top:calc(max(14px,env(safe-area-inset-top)) + 62px);
-      right:max(12px,env(safe-area-inset-right));z-index:9997;
-      padding:5px 13px;background:rgba(8,8,8,.9);
-      border:1px solid rgba(255,255,255,.05);
-      font-size:11px;font-weight:500;letter-spacing:.02em;border-radius:20px;
-      pointer-events:none;opacity:0;transition:opacity .3s;
-      max-width:260px;text-align:right;
-      backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-    #status.show{opacity:1}
-    #status.ok{color:#4a90d9}
-    #status.warn{color:#fb923c}
-    #status.err{color:#f87171}
-
-    /* ── SHAKA CUSTOM BUTTONS ── */
-    .sp-btn{background:transparent!important;border:none!important;
-      cursor:pointer!important;padding:0 8px!important;
-      opacity:.8;display:flex;align-items:center;justify-content:center;gap:5px;
-      height:100%;min-width:36px;transition:opacity .15s,color .15s;color:#fff!important;
-      -webkit-tap-highlight-color:transparent}
-    .sp-btn:hover{opacity:1}
-    .sp-btn:active{opacity:1;transform:scale(.92)}
-    .sp-btn:focus-visible{outline:2px solid #4a90d9;outline-offset:2px;border-radius:6px}
-    .sp-btn svg{width:18px;height:18px;display:block;pointer-events:none;flex-shrink:0}
-    .sp-btn.active{opacity:1;color:#4a90d9!important}
-    .fit-ratio{font-size:11px;font-weight:600;letter-spacing:.2px;line-height:1;
-      white-space:nowrap;pointer-events:none}
-    .shaka-controls-container button{color:#fff!important}
-    .shaka-video-container{background-color:#000!important}
-    .shaka-controls-container .shaka-seek-bar .shaka-seek-bar-played{background:#4a90d9!important}
-    .shaka-controls-container .shaka-seek-bar .shaka-seek-bar-buffered{background:#1e3a5f!important}
-
-    /* ── RESPONSIVE ── */
-    @media(max-width:400px){
-      #ch-grid{grid-template-columns:1fr 1fr;gap:10px;padding:0 10px}
-      .ch-name{font-size:11px}
-      .ch-body{padding:10px 10px 8px}
-      .ch-cta{margin:8px 10px 10px;font-size:11px;padding:8px}
-      /* Slightly smaller badge on small screens, still prominent */
-      #tgBadge{padding:9px 15px;font-size:13px;gap:8px}
-      #tgBadge svg{width:17px;height:17px}
-    }
-    @media(max-width:340px){
-      #tgBadge span{display:none}
-      #tgBadge{padding:9px 12px}
-    }
-    @media(min-width:900px){
-      #ch-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:0 24px}
-    }
-
-    /* ════════════════════════════════════════════
-       TELEGRAM POPUP
-    ════════════════════════════════════════════ */
-    #tgOverlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999999;
-      padding: 20px;
-      animation: fadeInPopup 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    #tgOverlay.show { display: flex; }
-
-    #tgCard {
-      width: 100%;
-      max-width: 400px;
-      background: linear-gradient(160deg, #121821, #0a0c0f);
-      border: 1px solid rgba(79, 195, 247, 0.15);
-      border-radius: 24px;
-      padding: 36px 28px 28px;
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(79, 195, 247, 0.03);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    #tgCard::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 20%, rgba(79, 195, 247, 0.04), transparent 60%);
-      pointer-events: none;
-    }
-    #tgIcon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #2AABEE, #229ED9);
-      box-shadow: 0 0 40px rgba(42, 171, 238, 0.2);
-      position: relative;
-      z-index: 1;
-    }
-    #tgIcon svg { width: 36px; height: 36px; }
-
-    #tgCard h2 {
-      margin: 0 0 8px;
-      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-      font-weight: 700;
-      color: #ffffff;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      position: relative;
-      z-index: 1;
-      letter-spacing: -0.01em;
-    }
-    #tgCard p {
-      margin: 0 0 24px;
-      color: #8e9baf;
-      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-    }
-    .tgBtns {
-      display: flex;
-      gap: 12px;
-      position: relative;
-      z-index: 1;
-    }
-    .tgBtn {
-      flex: 1;
-      height: 48px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: clamp(0.85rem, 1vw, 1rem);
-      cursor: pointer;
-      transition: all 0.25s ease;
-      border: none;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      letter-spacing: 0.01em;
-    }
-    #joinNow {
-      background: linear-gradient(135deg, #4fc3f7, #2196f3);
-      color: #ffffff;
-      box-shadow: 0 6px 24px rgba(79, 195, 247, 0.25);
-    }
-    #joinNow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(79, 195, 247, 0.35);
-    }
-    #joinedBtn {
-      background: rgba(255, 255, 255, 0.05);
-      color: #8e9baf;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    #joinedBtn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-    }
-    @keyframes fadeInPopup {
-      from { opacity: 0; transform: scale(0.95) translateY(12px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @media (max-width: 480px) {
-      #tgCard { padding: 24px 18px 20px; border-radius: 20px; }
-      #tgIcon { width: 60px; height: 60px; }
-      #tgIcon svg { width: 30px; height: 30px; }
-      #tgCard h2 { font-size: 1.2rem; }
-      #tgCard p { font-size: 0.85rem; margin-bottom: 18px; }
-      .tgBtn { height: 42px; font-size: 0.8rem; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="referrer" content="no-referrer">
+<title>Sonu // Live Stream</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@5.1.8/dist/controls.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#000;overflow:hidden;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.shaka-video-container{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;touch-action:manipulation}
+video{width:100%;height:100%;object-fit:contain;background:#000}
+video.mode-fill{object-fit:fill}
+video.mode-cover{object-fit:cover}
+.shaka-spinner-container,.shaka-spinner,.shaka-spinner-svg{display:none!important}
+.shaka-controls-container button{color:#fff!important}
+.shaka-fit-btn{background:transparent!important;border:none!important;cursor:pointer!important;padding:0 10px!important;opacity:.85;display:flex;align-items:center;justify-content:center;height:100%;transition:opacity .15s}
+.shaka-fit-btn:hover{opacity:1}
+.shaka-fit-btn svg{width:18px;height:18px;display:block}
+#loader{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:9;opacity:0;pointer-events:none;transition:opacity .2s}
+#loader.on{opacity:1}
+.spin{width:36px;height:36px;border:3px solid rgba(255,255,255,.15);border-top-color:#38bdf8;border-radius:50%;animation:sp .75s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+</style>
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════
-     TELEGRAM BADGE (top-left, BIG STYLE)
-════════════════════════════════════════════ -->
-<a id="tgBadge" href="https://t.me/sportlink10" target="_blank" rel="noopener" title="@Sportlink">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-  </svg>
-  <span>@Sportlink</span>
-</a>
-
-<div id="overlay">
-  <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-    <circle cx="20" cy="20" r="16" stroke="#1f2937" stroke-width="4"/>
-    <path d="M20 4a16 16 0 0 1 16 16" stroke="#4a90d9" stroke-width="4" stroke-linecap="round"/>
-  </svg>
-  <p id="loadMsg">Loading…</p>
+<div class="shaka-video-container" id="pc">
+  <video id="v" autoplay playsinline preload="metadata"></video>
+  <div id="loader"><div class="spin"></div></div>
 </div>
 
-<div id="status"></div>
-
-<div id="channel-list">
-  <!-- Header -->
-  <div class="sw-header">
-    <div class="sw-brand-pill">
-      <div class="sw-brand-icon">
-        <svg viewBox="0 0 20 14"><rect x="0" y="0" width="20" height="14" rx="2" fill="#4a90d9"/><polygon points="7,3 7,11 15,7" fill="#fff"/></svg>
-      </div>
-      <span class="sw-brand-text">Sportlink <span>Willow</span></span>
-    </div>
-    <div class="sw-sub">Willow Cricket · Powered by Sportlink</div>
-    <div class="sw-tabs">
-      <div class="sw-tab active" id="tab-live" onclick="filterCards('live')">
-        <span class="dot"></span>
-        <span>LIVE</span>
-        <span class="count" id="live-count">0</span>
-      </div>
-      <div class="sw-tab" id="tab-upcoming" onclick="filterCards('upcoming')">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span>UPCOMING</span>
-        <span class="count" id="upcoming-count">0</span>
-      </div>
-    </div>
-  </div>
-  <div id="ch-grid"></div>
-</div>
-
-<div id="pc">
-  <video id="v" playsinline webkit-playsinline
-    preload="none" x5-video-player-type="h5" x5-video-player-fullscreen="true"></video>
-</div>
-
-<!-- ====== TELEGRAM POPUP ====== -->
-<div id="tgOverlay">
-  <div id="tgCard">
-    <div id="tgIcon">
-      <svg viewBox="0 0 24 24" fill="white" width="36" height="36">
-        <path d="M23.05 2.1L19.6 21.3c-.26 1.15-.94 1.43-1.9.9l-5.26-3.88-2.54 2.45c-.28.28-.52.52-1.06.52l.38-5.4L19.9 5.8c.46-.4-.1-.63-.72-.23L7.5 13.03l-5.24-1.64c-1.14-.36-1.16-1.14.24-1.68L21.6.9c.95-.36 1.78.23 1.45 1.2z"/>
-      </svg>
-    </div>
-    <h2>Join Telegram Channel</h2>
-    <p>Get match links &amp; live updates delivered straight to your phone.</p>
-    <div class="tgBtns">
-      <button class="tgBtn" id="joinedBtn">Already Joined</button>
-      <button class="tgBtn" id="joinNow">Join Now</button>
-    </div>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/shaka-player@4.16.2/dist/shaka-player.ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/shaka-player@5.1.8/dist/shaka-player.ui.min.js"></script>
 <script>
-(function(){
-"use strict";
-
-var API = "https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json";
-
-var $overlay  = document.getElementById("overlay");
-var $loadMsg  = document.getElementById("loadMsg");
-var $status   = document.getElementById("status");
-var $list     = document.getElementById("channel-list");
-var $grid     = document.getElementById("ch-grid");
-var $pc       = document.getElementById("pc");
-var $vid      = document.getElementById("v");
-var _stTmr    = null;
-var _allCards = [];
-var _curFilter= "live";
-
-function getTier(){
-  var mem=navigator.deviceMemory||4,cores=navigator.hardwareConcurrency||4;
-  var mob=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  var conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
-  var net=conn?(conn.effectiveType||"4g"):"4g";
-  if(!mob) return "high";
-  if(mem<=1.5||cores<=2||net==="slow-2g"||net==="2g") return "low";
-  if(mem<=3||cores<=4) return "mid";
-  return "high";
-}
-var TIER=getTier();
-var PROF={
-  low: {buf:5,reBuf:1.5,behind:15,maxH:480,maxBw:1200000,bwEst:400000},
-  mid: {buf:8,reBuf:1.5,behind:25,maxH:720,maxBw:3500000,bwEst:1000000},
-  high:{buf:12,reBuf:1.5,behind:30,maxH:1080,maxBw:0,bwEst:2000000}
-}[TIER];
-
-var FITS=["contain","fill","cover"];
-var MODE_LABEL={contain:"Fit",fill:"Fill",cover:"Zoom"};
-var FICO={
-  contain:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="21" x2="22" y2="21"/></svg>',
-  fill:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>',
-  cover:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M6 7l3 3m0 0H7m2 0V8m9-1l-3 3m0 0h2m-2 0V8M6 13l3-3m0 0H7m2 0v2m9 1l-3-3m0 0h2m-2 0v2"/></svg>'
-};
-var PIP_ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12" y="12" width="7" height="5" rx="1" fill="currentColor" stroke="none"/></svg>';
-
-var CAL_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
-var CLK_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>';
-var NL_SVG ='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>';
-
-function toast(msg,type,dur){
-  $status.textContent=msg;
-  $status.className="show "+(type||"ok");
-  if(_stTmr) clearTimeout(_stTmr);
-  if(dur!==0){
-    _stTmr=setTimeout(function(){
-      $status.className=$status.className.replace("show","").trim();
-      _stTmr=null;
-    },dur||4000);
-  }
-}
-function setMsg(m){$loadMsg&&($loadMsg.textContent=m);}
-function hideOverlay(){$overlay&&($overlay.style.display="none");}
-function getChId(){return new URLSearchParams(location.search).get("id")||"";}
-
-window.filterCards=function(filter){
-  _curFilter=filter;
-  document.getElementById("tab-live").classList.toggle("active",filter==="live");
-  document.getElementById("tab-upcoming").classList.toggle("active",filter==="upcoming");
-  $grid.innerHTML="";
-  var f=document.createDocumentFragment();
-  _allCards.forEach(function(item){
-    var isLive=item.status&&item.status.toUpperCase()==="LIVE";
-    if(filter==="live"&&isLive) f.appendChild(item.el);
-    else if(filter==="upcoming"&&!isLive) f.appendChild(item.el);
-  });
-  $grid.appendChild(f);
-};
-
-async function loadData(){
-  var r=await fetch(API,{cache:"no-store",headers:{Accept:"application/json"}});
-  if(!r.ok) throw new Error("HTTP "+r.status);
-  var d=await r.json();
-  var matches=d&&Array.isArray(d.Matches)?d.Matches:[];
-  if(!matches.length) throw new Error("No matches found");
-  return matches.map(function(m){
-    var streamUrl="";
-    if(m.stream_url_bravo&&m.stream_url_bravo["Akamai Server"]) streamUrl=m.stream_url_bravo["Akamai Server"];
-    else if(m.stream_url_alpha&&m.stream_url_alpha["Akamai Server"]) streamUrl=m.stream_url_alpha["Akamai Server"];
-    else if(m.stream_url_bravo&&Object.values(m.stream_url_bravo)[0]) streamUrl=Object.values(m.stream_url_bravo)[0];
-    else if(m.stream_url_alpha&&Object.values(m.stream_url_alpha)[0]) streamUrl=Object.values(m.stream_url_alpha)[0];
-    var keyId="00000000000000000000000000000000",key="00000000000000000000000000000000";
-    if(m.drm_key){var parts=m.drm_key.split(":");if(parts.length===2){keyId=parts[0].trim();key=parts[1].trim();}}
-    return {
-      id:m.match_id||"match_"+Math.random().toString(36).substr(2,6),
-      name:m.title||"Live Match",
-      status:m.status||"",
-      time:m.time||"",
-      cover_image:m.cover_image||"",
-      is_free:m.is_free!==undefined?m.is_free:true,
-      stream_url:streamUrl,
-      key_id:keyId,key:key,
-      logo:m.cover_image||""
-    };
-  });
-}
-
-function buildCard(ch){
-  var isLive=ch.status&&ch.status.toUpperCase()==="LIVE";
-  var a=document.createElement("a");
-  a.className="ch-card";
-  a.href="?id="+encodeURIComponent(ch.id);
-
-  // image area
-  var imgDiv=document.createElement("div");
-  imgDiv.className="ch-img";
-  if(ch.logo&&ch.logo.trim()){
-    var img=document.createElement("img");
-    img.src=ch.logo;img.alt=ch.name;img.loading="lazy";
-    img.onerror=function(){this.style.display="none";};
-    imgDiv.appendChild(img);
-  } else {
-    var ph=document.createElement("div");
-    ph.className="ch-img-placeholder";
-    ph.textContent=ch.name.split(" ").slice(0,2).map(function(w){return w[0];}).join("");
-    imgDiv.appendChild(ph);
-  }
-
-  // live / upcoming badge
-  var badge=document.createElement("div");
-  if(isLive){
-    badge.className="ch-img-badge live";
-    badge.innerHTML='<span class="b-dot"></span>LIVE';
-  } else {
-    badge.className="ch-img-badge upcoming";
-    badge.innerHTML=CAL_SVG+"UPCOMING";
-  }
-  imgDiv.appendChild(badge);
-
-  // free badge
-  if(ch.is_free){
-    var fb=document.createElement("div");
-    fb.className="ch-free";fb.textContent="FREE";
-    imgDiv.appendChild(fb);
-  }
-  a.appendChild(imgDiv);
-
-  // body
-  var body=document.createElement("div");
-  body.className="ch-body";
-  var nameEl=document.createElement("div");
-  nameEl.className="ch-name";nameEl.textContent=ch.name;
-  body.appendChild(nameEl);
-  if(ch.time){
-    var timeEl=document.createElement("div");
-    timeEl.className="ch-time";
-    timeEl.innerHTML=CLK_SVG+"<span>"+(isLive?ch.time:"Live at "+ch.time)+"</span>";
-    body.appendChild(timeEl);
-  }
-  a.appendChild(body);
-
-  // CTA
-  var cta=document.createElement("div");
-  if(isLive){
-    cta.className="ch-cta watch";
-    cta.innerHTML='<span style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #fff;display:inline-block"></span> WATCH NOW';
-  } else {
-    cta.className="ch-cta not-live";
-    cta.innerHTML=NL_SVG+" NOT LIVE YET";
-  }
-  a.appendChild(cta);
-
-  return a;
-}
-
-function renderList(channels){
-  hideOverlay();
-  var liveCount=0,upCount=0;
-  _allCards=[];
-  channels.forEach(function(ch){
-    var isLive=ch.status&&ch.status.toUpperCase()==="LIVE";
-    if(isLive) liveCount++; else upCount++;
-    _allCards.push({status:ch.status,el:buildCard(ch)});
-  });
-  document.getElementById("live-count").textContent=liveCount;
-  document.getElementById("upcoming-count").textContent=upCount;
-  filterCards(liveCount>0?"live":"upcoming");
-  $list.style.display="flex";
-}
-
-function errMsg(msg){setMsg(msg);$overlay.style.display="flex";toast(msg,"err",0);}
-function shakaErrStr(e){
-  if(!e) return "Unknown error";
-  var c={1:"Network",2:"Text",3:"Media",4:"Manifest",5:"Streaming",6:"DRM",7:"Player"};
-  var s=(c[e.category]||"Err")+" "+e.category+":"+e.code;
-  if(e.data&&e.data[0]&&typeof e.data[0]==="string") s+=" — "+e.data[0].slice(0,72);
-  return s;
-}
-function ratioLabel(w,h){
-  if(!w||!h) return "";
-  function gcd(a,b){return b?gcd(b,a%b):a;}
-  var g=gcd(w,h)||1,rw=w/g,rh=h/g;
-  var common={"16:9":16/9,"4:3":4/3,"21:9":21/9,"1:1":1,"9:16":9/16,"3:2":3/2,"5:4":5/4,"2:1":2};
-  var real=w/h,best=null,bestDiff=.02;
-  Object.keys(common).forEach(function(k){var d=Math.abs(common[k]-real);if(d<bestDiff){bestDiff=d;best=k;}});
-  if(best) return best;
-  if(rw<=40&&rh<=40) return rw+":"+rh;
-  return real.toFixed(2)+":1";
-}
-
-function injectControls(container,vid,player){
-  var panel=container.querySelector(".shaka-controls-button-panel");
-  if(!panel) return;
-  var anchor=panel.querySelector(".shaka-fullscreen-button");
-  var fitIdx=0;
-  var fitBtn=document.createElement("button");
-  fitBtn.className="sp-btn sp-fit-btn";fitBtn.title="Video fit: Fit";
-  fitBtn.innerHTML='<span class="fit-icon">'+FICO.contain+'</span><span class="fit-ratio">--</span>';
-  if(anchor) panel.insertBefore(fitBtn,anchor); else panel.appendChild(fitBtn);
-  function applyFit(i){
-    fitIdx=i;var m=FITS[i];
-    vid.classList.remove("mode-fill","mode-cover");
-    if(m==="fill") vid.classList.add("mode-fill");
-    if(m==="cover") vid.classList.add("mode-cover");
-    var ic=fitBtn.querySelector(".fit-icon");if(ic) ic.innerHTML=FICO[m];
-    fitBtn.title="Video fit: "+MODE_LABEL[m];
-  }
-  fitBtn.addEventListener("click",function(e){e.stopPropagation();applyFit((fitIdx+1)%FITS.length);});
-  ["fullscreenchange","webkitfullscreenchange"].forEach(function(ev){
-    document.addEventListener(ev,function(){if(!(document.fullscreenElement||document.webkitFullscreenElement)) applyFit(0);});
-  });
-  function updateRatio(){var lbl=ratioLabel(vid.videoWidth,vid.videoHeight);var badge=fitBtn.querySelector(".fit-ratio");if(badge&&lbl) badge.textContent=lbl;}
-  vid.addEventListener("loadedmetadata",updateRatio);
-  vid.addEventListener("resize",updateRatio);updateRatio();
-  var pipOk=!!(document.pictureInPictureEnabled||(vid.webkitSupportsPresentationMode&&typeof vid.webkitSetPresentationMode==="function"));
-  if(pipOk){
-    var pipBtn=document.createElement("button");
-    pipBtn.className="sp-btn sp-pip-btn";pipBtn.title="Picture in Picture";pipBtn.innerHTML=PIP_ICON;
-    panel.insertBefore(pipBtn,fitBtn);
-    function setPipState(active){pipBtn.classList.toggle("active",active);pipBtn.title=active?"Exit Picture in Picture":"Picture in Picture";}
-    pipBtn.addEventListener("click",async function(e){
-      e.stopPropagation();
-      try{
-        if(document.pictureInPictureEnabled){if(document.pictureInPictureElement) await document.exitPictureInPicture();else await vid.requestPictureInPicture();}
-        else if(vid.webkitSupportsPresentationMode) vid.webkitSetPresentationMode(vid.webkitPresentationMode==="picture-in-picture"?"inline":"picture-in-picture");
-      } catch(_){toast("PiP unavailable","warn",2500);}
-    });
-    vid.addEventListener("enterpictureinpicture",function(){setPipState(true);});
-    vid.addEventListener("leavepictureinpicture",function(){setPipState(false);});
-    if(vid.webkitPresentationMode!==undefined) vid.addEventListener("webkitpresentationmodechanged",function(){setPipState(vid.webkitPresentationMode==="picture-in-picture");});
-  }
-}
-
-async function startPlayer(ch){
-  $pc.style.display="flex";
+document.addEventListener('DOMContentLoaded', async () => {
   shaka.polyfill.installAll();
-  if(!shaka.Player.isBrowserSupported()){errMsg("Browser not supported.");return;}
-  var player=new shaka.Player();
-  await player.attach($vid);
-  new shaka.ui.Overlay(player,$pc,$vid).configure({
-    controlPanelElements:["play_pause","mute","volume","time_and_duration","spacer","quality","fullscreen"],
-    seekBarColors:{base:"#374151",buffered:"#1e3a5f",played:"#4a90d9"}
+  if (!shaka.Player.isBrowserSupported()) return;
+
+  const video     = document.getElementById('v');
+  const container = document.getElementById('pc');
+  const loader    = document.getElementById('loader');
+
+  let playing = false;
+  const showLoader = () => { if (playing) loader.classList.add('on'); };
+  const hideLoader = () => { playing = true; loader.classList.remove('on'); };
+
+  video.addEventListener('waiting',    showLoader);
+  video.addEventListener('stalled',    showLoader);
+  video.addEventListener('seeking',    showLoader);
+  video.addEventListener('playing',    hideLoader);
+  video.addEventListener('canplay',    hideLoader);
+  video.addEventListener('timeupdate', () => { if (!video.paused && video.currentTime > 0) hideLoader(); });
+
+  const player = new shaka.Player();
+  await player.attach(video);
+
+  const ui = new shaka.ui.Overlay(player, container, video);
+  ui.configure({
+    controlPanelElements: ['play_pause','time_and_duration','spacer','quality','fullscreen','overflow_menu'],
+    overflowMenuButtons:  ['language','captions','playback_rate','picture_in_picture'],
+    seekBarColors: { base:'rgba(209,213,219,.25)', buffered:'rgba(139,0,0,.45)', played:'#22c55e' },
+    fadeDelay: 3
   });
-  setTimeout(function(){injectControls($pc,$vid,player);},100);
 
-  var keyId=ch.key_id,key=ch.key,url=ch.stream_url;
-  var restrictionsRelaxed=false;
+  const STREAM_URL = 'https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/3ehx5oie11/out/v1/8e1d4ff75c7e4e88a5bf9984431ef804/cenc.mpd';
+  const RAW_KEYS = '63ff5bd50a863114f9d5fe0d18aff544:319760d139c5af680bab44664fd833ad';
+  const clearKeys = Object.fromEntries(
+    RAW_KEYS.split(',').map(pair => pair.trim().split(':'))
+  );
 
-  function buildCfg(){
-    var restr={};
-    if(!restrictionsRelaxed){if(PROF.maxH<1080) restr.maxHeight=PROF.maxH;if(PROF.maxBw>0) restr.maxBandwidth=PROF.maxBw;}
-    return {
-      drm:{clearKeys:{[keyId]:key}},
-      manifest:{defaultPresentationDelay:4,ignoreTextStreamFailures:true,retryParameters:{maxAttempts:5,baseDelay:500,backoffFactor:2,fuzzFactor:.5,timeout:30000}},
-      streaming:{lowLatencyMode:false,bufferingGoal:PROF.buf,rebufferingGoal:PROF.reBuf,bufferBehind:PROF.behind,safeSeekOffset:4,stallEnabled:true,stallThreshold:1,stallSkip:.3,inaccurateManifestTolerance:0,retryParameters:{maxAttempts:5,baseDelay:500,backoffFactor:2,fuzzFactor:.5,timeout:30000}},
-      abr:{enabled:true,defaultBandwidthEstimate:PROF.bwEst,switchInterval:4,restrictions:restr}
-    };
-  }
-
-  player.configure(buildCfg());
-  player.getNetworkingEngine().registerRequestFilter(function(type,req){
-    req.headers["Referer"]="https://www.jiotv.com/";
-    req.headers["User-Agent"]="Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36";
-  });
-
-  var refreshing=false,retries=0,edgeTried=false,lastTry=0,started=false;
-
-  function unmuteOnce(){$vid.muted=false;}
-  $pc.addEventListener("pointerdown",unmuteOnce,{capture:true,once:true});
-  $pc.addEventListener("click",unmuteOnce,{capture:true,once:true});
-  $pc.addEventListener("keydown",unmuteOnce,{capture:true,once:true});
-
-  function goLiveEdge(){if(refreshing) return;try{player.goToLive();edgeTried=true;toast("Syncing…","warn",2000);}catch(_){reload();}}
-
-  async function reload(){
-    var now=Date.now();
-    if(refreshing||now-lastTry<1500) return;
-    if(retries>=5){toast("Stream unavailable.","err",0);return;}
-    refreshing=true;lastTry=now;retries++;
-    toast("Reconnecting… ("+retries+"/5)","warn",0);
-    try{
-      var channels=await loadData();
-      var fresh=channels.find(function(c){return c.id===ch.id;});
-      if(!fresh) throw new Error("missing");
-      keyId=fresh.key_id;key=fresh.key;url=fresh.stream_url;
-      player.configure(buildCfg());
-      await player.load(url);
-      $vid.play().catch(function(){});
-      retries=0;edgeTried=false;
-      toast("● Live","ok",4000);
-    } catch(_){setTimeout(reload,Math.min(1000*Math.pow(2,retries-1),8000));}
-    finally{refreshing=false;}
-  }
-
-  var RECOVERABLE=[1001,1002,1003,4012,6006,6007,7000,7001,7002];
-  player.addEventListener("error",function(ev){
-    var err=ev.detail,code=err&&err.code;
-    if(code===4014&&!restrictionsRelaxed){
-      restrictionsRelaxed=true;refreshing=true;
-      player.configure(buildCfg());toast("Playing best available quality","warn",2500);
-      player.load(url).then(function(){$vid.play().catch(function(){});toast("● Live","ok",4000);}).catch(function(){reload();}).finally(function(){refreshing=false;});
-      return;
+  player.configure({
+    drm: { clearKeys },
+    manifest: {
+      defaultPresentationDelay: 4,
+      ignoreTextStreamFailures: true,
+      dash: { autoCorrectDrift: true, ignoreMinBufferTime: true }
+    },
+    abr: {
+      enabled: true,
+      defaultBandwidthEstimate: 2000000,
+      bandwidthUpgradeTarget: 0.85,
+      bandwidthDowngradeTarget: 0.95,
+      restrictions: { maxHeight: 1080 }
     }
-    if(RECOVERABLE.indexOf(code)!==-1) reload();
-    else toast(shakaErrStr(err),"err",6000);
+  });
+  player.configurationForLowLatency({
+    streaming: {
+      inaccurateManifestTolerance: 0,
+      segmentPrefetchLimit: 2,
+      updateIntervalSeconds: 0.1,
+      maxDisabledTime: 1,
+      bufferingGoal: 10,
+      rebufferingGoal: 2,
+      bufferBehind: 30,
+      safeSeekOffset: 3,
+      retryParameters: { baseDelay: 100, maxAttempts: 5, backoffFactor: 1.5, fuzzFactor: 0.5 }
+    },
+    manifest: {
+      dash: { autoCorrectDrift: true },
+      retryParameters: { baseDelay: 100 }
+    },
+    drm: {
+      retryParameters: { baseDelay: 100 }
+    }
   });
 
-  try{
-    setMsg("Loading stream…");toast("Loading…","warn",0);
-    await player.load(url);
-    hideOverlay();toast("Tap ▶ to start","ok",5000);
-  } catch(_){
-    hideOverlay();toast("Retrying…","warn",0);
-    setTimeout(reload,1500);return;
-  }
+  player.getNetworkingEngine().registerRequestFilter((type, request) => {
+    request.headers['Referer']    = 'https://www.cricbuzz.com/';
+    request.headers['User-Agent'] = 'Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36';
+  });
 
-  var stallTmr=null;
-  function onStall(){if(!started||stallTmr||refreshing) return;toast("Buffering…","warn",0);stallTmr=setTimeout(function(){stallTmr=null;if(!edgeTried) goLiveEdge();else reload();},5000);}
-  function onPlaying(){started=true;if(stallTmr){clearTimeout(stallTmr);stallTmr=null;}edgeTried=false;if(!refreshing) toast("● Live","ok",3000);}
-  $vid.addEventListener("waiting",onStall);$vid.addEventListener("stalled",onStall);
-  $vid.addEventListener("playing",onPlaying);$vid.addEventListener("error",function(){if(!refreshing) reload();});
-  document.addEventListener("visibilitychange",function(){if(!document.hidden){setTimeout(function(){if(started&&$vid.paused&&!refreshing) $vid.play().catch(function(){});},400);}});
-  var netConn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
-  if(netConn){netConn.addEventListener("change",function(){if(!player||restrictionsRelaxed) return;var t=netConn.effectiveType||"4g";var h=t==="slow-2g"||t==="2g"?240:t==="3g"?480:PROF.maxH;try{player.configure("abr.restrictions.maxHeight",h);}catch(_){}if(h<PROF.maxH) toast("Slow network — reducing quality","warn",3000);});}
-}
+  try { await player.load(STREAM_URL); } catch (_) {}
 
-async function main(){
-  var id=getChId(),channels;
-  try{setMsg("Fetching matches…");channels=await loadData();}
-  catch(_){errMsg("Connection error.");return;}
-  if(!id){renderList(channels);return;}
-  var ch=channels.find(function(c){return c.id===id;});
-  if(!ch){errMsg("Match not found.");return;}
-  document.title="Sportlink · "+ch.name;
-  await startPlayer(ch);
-}
-
-document.addEventListener("DOMContentLoaded",main);
-})();
-</script>
-
-<!-- ====== TELEGRAM POPUP SCRIPT ====== -->
-<script>
-(function () {
-  const tgOverlay = document.getElementById('tgOverlay');
-
-  function closePopup() {
-    tgOverlay.classList.remove('show');
-  }
-
-  // Show popup after 3 seconds
-  setTimeout(function () {
-    tgOverlay.classList.add('show');
-  }, 3000);
-
-  // Join Now → open Telegram link, then close
-  document.getElementById('joinNow').onclick = function () {
-    window.open('https://t.me/sportlink10', '_blank');
-    closePopup();
+  const MODES = ['contain','fill','cover'];
+  const ICONS = {
+    contain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="21" x2="22" y2="21"/></svg>',
+    fill:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>',
+    cover:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M6 7l3 3m0 0H7m2 0V8m9-1l-3 3m0 0h2m-2 0V8M6 13l3-3m0 0H7m2 0v2m9 1l-3-3m0 0h2m-2 0v2"/></svg>'
   };
+  let modeIdx = 0;
 
-  // Already Joined → just close
-  document.getElementById('joinedBtn').onclick = function () {
-    closePopup();
-  };
+  function injectFitButton(cnt, vid) {
+    const poll = setInterval(() => {
+      const panel = cnt.querySelector('.shaka-controls-button-panel');
+      if (!panel) return;
+      clearInterval(poll);
+      const btn = document.createElement('button');
+      btn.className = 'shaka-fit-btn';
+      btn.title     = 'Toggle fit mode';
+      btn.innerHTML = ICONS.contain;
+      const anchor = panel.querySelector('.shaka-fullscreen-button');
+      if (anchor) panel.insertBefore(btn, anchor); else panel.appendChild(btn);
+      function applyMode(idx) {
+        modeIdx = idx;
+        const m = MODES[idx];
+        vid.classList.remove('mode-fill','mode-cover');
+        if (m === 'fill')  vid.classList.add('mode-fill');
+        if (m === 'cover') vid.classList.add('mode-cover');
+        btn.innerHTML = ICONS[m];
+      }
+      btn.addEventListener('click', e => { e.stopPropagation(); applyMode((modeIdx + 1) % MODES.length); });
+      ['fullscreenchange','webkitfullscreenchange'].forEach(ev => {
+        document.addEventListener(ev, () => {
+          if (!(document.fullscreenElement || document.webkitFullscreenElement)) applyMode(0);
+        });
+      });
+    }, 50);
+  }
 
-  // Click on dark backdrop → close
-  tgOverlay.addEventListener('click', function (e) {
-    if (e.target === tgOverlay) {
-      closePopup();
-    }
-  });
-
-  // ESC key → close
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && tgOverlay.classList.contains('show')) {
-      closePopup();
-    }
-  });
-})();
+  injectFitButton(container, video);
+});
 </script>
+<script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
 </body>
 </html>
