@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>IND VS ZIM</title>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+   
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      background: #000000;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(18px, 4vh, 32px) clamp(12px, 3vw, 28px);
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 20;
+      min-height: clamp(60px, 8vh, 80px);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 20px rgba(255, 255, 255, 0.02);
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      border-radius: 100%;
+    }
+
+    .logo {
+      font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .logo .sport { color: #f5c518; font-weight: 800; text-shadow: 0 0 30px rgba(245,197,24,0.3); }
+    .logo .link { color: #ffffff; font-weight: 700; }
+    .logo .dot { color: #f5c518; font-size: 0.35em; margin-left: 0.05em; opacity: 0.5; }
+
+    .main {
+      margin-top: clamp(60px, 8vh, 80px);
+      min-height: calc(100vh - clamp(60px, 8vh, 80px));
+      min-height: calc(100dvh - clamp(60px, 8vh, 80px));
+      display: flex;
+      flex-direction: column;
+      background: #000000;
+      width: 100%;
+    }
+
+    .player-wrapper {
+      width: 100%;
+      background: #000000;
+      flex-shrink: 0;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      max-height: 70vh;
+    }
+
+    @media (min-width: 900px) {
+      .player-wrapper { padding-bottom: 0; height: min(56.25vw, 70vh); max-height: 70vh; }
+    }
+
+    .player-wrapper iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background: #000000;
+    }
+
+    /* ====== WHATSAPP PROMO STRIP (honest, restyled) ====== */
+    .wa-strip {
+      width: 100%;
+      background: #0b1210;
+      border-top: 1px solid rgba(37, 211, 102, 0.18);
+      border-bottom: 1px solid rgba(37, 211, 102, 0.18);
+      padding: clamp(10px, 1.8vh, 16px) clamp(14px, 3vw, 32px);
+      display: flex;
+      align-items: center;
+      gap: clamp(10px, 2vw, 18px);
+      flex-shrink: 0;
+    }
+
+    .wa-strip .strip-icon {
+      width: clamp(32px, 4.5vw, 44px);
+      height: clamp(32px, 4.5vw, 44px);
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .wa-strip .strip-icon svg { width: clamp(16px, 2.2vw, 22px); height: clamp(16px, 2.2vw, 22px); }
+
+    .wa-strip .strip-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+
+    .wa-strip .strip-text .t1 {
+      font-size: clamp(0.78rem, 1.15vw, 0.98rem);
+      font-weight: 700;
+      color: #f0f2f5;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .wa-strip .strip-text .t2 {
+      font-size: clamp(0.68rem, 0.95vw, 0.82rem);
+      color: #7f9088;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .wa-strip .strip-cta {
+      background: transparent;
+      color: #25D366;
+      border: 1.5px solid #25D366;
+      padding: clamp(7px, 1.1vh, 11px) clamp(14px, 2.2vw, 22px);
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: clamp(0.7rem, 1vw, 0.88rem);
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.01em;
+      transition: all 0.2s ease;
+    }
+
+    .wa-strip .strip-cta:hover {
+      background: #25D366;
+      color: #06110a;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.25);
+    }
+
+    .wa-strip .strip-close {
+      background: transparent;
+      border: none;
+      color: #5a675f;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .wa-strip .strip-close:hover { background: rgba(255, 255, 255, 0.06); color: #f0f2f5; }
+    .wa-strip .strip-close .material-icons { font-size: 18px; }
+
+    @media (max-width: 600px) {
+      .wa-strip { padding: 9px 10px; gap: 8px; }
+      .wa-strip .strip-text .t1 { font-size: 0.72rem; }
+      .wa-strip .strip-text .t2 { display: none; }
+      .wa-strip .strip-cta { padding: 6px 12px; font-size: 0.65rem; }
+      .wa-strip .strip-icon { width: 30px; height: 30px; }
+      .wa-strip .strip-close { width: 24px; height: 24px; }
+      .wa-strip .strip-close .material-icons { font-size: 16px; }
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.6);
+      flex-shrink: 0;
+      padding: 0;
+      width: 100%;
+      min-height: clamp(60px, 8vh, 90px);
+      position: sticky;
+      top: clamp(60px, 8vh, 80px);
+      z-index: 15;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: clamp(16px, 2.5vh, 28px) clamp(28px, 5vw, 56px);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+      color: #8e9baf;
+      cursor: pointer;
+      border-bottom: 4px solid transparent;
+      transition: all 0.3s ease;
+      letter-spacing: 0.03em;
+      flex: 1;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      position: relative;
+      min-height: clamp(60px, 8vh, 90px);
+    }
+
+    .tab-btn .material-icons { font-size: clamp(1.6rem, 2.2vw, 2.4rem); }
+    .tab-btn:hover { color: #ffffff; background: rgba(255, 255, 255, 0.03); }
+    .tab-btn.active { color: #ffffff; border-bottom-color: #4fc3f7; background: rgba(79, 195, 247, 0.06); }
+    .tab-btn.active .material-icons { color: #4fc3f7; }
+    .tab-btn[data-tab="channels"].active { border-bottom-color: #4fc3f7; color: #4fc3f7; }
+    .tab-btn[data-tab="channels"].active .material-icons { color: #4fc3f7; }
+    .tab-btn[data-tab="chat"].active { border-bottom-color: #ce93d8; color: #ce93d8; }
+    .tab-btn[data-tab="chat"].active .material-icons { color: #ce93d8; }
+
+    .tab-content { display: none; flex: 1; min-height: 0; background: #000000; width: 100%; }
+    .tab-content.active { display: flex; flex-direction: column; width: 100%; }
+
+    .channels-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(12px, 2vw, 20px);
+      padding: clamp(16px, 2.5vh, 32px) clamp(16px, 3vw, 40px);
+      flex: 1;
+      align-content: start;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (min-width: 900px) { .channels-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .channel-card {
+      background: #121821;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: clamp(18px, 3vh, 32px) clamp(14px, 2vw, 24px);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .channel-card:hover { border-color: rgba(79, 195, 247, 0.3); transform: translateY(-3px); background: #1a2330; }
+
+    .channel-card .icon {
+      width: clamp(48px, 6vw, 72px);
+      height: clamp(48px, 6vw, 72px);
+      border-radius: 50%;
+      background: #0a0c0f;
+      border: 2px solid rgba(79, 195, 247, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: clamp(16px, 2vw, 24px);
+      color: #4fc3f7;
+      transition: all 0.3s ease;
+    }
+
+    .channel-card:hover .icon { border-color: #4fc3f7; box-shadow: 0 0 30px rgba(79, 195, 247, 0.1); }
+    .channel-card .name { font-weight: 700; font-size: clamp(0.9rem, 1.2vw, 1.2rem); color: #f0f2f5; letter-spacing: 0.01em; }
+
+    .channel-card .badge {
+      font-size: 0.65rem;
+      color: #8e9baf;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 14px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-weight: 500;
+    }
+
+    .channel-card.active { border-color: #4fc3f7; box-shadow: 0 0 40px rgba(79, 195, 247, 0.06); background: #0f1923; }
+    .channel-card.active .icon { border-color: #4fc3f7; box-shadow: 0 0 30px rgba(79, 195, 247, 0.15); background: rgba(79, 195, 247, 0.08); }
+
+    .chat-container { flex: 1; width: 100%; min-height: 70vh; background: #0f141c; }
+    .chat-container iframe { width: 100%; height: 100%; min-height: 70vh; border: none; display: block; }
+
+    #waOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+      padding: 20px;
+      animation: fadeInPopup 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    #waOverlay.show { display: flex; }
+
+    #waCard {
+      width: 100%;
+      max-width: 400px;
+      background: linear-gradient(160deg, #121821, #0a0c0f);
+      border: 1px solid rgba(79, 195, 247, 0.15);
+      border-radius: 24px;
+      padding: 36px 28px 28px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(79, 195, 247, 0.03);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #waCard::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 20%, rgba(79, 195, 247, 0.04), transparent 60%);
+      pointer-events: none;
+    }
+
+    #waIcon {
+      width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #0088cc, #006aaa);
+      box-shadow: 0 0 40px rgba(0, 136, 204, 0.3);
+      position: relative; z-index: 1;
+    }
+
+    #waIcon svg { width: 36px; height: 36px; }
+
+    #waCard h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      color: #ffffff;
+      font-family: 'Inter', system-ui, sans-serif;
+      position: relative; z-index: 1;
+      letter-spacing: -0.01em;
+    }
+
+    #waCard p {
+      margin: 0 0 24px;
+      color: #8e9baf;
+      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+      line-height: 1.6;
+      position: relative; z-index: 1;
+    }
+
+    .waBtns { display: flex; gap: 12px; position: relative; z-index: 1; }
+
+    .waBtn {
+      flex: 1; height: 48px; border-radius: 40px; font-weight: 700;
+      font-size: clamp(0.85rem, 1vw, 1rem);
+      cursor: pointer; transition: all 0.25s ease; border: none;
+      font-family: 'Inter', sans-serif; letter-spacing: 0.01em;
+    }
+
+    #joinNow {
+      background: linear-gradient(135deg, #4fc3f7, #2196f3);
+      color: #ffffff;
+      box-shadow: 0 6px 24px rgba(79, 195, 247, 0.25);
+    }
+
+    #joinNow:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(79, 195, 247, 0.35); }
+
+    #joinedBtn {
+      background: rgba(255, 255, 255, 0.05);
+      color: #8e9baf;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    #joinedBtn:hover { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
+
+    @keyframes fadeInPopup {
+      from { opacity: 0; transform: scale(0.95) translateY(12px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      #waCard { padding: 24px 18px 20px; border-radius: 20px; }
+      #waIcon { width: 60px; height: 60px; }
+      #waIcon svg { width: 30px; height: 30px; }
+      #waCard h2 { font-size: 1.2rem; }
+      #waCard p { font-size: 0.85rem; margin-bottom: 18px; }
+      .waBtn { height: 42px; font-size: 0.8rem; }
+    }
+
+    @media (max-width: 600px) {
+      .header { padding: 10px 12px; min-height: 48px; }
+      .header::after { left: 5%; right: 5%; }
+      .logo { font-size: clamp(1rem, 4.5vw, 1.4rem); gap: 1px; }
+      .main { margin-top: 48px; min-height: calc(100vh - 48px); min-height: calc(100dvh - 48px); }
+      .tabs { min-height: 50px; top: 48px; }
+      .tab-btn { padding: 10px 12px; font-size: 0.75rem; gap: 6px; min-height: 50px; }
+      .tab-btn .material-icons { font-size: 1rem; }
+      .channels-grid { gap: 8px; padding: 10px; }
+      .channel-card { padding: 14px 10px; border-radius: 12px; }
+      .channel-card .icon { width: 40px; height: 40px; font-size: 14px; }
+      .channel-card .name { font-size: 0.75rem; }
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      .header { padding: 6px 16px; min-height: 40px; }
+      .logo { font-size: clamp(0.8rem, 2.5vh, 1.2rem); }
+      .main { margin-top: 40px; min-height: calc(100vh - 40px); min-height: calc(100dvh - 40px); }
+      .tabs { min-height: 42px; top: 40px; }
+      .tab-btn { padding: 6px 16px; font-size: 0.7rem; gap: 4px; min-height: 42px; }
+      .tab-btn .material-icons { font-size: 0.9rem; }
+      .player-wrapper { padding-bottom: 50%; }
+      .wa-strip { padding: 6px 12px; }
+      .channels-grid { gap: 6px; padding: 8px 12px; }
+      .channel-card { padding: 10px 8px; border-radius: 10px; }
+      .channel-card .icon { width: 32px; height: 32px; font-size: 11px; }
+      .channel-card .name { font-size: 0.65rem; }
+    }
+
+    @media (min-width: 1200px) {
+      .header { padding: 28px 40px; min-height: 90px; }
+      .header::after { left: 15%; right: 15%; }
+      .logo { font-size: 2.8rem; }
+      .main { margin-top: 90px; min-height: calc(100vh - 90px); min-height: calc(100dvh - 90px); }
+      .tabs { min-height: 100px; top: 90px; }
+      .tab-btn { padding: 28px 56px; font-size: 1.6rem; gap: 18px; min-height: 100px; }
+      .tab-btn .material-icons { font-size: 2.4rem; }
+      .channels-grid { gap: 24px; padding: 32px 48px; }
+      .channel-card { padding: 32px 28px; border-radius: 20px; }
+      .channel-card .icon { width: 80px; height: 80px; font-size: 28px; }
+      .channel-card .name { font-size: 1.4rem; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-content.active { animation: fadeIn 0.35s ease; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="/" class="logo" style="text-decoration:none;">
+      <span class="sport">Sport</span><span class="link">link</span><span class="dot">•</span>
+    </a>
+  </header>
+
+  <div class="main">
+
+    <div class="player-wrapper">
+      <iframe src="https://sayan-starsport.pages.dev/?id=1108" allowfullscreen loading="lazy" title="Live Match" allow="encrypted-media; fullscreen; autoplay"></iframe>
+    </div>
+
+    <!-- ====== WHATSAPP PROMO STRIP (honest copy, calm design, dismissible) ====== -->
+    <div class="wa-strip" id="waStrip">
+      <div class="strip-icon">
+        <svg viewBox="0 0 24 24" fill="#0088cc" width="20" height="20">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 13.63l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.462c.537-.194 1.006.131.833.93z"/>
+        </svg>
+      </div>
+      <div class="strip-text">
+        <div class="t1">Join Our Telegram Channel for Live Match Links &amp; Instant Updates</div>
+        <div class="t2">Instant alerts if a stream drops or channels change</div>
+      </div>
+      <button class="strip-cta" id="stripJoinBtn">Join</button>
+      <button class="strip-close" id="stripCloseBtn" aria-label="Dismiss">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="channels">
+        <span class="material-icons">live_tv</span>
+        <span>Channels</span>
+      </button>
+      <button class="tab-btn" data-tab="chat">
+        <span class="material-icons">chat</span>
+        <span>Live Chat</span>
+      </button>
+    </div>
+
+    <div class="tab-content active" id="channels">
+      <div class="channels-grid" id="channelsGrid"></div>
+    </div>
+
+  </div>
+
+  <div id="waOverlay">
+    <div id="waCard">
+      <div id="waIcon">
+        <svg viewBox="0 0 24 24" fill="white" width="36" height="36">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 13.63l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.462c.537-.194 1.006.131.833.93z"/>
+        </svg>
+      </div>
+      <h2>Join Telegram Channel</h2>
+      <p>Get match links &amp; live updates delivered straight to your phone.</p>
+      <div class="waBtns">
+        <button class="waBtn" id="joinedBtn">Already Joined</button>
+        <button class="waBtn" id="joinNow">Join Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const WHATSAPP_LINK = 'https://t.me/sportlink10';
+
+      const channels = [
+        { name: 'Hindi', url: 'https://sportlink10-ajp.pages.dev/cc?id=1108', logo: 'HN' },
+        { name: 'English', url: 'https://sportlink10-ajp.pages.dev/cc?id=1106', logo: 'EN' },
+        { name: 'Tamil', url: 'https://sportlink10-ajp.pages.dev/cc?id=3277', logo: 'TAM' },
+        { name: 'Telugu', url: 'https://sportlink10-ajp.pages.dev/cc?id=3278', logo: 'TEL' },
+        { name: 'Kanada', url: 'https://sportlink10-ajp.pages.dev/cc?id=1650', logo: 'KAN' },
+      ];
+
+      const grid = document.getElementById('channelsGrid');
+      const playerIframe = document.querySelector('.player-wrapper iframe');
+      let currentIndex = 0;
+
+      function renderChannels(activeIndex) {
+        grid.innerHTML = channels.map((ch, index) => `
+          <div class="channel-card ${index === activeIndex ? 'active' : ''}" data-index="${index}">
+            <div class="icon">${ch.logo}</div>
+            <div class="name">${ch.name}</div>
+            <div class="badge">HD · Live</div>
+          </div>
+        `).join('');
+
+        grid.querySelectorAll('.channel-card').forEach(card => {
+          card.addEventListener('click', function() {
+            const idx = parseInt(this.dataset.index);
+            switchChannel(idx);
+          });
+        });
+      }
+
+      function switchChannel(index) {
+        const ch = channels[index];
+        if (!ch) return;
+        currentIndex = index;
+        playerIframe.src = ch.url;
+        grid.querySelectorAll('.channel-card').forEach(c => {
+          c.classList.toggle('active', parseInt(c.dataset.index) === index);
+        });
+      }
+
+      renderChannels(0);
+
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const target = this.dataset.tab;
+          tabBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          tabContents.forEach(c => c.classList.remove('active'));
+          document.getElementById(target).classList.add('active');
+        });
+      });
+
+      const waOverlay = document.getElementById('waOverlay');
+
+      setTimeout(function() {
+        waOverlay.classList.add('show');
+      }, 3000);
+
+      document.getElementById('joinNow').onclick = function() {
+        window.open(WHATSAPP_LINK, '_blank');
+        waOverlay.classList.remove('show');
+      };
+
+      document.getElementById('joinedBtn').onclick = function() {
+        waOverlay.classList.remove('show');
+      };
+
+      waOverlay.addEventListener('click', function(e) {
+        if (e.target === waOverlay) {
+          waOverlay.classList.remove('show');
+        }
+      });
+
+      // WhatsApp promo strip — only the Join button opens the link,
+      // and it's honestly labeled with a real reason to join.
+      const waStrip = document.getElementById('waStrip');
+      document.getElementById('stripJoinBtn').addEventListener('click', function() {
+        window.open(WHATSAPP_LINK, '_blank');
+      });
+      document.getElementById('stripCloseBtn').addEventListener('click', function() {
+        waStrip.style.display = 'none';
+      });
+
+    })();
+  </script>
+
+  <!-- Ads Script -->
+  <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
+
+</body>
+</html>
