@@ -1,32 +1,32 @@
 {
-  "timestamp": "2026-10-17T17:15:46.382543",
-  "total_matches": 23,
+  "timestamp": "2026-10-17T17:20:45.878226",
+  "total_matches": 22,
   "live_count": 3,
-  "upcoming_count": 20,
+  "upcoming_count": 19,
   "completed_count": 0,
   "matches": [
     {
-      "match_id": "1251",
-      "title": "RCD Espanyol vs Atletico de Madrid",
-      "teams": "RCD Espanyol vs Atletico de Madrid",
+      "match_id": "1253",
+      "title": "Real Betis vs Barcelona",
+      "teams": "Real Betis vs Barcelona",
       "sport": "cricket",
       "sport_display": "Cricket",
       "status": "live",
       "status_display": "LIVE",
       "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247654_53004_ESL_ATM_FC-Web.png",
+      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247656_53004_RB_BAR_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "82",
+      "viewers": "78",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
-      "page_url": "/world-sports/player.html?id=1251",
-      "match_url": "live/rcd-espanyol-vs-atletico-de-madrid-1251",
+      "page_url": "/world-sports/player.html?id=1253",
+      "match_url": "live/real-betis-vs-barcelona-1253",
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:42.571499"
+      "last_updated": "2026-10-17T17:20:11.130188"
     },
     {
       "match_id": "1252",
@@ -39,7 +39,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247652_53004_VIL_ELC_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "50",
+      "viewers": "61",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -52,7 +52,7 @@
         "https://live.talkoraai.com/match/hls?t=tnW8VofuH2nbPXwGXhtarlSOZFTuA-qzR3ofCmpIEuuA-80Or2Ye1SQsnz6B_9GFDuVdN2Rl34UfIldmVo9cru8J8Xo9XC_4x5bhxIdlA2G8tNH2KrJEfLgrJkORVO-U_kMyhypr_38oPsFtXstJuMjkPZ-IDpSlNFu7fO_9VTpnQr-1sgSYgfRSTegAlD1hEXqSV-dMooALqMFlGtcFL5WWCOgkHiOwgkStrPLe4Vp_pmIr1sydLBWKJg17x_xz21yfbLTz33yW2BjEOgkghqxWYw",
         "https://live.talkoraai.com/match/seg?t=6HdpdEOGAPi4DWcTTVyEiCc59oS04EpteImVNuEeAgAjIwy4bpUJujbGq-JiCRotoBRr4RQnZ4iZxRUgGe-IeRkpSay24rLsruWGUPdp4N6AOVAd1S15Fca73Z-uVpMTlS0oTL_ZpetLJjhm2MbzBxv6baI05K2GAZCGwFIlXC1qSXQvfpfwuRkuWIKvqOZYmZdDNky8YFhmOcOP75jIVp8wjXrNLQumTqCIHsUYK_yxJ1JbFpRzGxMfqyPmNZK_T6LStGWp6svacvhPyzhVcvfJqJULfqh4u0c-"
       ],
-      "last_updated": "2026-10-17T15:42:42.908792"
+      "last_updated": "2026-10-17T17:20:11.891063"
     },
     {
       "match_id": "1287",
@@ -65,7 +65,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791354679540x302.jpg",
       "league": "West Indies Tour of India 2026",
-      "viewers": "23",
+      "viewers": "36",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -79,30 +79,7 @@
         "https://live.talkoraai.com/match/seg?t=f5nJ1Sw702RAw8sYxKD31WgtyCtNMmdTDe7QKSJnY_uLYcy0gGF6gtCEeUNUwKhKjnoNeEUuYhrhhFR4vvCkODthl7jN1xofTNz_6R-WCrpG5O1Kej141NssLQvrSIumitFTW3JYNgRIZ6O0Kn1mqHN4bfCKfYnqsnESswUn5VVOU6In0mZxL7YJCZeeUt7Q2NIJKA_kEU41HqeatvxoGwmzbopLCew3RHj0Z_i9pU-AnSVrV7514CY582vdqsX-uwYC70SOhMkc9S_uxJ8vxy5V9f0",
         "https://tvsen7.aynaott.com/ssport2hd/index.m3u8"
       ],
-      "last_updated": "2026-10-17T15:42:43.282948"
-    },
-    {
-      "match_id": "1253",
-      "title": "Real Betis vs Barcelona",
-      "teams": "Real Betis vs Barcelona",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247656_53004_RB_BAR_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "25",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1253",
-      "match_url": "live/real-betis-vs-barcelona-1253",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.612920"
+      "last_updated": "2026-10-17T17:20:12.251744"
     },
     {
       "match_id": "1254",
@@ -125,7 +102,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.614003"
+      "last_updated": "2026-10-17T17:20:12.577483"
     },
     {
       "match_id": "1101",
@@ -148,7 +125,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.614998"
+      "last_updated": "2026-10-17T17:20:12.578211"
     },
     {
       "match_id": "1255",
@@ -171,7 +148,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.615979"
+      "last_updated": "2026-10-17T17:20:12.578907"
     },
     {
       "match_id": "1256",
@@ -194,7 +171,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.616961"
+      "last_updated": "2026-10-17T17:20:12.579538"
     },
     {
       "match_id": "1257",
@@ -217,7 +194,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.617969"
+      "last_updated": "2026-10-17T17:20:12.580184"
     },
     {
       "match_id": "1258",
@@ -240,7 +217,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.618593"
+      "last_updated": "2026-10-17T17:20:12.580815"
     },
     {
       "match_id": "1259",
@@ -263,7 +240,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.619233"
+      "last_updated": "2026-10-17T17:20:12.581432"
     },
     {
       "match_id": "1260",
@@ -286,7 +263,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.619838"
+      "last_updated": "2026-10-17T17:20:12.582061"
     },
     {
       "match_id": "1261",
@@ -309,7 +286,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.620479"
+      "last_updated": "2026-10-17T17:20:12.582658"
     },
     {
       "match_id": "1262",
@@ -332,7 +309,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.621099"
+      "last_updated": "2026-10-17T17:20:12.583281"
     },
     {
       "match_id": "1263",
@@ -355,7 +332,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.621696"
+      "last_updated": "2026-10-17T17:20:12.583900"
     },
     {
       "match_id": "1264",
@@ -378,7 +355,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.622322"
+      "last_updated": "2026-10-17T17:20:12.584503"
     },
     {
       "match_id": "1265",
@@ -401,7 +378,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.622933"
+      "last_updated": "2026-10-17T17:20:12.585127"
     },
     {
       "match_id": "1266",
@@ -424,7 +401,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.623521"
+      "last_updated": "2026-10-17T17:20:12.585743"
     },
     {
       "match_id": "1267",
@@ -447,7 +424,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.624135"
+      "last_updated": "2026-10-17T17:20:12.586335"
     },
     {
       "match_id": "1246",
@@ -470,7 +447,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.624724"
+      "last_updated": "2026-10-17T17:20:12.586948"
     },
     {
       "match_id": "1245",
@@ -493,7 +470,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.625339"
+      "last_updated": "2026-10-17T17:20:12.587542"
     },
     {
       "match_id": "1243",
@@ -516,7 +493,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.625952"
+      "last_updated": "2026-10-17T17:20:12.588156"
     },
     {
       "match_id": "1102",
@@ -539,7 +516,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T15:42:43.626543"
+      "last_updated": "2026-10-17T17:20:12.588775"
     }
   ]
 }
