@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-17T15:00:45.520495",
+  "timestamp": "2026-10-17T15:05:46.203876",
   "total_matches": 23,
   "live_count": 3,
   "upcoming_count": 20,
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247654_53004_ESL_ATM_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "68",
+      "viewers": "69",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -26,7 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:18.279704"
+      "last_updated": "2026-10-17T15:02:17.808489"
     },
     {
       "match_id": "1252",
@@ -39,17 +39,20 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247652_53004_VIL_ELC_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "36",
+      "viewers": "38",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
       "page_url": "/world-sports/player.html?id=1252",
       "match_url": "live/villarreal-cf-vs-elche-cf-1252",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-17T14:57:18.630895"
+      "stream_url": "https://live.talkoraai.com/match/hls?t=tnW8VofuH2nbPXwGXhtarlSOZFTuA-qzR3ofCmpIEuuA-80Or2Ye1SQsnz6B_9GFDuVdN2Rl34UfIldmVo9cru8J8Xo9XC_4x5bhxIdlA2G8tNH2KrJEfLgrJkORVO-U_kMyhypr_38oPsFtXstJuMjkPZ-IDpSlNFu7fO_9VTpnQr-1sgSYgfRSTegAlD1hEXqSV-dMooALqMFlGtcFL5WWCOgkHiOwgkStrPLe4Vp_pmIr1sydLBWKJg17x_xz21yfbLTz33yW2BjEOgkghqxWYw",
+      "server_count": 2,
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=tnW8VofuH2nbPXwGXhtarlSOZFTuA-qzR3ofCmpIEuuA-80Or2Ye1SQsnz6B_9GFDuVdN2Rl34UfIldmVo9cru8J8Xo9XC_4x5bhxIdlA2G8tNH2KrJEfLgrJkORVO-U_kMyhypr_38oPsFtXstJuMjkPZ-IDpSlNFu7fO_9VTpnQr-1sgSYgfRSTegAlD1hEXqSV-dMooALqMFlGtcFL5WWCOgkHiOwgkStrPLe4Vp_pmIr1sydLBWKJg17x_xz21yfbLTz33yW2BjEOgkghqxWYw",
+        "https://live.talkoraai.com/match/seg?t=6HdpdEOGAPi4DWcTTVyEiCc59oS04EpteImVNuEeAgAjIwy4bpUJujbGq-JiCRotoBRr4RQnZ4iZxRUgGe-IeRkpSay24rLsruWGUPdp4N6AOVAd1S15Fca73Z-uVpMTlS0oTL_ZpetLJjhm2MbzBxv6baI05K2GAZCGwFIlXC1qSXQvfpfwuRkuWIKvqOZYmZdDNky8YFhmOcOP75jIVp8wjXrNLQumTqCIHsUYK_yxJ1JbFpRzGxMfqyPmNZK_T6LStGWp6svacvhPyzhVcvfJqJULfqh4u0c-"
+      ],
+      "last_updated": "2026-10-17T15:02:19.155006"
     },
     {
       "match_id": "1287",
@@ -62,7 +65,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791354679540x302.jpg",
       "league": "West Indies Tour of India 2026",
-      "viewers": "9",
+      "viewers": "11",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -76,7 +79,7 @@
         "https://live.talkoraai.com/match/seg?t=f5nJ1Sw702RAw8sYxKD31WgtyCtNMmdTDe7QKSJnY_uLYcy0gGF6gtCEeUNUwKhKjnoNeEUuYhrhhFR4vvCkODthl7jN1xofTNz_6R-WCrpG5O1Kej141NssLQvrSIumitFTW3JYNgRIZ6O0Kn1mqHN4bfCKfYnqsnESswUn5VVOU6In0mZxL7YJCZeeUt7Q2NIJKA_kEU41HqeatvxoGwmzbopLCew3RHj0Z_i9pU-AnSVrV7514CY582vdqsX-uwYC70SOhMkc9S_uxJ8vxy5V9f0",
         "https://tvsen7.aynaott.com/ssport2hd/index.m3u8"
       ],
-      "last_updated": "2026-10-17T14:57:33.647422"
+      "last_updated": "2026-10-17T15:02:20.767050"
     },
     {
       "match_id": "1253",
@@ -99,7 +102,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.131905"
+      "last_updated": "2026-10-17T15:02:21.727665"
     },
     {
       "match_id": "1254",
@@ -122,7 +125,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.132344"
+      "last_updated": "2026-10-17T15:02:21.728071"
     },
     {
       "match_id": "1101",
@@ -145,7 +148,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.132709"
+      "last_updated": "2026-10-17T15:02:21.728409"
     },
     {
       "match_id": "1255",
@@ -168,7 +171,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.133048"
+      "last_updated": "2026-10-17T15:02:21.728731"
     },
     {
       "match_id": "1256",
@@ -191,7 +194,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.133372"
+      "last_updated": "2026-10-17T15:02:21.729050"
     },
     {
       "match_id": "1257",
@@ -214,7 +217,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.133701"
+      "last_updated": "2026-10-17T15:02:21.729369"
     },
     {
       "match_id": "1258",
@@ -237,7 +240,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.134021"
+      "last_updated": "2026-10-17T15:02:21.729687"
     },
     {
       "match_id": "1259",
@@ -260,7 +263,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.134342"
+      "last_updated": "2026-10-17T15:02:21.730003"
     },
     {
       "match_id": "1260",
@@ -283,7 +286,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.134670"
+      "last_updated": "2026-10-17T15:02:21.730319"
     },
     {
       "match_id": "1261",
@@ -306,7 +309,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.134987"
+      "last_updated": "2026-10-17T15:02:21.730643"
     },
     {
       "match_id": "1262",
@@ -329,7 +332,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.135304"
+      "last_updated": "2026-10-17T15:02:21.730964"
     },
     {
       "match_id": "1263",
@@ -352,7 +355,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.135632"
+      "last_updated": "2026-10-17T15:02:21.731288"
     },
     {
       "match_id": "1264",
@@ -375,7 +378,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.135953"
+      "last_updated": "2026-10-17T15:02:21.731616"
     },
     {
       "match_id": "1265",
@@ -398,7 +401,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.136278"
+      "last_updated": "2026-10-17T15:02:21.731932"
     },
     {
       "match_id": "1266",
@@ -421,7 +424,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.136623"
+      "last_updated": "2026-10-17T15:02:21.732250"
     },
     {
       "match_id": "1267",
@@ -444,7 +447,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.136944"
+      "last_updated": "2026-10-17T15:02:21.732572"
     },
     {
       "match_id": "1246",
@@ -467,7 +470,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.137264"
+      "last_updated": "2026-10-17T15:02:21.732880"
     },
     {
       "match_id": "1245",
@@ -490,7 +493,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.137592"
+      "last_updated": "2026-10-17T15:02:21.733195"
     },
     {
       "match_id": "1243",
@@ -513,7 +516,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.137966"
+      "last_updated": "2026-10-17T15:02:21.733518"
     },
     {
       "match_id": "1102",
@@ -536,7 +539,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T14:57:37.138292"
+      "last_updated": "2026-10-17T15:02:21.733836"
     }
   ]
 }
