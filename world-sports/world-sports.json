@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-17T19:25:45.017068",
-  "total_matches": 22,
-  "live_count": 3,
-  "upcoming_count": 19,
+  "timestamp": "2026-10-17T19:30:46.408337",
+  "total_matches": 20,
+  "live_count": 2,
+  "upcoming_count": 18,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247656_53004_RB_BAR_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "78",
+      "viewers": "110",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -26,60 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:11.130188"
-    },
-    {
-      "match_id": "1252",
-      "title": "Villarreal CF vs Elche CF",
-      "teams": "Villarreal CF vs Elche CF",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247652_53004_VIL_ELC_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "61",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1252",
-      "match_url": "live/villarreal-cf-vs-elche-cf-1252",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=tnW8VofuH2nbPXwGXhtarlSOZFTuA-qzR3ofCmpIEuuA-80Or2Ye1SQsnz6B_9GFDuVdN2Rl34UfIldmVo9cru8J8Xo9XC_4x5bhxIdlA2G8tNH2KrJEfLgrJkORVO-U_kMyhypr_38oPsFtXstJuMjkPZ-IDpSlNFu7fO_9VTpnQr-1sgSYgfRSTegAlD1hEXqSV-dMooALqMFlGtcFL5WWCOgkHiOwgkStrPLe4Vp_pmIr1sydLBWKJg17x_xz21yfbLTz33yW2BjEOgkghqxWYw",
-      "server_count": 2,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=tnW8VofuH2nbPXwGXhtarlSOZFTuA-qzR3ofCmpIEuuA-80Or2Ye1SQsnz6B_9GFDuVdN2Rl34UfIldmVo9cru8J8Xo9XC_4x5bhxIdlA2G8tNH2KrJEfLgrJkORVO-U_kMyhypr_38oPsFtXstJuMjkPZ-IDpSlNFu7fO_9VTpnQr-1sgSYgfRSTegAlD1hEXqSV-dMooALqMFlGtcFL5WWCOgkHiOwgkStrPLe4Vp_pmIr1sydLBWKJg17x_xz21yfbLTz33yW2BjEOgkghqxWYw",
-        "https://live.talkoraai.com/match/seg?t=6HdpdEOGAPi4DWcTTVyEiCc59oS04EpteImVNuEeAgAjIwy4bpUJujbGq-JiCRotoBRr4RQnZ4iZxRUgGe-IeRkpSay24rLsruWGUPdp4N6AOVAd1S15Fca73Z-uVpMTlS0oTL_ZpetLJjhm2MbzBxv6baI05K2GAZCGwFIlXC1qSXQvfpfwuRkuWIKvqOZYmZdDNky8YFhmOcOP75jIVp8wjXrNLQumTqCIHsUYK_yxJ1JbFpRzGxMfqyPmNZK_T6LStGWp6svacvhPyzhVcvfJqJULfqh4u0c-"
-      ],
-      "last_updated": "2026-10-17T17:20:11.891063"
-    },
-    {
-      "match_id": "1287",
-      "title": "India vs West Indies",
-      "teams": "India vs West Indies",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1791354679540x302.jpg",
-      "league": "West Indies Tour of India 2026",
-      "viewers": "36",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1287",
-      "match_url": "live/india-vs-west-indies-1287",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=ESr4-XgYOO0TQ0LMdsjaTTMfcXMLo3L0UTjxmF-yBJ3yyu0nRnqmJHs_UoRmIUDWleH4RQ7DtxDyNRMlts77mkFJnMa5hcsee2-2MdNtpRo69D4ioHXm0cJgyb3EcYcKZrPGEyeEFWv8gBCVpBUo_GpJ4z9FJGpsX9GpkHI76bzCDCzSjXJHIzuGhj4OgKQXMQKncete1o8Lv7yEzRdlFWiFnxnpq8C0IxE4B5IK0GYBfz0NxswrNmUdrmFV1bIiWH9gEsW7ycB6DFPG",
-      "server_count": 3,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=ESr4-XgYOO0TQ0LMdsjaTTMfcXMLo3L0UTjxmF-yBJ3yyu0nRnqmJHs_UoRmIUDWleH4RQ7DtxDyNRMlts77mkFJnMa5hcsee2-2MdNtpRo69D4ioHXm0cJgyb3EcYcKZrPGEyeEFWv8gBCVpBUo_GpJ4z9FJGpsX9GpkHI76bzCDCzSjXJHIzuGhj4OgKQXMQKncete1o8Lv7yEzRdlFWiFnxnpq8C0IxE4B5IK0GYBfz0NxswrNmUdrmFV1bIiWH9gEsW7ycB6DFPG",
-        "https://live.talkoraai.com/match/seg?t=f5nJ1Sw702RAw8sYxKD31WgtyCtNMmdTDe7QKSJnY_uLYcy0gGF6gtCEeUNUwKhKjnoNeEUuYhrhhFR4vvCkODthl7jN1xofTNz_6R-WCrpG5O1Kej141NssLQvrSIumitFTW3JYNgRIZ6O0Kn1mqHN4bfCKfYnqsnESswUn5VVOU6In0mZxL7YJCZeeUt7Q2NIJKA_kEU41HqeatvxoGwmzbopLCew3RHj0Z_i9pU-AnSVrV7514CY582vdqsX-uwYC70SOhMkc9S_uxJ8vxy5V9f0",
-        "https://tvsen7.aynaott.com/ssport2hd/index.m3u8"
-      ],
-      "last_updated": "2026-10-17T17:20:12.251744"
+      "last_updated": "2026-10-17T19:28:52.145602"
     },
     {
       "match_id": "1254",
@@ -87,13 +34,13 @@
       "teams": "Valencia CF vs Athletic Club",
       "sport": "cricket",
       "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "status": "live",
+      "status_display": "LIVE",
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247655_53004_VAL_ATH_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "24",
-      "viewers_type": "Waiting",
+      "viewers": "25",
+      "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
@@ -102,7 +49,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.577483"
+      "last_updated": "2026-10-17T19:28:52.491937"
     },
     {
       "match_id": "1101",
@@ -125,7 +72,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.578211"
+      "last_updated": "2026-10-17T19:28:52.815226"
     },
     {
       "match_id": "1255",
@@ -148,7 +95,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.578907"
+      "last_updated": "2026-10-17T19:28:52.815943"
     },
     {
       "match_id": "1256",
@@ -171,7 +118,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.579538"
+      "last_updated": "2026-10-17T19:28:52.816562"
     },
     {
       "match_id": "1257",
@@ -194,7 +141,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.580184"
+      "last_updated": "2026-10-17T19:28:52.817186"
     },
     {
       "match_id": "1258",
@@ -217,7 +164,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.580815"
+      "last_updated": "2026-10-17T19:28:52.817799"
     },
     {
       "match_id": "1259",
@@ -240,7 +187,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.581432"
+      "last_updated": "2026-10-17T19:28:52.818451"
     },
     {
       "match_id": "1260",
@@ -263,7 +210,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.582061"
+      "last_updated": "2026-10-17T19:28:52.819070"
     },
     {
       "match_id": "1261",
@@ -286,7 +233,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.582658"
+      "last_updated": "2026-10-17T19:28:52.819658"
     },
     {
       "match_id": "1262",
@@ -309,7 +256,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.583281"
+      "last_updated": "2026-10-17T19:28:52.820272"
     },
     {
       "match_id": "1263",
@@ -332,7 +279,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.583900"
+      "last_updated": "2026-10-17T19:28:52.820884"
     },
     {
       "match_id": "1264",
@@ -345,7 +292,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247661_53004_VAL_VIL_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "18",
+      "viewers": "19",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -355,7 +302,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.584503"
+      "last_updated": "2026-10-17T19:28:52.821470"
     },
     {
       "match_id": "1265",
@@ -368,7 +315,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247659_53004_ATM_COR_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "18",
+      "viewers": "20",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -378,7 +325,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.585127"
+      "last_updated": "2026-10-17T19:28:52.822081"
     },
     {
       "match_id": "1266",
@@ -401,7 +348,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.585743"
+      "last_updated": "2026-10-17T19:28:52.822668"
     },
     {
       "match_id": "1267",
@@ -424,7 +371,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.586335"
+      "last_updated": "2026-10-17T19:28:52.823276"
     },
     {
       "match_id": "1246",
@@ -447,7 +394,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.586948"
+      "last_updated": "2026-10-17T19:28:52.823885"
     },
     {
       "match_id": "1245",
@@ -470,7 +417,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.587542"
+      "last_updated": "2026-10-17T19:28:52.824471"
     },
     {
       "match_id": "1243",
@@ -493,7 +440,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.588156"
+      "last_updated": "2026-10-17T19:28:52.825080"
     },
     {
       "match_id": "1102",
@@ -516,7 +463,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-17T17:20:12.588775"
+      "last_updated": "2026-10-17T19:28:52.825668"
     }
   ]
 }
