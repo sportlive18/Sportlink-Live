@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-19T22:55:26.514607",
-  "total_matches": 15,
-  "live_count": 3,
+  "timestamp": "2026-10-19T23:00:24.630034",
+  "total_matches": 13,
+  "live_count": 1,
   "upcoming_count": 12,
   "completed_count": 0,
   "matches": [
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "275",
+      "viewers": "277",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -30,59 +30,7 @@
         "https://live.talkoraai.com/match/hls?t=gpB-no5NvUDcpEmIDXjgztqfdJ8meWmpSQOAcHYU0yaFgOQDHDbEiQyMqeNSZ5b4q2bVKgEpcpyJ3flFtm4f-2WJERTZIrdPLcrDqE-J7gPFnHP-w4SUmuoyg3UhM7N4AACAoXZ-p4TIDY5UWLqcKeInGigxc9FjILx9mEmA1l69SfELc8SVmvazya7LrDHV0tZ6AGiR_uJ67OQz_qN8wN5rEVr1gm0z2QCRGleF9-yQmos8qKaoVT8w0gNzp-ie3OQEd4UQeBMUenh3",
         "https://live.talkoraai.com/match/seg?t=UhJSNHTY7zwSnprffVjuhEcNCc5icSTF070OrOLqJzFMYkV-WxTmAqsnSOhIpfpR6RyRyEXVBryNYW_7_JzR4f8upxtP_wyG1hgB0eY2WHNIw6YvwLe6TJPm9DImZRUjYo7wR81hNDCrrTy87NozpOB2NjxRToink1YgtS-PMH8Bs2TWm0UtbQSpCzxEAhngKWnjLkGaAynXirMAI3ynteDjYOnCKcdX26dva-Bwtv9xvLDChaaYvrbe7hgaOVqV6B8VA8p51ZAvkf_IdrptzTctmecUuo87-pHrvj2vDU2BXvCKwA"
       ],
-      "last_updated": "2026-10-19T19:27:48.713245"
-    },
-    {
-      "match_id": "1288",
-      "title": "Afghanistan vs Zimbabwe",
-      "teams": "Afghanistan vs Zimbabwe",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792130892540x302.jpg",
-      "league": "UAE ODI Tri-Series 2026",
-      "viewers": "186",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1288",
-      "match_url": "live/afghanistan-vs-zimbabwe-1288",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=rj4jbVjYHODQ-WkFuoRcHaS0nx15B3UXHz8TNY8Swsx_cYyL7ZxzyWR7UZFFkf-6Cjbnp6vKrp48Ptq9BohpNqbRAo-C5jVLLXC6sD8OU4DyzdFSkU6LC-tNqIQY8_JfoLgBd2wetnw6D0LS2aLW4VSEaguUCES7YFi6mimVMAClS6950LwZWbXOU8uDxyp7n-7HLkZRiT_jXF39-eUBWLs37wb7t44QN8MXaj2uAeKDESVarztQZIcIvD_StdnhKP_wUMquiXbXyexj",
-      "server_count": 2,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=rj4jbVjYHODQ-WkFuoRcHaS0nx15B3UXHz8TNY8Swsx_cYyL7ZxzyWR7UZFFkf-6Cjbnp6vKrp48Ptq9BohpNqbRAo-C5jVLLXC6sD8OU4DyzdFSkU6LC-tNqIQY8_JfoLgBd2wetnw6D0LS2aLW4VSEaguUCES7YFi6mimVMAClS6950LwZWbXOU8uDxyp7n-7HLkZRiT_jXF39-eUBWLs37wb7t44QN8MXaj2uAeKDESVarztQZIcIvD_StdnhKP_wUMquiXbXyexj",
-        "https://live.talkoraai.com/match/seg?t=Al7nDcXJ_F4jlRA4ZAncjggUjWLwqJP-l5ZCUj7PXlUGYFFtc8wkmN4A3u0qhrORxOlhPRxtvl2yUo6Kp4NBeDfXOabHsAMonekCywP6Dg2rmSUPdoObe00bF8TVCniRq0NhOjSwsXWwGssPqkGY7usM1EUTZYlSmMfbuZ0Z2qycyzf4is7Gp94V4vsSyESyA0oJzMPZTqQS_JBSX4crIOMJC3iKeIJe-CzspvqZPf5RVI7tDsIY1W5g_UzLYepbJpv8yVMM8H--dyg7BVV08CBkeXs"
-      ],
-      "last_updated": "2026-10-19T19:27:49.101944"
-    },
-    {
-      "match_id": "1259",
-      "title": "Getafe CF vs Rayo Vallecano",
-      "teams": "Getafe CF vs Rayo Vallecano",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247650_53004_GEF_RVL_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "180",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1259",
-      "match_url": "live/getafe-cf-vs-rayo-vallecano-1259",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=UXQAMd3CjN0U9JccQJhBoV68gLOoEj707s1WAw9HCPaDKXaa01hWd-yCzESPG_tpsB-mhJmgwhuqsQUoIUD2ANUU4X1YcGGX7c-viiCg1MF4g7hufLN-1toBoXdhM9P_TMW4kwZF02ERkkYIpLE1_d1teoY03KPm4i4Z6UKq5pX-KLypCRYNa0TZ1SoYANBvf-vLrjzojPer2R74GY3yEbmr57LSyxqFjEUOdVIivCUT_iwLp32Dm81KxrHfnyOTSXrcuPPKGeii5b2i",
-      "server_count": 2,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=UXQAMd3CjN0U9JccQJhBoV68gLOoEj707s1WAw9HCPaDKXaa01hWd-yCzESPG_tpsB-mhJmgwhuqsQUoIUD2ANUU4X1YcGGX7c-viiCg1MF4g7hufLN-1toBoXdhM9P_TMW4kwZF02ERkkYIpLE1_d1teoY03KPm4i4Z6UKq5pX-KLypCRYNa0TZ1SoYANBvf-vLrjzojPer2R74GY3yEbmr57LSyxqFjEUOdVIivCUT_iwLp32Dm81KxrHfnyOTSXrcuPPKGeii5b2i",
-        "https://live.talkoraai.com/match/seg?t=6V9dHscYcnY0CXvIxiWZVRtEkUbnc561dVy35jLKoNQ6QHmopaFev_5g2DgT0Gg8KNa-iPd1AsZxXoinJJgpdKYQybxRgTPN6jlYH9N4P2zj29ChRYUrWG5yALfIPG0iiCJN6i4MPaS-IYNcD1Ssh1_Szvk_ePC4dNn1IHo5lML2LnIegyPrL7K4XGwl7r-_kn8_sTF_ey1nmczsBx8QCYYoASlCOFgi-OOEL-FY3bciv7RQWmuHpN99QyEXNMV9himMrAHiOSE_ULy_FXNTl65WsfA"
-      ],
-      "last_updated": "2026-10-19T19:27:49.464444"
+      "last_updated": "2026-10-19T22:59:00.724226"
     },
     {
       "match_id": "1260",
@@ -105,7 +53,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.790779"
+      "last_updated": "2026-10-19T22:59:01.102267"
     },
     {
       "match_id": "1261",
@@ -128,7 +76,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.791496"
+      "last_updated": "2026-10-19T22:59:01.103056"
     },
     {
       "match_id": "1262",
@@ -151,7 +99,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.792128"
+      "last_updated": "2026-10-19T22:59:01.103760"
     },
     {
       "match_id": "1263",
@@ -174,7 +122,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.792769"
+      "last_updated": "2026-10-19T22:59:01.104392"
     },
     {
       "match_id": "1264",
@@ -197,7 +145,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.793399"
+      "last_updated": "2026-10-19T22:59:01.105057"
     },
     {
       "match_id": "1265",
@@ -220,7 +168,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.794007"
+      "last_updated": "2026-10-19T22:59:01.105685"
     },
     {
       "match_id": "1266",
@@ -243,7 +191,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.794629"
+      "last_updated": "2026-10-19T22:59:01.106288"
     },
     {
       "match_id": "1267",
@@ -266,7 +214,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.795243"
+      "last_updated": "2026-10-19T22:59:01.106914"
     },
     {
       "match_id": "1246",
@@ -289,7 +237,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.795849"
+      "last_updated": "2026-10-19T22:59:01.107528"
     },
     {
       "match_id": "1245",
@@ -312,7 +260,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.796461"
+      "last_updated": "2026-10-19T22:59:01.108131"
     },
     {
       "match_id": "1243",
@@ -335,7 +283,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.797056"
+      "last_updated": "2026-10-19T22:59:01.108754"
     },
     {
       "match_id": "1102",
@@ -358,7 +306,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T19:27:49.797674"
+      "last_updated": "2026-10-19T22:59:01.109350"
     }
   ]
 }
