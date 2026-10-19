@@ -100,111 +100,6 @@ body{
   max-width:400px;margin:0 auto;
   line-height:1.5
 }
-
-/* ===== HERO SLIDER ===== */
-.hero-slider{
-  position:relative;
-  width:100%;
-  max-width:480px;
-  margin:0 auto 20px;
-  padding:0 16px;
-  display:none;
-}
-.hero-slider.on{display:block}
-.hero-card{
-  position:relative;
-  width:100%;
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid rgba(255,184,0,.15);
-  box-shadow:0 10px 40px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.05);
-  aspect-ratio:16/9;
-  background:#0d0d1c;
-}
-.hero-card .poster-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:18px;
-  background:linear-gradient(to bottom,
-    rgba(8,8,12,0) 30%,
-    rgba(8,8,12,.65) 65%,
-    rgba(8,8,12,.95) 100%);
-}
-.hero-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  align-self:flex-start;
-  padding:5px 12px;
-  border-radius:20px;
-  font-size:10.5px;
-  font-weight:900;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:#fff;
-  background:linear-gradient(135deg,#e82000,#ff4422);
-  box-shadow:0 4px 15px rgba(232,32,0,.5);
-  margin-bottom:8px;
-  animation:pulse-live 1.6s ease-in-out infinite;
-}
-.hero-badge.upcoming{
-  background:linear-gradient(135deg,#1e1e2e,#2a2a3e);
-  color:#a0a0b0;
-  border:1px solid rgba(255,255,255,.15);
-  animation:none;
-  box-shadow:none;
-}
-@keyframes pulse-live{
-  0%,100%{box-shadow:0 4px 15px rgba(232,32,0,.5)}
-  50%{box-shadow:0 4px 25px rgba(232,32,0,.85)}
-}
-.hero-title{
-  font-size:22px;
-  font-weight:900;
-  color:#fff;
-  line-height:1.2;
-  text-shadow:0 2px 12px rgba(0,0,0,.9);
-  margin-bottom:4px;
-}
-.hero-sub{
-  font-size:12.5px;
-  font-weight:600;
-  color:#ffb800;
-  margin-bottom:12px;
-  letter-spacing:.3px;
-}
-.hero-btn{
-  align-self:flex-start;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:11px 22px;
-  border-radius:10px;
-  background:linear-gradient(135deg,#ffb800,#ff8800);
-  color:#0a0a0f;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-  text-decoration:none;
-  box-shadow:0 6px 22px rgba(255,136,0,.45);
-  transition:transform .18s ease, box-shadow .25s ease;
-  -webkit-tap-highlight-color:transparent;
-}
-.hero-btn:active{
-  transform:scale(.96);
-  box-shadow:0 3px 12px rgba(255,136,0,.5);
-}
-
 .filters{
   display:flex;align-items:center;justify-content:center;
   gap:10px;padding:0 16px 24px;
@@ -428,9 +323,6 @@ video.mode-cover{object-fit:cover}
   .stream-btn{font-size:11px;padding:10px 6px;min-width:80px}
   .filter-btn{padding:8px 16px;font-size:12px}
   .card-info{padding:14px}
-  .hero-title{font-size:18px}
-  .hero-overlay{padding:14px}
-  .hero-btn{padding:9px 16px;font-size:12px}
 }
 </style>
 </head>
@@ -447,10 +339,6 @@ video.mode-cover{object-fit:cover}
     <h1>USA Cricbuzz</h1>
     <p>Stream Exclusive Sports &amp; Live Matches in 4K</p>
   </div>
-
-  <!-- HERO SLIDER (data-driven) -->
-  <div class="hero-slider" id="hero-slider"></div>
-
   <div class="filters" id="filters">
     <button class="filter-btn active" data-filter="all">
       <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
@@ -493,7 +381,6 @@ var $list = document.getElementById("channel-list");
 var $cards = document.getElementById("ch-cards");
 var $pc = document.getElementById("pc");
 var $vid = document.getElementById("v");
-var $hero = document.getElementById("hero-slider");
 var _stTmr = null;
 var _channels = [];
 var _currentFilter = "all";
@@ -675,56 +562,7 @@ function injectFitBtn(container, vid){
   return true;
 }
 
-/* ===== HERO RENDER ===== */
-function renderHero(channels){
-  if(!$hero) return;
-  // Prefer India vs New Zealand, else first live match
-  var featured = channels.find(function(c){
-    var n = (c.event_name || "").toLowerCase();
-    return n.indexOf("india") !== -1 && n.indexOf("new zealand") !== -1;
-  });
-  if(!featured){
-    featured = channels.find(function(c){
-      return String(c.status || "").toUpperCase() === "LIVE";
-    });
-  }
-  if(!featured){
-    $hero.className = "hero-slider";
-    $hero.innerHTML = "";
-    return;
-  }
-
-  var isLive = String(featured.status || "").toUpperCase() === "LIVE";
-  var srvs = getAvailableServers(featured);
-  var srvId = srvs.length ? srvs[0].id : 1;
-  var cleanId = String(featured.id || "").replace(/[^0-9]/g, "");
-  var sub = featured.series || featured.tournament || featured.sport || "";
-
-  var action;
-  if(srvs.length){
-    action = '<a class="hero-btn" href="?CB' + cleanId + '&ser=' + srvId + '">Watch Now</a>';
-  } else {
-    action = '<span class="hero-btn" style="opacity:.55;cursor:default">Coming Soon</span>';
-  }
-
-  $hero.className = "hero-slider on";
-  $hero.innerHTML =
-    '<div class="hero-card">' +
-      '<img src="' + (featured.image || "") + '" alt="' + (featured.event_name || "") + '" ' +
-        'class="poster-image" loading="eager" decoding="async" fetchpriority="high">' +
-      '<div class="hero-overlay">' +
-        '<span class="hero-badge' + (isLive ? '' : ' upcoming') + '">' +
-          (isLive ? '🔴 LIVE NOW' : '⏰ UPCOMING') +
-        '</span>' +
-        '<h2 class="hero-title">' + (featured.event_name || 'Featured Match') + '</h2>' +
-        (sub ? '<p class="hero-sub">' + sub + '</p>' : '') +
-        action +
-      '</div>' +
-    '</div>';
-}
-
 function renderLanding(channels){
-  renderHero(channels);
   $cards.innerHTML = "";
   var filtered = channels.filter(function(ch){
     if(_currentFilter === "all") return true;
