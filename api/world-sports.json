@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-19T06:20:22.854361",
+  "timestamp": "2026-10-19T06:25:19.315263",
   "total_matches": 14,
   "live_count": 1,
   "upcoming_count": 13,
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "81",
+      "viewers": "86",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -28,7 +28,7 @@
       "server_urls": [
         "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8"
       ],
-      "last_updated": "2026-10-19T01:25:09.205267"
+      "last_updated": "2026-10-19T06:22:53.900591"
     },
     {
       "match_id": "1259",
@@ -51,7 +51,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.658880"
+      "last_updated": "2026-10-19T06:22:54.271528"
     },
     {
       "match_id": "1260",
@@ -74,7 +74,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.659678"
+      "last_updated": "2026-10-19T06:22:54.272236"
     },
     {
       "match_id": "1261",
@@ -97,7 +97,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.660331"
+      "last_updated": "2026-10-19T06:22:54.272928"
     },
     {
       "match_id": "1262",
@@ -120,7 +120,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.660948"
+      "last_updated": "2026-10-19T06:22:54.273563"
     },
     {
       "match_id": "1263",
@@ -143,7 +143,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.661588"
+      "last_updated": "2026-10-19T06:22:54.274158"
     },
     {
       "match_id": "1264",
@@ -166,7 +166,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.662211"
+      "last_updated": "2026-10-19T06:22:54.274754"
     },
     {
       "match_id": "1265",
@@ -189,7 +189,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.662810"
+      "last_updated": "2026-10-19T06:22:54.275350"
     },
     {
       "match_id": "1266",
@@ -212,7 +212,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.663464"
+      "last_updated": "2026-10-19T06:22:54.275929"
     },
     {
       "match_id": "1267",
@@ -235,7 +235,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.664066"
+      "last_updated": "2026-10-19T06:22:54.276554"
     },
     {
       "match_id": "1246",
@@ -258,7 +258,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.664704"
+      "last_updated": "2026-10-19T06:22:54.277126"
     },
     {
       "match_id": "1245",
@@ -281,7 +281,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.665318"
+      "last_updated": "2026-10-19T06:22:54.277718"
     },
     {
       "match_id": "1243",
@@ -294,7 +294,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247667_53004_SEV_OSN_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "17",
+      "viewers": "18",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -304,7 +304,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.665922"
+      "last_updated": "2026-10-19T06:22:54.278298"
     },
     {
       "match_id": "1102",
@@ -317,7 +317,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "37",
+      "viewers": "39",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -327,7 +327,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T01:25:09.666541"
+      "last_updated": "2026-10-19T06:22:54.278900"
     }
   ]
 }
