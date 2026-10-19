@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-19T13:35:25.671673",
-  "total_matches": 14,
-  "live_count": 1,
+  "timestamp": "2026-10-19T13:40:28.167631",
+  "total_matches": 15,
+  "live_count": 2,
   "upcoming_count": 13,
   "completed_count": 0,
   "matches": [
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "86",
+      "viewers": "102",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -24,11 +24,39 @@
       "page_url": "/world-sports/player.html?id=1101",
       "match_url": "live/south-africa-vs-australia-2nd-test-1101",
       "stream_url": "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8",
-      "server_count": 1,
+      "server_count": 3,
       "server_urls": [
-        "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8"
+        "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8",
+        "https://live.talkoraai.com/match/hls?t=gpB-no5NvUDcpEmIDXjgztqfdJ8meWmpSQOAcHYU0yaFgOQDHDbEiQyMqeNSZ5b4q2bVKgEpcpyJ3flFtm4f-2WJERTZIrdPLcrDqE-J7gPFnHP-w4SUmuoyg3UhM7N4AACAoXZ-p4TIDY5UWLqcKeInGigxc9FjILx9mEmA1l69SfELc8SVmvazya7LrDHV0tZ6AGiR_uJ67OQz_qN8wN5rEVr1gm0z2QCRGleF9-yQmos8qKaoVT8w0gNzp-ie3OQEd4UQeBMUenh3",
+        "https://live.talkoraai.com/match/seg?t=UhJSNHTY7zwSnprffVjuhEcNCc5icSTF070OrOLqJzFMYkV-WxTmAqsnSOhIpfpR6RyRyEXVBryNYW_7_JzR4f8upxtP_wyG1hgB0eY2WHNIw6YvwLe6TJPm9DImZRUjYo7wR81hNDCrrTy87NozpOB2NjxRToink1YgtS-PMH8Bs2TWm0UtbQSpCzxEAhngKWnjLkGaAynXirMAI3ynteDjYOnCKcdX26dva-Bwtv9xvLDChaaYvrbe7hgaOVqV6B8VA8p51ZAvkf_IdrptzTctmecUuo87-pHrvj2vDU2BXvCKwA"
       ],
-      "last_updated": "2026-10-19T06:22:53.900591"
+      "last_updated": "2026-10-19T13:38:59.028526"
+    },
+    {
+      "match_id": "1288",
+      "title": "Afghanistan vs Zimbabwe",
+      "teams": "Afghanistan vs Zimbabwe",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "live",
+      "status_display": "LIVE",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792130892540x302.jpg",
+      "league": "UAE ODI Tri-Series 2026",
+      "viewers": "5",
+      "viewers_type": "Watching",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1288",
+      "match_url": "live/afghanistan-vs-zimbabwe-1288",
+      "stream_url": "https://live.talkoraai.com/match/hls?t=rj4jbVjYHODQ-WkFuoRcHaS0nx15B3UXHz8TNY8Swsx_cYyL7ZxzyWR7UZFFkf-6Cjbnp6vKrp48Ptq9BohpNqbRAo-C5jVLLXC6sD8OU4DyzdFSkU6LC-tNqIQY8_JfoLgBd2wetnw6D0LS2aLW4VSEaguUCES7YFi6mimVMAClS6950LwZWbXOU8uDxyp7n-7HLkZRiT_jXF39-eUBWLs37wb7t44QN8MXaj2uAeKDESVarztQZIcIvD_StdnhKP_wUMquiXbXyexj",
+      "server_count": 2,
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=rj4jbVjYHODQ-WkFuoRcHaS0nx15B3UXHz8TNY8Swsx_cYyL7ZxzyWR7UZFFkf-6Cjbnp6vKrp48Ptq9BohpNqbRAo-C5jVLLXC6sD8OU4DyzdFSkU6LC-tNqIQY8_JfoLgBd2wetnw6D0LS2aLW4VSEaguUCES7YFi6mimVMAClS6950LwZWbXOU8uDxyp7n-7HLkZRiT_jXF39-eUBWLs37wb7t44QN8MXaj2uAeKDESVarztQZIcIvD_StdnhKP_wUMquiXbXyexj",
+        "https://live.talkoraai.com/match/seg?t=Al7nDcXJ_F4jlRA4ZAncjggUjWLwqJP-l5ZCUj7PXlUGYFFtc8wkmN4A3u0qhrORxOlhPRxtvl2yUo6Kp4NBeDfXOabHsAMonekCywP6Dg2rmSUPdoObe00bF8TVCniRq0NhOjSwsXWwGssPqkGY7usM1EUTZYlSmMfbuZ0Z2qycyzf4is7Gp94V4vsSyESyA0oJzMPZTqQS_JBSX4crIOMJC3iKeIJe-CzspvqZPf5RVI7tDsIY1W5g_UzLYepbJpv8yVMM8H--dyg7BVV08CBkeXs"
+      ],
+      "last_updated": "2026-10-19T13:39:01.398161"
     },
     {
       "match_id": "1259",
@@ -51,7 +79,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.271528"
+      "last_updated": "2026-10-19T13:39:02.526059"
     },
     {
       "match_id": "1260",
@@ -74,7 +102,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.272236"
+      "last_updated": "2026-10-19T13:39:02.526701"
     },
     {
       "match_id": "1261",
@@ -97,7 +125,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.272928"
+      "last_updated": "2026-10-19T13:39:02.527287"
     },
     {
       "match_id": "1262",
@@ -120,7 +148,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.273563"
+      "last_updated": "2026-10-19T13:39:02.527851"
     },
     {
       "match_id": "1263",
@@ -143,7 +171,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.274158"
+      "last_updated": "2026-10-19T13:39:02.528424"
     },
     {
       "match_id": "1264",
@@ -166,7 +194,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.274754"
+      "last_updated": "2026-10-19T13:39:02.528997"
     },
     {
       "match_id": "1265",
@@ -189,7 +217,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.275350"
+      "last_updated": "2026-10-19T13:39:02.529562"
     },
     {
       "match_id": "1266",
@@ -212,7 +240,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.275929"
+      "last_updated": "2026-10-19T13:39:02.530123"
     },
     {
       "match_id": "1267",
@@ -235,7 +263,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.276554"
+      "last_updated": "2026-10-19T13:39:02.530672"
     },
     {
       "match_id": "1246",
@@ -258,7 +286,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.277126"
+      "last_updated": "2026-10-19T13:39:02.531271"
     },
     {
       "match_id": "1245",
@@ -281,7 +309,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.277718"
+      "last_updated": "2026-10-19T13:39:02.531826"
     },
     {
       "match_id": "1243",
@@ -304,7 +332,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.278298"
+      "last_updated": "2026-10-19T13:39:02.532398"
     },
     {
       "match_id": "1102",
@@ -317,7 +345,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "39",
+      "viewers": "40",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -327,7 +355,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-19T06:22:54.278900"
+      "last_updated": "2026-10-19T13:39:02.532948"
     }
   ]
 }
