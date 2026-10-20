@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-20T19:00:41.056454",
-  "total_matches": 13,
+  "timestamp": "2026-10-20T19:05:29.148468",
+  "total_matches": 14,
   "live_count": 1,
-  "upcoming_count": 12,
+  "upcoming_count": 13,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "487",
+      "viewers": "490",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -30,7 +30,30 @@
         "https://live.talkoraai.com/match/hls?t=Jq7LTzfcLLjnwW3yfw6R_P7FnvyAQcLpmksI85v13ELDEGTZyI9FRNdxsqI-rlP5M6l1nzT-fgv3ujC2NVr7TVqpkI-eFB79p_C2dnnamdeksxQ51PlwK533v-TzP7LJqZ8Hn7l7BG0_8a2FdVDaRhte-UqoSVlNzMEB28h_bxFTNEgVqkNkbH2Sp7pZm5u-iBw9tIpqlNV_FHKAjx793wecP2-ZorQRT3sKXANVJMMLGcuCIGxAOMU8PCRdvd-XNArfPKCyVlox6oWP",
         "https://live.talkoraai.com/match/seg?t=0igJZfr-0YeO4pkTgnF4W3rFfEbmW0BTag_p4WkNCFRhiiazOfzqGkc70cCg0pshkjl6Ugpv3NkCZeof9bSQlbHqRAbmjrtaQOYgTcgb6KDeJosGvrWVQxwDou_j0qXWW7nK4m2F03txRxgmsMOH_2wH3lAir6l4WyDQK7wwm_SF-TVRIj-_9htaOQ9u6b8i_KQkxZRmnFCasPtftb-cCQZTOsqdr8vAsJDAwqV_yXYC03KFUdBT9L9KOYWwUBwekJZ29s1xiZDkRc41AeA_uvAl5k4"
       ],
-      "last_updated": "2026-10-20T18:58:38.616467"
+      "last_updated": "2026-10-20T19:03:42.126686"
+    },
+    {
+      "match_id": "1290",
+      "title": "Germain vs Barcelona",
+      "teams": "Germain vs Barcelona",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792049907540x302.jpg",
+      "league": "Sports Tournament",
+      "viewers": "280",
+      "viewers_type": "Waiting",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1290",
+      "match_url": "live/germain-vs-barcelona-1290",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-20T19:03:42.533958"
     },
     {
       "match_id": "1260",
@@ -43,7 +66,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247624_53004_LET_ATH_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "275",
+      "viewers": "276",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -53,7 +76,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.044640"
+      "last_updated": "2026-10-20T19:03:42.534693"
     },
     {
       "match_id": "1261",
@@ -76,7 +99,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.045465"
+      "last_updated": "2026-10-20T19:03:42.535356"
     },
     {
       "match_id": "1262",
@@ -99,7 +122,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.046060"
+      "last_updated": "2026-10-20T19:03:42.535997"
     },
     {
       "match_id": "1263",
@@ -122,7 +145,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.046620"
+      "last_updated": "2026-10-20T19:03:42.536620"
     },
     {
       "match_id": "1264",
@@ -145,7 +168,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.047197"
+      "last_updated": "2026-10-20T19:03:42.537235"
     },
     {
       "match_id": "1265",
@@ -168,7 +191,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.047744"
+      "last_updated": "2026-10-20T19:03:42.537886"
     },
     {
       "match_id": "1266",
@@ -191,7 +214,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.048304"
+      "last_updated": "2026-10-20T19:03:42.538496"
     },
     {
       "match_id": "1267",
@@ -214,7 +237,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.048894"
+      "last_updated": "2026-10-20T19:03:42.539126"
     },
     {
       "match_id": "1246",
@@ -237,7 +260,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.049533"
+      "last_updated": "2026-10-20T19:03:42.539725"
     },
     {
       "match_id": "1245",
@@ -260,7 +283,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.050117"
+      "last_updated": "2026-10-20T19:03:42.540330"
     },
     {
       "match_id": "1243",
@@ -283,7 +306,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.050659"
+      "last_updated": "2026-10-20T19:03:42.540941"
     },
     {
       "match_id": "1102",
@@ -306,7 +329,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-20T18:58:39.051217"
+      "last_updated": "2026-10-20T19:03:42.541536"
     }
   ]
 }
