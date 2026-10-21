@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-21T11:30:28.690804",
-  "total_matches": 13,
+  "timestamp": "2026-10-21T11:35:23.424771",
+  "total_matches": 14,
   "live_count": 1,
-  "upcoming_count": 12,
+  "upcoming_count": 13,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "634",
+      "viewers": "635",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -30,7 +30,30 @@
         "https://live.talkoraai.com/match/hls?t=Jq7LTzfcLLjnwW3yfw6R_P7FnvyAQcLpmksI85v13ELDEGTZyI9FRNdxsqI-rlP5M6l1nzT-fgv3ujC2NVr7TVqpkI-eFB79p_C2dnnamdeksxQ51PlwK533v-TzP7LJqZ8Hn7l7BG0_8a2FdVDaRhte-UqoSVlNzMEB28h_bxFTNEgVqkNkbH2Sp7pZm5u-iBw9tIpqlNV_FHKAjx793wecP2-ZorQRT3sKXANVJMMLGcuCIGxAOMU8PCRdvd-XNArfPKCyVlox6oWP",
         "https://live.talkoraai.com/match/seg?t=0igJZfr-0YeO4pkTgnF4W3rFfEbmW0BTag_p4WkNCFRhiiazOfzqGkc70cCg0pshkjl6Ugpv3NkCZeof9bSQlbHqRAbmjrtaQOYgTcgb6KDeJosGvrWVQxwDou_j0qXWW7nK4m2F03txRxgmsMOH_2wH3lAir6l4WyDQK7wwm_SF-TVRIj-_9htaOQ9u6b8i_KQkxZRmnFCasPtftb-cCQZTOsqdr8vAsJDAwqV_yXYC03KFUdBT9L9KOYWwUBwekJZ29s1xiZDkRc41AeA_uvAl5k4"
       ],
-      "last_updated": "2026-10-21T11:27:39.675435"
+      "last_updated": "2026-10-21T11:32:38.746888"
+    },
+    {
+      "match_id": "1292",
+      "title": "Afghanistan vs Bangladesh",
+      "teams": "Afghanistan vs Bangladesh",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792390173540x302.jpg",
+      "league": "Sports Tournament",
+      "viewers": "354",
+      "viewers_type": "Waiting",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1292",
+      "match_url": "live/afghanistan-vs-bangladesh-1292",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-21T11:32:39.225538"
     },
     {
       "match_id": "1260",
@@ -53,7 +76,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.510387"
+      "last_updated": "2026-10-21T11:32:39.226237"
     },
     {
       "match_id": "1261",
@@ -76,7 +99,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.511173"
+      "last_updated": "2026-10-21T11:32:39.226884"
     },
     {
       "match_id": "1262",
@@ -99,7 +122,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.511822"
+      "last_updated": "2026-10-21T11:32:39.227525"
     },
     {
       "match_id": "1263",
@@ -122,7 +145,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.512460"
+      "last_updated": "2026-10-21T11:32:39.228137"
     },
     {
       "match_id": "1264",
@@ -145,7 +168,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.513107"
+      "last_updated": "2026-10-21T11:32:39.228744"
     },
     {
       "match_id": "1265",
@@ -168,7 +191,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.513727"
+      "last_updated": "2026-10-21T11:32:39.229333"
     },
     {
       "match_id": "1266",
@@ -191,7 +214,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.514356"
+      "last_updated": "2026-10-21T11:32:39.229986"
     },
     {
       "match_id": "1267",
@@ -214,7 +237,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.514961"
+      "last_updated": "2026-10-21T11:32:39.230618"
     },
     {
       "match_id": "1246",
@@ -237,7 +260,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.515600"
+      "last_updated": "2026-10-21T11:32:39.231208"
     },
     {
       "match_id": "1245",
@@ -260,7 +283,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.516251"
+      "last_updated": "2026-10-21T11:32:39.231818"
     },
     {
       "match_id": "1243",
@@ -283,7 +306,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.516850"
+      "last_updated": "2026-10-21T11:32:39.232418"
     },
     {
       "match_id": "1102",
@@ -306,7 +329,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-21T11:27:41.517466"
+      "last_updated": "2026-10-21T11:32:39.233016"
     }
   ]
 }
