@@ -1,7 +1,7 @@
 // ====== WILLOW LIVE MATCHES SCRIPT ======
 
 // API URL
-const WILLOW_API_URL = 'https://willow-api.sayanwork-studioo.workers.dev/';
+const WILLOW_API_URL = 'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json';
 
 // DOM Elements
 const willowTrack = document.getElementById('willowLiveTrack');
