@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-22T12:15:30.023650",
-  "total_matches": 14,
+  "timestamp": "2026-10-22T12:20:24.443354",
+  "total_matches": 13,
   "live_count": 1,
-  "upcoming_count": 13,
+  "upcoming_count": 12,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "678",
+      "viewers": "703",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -30,30 +30,7 @@
         "https://live.talkoraai.com/match/hls?t=Jq7LTzfcLLjnwW3yfw6R_P7FnvyAQcLpmksI85v13ELDEGTZyI9FRNdxsqI-rlP5M6l1nzT-fgv3ujC2NVr7TVqpkI-eFB79p_C2dnnamdeksxQ51PlwK533v-TzP7LJqZ8Hn7l7BG0_8a2FdVDaRhte-UqoSVlNzMEB28h_bxFTNEgVqkNkbH2Sp7pZm5u-iBw9tIpqlNV_FHKAjx793wecP2-ZorQRT3sKXANVJMMLGcuCIGxAOMU8PCRdvd-XNArfPKCyVlox6oWP",
         "https://live.talkoraai.com/match/seg?t=0igJZfr-0YeO4pkTgnF4W3rFfEbmW0BTag_p4WkNCFRhiiazOfzqGkc70cCg0pshkjl6Ugpv3NkCZeof9bSQlbHqRAbmjrtaQOYgTcgb6KDeJosGvrWVQxwDou_j0qXWW7nK4m2F03txRxgmsMOH_2wH3lAir6l4WyDQK7wwm_SF-TVRIj-_9htaOQ9u6b8i_KQkxZRmnFCasPtftb-cCQZTOsqdr8vAsJDAwqV_yXYC03KFUdBT9L9KOYWwUBwekJZ29s1xiZDkRc41AeA_uvAl5k4"
       ],
-      "last_updated": "2026-10-22T06:33:44.801115"
-    },
-    {
-      "match_id": "1295",
-      "title": "New Zealand vs India",
-      "teams": "New Zealand vs India",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792153281540x302.jpg",
-      "league": "Sports Tournament",
-      "viewers": "465",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1295",
-      "match_url": "live/new-zealand-vs-india-1295",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.158629"
+      "last_updated": "2026-10-22T12:17:46.059446"
     },
     {
       "match_id": "1294",
@@ -66,7 +43,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4249697_53089_AFG_ZIM_FC-WEB.jpg",
       "league": "World Championship of Legends, 2026",
-      "viewers": "428",
+      "viewers": "3",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -76,7 +53,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.159347"
+      "last_updated": "2026-10-22T12:17:46.482563"
     },
     {
       "match_id": "1261",
@@ -99,7 +76,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.160037"
+      "last_updated": "2026-10-22T12:17:46.483326"
     },
     {
       "match_id": "1262",
@@ -122,7 +99,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.160693"
+      "last_updated": "2026-10-22T12:17:46.483949"
     },
     {
       "match_id": "1263",
@@ -145,7 +122,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.161329"
+      "last_updated": "2026-10-22T12:17:46.484591"
     },
     {
       "match_id": "1264",
@@ -168,7 +145,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.161971"
+      "last_updated": "2026-10-22T12:17:46.485223"
     },
     {
       "match_id": "1265",
@@ -191,7 +168,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.162632"
+      "last_updated": "2026-10-22T12:17:46.485824"
     },
     {
       "match_id": "1266",
@@ -214,7 +191,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.163246"
+      "last_updated": "2026-10-22T12:17:46.486439"
     },
     {
       "match_id": "1267",
@@ -227,7 +204,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247664_53004_CEV_RB_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "280",
+      "viewers": "281",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -237,7 +214,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.163900"
+      "last_updated": "2026-10-22T12:17:46.487034"
     },
     {
       "match_id": "1246",
@@ -260,7 +237,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.164521"
+      "last_updated": "2026-10-22T12:17:46.487658"
     },
     {
       "match_id": "1245",
@@ -283,7 +260,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.165131"
+      "last_updated": "2026-10-22T12:17:46.488286"
     },
     {
       "match_id": "1243",
@@ -306,7 +283,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.165748"
+      "last_updated": "2026-10-22T12:17:46.488887"
     },
     {
       "match_id": "1102",
@@ -329,7 +306,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-22T06:33:45.166351"
+      "last_updated": "2026-10-22T12:17:46.489492"
     }
   ]
 }
