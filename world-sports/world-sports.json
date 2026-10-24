@@ -1,46 +1,23 @@
 {
-  "timestamp": "2026-10-24T16:55:43.079275",
-  "total_matches": 10,
-  "live_count": 1,
-  "upcoming_count": 9,
+  "timestamp": "2026-10-24T17:00:01.798689",
+  "total_matches": 9,
+  "live_count": 2,
+  "upcoming_count": 7,
   "completed_count": 0,
   "matches": [
-    {
-      "match_id": "1262",
-      "title": "Rayo Vallecano vs Elche CF",
-      "teams": "Rayo Vallecano vs Elche CF",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247665_53004_RVL_ELC_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "473",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1262",
-      "match_url": "live/rayo-vallecano-vs-elche-cf-1262",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.058200"
-    },
     {
       "match_id": "1263",
       "title": "Racing Club de Santander vs RCD Espanyol",
       "teams": "Racing Club de Santander vs RCD Espanyol",
       "sport": "cricket",
       "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "status": "live",
+      "status_display": "LIVE",
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247658_53004_RAC_ESL_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "490",
-      "viewers_type": "Waiting",
+      "viewers": "492",
+      "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
@@ -49,7 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.429186"
+      "last_updated": "2026-10-24T16:56:09.032508"
     },
     {
       "match_id": "1264",
@@ -57,13 +34,13 @@
       "teams": "Valencia CF vs Villarreal CF",
       "sport": "cricket",
       "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "status": "live",
+      "status_display": "LIVE",
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247661_53004_VAL_VIL_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "485",
-      "viewers_type": "Waiting",
+      "viewers": "486",
+      "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
@@ -72,7 +49,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.429814"
+      "last_updated": "2026-10-24T16:56:09.563395"
     },
     {
       "match_id": "1265",
@@ -95,7 +72,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.430354"
+      "last_updated": "2026-10-24T16:56:10.002225"
     },
     {
       "match_id": "1266",
@@ -118,7 +95,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.430890"
+      "last_updated": "2026-10-24T16:56:10.002628"
     },
     {
       "match_id": "1267",
@@ -141,7 +118,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.431417"
+      "last_updated": "2026-10-24T16:56:10.002973"
     },
     {
       "match_id": "1246",
@@ -164,7 +141,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.431958"
+      "last_updated": "2026-10-24T16:56:10.003312"
     },
     {
       "match_id": "1245",
@@ -187,7 +164,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.432483"
+      "last_updated": "2026-10-24T16:56:10.003660"
     },
     {
       "match_id": "1243",
@@ -210,7 +187,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.433009"
+      "last_updated": "2026-10-24T16:56:10.003989"
     },
     {
       "match_id": "1102",
@@ -233,7 +210,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T13:39:12.433525"
+      "last_updated": "2026-10-24T16:56:10.004312"
     }
   ]
 }
