@@ -1,33 +1,10 @@
 {
-  "timestamp": "2026-10-24T23:35:50.519927",
-  "total_matches": 7,
-  "live_count": 1,
+  "timestamp": "2026-10-24T23:40:48.038205",
+  "total_matches": 6,
+  "live_count": 0,
   "upcoming_count": 6,
   "completed_count": 0,
   "matches": [
-    {
-      "match_id": "1265",
-      "title": "Atletico de Madrid vs Deportivo de La Coruna",
-      "teams": "Atletico de Madrid vs Deportivo de La Coruna",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247659_53004_ATM_COR_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "493",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1265",
-      "match_url": "live/atletico-de-madrid-vs-deportivo-de-la-coruna-1265",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-24T21:35:01.876533"
-    },
     {
       "match_id": "1266",
       "title": "Athletic Club vs Getafe CF",
@@ -49,7 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T21:35:02.525242"
+      "last_updated": "2026-10-24T23:37:46.489290"
     },
     {
       "match_id": "1267",
@@ -72,7 +49,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T21:35:02.525713"
+      "last_updated": "2026-10-24T23:37:46.490242"
     },
     {
       "match_id": "1246",
@@ -95,7 +72,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T21:35:02.526129"
+      "last_updated": "2026-10-24T23:37:46.490932"
     },
     {
       "match_id": "1245",
@@ -118,7 +95,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T21:35:02.526553"
+      "last_updated": "2026-10-24T23:37:46.491586"
     },
     {
       "match_id": "1243",
@@ -141,7 +118,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T21:35:02.526949"
+      "last_updated": "2026-10-24T23:37:46.492207"
     },
     {
       "match_id": "1102",
@@ -164,7 +141,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T21:35:02.527356"
+      "last_updated": "2026-10-24T23:37:46.492843"
     }
   ]
 }
