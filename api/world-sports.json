@@ -1,54 +1,23 @@
 {
-  "timestamp": "2026-10-24T13:35:46.435872",
-  "total_matches": 11,
+  "timestamp": "2026-10-24T13:40:40.089767",
+  "total_matches": 10,
   "live_count": 1,
-  "upcoming_count": 10,
+  "upcoming_count": 9,
   "completed_count": 0,
   "matches": [
-    {
-      "match_id": "1297",
-      "title": "New Zealand vs India - 2ND T20",
-      "teams": "New Zealand vs India - 2ND T20",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792394762540x302.jpg",
-      "league": "India tour of New Zealand 2026",
-      "viewers": "28",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1297",
-      "match_url": "live/new-zealand-vs-india-2nd-t20-1297",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=9vcLpP0tuEd9AcfvW65Q6PwUfvL6iyWtfnAIGt2gMm_L3B9qGd2Evfno7cmGJBSSphy8eqNc9IaFZVPJxlM39ZuB5uxOu7m6tiKpH_p0d4BRdixEr65Xobkzyu-Ua6fAf3uNeDimHVr-5Ckiq4G4B63J0wSGcTw4P_SjZaJQsim9yo3obiEy4zGvXVc5U39UXA-RKsnB4EOj9Kga8q_TmLY-9kAGUQfg2Amh4f-Tw80WTSh15J7PTGfd--mhKXWfLS8G12YD4-AUgc5t",
-      "server_count": 7,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=9vcLpP0tuEd9AcfvW65Q6PwUfvL6iyWtfnAIGt2gMm_L3B9qGd2Evfno7cmGJBSSphy8eqNc9IaFZVPJxlM39ZuB5uxOu7m6tiKpH_p0d4BRdixEr65Xobkzyu-Ua6fAf3uNeDimHVr-5Ckiq4G4B63J0wSGcTw4P_SjZaJQsim9yo3obiEy4zGvXVc5U39UXA-RKsnB4EOj9Kga8q_TmLY-9kAGUQfg2Amh4f-Tw80WTSh15J7PTGfd--mhKXWfLS8G12YD4-AUgc5t",
-        "https://tvsen5.aynaott.com/willowhd/index.m3u8",
-        "https://live.talkoraai.com/match/seg?t=hqvHvbglj60AAet0YEoCZWuoXDeVEp9yWzmYQFDe4NBV4V_eKeFrW6BZJvCxQDn9RPH4BXECGr2SHpwut2yfScaN7fOTuqU0mjee7s5ejxeFX6VZoy3yFoVKVx_Y2yvT-xOpPhWXxIL4qrAJG6XYgBlyF5P9UFQW284uMYjMhgEyM1pJ6LdoaKGN6Yb7lBxquIbsVawSvu23WEsYCYsZRPeFRunQEltuZ_ZNIhu_vIoHZZlxie_jiP5WXR2f-UFwR_CthAUefxM0OTHvDYdszVTmn4M",
-        "https://alixbd.com/playlistconfig/channel/36.m3u8",
-        "https://alixbd.com/playlistconfig/channel/38.m3u8",
-        "https://alixbd.com/playlistconfig/channel/39.m3u8",
-        "https://tims-nl-0001.duckdns.org/main/secure/6c82a5e3779a5e0fd00093f9ee5eff67e14fabaa8dc7bed3a4da463199caa9d1/1792837853/skysport1-nz.m3u8"
-      ],
-      "last_updated": "2026-10-24T09:51:21.990445"
-    },
     {
       "match_id": "1262",
       "title": "Rayo Vallecano vs Elche CF",
       "teams": "Rayo Vallecano vs Elche CF",
       "sport": "cricket",
       "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "status": "live",
+      "status_display": "LIVE",
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247665_53004_RVL_ELC_FC-Web.png",
       "league": "LALIGA 2026-27",
       "viewers": "473",
-      "viewers_type": "Waiting",
+      "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
@@ -57,7 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.688840"
+      "last_updated": "2026-10-24T13:39:12.058200"
     },
     {
       "match_id": "1263",
@@ -80,7 +49,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.689415"
+      "last_updated": "2026-10-24T13:39:12.429186"
     },
     {
       "match_id": "1264",
@@ -103,7 +72,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.689879"
+      "last_updated": "2026-10-24T13:39:12.429814"
     },
     {
       "match_id": "1265",
@@ -126,7 +95,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.690349"
+      "last_updated": "2026-10-24T13:39:12.430354"
     },
     {
       "match_id": "1266",
@@ -149,7 +118,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.690791"
+      "last_updated": "2026-10-24T13:39:12.430890"
     },
     {
       "match_id": "1267",
@@ -172,7 +141,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.691237"
+      "last_updated": "2026-10-24T13:39:12.431417"
     },
     {
       "match_id": "1246",
@@ -195,7 +164,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.691682"
+      "last_updated": "2026-10-24T13:39:12.431958"
     },
     {
       "match_id": "1245",
@@ -218,7 +187,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.692112"
+      "last_updated": "2026-10-24T13:39:12.432483"
     },
     {
       "match_id": "1243",
@@ -241,7 +210,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.692563"
+      "last_updated": "2026-10-24T13:39:12.433009"
     },
     {
       "match_id": "1102",
@@ -264,7 +233,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-24T09:51:24.692985"
+      "last_updated": "2026-10-24T13:39:12.433525"
     }
   ]
 }
