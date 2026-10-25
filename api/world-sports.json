@@ -1,78 +1,35 @@
 {
-  "timestamp": "2026-10-25T21:05:45.762518",
-  "total_matches": 5,
-  "live_count": 2,
-  "upcoming_count": 3,
+  "timestamp": "2026-10-25T21:10:43.976163",
+  "total_matches": 3,
+  "live_count": 1,
+  "upcoming_count": 2,
   "completed_count": 0,
   "matches": [
-    {
-      "match_id": "1267",
-      "title": "RC Celta vs Real Betis",
-      "teams": "RC Celta vs Real Betis",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247664_53004_CEV_RB_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "566",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1267",
-      "match_url": "live/rc-celta-vs-real-betis-1267",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-25T18:32:59.932413"
-    },
-    {
-      "match_id": "1246",
-      "title": "Real Sociedad vs Levante",
-      "teams": "Real Sociedad vs Levante",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247663_53004_RS_LET_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "549",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1246",
-      "match_url": "live/real-sociedad-vs-levante-1246",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-25T18:33:00.325746"
-    },
     {
       "match_id": "1245",
       "title": "Barcelona vs Real Madrid",
       "teams": "Barcelona vs Real Madrid",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "sport": "football",
+      "sport_display": "Football",
+      "status": "live",
+      "status_display": "LIVE",
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247666_53004_BAR_RM_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "527",
-      "viewers_type": "Waiting",
+      "viewers": "646",
+      "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
       "page_url": "/world-sports/player.html?id=1245",
       "match_url": "live/barcelona-vs-real-madrid-1245",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-25T18:33:00.667110"
+      "stream_url": "https://live.talkoraai.com/match/hls?t=fPEwHOe0OQvEDLS8sqmt0oW-IaPjIi94K-xOezRttigU-fADElZfpwSvb5sbfxdkAfL61ZzIQ8XQS9z-Ai4BttAyso6TdTQDZ0Ka-Tor4f-RDIxQQLSI7JPzRoDZV5AkCpPp7TxDGoZnZArfwPlkzGXTjwcBBeiMv7bJSoI4ILPfHuZUZ-AFnRu5RSXObaiAKgqosMOTrIDwnlzjIQ1YBv72zm9Wglewf28aF_bWHS21g-nGoYelAo96lj9i0Nxi7IGtFyGlCBLnA2q_",
+      "server_count": 2,
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=fPEwHOe0OQvEDLS8sqmt0oW-IaPjIi94K-xOezRttigU-fADElZfpwSvb5sbfxdkAfL61ZzIQ8XQS9z-Ai4BttAyso6TdTQDZ0Ka-Tor4f-RDIxQQLSI7JPzRoDZV5AkCpPp7TxDGoZnZArfwPlkzGXTjwcBBeiMv7bJSoI4ILPfHuZUZ-AFnRu5RSXObaiAKgqosMOTrIDwnlzjIQ1YBv72zm9Wglewf28aF_bWHS21g-nGoYelAo96lj9i0Nxi7IGtFyGlCBLnA2q_",
+        "https://live2.domaincdn.cc/livecdn/channel-5.m3u8?auth_key=3000001792609084-0-0-3b885d896329e63bd1b28f6ae64ec946"
+      ],
+      "last_updated": "2026-10-25T21:09:41.722259"
     },
     {
       "match_id": "1243",
@@ -95,7 +52,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T18:33:00.667845"
+      "last_updated": "2026-10-25T21:09:42.128112"
     },
     {
       "match_id": "1102",
@@ -118,7 +75,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T18:33:00.668522"
+      "last_updated": "2026-10-25T21:09:42.128701"
     }
   ]
 }
