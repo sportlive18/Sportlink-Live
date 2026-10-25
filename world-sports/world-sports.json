@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-25T06:40:46.721485",
+  "timestamp": "2026-10-25T06:50:44.180693",
   "total_matches": 6,
   "live_count": 0,
   "upcoming_count": 6,
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247662_53004_ATH_GEF_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "486",
+      "viewers": "487",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -26,7 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T01:34:24.894600"
+      "last_updated": "2026-10-25T06:43:00.568175"
     },
     {
       "match_id": "1267",
@@ -39,7 +39,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247664_53004_CEV_RB_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "481",
+      "viewers": "482",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -49,7 +49,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T01:34:24.895409"
+      "last_updated": "2026-10-25T06:43:00.568773"
     },
     {
       "match_id": "1246",
@@ -72,7 +72,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T01:34:24.896057"
+      "last_updated": "2026-10-25T06:43:00.569174"
     },
     {
       "match_id": "1245",
@@ -95,7 +95,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T01:34:24.896686"
+      "last_updated": "2026-10-25T06:43:00.569602"
     },
     {
       "match_id": "1243",
@@ -118,7 +118,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T01:34:24.897290"
+      "last_updated": "2026-10-25T06:43:00.570005"
     },
     {
       "match_id": "1102",
@@ -141,7 +141,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T01:34:24.897917"
+      "last_updated": "2026-10-25T06:43:00.570428"
     }
   ]
 }
