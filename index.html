@@ -14,17 +14,17 @@
   <title>Sportlink - Live Sports Streaming, Match Highlights & Scores</title>
   <meta name="description" content="Watch live sports streaming, match highlights, and real-time scores on Sportlink. Free access to football, cricket, and all major sports events." />
   <meta name="keywords" content="live sports, match streaming, football highlights, cricket live, sports scores, Sportlink, live match, sports streaming" />
-  <link rel="canonical" href="https://sportlink.in/" />
-  <link rel="alternate" hreflang="en" href="https://sportlink.in/" />
-  <link rel="alternate" hreflang="en-IN" href="https://sportlink.in/" />
+  <link rel="canonical" href="https://sportlinks-tv.pages.dev/" />
+  <link rel="alternate" hreflang="en" href="https://sportlinks-tv.pages.dev/" />
+  <link rel="alternate" hreflang="en-IN" href="https://sportlinks-tv.pages.dev/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sportlink - Live Sports Streaming & Match Highlights" />
   <meta property="og:description" content="Watch live sports, match highlights, and real-time scores. Free streaming for football, cricket, and all major tournaments." />
-  <meta property="og:url" content="https://sportlink.in/" />
+  <meta property="og:url" content="https://sportlinks-tv.pages.dev/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sportlink" />
-  <meta property="og:image" content="https://sportlink.in/images/og-image.jpg" />
+  <meta property="og:image" content="https://sportlinks-tv.pages.dev/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_IN" />
@@ -33,7 +33,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sportlink - Live Sports Streaming & Match Highlights" />
   <meta name="twitter:description" content="Watch live sports, match highlights, and real-time scores. Free streaming for football, cricket, and all major tournaments." />
-  <meta name="twitter:image" content="https://sportlink.in/images/og-image.jpg" />
+  <meta name="twitter:image" content="https://sportlinks-tv.pages.dev/images/og-image.jpg" />
   <meta name="twitter:site" content="@Sportlink" />
   <meta name="twitter:creator" content="@Sportlink" />
 
@@ -63,11 +63,11 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Sportlink",
-    "url": "https://sportlink.in/",
+    "url": "https://sportlinks-tv.pages.dev/",
     "description": "Live sports streaming, match highlights, and real-time scores for football, cricket, and all major sports events.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://sportlink.in/search?q={search_term_string}",
+      "target": "https://sportlinks-tv.pages.dev/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -77,8 +77,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Sportlink",
-    "url": "https://sportlink.in/",
-    "logo": "https://sportlink.in/images/logo.png",
+    "url": "https://sportlinks-tv.pages.dev/",
+    "logo": "https://sportlinks-tv.pages.dev/images/logo.png",
     "description": "Live sports streaming platform offering match highlights and real-time scores.",
     "sameAs": [
       "https://twitter.com/Sportlink",
@@ -418,70 +418,13 @@
       border-radius: 4px;
     }
 
-    .progress-fill.filling {
-      animation: fillProgress 10s linear forwards;
-    }
-
     .progress-fill.filled {
       width: 100%;
-    }
-
-    @keyframes fillProgress {
-      from { width: 0%; }
-      to { width: 100%; }
-    }
-
-    /* ---------- SLIDER ARROWS ---------- */
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: clamp(34px, 4vw, 52px);
-      height: clamp(34px, 4vw, 52px);
-      border-radius: 50%;
-      background: rgba(11, 13, 15, 0.4);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: clamp(1rem, 1.8vw, 1.5rem);
-      cursor: pointer;
-      z-index: 20;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      line-height: 1;
-      user-select: none;
-    }
-
-    .slider-arrow:hover {
-      background: rgba(11, 13, 15, 0.7);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-50%) scale(1.08);
-    }
-
-    .slider-arrow:active {
-      transform: translateY(-50%) scale(0.92);
-    }
-
-    .slider-arrow.arrow-left {
-      left: clamp(0.6rem, 2vw, 1.8rem);
-    }
-
-    .slider-arrow.arrow-right {
-      right: clamp(0.6rem, 2vw, 1.8rem);
     }
 
     @media (orientation: portrait) and (max-width: 768px) {
       .slider-progress {
         top: clamp(3.5rem, 8vh, 5rem);
-      }
-
-      .slider-arrow {
-        width: clamp(30px, 8vw, 40px);
-        height: clamp(30px, 8vw, 40px);
-        font-size: clamp(0.85rem, 3.5vw, 1.1rem);
       }
     }
 
@@ -1212,32 +1155,34 @@
     <a href="#primeSection" class="nav-scroll">Prime</a>
   </nav>
 
-  <!-- ====== POSTER SECTION - CLICKABLE / SLIDER ====== -->
-  <div class="poster-wrapper" id="posterWrapper" aria-label="Featured matches">
+  <!-- ====== POSTER SECTION - SINGLE SLIDE (IND vs NZ) ====== -->
+  <div class="poster-wrapper" id="posterWrapper" aria-label="Featured match">
 
-    <!-- SLIDE 1 -->
+    <!-- SLIDE - IND VS NZ -->
     <section class="poster-section active" data-slide="0">
       <picture>
         <source
           media="(orientation: portrait) and (max-width: 768px)"
-          srcset="https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/9280/1791259109280-i"
+          srcset="https://ik.imagekit.io/sayanmete/India%20vs%20New%20Zealand%20T20%20match%20poster%20by%20Sayan.png"
         />
         <source
           media="(min-width: 769px)"
-          srcset="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1280/sources/r1/cms/prod/9280/1791259109280-i"
+          srcset="https://ik.imagekit.io/sayanmete/India%20vs%20New%20Zealand%20T20%20match%20poster%20by%20Sayan.png"
         />
         <img
-          src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1280/sources/r1/cms/prod/9280/1791259109280-i"
-          alt="India vs West Indies poster"
+          src="https://ik.imagekit.io/sayanmete/India%20vs%20New%20Zealand%20T20%20match%20poster%20by%20Sayan.png"
+          alt="India vs New Zealand T20 match poster"
           class="poster-image"
-          loading="lazy"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
       </picture>
       <div class="gradient-left"></div>
       <div class="gradient-overlay"></div>
 
       <div class="match-details">
-        <div class="match-title">IND VS WI T20 SERIES, 2026</div>
+        <div class="match-title">IND VS NZ T20 SERIES, 2026</div>
 
         <div class="teams-row">
           <div class="team">
@@ -1252,158 +1197,12 @@
           <span class="vs-score"> VS </span>
           <div class="team">
             <img
-              src="https://flagpedia.net/data/flags/w1160/wi.webp"
-              alt="West Indies"
+              src="https://flagpedia.net/data/flags/w1160/nz.webp"
+              alt="New Zealand"
               class="team-flag"
               loading="lazy"
             />
-            <span class="team-name">West Indies</span>
-          </div>
-        </div>
-
-        <div class="match-info">
-          <span class="tag">Tomorrow</span>
-          <span class="separator">•</span>
-          <span class="date">OCT 9th</span>
-          <span class="separator">•</span>
-          <span class="time">7:00 PM IST</span>
-          <span class="separator">•</span>
-          <span class="venue">Stadium, India</span>
-        </div>
-
-        <div class="badges">
-          <span class="badge badge-fulltime">T20</span>
-          <span class="badge badge-4k">4K</span>
-          <span class="badge badge-hdr">HDR</span>
-          <span class="badge badge-fanzone">FanZone</span>
-        </div>
-
-        <div class="action-buttons">
-          <a href="/live/ind-vs-wi.html" class="watch-btn">
-            <span class="icon">▶</span>
-            <span>Watch Now</span>
-          </a>
-          <a href="#" class="btn-mytod">+ My List</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SLIDE 2 -->
-    <section class="poster-section" data-slide="1">
-      <picture>
-        <source
-          media="(orientation: portrait) and (max-width: 768px)"
-          srcset="https://ik.imagekit.io/hca68wjbj/ChatGPT%20Image%20Sep%2028,%202026,%2009_20_43%20AM.png"
-        />
-        <source
-          media="(min-width: 769px)"
-          srcset="https://images.slivcdn.com/videoasset_images/manage_file/1000025071/1790513676229545_AG26_India-vs-Afghanistan_live_masthead_large_v3.jpg?h=auto&w=1712&q=high"
-        />
-        <img
-          src="https://images.slivcdn.com/videoasset_images/manage_file/1000025071/1790513676229545_AG26_India-vs-Afghanistan_live_masthead_large_v3.jpg?h=auto&w=1712&q=high"
-          alt="India vs Afghanistan poster"
-          class="poster-image"
-          loading="lazy"
-        />
-      </picture>
-      <div class="gradient-left"></div>
-      <div class="gradient-overlay"></div>
-
-      <div class="match-details">
-        <div class="match-title">ASIAN GAMES, 2026</div>
-
-        <div class="teams-row">
-          <div class="team">
-            <img
-              src="https://flagpedia.net/data/flags/w1160/in.webp"
-              alt="India"
-              class="team-flag"
-              loading="lazy"
-            />
-            <span class="team-name">India</span>
-          </div>
-          <span class="vs-score"> VS </span>
-          <div class="team">
-            <img
-              src="https://flagpedia.net/data/flags/w1160/af.webp"
-              alt="Afghanistan"
-              class="team-flag"
-              loading="lazy"
-            />
-            <span class="team-name">Afghanistan</span>
-          </div>
-        </div>
-
-        <div class="match-info">
-          <span class="tag">Today</span>
-          <span class="separator">•</span>
-          <span class="date">Sep 28th</span>
-          <span class="separator">•</span>
-          <span class="time">10:30 AM</span>
-          <span class="separator">•</span>
-          <span class="venue">Oshma Stadium</span>
-        </div>
-
-        <div class="badges">
-          <span class="badge badge-fulltime">T20</span>
-          <span class="badge badge-4k">4K</span>
-          <span class="badge badge-hdr">HDR</span>
-          <span class="badge badge-fanzone">FanZone</span>
-        </div>
-
-        <div class="action-buttons">
-          <a href="/live/asian-games.html" class="watch-btn">
-            <span class="icon">▶</span>
-            <span>Watch Now</span>
-          </a>
-          <a href="#" class="btn-mytod">+ My List</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SLIDE 3 -->
-    <section class="poster-section" data-slide="2">
-      <picture>
-        <source
-          media="(orientation: portrait) and (max-width: 768px)"
-          srcset="https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/9280/1791259109280-i"
-        />
-        <source
-          media="(min-width: 769px)"
-          srcset="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1280/sources/r1/cms/prod/9280/1791259109280-i"
-        />
-        <img
-          src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1280/sources/r1/cms/prod/9280/1791259109280-i"
-          alt="India vs Switzerland"
-          class="poster-image"
-          loading="lazy"
-        />
-      </picture>
-      <div class="gradient-left"></div>
-      <div class="gradient-overlay"></div>
-
-      <div class="match-details">
-        <div class="match-title">IND VS SWI, 2026</div>
-
-        <div class="teams-row">
-          <div class="team">
-            <img
-              src="https://flagpedia.net/data/flags/w1160/in.webp"
-              alt="India"
-              class="team-flag"
-              loading="lazy"
-            />
-            <span class="team-name">India</span>
-          </div>
-          <span class="vs-score"> VS </span>
-          <div class="team">
-            <img
-              src="https://flagpedia.net/data/flags/w1160/ch.webp"
-              alt="Switzerland"
-              class="team-flag"
-              loading="lazy"
-            />
-            <span class="team-name">Switzerland</span>
+            <span class="team-name">NEW ZEALAND</span>
           </div>
         </div>
 
@@ -1412,20 +1211,20 @@
           <span class="separator">•</span>
           <span class="date">Oct 9th</span>
           <span class="separator">•</span>
-          <span class="time">7:30 PM IST</span>
+          <span class="time">7:00 PM IST</span>
           <span class="separator">•</span>
           <span class="venue">TBD Stadium</span>
         </div>
 
         <div class="badges">
-          <span class="badge badge-fulltime">LIVE</span>
+          <span class="badge badge-fulltime">T20</span>
           <span class="badge badge-4k">4K</span>
           <span class="badge badge-hdr">HDR</span>
           <span class="badge badge-fanzone">FanZone</span>
         </div>
 
         <div class="action-buttons">
-          <a href="/live/ind-vs-swi.html" class="watch-btn">
+          <a href="/live/ind-vs-nz.html" class="watch-btn">
             <span class="icon">▶</span>
             <span>Watch Now</span>
           </a>
@@ -1434,37 +1233,12 @@
       </div>
     </section>
 
-    <!-- SLIDE 4 - IND VS NZ -->
-    <section class="poster-section" data-slide="3">
-      <img
-        src="https://ik.imagekit.io/sayanmete/India%20vs%20New%20Zealand%20T20%20match%20poster%20by%20Sayan.png"
-        alt="India vs New Zealand"
-        class="poster-image"
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-      />
-    </section>
-
-    <!-- SLIDER PROGRESS BAR (4 tracks, one per slide) -->
+    <!-- SLIDER PROGRESS BAR (single track) -->
     <div class="slider-progress" id="sliderProgress" aria-hidden="true">
       <div class="progress-track" data-track="0">
-        <div class="progress-fill"></div>
-      </div>
-      <div class="progress-track" data-track="1">
-        <div class="progress-fill"></div>
-      </div>
-      <div class="progress-track" data-track="2">
-        <div class="progress-fill"></div>
-      </div>
-      <div class="progress-track" data-track="3">
-        <div class="progress-fill"></div>
+        <div class="progress-fill filled" style="width:100%;"></div>
       </div>
     </div>
-
-    <!-- SLIDER ARROWS -->
-    <button class="slider-arrow arrow-left" id="arrowLeft" type="button" aria-label="Previous slide">&#10094;</button>
-    <button class="slider-arrow arrow-right" id="arrowRight" type="button" aria-label="Next slide">&#10095;</button>
 
     <!-- SCROLL INDICATOR -->
     <div class="scroll-indicator" aria-hidden="true">
@@ -1636,65 +1410,27 @@
       });
     });
 
-    // ====== HERO SLIDER (AUTO-SLIDE + PROGRESS BAR + ARROWS) ======
+    // ====== HERO SLIDER (single slide — no autoplay / no arrows) ======
     (function () {
       const slides = Array.from(document.querySelectorAll('.poster-section'));
       const tracks = Array.from(document.querySelectorAll('.progress-track'));
       const arrowLeft = document.getElementById('arrowLeft');
       const arrowRight = document.getElementById('arrowRight');
-      const SLIDE_DURATION = 10000;
-      let currentIndex = 0;
-      let autoplayTimer = null;
 
-      function getFill(trackIndex) {
-        return tracks[trackIndex].querySelector('.progress-fill');
-      }
-
-      function updateProgressBars(activeIndex) {
-        tracks.forEach(function (track, i) {
-          const fill = getFill(i);
-          fill.classList.remove('filling');
-          fill.classList.remove('filled');
-          fill.style.width = '';
-          void fill.offsetWidth;
-          if (i < activeIndex) {
+      // With only one slide, hide arrows (if any) and mark progress as filled
+      if (slides.length <= 1) {
+        if (arrowLeft) arrowLeft.style.display = 'none';
+        if (arrowRight) arrowRight.style.display = 'none';
+        tracks.forEach(function (track) {
+          const fill = track.querySelector('.progress-fill');
+          if (fill) {
+            fill.classList.remove('filling');
             fill.classList.add('filled');
-          } else if (i === activeIndex) {
-            fill.classList.add('filling');
+            fill.style.width = '100%';
           }
         });
+        return;
       }
-
-      function goToSlide(index) {
-        const total = slides.length;
-        const nextIndex = ((index % total) + total) % total;
-        slides[currentIndex].classList.remove('active');
-        slides[nextIndex].classList.add('active');
-        currentIndex = nextIndex;
-        updateProgressBars(currentIndex);
-        restartAutoplay();
-      }
-
-      function nextSlide() { goToSlide(currentIndex + 1); }
-      function prevSlide() { goToSlide(currentIndex - 1); }
-
-      function restartAutoplay() {
-        if (autoplayTimer) clearTimeout(autoplayTimer);
-        autoplayTimer = setTimeout(nextSlide, SLIDE_DURATION);
-      }
-
-      arrowRight.addEventListener('click', function (e) {
-        e.stopPropagation();
-        nextSlide();
-      });
-
-      arrowLeft.addEventListener('click', function (e) {
-        e.stopPropagation();
-        prevSlide();
-      });
-
-      updateProgressBars(currentIndex);
-      restartAutoplay();
     })();
 
     // ====== VIDEO SECTION (LAZY LOAD) ======
