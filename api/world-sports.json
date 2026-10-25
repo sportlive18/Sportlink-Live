@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-25T15:40:43.571358",
-  "total_matches": 9,
-  "live_count": 3,
-  "upcoming_count": 6,
+  "timestamp": "2026-10-25T15:45:47.101673",
+  "total_matches": 8,
+  "live_count": 4,
+  "upcoming_count": 4,
   "completed_count": 0,
   "matches": [
     {
@@ -16,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792875880540x302.jpg",
       "league": "Pakistan ODI Tri-Series 2026",
-      "viewers": "33",
+      "viewers": "127",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -31,32 +31,53 @@
         "https://fawa.duckdns.org/api/proxy?url=http%3A%2F%2F193.47.62.50%2Fhls%2FZZZZ.m3u8&headers=%7B%22Referer%22%3A%22http%3A%2F%2Fwww.fawanews.sc%2F%22%7D",
         "https://live.talkoraai.com/match/seg?t=_VZ4in5QzoEdjSK0ofCHRWA2sBRpK5HPWy-yaNzb2nVclGy1-yUJgy30g4Sbit1CrttppZpP3jBmTl_FlVRSnMps1RJBiTEUpkX9DyZJYXERkVHWTjAHlkF6lmUDR112OBs5GJseRxS_Ixg8rIjuTEcgyMjHP0vpRnLIZ43D48j_eWi01pVaDSlEVWisxpDz3yiOK-F7u2yYFO0PoxGied7HamBRtdJhUZFTg8WwRTveK5lFx_sLPVII5gLm3Ma2vVsjVEdtA07h9b0dRXELPAE39MU"
       ],
-      "last_updated": "2026-10-25T12:00:03.004478"
+      "last_updated": "2026-10-25T15:42:22.818706"
     },
     {
-      "match_id": "1299",
-      "title": "United Arab Emirates vs Netherlands",
-      "teams": "United Arab Emirates vs Netherlands",
+      "match_id": "1266",
+      "title": "Athletic Club vs Getafe CF",
+      "teams": "Athletic Club vs Getafe CF",
       "sport": "cricket",
       "sport_display": "Cricket",
       "status": "live",
       "status_display": "LIVE",
       "runtime": "00h 00m 00s",
-      "thumbnail": "https://www.fancode.com/skillup-uploads/cms-media/ICC-CWC-League_Web-match-card.png",
-      "league": "ICC Cricket World Cup League",
-      "viewers": "8",
+      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247662_53004_ATH_GEF_FC-Web.png",
+      "league": "LALIGA 2026-27",
+      "viewers": "557",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
-      "page_url": "/world-sports/player.html?id=1299",
-      "match_url": "live/united-arab-emirates-vs-netherlands-1299",
-      "stream_url": "https://cinexcricket.com/proxy/universal.php/?url=https%3A%2F%2Fwww.kaizokutv.cyou%2Ffancode%2Fplayer.php%3Fserve_master%3D4250516_ENG",
-      "server_count": 1,
-      "server_urls": [
-        "https://cinexcricket.com/proxy/universal.php/?url=https%3A%2F%2Fwww.kaizokutv.cyou%2Ffancode%2Fplayer.php%3Fserve_master%3D4250516_ENG"
-      ],
-      "last_updated": "2026-10-25T12:00:04.445040"
+      "page_url": "/world-sports/player.html?id=1266",
+      "match_url": "live/athletic-club-vs-getafe-cf-1266",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-25T15:42:23.752533"
+    },
+    {
+      "match_id": "1267",
+      "title": "RC Celta vs Real Betis",
+      "teams": "RC Celta vs Real Betis",
+      "sport": "cricket",
+      "sport_display": "Cricket",
+      "status": "live",
+      "status_display": "LIVE",
+      "runtime": "00h 00m 00s",
+      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247664_53004_CEV_RB_FC-Web.png",
+      "league": "LALIGA 2026-27",
+      "viewers": "553",
+      "viewers_type": "Watching",
+      "date": null,
+      "time": null,
+      "servers": null,
+      "page_url": "/world-sports/player.html?id=1267",
+      "match_url": "live/rc-celta-vs-real-betis-1267",
+      "stream_url": null,
+      "server_count": 0,
+      "server_urls": [],
+      "last_updated": "2026-10-25T15:42:24.441240"
     },
     {
       "match_id": "1300",
@@ -69,7 +90,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://static.cricbuzz.com/a/img/v1/i1/c1105958/live-india-women-vs-zimbabwe-women-2nd-odi.jpg?d=high&p=det",
       "league": "Zimbabwe Women tour of India",
-      "viewers": "12",
+      "viewers": "82",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -82,53 +103,7 @@
         "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8",
         "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV540p.m3u8"
       ],
-      "last_updated": "2026-10-25T12:00:05.426605"
-    },
-    {
-      "match_id": "1266",
-      "title": "Athletic Club vs Getafe CF",
-      "teams": "Athletic Club vs Getafe CF",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247662_53004_ATH_GEF_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "490",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1266",
-      "match_url": "live/athletic-club-vs-getafe-cf-1266",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-25T12:00:06.038865"
-    },
-    {
-      "match_id": "1267",
-      "title": "RC Celta vs Real Betis",
-      "teams": "RC Celta vs Real Betis",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247664_53004_CEV_RB_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "483",
-      "viewers_type": "Waiting",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1267",
-      "match_url": "live/rc-celta-vs-real-betis-1267",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-25T12:00:06.039632"
+      "last_updated": "2026-10-25T15:42:24.788303"
     },
     {
       "match_id": "1246",
@@ -141,7 +116,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247663_53004_RS_LET_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "473",
+      "viewers": "539",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -151,7 +126,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T12:00:06.040300"
+      "last_updated": "2026-10-25T15:42:25.390376"
     },
     {
       "match_id": "1245",
@@ -164,7 +139,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247666_53004_BAR_RM_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "457",
+      "viewers": "524",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -174,7 +149,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T12:00:06.040926"
+      "last_updated": "2026-10-25T15:42:25.391030"
     },
     {
       "match_id": "1243",
@@ -187,7 +162,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247667_53004_SEV_OSN_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "441",
+      "viewers": "509",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -197,7 +172,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T12:00:06.041568"
+      "last_updated": "2026-10-25T15:42:25.391577"
     },
     {
       "match_id": "1102",
@@ -210,7 +185,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "449",
+      "viewers": "514",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -220,7 +195,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T12:00:06.042208"
+      "last_updated": "2026-10-25T15:42:25.392104"
     }
   ]
 }
