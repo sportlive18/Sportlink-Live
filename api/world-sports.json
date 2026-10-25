@@ -1,36 +1,10 @@
 {
-  "timestamp": "2026-10-25T23:10:45.747524",
-  "total_matches": 3,
-  "live_count": 1,
+  "timestamp": "2026-10-25T23:15:45.826887",
+  "total_matches": 2,
+  "live_count": 0,
   "upcoming_count": 2,
   "completed_count": 0,
   "matches": [
-    {
-      "match_id": "1245",
-      "title": "Barcelona vs Real Madrid",
-      "teams": "Barcelona vs Real Madrid",
-      "sport": "football",
-      "sport_display": "Football",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247666_53004_BAR_RM_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "646",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1245",
-      "match_url": "live/barcelona-vs-real-madrid-1245",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=fPEwHOe0OQvEDLS8sqmt0oW-IaPjIi94K-xOezRttigU-fADElZfpwSvb5sbfxdkAfL61ZzIQ8XQS9z-Ai4BttAyso6TdTQDZ0Ka-Tor4f-RDIxQQLSI7JPzRoDZV5AkCpPp7TxDGoZnZArfwPlkzGXTjwcBBeiMv7bJSoI4ILPfHuZUZ-AFnRu5RSXObaiAKgqosMOTrIDwnlzjIQ1YBv72zm9Wglewf28aF_bWHS21g-nGoYelAo96lj9i0Nxi7IGtFyGlCBLnA2q_",
-      "server_count": 2,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=fPEwHOe0OQvEDLS8sqmt0oW-IaPjIi94K-xOezRttigU-fADElZfpwSvb5sbfxdkAfL61ZzIQ8XQS9z-Ai4BttAyso6TdTQDZ0Ka-Tor4f-RDIxQQLSI7JPzRoDZV5AkCpPp7TxDGoZnZArfwPlkzGXTjwcBBeiMv7bJSoI4ILPfHuZUZ-AFnRu5RSXObaiAKgqosMOTrIDwnlzjIQ1YBv72zm9Wglewf28aF_bWHS21g-nGoYelAo96lj9i0Nxi7IGtFyGlCBLnA2q_",
-        "https://live2.domaincdn.cc/livecdn/channel-5.m3u8?auth_key=3000001792609084-0-0-3b885d896329e63bd1b28f6ae64ec946"
-      ],
-      "last_updated": "2026-10-25T21:09:41.722259"
-    },
     {
       "match_id": "1243",
       "title": "Sevilla vs CA Osasuna",
@@ -52,7 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T21:09:42.128112"
+      "last_updated": "2026-10-25T23:12:15.375478"
     },
     {
       "match_id": "1102",
@@ -75,7 +49,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T21:09:42.128701"
+      "last_updated": "2026-10-25T23:12:15.376369"
     }
   ]
 }
