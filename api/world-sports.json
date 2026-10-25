@@ -1,61 +1,10 @@
 {
-  "timestamp": "2026-10-25T18:30:46.812061",
-  "total_matches": 8,
-  "live_count": 4,
-  "upcoming_count": 4,
+  "timestamp": "2026-10-25T18:35:46.212345",
+  "total_matches": 5,
+  "live_count": 2,
+  "upcoming_count": 3,
   "completed_count": 0,
   "matches": [
-    {
-      "match_id": "1298",
-      "title": "Pakistan vs England",
-      "teams": "Pakistan vs England",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1792875880540x302.jpg",
-      "league": "Pakistan ODI Tri-Series 2026",
-      "viewers": "127",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1298",
-      "match_url": "live/pakistan-vs-england-1298",
-      "stream_url": "https://live.talkoraai.com/match/hls?t=GPHRZithdq_PQnOwAzH2q9Cn5to7sTFz22ZIS_v_o-kI9K5FGHxPII3ihY6z69VeojgBw-Pn8hVhNyBepsLZojU6bJ1iALF_In4A9NZ3zzCS5lqbdLpfOKubAbWvnF9INwLCWgScgDDmq2vGEy-4YrjbDvETMvajyZvOZNlV2U_BhIHJ5T6i1pAXt5HiuAsM1T5BD_Aaoxqnj0mO-9w7juV-THxnslD4c0o_23upE1I0Av7qJw5frOpBktSNoerp2WOlo1qyNDYucNCC",
-      "server_count": 4,
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=GPHRZithdq_PQnOwAzH2q9Cn5to7sTFz22ZIS_v_o-kI9K5FGHxPII3ihY6z69VeojgBw-Pn8hVhNyBepsLZojU6bJ1iALF_In4A9NZ3zzCS5lqbdLpfOKubAbWvnF9INwLCWgScgDDmq2vGEy-4YrjbDvETMvajyZvOZNlV2U_BhIHJ5T6i1pAXt5HiuAsM1T5BD_Aaoxqnj0mO-9w7juV-THxnslD4c0o_23upE1I0Av7qJw5frOpBktSNoerp2WOlo1qyNDYucNCC",
-        "https://tvsen5.aynaott.com/willowhd/index.m3u8",
-        "https://fawa.duckdns.org/api/proxy?url=http%3A%2F%2F193.47.62.50%2Fhls%2FZZZZ.m3u8&headers=%7B%22Referer%22%3A%22http%3A%2F%2Fwww.fawanews.sc%2F%22%7D",
-        "https://live.talkoraai.com/match/seg?t=_VZ4in5QzoEdjSK0ofCHRWA2sBRpK5HPWy-yaNzb2nVclGy1-yUJgy30g4Sbit1CrttppZpP3jBmTl_FlVRSnMps1RJBiTEUpkX9DyZJYXERkVHWTjAHlkF6lmUDR112OBs5GJseRxS_Ixg8rIjuTEcgyMjHP0vpRnLIZ43D48j_eWi01pVaDSlEVWisxpDz3yiOK-F7u2yYFO0PoxGied7HamBRtdJhUZFTg8WwRTveK5lFx_sLPVII5gLm3Ma2vVsjVEdtA07h9b0dRXELPAE39MU"
-      ],
-      "last_updated": "2026-10-25T15:42:22.818706"
-    },
-    {
-      "match_id": "1266",
-      "title": "Athletic Club vs Getafe CF",
-      "teams": "Athletic Club vs Getafe CF",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247662_53004_ATH_GEF_FC-Web.png",
-      "league": "LALIGA 2026-27",
-      "viewers": "557",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1266",
-      "match_url": "live/athletic-club-vs-getafe-cf-1266",
-      "stream_url": null,
-      "server_count": 0,
-      "server_urls": [],
-      "last_updated": "2026-10-25T15:42:23.752533"
-    },
     {
       "match_id": "1267",
       "title": "RC Celta vs Real Betis",
@@ -67,7 +16,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247664_53004_CEV_RB_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "553",
+      "viewers": "566",
       "viewers_type": "Watching",
       "date": null,
       "time": null,
@@ -77,33 +26,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T15:42:24.441240"
-    },
-    {
-      "match_id": "1300",
-      "title": "India Women vs Zimbabwe Women 2ND ODI",
-      "teams": "India Women vs Zimbabwe Women 2ND ODI",
-      "sport": "cricket",
-      "sport_display": "Cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "runtime": "00h 00m 00s",
-      "thumbnail": "https://static.cricbuzz.com/a/img/v1/i1/c1105958/live-india-women-vs-zimbabwe-women-2nd-odi.jpg?d=high&p=det",
-      "league": "Zimbabwe Women tour of India",
-      "viewers": "82",
-      "viewers_type": "Watching",
-      "date": null,
-      "time": null,
-      "servers": null,
-      "page_url": "/world-sports/player.html?id=1300",
-      "match_url": "live/india-women-vs-zimbabwe-women-2nd-odi-1300",
-      "stream_url": "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8",
-      "server_count": 2,
-      "server_urls": [
-        "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8",
-        "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV540p.m3u8"
-      ],
-      "last_updated": "2026-10-25T15:42:24.788303"
+      "last_updated": "2026-10-25T18:32:59.932413"
     },
     {
       "match_id": "1246",
@@ -111,13 +34,13 @@
       "teams": "Real Sociedad vs Levante",
       "sport": "cricket",
       "sport_display": "Cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "status": "live",
+      "status_display": "LIVE",
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247663_53004_RS_LET_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "539",
-      "viewers_type": "Waiting",
+      "viewers": "549",
+      "viewers_type": "Watching",
       "date": null,
       "time": null,
       "servers": null,
@@ -126,7 +49,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T15:42:25.390376"
+      "last_updated": "2026-10-25T18:33:00.325746"
     },
     {
       "match_id": "1245",
@@ -139,7 +62,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247666_53004_BAR_RM_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "524",
+      "viewers": "527",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -149,7 +72,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T15:42:25.391030"
+      "last_updated": "2026-10-25T18:33:00.667110"
     },
     {
       "match_id": "1243",
@@ -162,7 +85,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247667_53004_SEV_OSN_FC-Web.png",
       "league": "LALIGA 2026-27",
-      "viewers": "509",
+      "viewers": "512",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -172,7 +95,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T15:42:25.391577"
+      "last_updated": "2026-10-25T18:33:00.667845"
     },
     {
       "match_id": "1102",
@@ -185,7 +108,7 @@
       "runtime": "00h 00m 00s",
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "league": "Australia tour of South Africa",
-      "viewers": "514",
+      "viewers": "516",
       "viewers_type": "Waiting",
       "date": null,
       "time": null,
@@ -195,7 +118,7 @@
       "stream_url": null,
       "server_count": 0,
       "server_urls": [],
-      "last_updated": "2026-10-25T15:42:25.392104"
+      "last_updated": "2026-10-25T18:33:00.668522"
     }
   ]
 }
