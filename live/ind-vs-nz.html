@@ -98,7 +98,7 @@
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background: #000000;
     }
 
-    /* ====== WHATSAPP PROMO STRIP (honest, restyled) ====== */
+    /* ====== WHATSAPP PROMO STRIP ====== */
     .wa-strip {
       width: 100%;
       background: #0b1210;
@@ -238,8 +238,6 @@
     .tab-btn.active .material-icons { color: #4fc3f7; }
     .tab-btn[data-tab="channels"].active { border-bottom-color: #4fc3f7; color: #4fc3f7; }
     .tab-btn[data-tab="channels"].active .material-icons { color: #4fc3f7; }
-    .tab-btn[data-tab="chat"].active { border-bottom-color: #ce93d8; color: #ce93d8; }
-    .tab-btn[data-tab="chat"].active .material-icons { color: #ce93d8; }
 
     .tab-content { display: none; flex: 1; min-height: 0; background: #000000; width: 100%; }
     .tab-content.active { display: flex; flex-direction: column; width: 100%; }
@@ -304,9 +302,6 @@
 
     .channel-card.active { border-color: #4fc3f7; box-shadow: 0 0 40px rgba(79, 195, 247, 0.06); background: #0f1923; }
     .channel-card.active .icon { border-color: #4fc3f7; box-shadow: 0 0 30px rgba(79, 195, 247, 0.15); background: rgba(79, 195, 247, 0.08); }
-
-    .chat-container { flex: 1; width: 100%; min-height: 70vh; background: #0f141c; }
-    .chat-container iframe { width: 100%; height: 100%; min-height: 70vh; border: none; display: block; }
 
     #waOverlay {
       position: fixed;
@@ -477,7 +472,7 @@
       <iframe src="https://sportlink-json.pages.dev/ios?url=https://telegram-sportlink10.lovable.app/api/proxy?u=https://allinonereborn2.online/sony-new/playlists/sony_ten1_hd.m3u8" allowfullscreen loading="lazy" title="Live Match" allow="encrypted-media; fullscreen; autoplay"></iframe>
     </div>
 
-    <!-- ====== WHATSAPP PROMO STRIP (honest copy, calm design, dismissible) ====== -->
+    <!-- ====== WHATSAPP PROMO STRIP ====== -->
     <div class="wa-strip" id="waStrip">
       <div class="strip-icon">
         <svg viewBox="0 0 24 24" fill="#0088cc" width="20" height="20">
@@ -498,10 +493,6 @@
       <button class="tab-btn active" data-tab="channels">
         <span class="material-icons">live_tv</span>
         <span>Channels</span>
-      </button>
-      <button class="tab-btn" data-tab="chat">
-        <span class="material-icons">chat</span>
-        <span>Live Chat</span>
       </button>
     </div>
 
@@ -572,19 +563,6 @@
 
       renderChannels(0);
 
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      const tabContents = document.querySelectorAll('.tab-content');
-
-      tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const target = this.dataset.tab;
-          tabBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          tabContents.forEach(c => c.classList.remove('active'));
-          document.getElementById(target).classList.add('active');
-        });
-      });
-
       const waOverlay = document.getElementById('waOverlay');
 
       setTimeout(function() {
@@ -606,8 +584,6 @@
         }
       });
 
-      // WhatsApp promo strip — only the Join button opens the link,
-      // and it's honestly labeled with a real reason to join.
       const waStrip = document.getElementById('waStrip');
       document.getElementById('stripJoinBtn').addEventListener('click', function() {
         window.open(WHATSAPP_LINK, '_blank');
@@ -618,7 +594,6 @@
 
     })();
   </script>
-
 
   <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
 
