@@ -51,112 +51,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- ===================== PRIME FALLBACK STYLES (must come BEFORE prime.css) ===================== -->
-  <style id="primeFallbackStyles">
-    .prime-section {
-      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 4vw, 4rem) clamp(1rem, 2vw, 2rem);
-      position: relative;
-      background: #0b0d0f;
-      min-height: 220px;
-    }
-    .prime-header {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1rem;
-    }
-    .prime-title {
-      color: #fff;
-      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
-      font-weight: 700;
-      font-family: 'Inter', system-ui, sans-serif;
-      margin: 0;
-      letter-spacing: 0.01em;
-    }
-    .prime-badge {
-      background: #7dffb3;
-      color: #0b0d0f;
-      padding: 0.2rem 0.65rem;
-      border-radius: 20px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    .prime-carousel-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-    .prime-track {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 0.5rem 0.25rem;
-      scrollbar-width: none;
-      min-height: 180px;
-      width: 100%;
-    }
-    .prime-track::-webkit-scrollbar { display: none; }
-    .prime-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: clamp(32px, 3.5vw, 44px);
-      height: clamp(32px, 3.5vw, 44px);
-      border-radius: 50%;
-      background: rgba(11, 13, 15, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      cursor: pointer;
-      z-index: 5;
-      transition: all 0.25s ease;
-      line-height: 1;
-    }
-    .prime-arrow.arrow-left { left: -0.5rem; }
-    .prime-arrow.arrow-right { right: -0.5rem; }
-    .prime-arrow:hover { background: rgba(11, 13, 15, 0.98); transform: translateY(-50%) scale(1.08); }
-    .prime-arrow:active { transform: translateY(-50%) scale(0.94); }
-    .prime-card {
-      flex: 0 0 auto;
-      width: clamp(170px, 22vw, 240px);
-      aspect-ratio: 16/9;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #1a1f26, #11151a);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 0.65rem;
-      color: #fff;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 600;
-      position: relative;
-      overflow: hidden;
-      text-decoration: none;
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-    .prime-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.72), transparent 60%);
-    }
-    .prime-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(125, 255, 179, 0.35);
-    }
-    .prime-card span { position: relative; z-index: 1; }
-  </style>
-
-  <!-- Section Stylesheets (these override the fallback above when present) -->
+  <!-- Section Stylesheets -->
   <link rel="stylesheet" href="/willow/willow-live.css">
   <link rel="stylesheet" href="/world-sports/world-sports.css" />
   <link rel="stylesheet" href="/fancode/fancode.css">
@@ -747,10 +642,10 @@
       </div>
     </section>
 
-    <!-- ===================== PRIME SECTION (NEW) ===================== -->
-    <section class="prime-section" id="primeSection" aria-labelledby="primeTitle">
+    <!-- PRIME SECTION -->
+    <section class="prime-section" id="primeSection">
       <div class="prime-header">
-        <h2 class="prime-title" id="primeTitle">Prime</h2>
+        <h2 class="prime-title">Prime</h2>
         <span class="prime-badge">Live</span>
       </div>
       <div class="prime-carousel-wrapper">
@@ -759,7 +654,6 @@
         <button class="prime-arrow arrow-right" id="primeArrowRight" type="button" aria-label="Scroll Prime right">&#10095;</button>
       </div>
     </section>
-    <!-- ============================================================= -->
 
     <!-- WORLD SPORTS SECTION -->
     <section class="world-sports-section" id="worldSportsSection">
@@ -933,39 +827,6 @@
       }
     });
 
-    // ====== PRIME SECTION FALLBACK ======
-    // If /prime/prime.js is missing or fails to populate #primeTrack, this guarantees the section is visible.
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        var track = document.getElementById('primeTrack');
-        if (!track) return;
-        if (track.children.length > 0) return; // prime.js already populated it
-
-        var demos = [
-          'Prime Match 1',
-          'Prime Match 2',
-          'Prime Match 3',
-          'Prime Match 4',
-          'Prime Match 5',
-          'Prime Match 6'
-        ];
-        demos.forEach(function (label) {
-          var card = document.createElement('a');
-          card.href = '/prime/index.html';
-          card.className = 'prime-card';
-          card.setAttribute('aria-label', label);
-          card.innerHTML = '<span>' + label + '</span>';
-          track.appendChild(card);
-        });
-
-        var left = document.getElementById('primeArrowLeft');
-        var right = document.getElementById('primeArrowRight');
-        if (left) left.addEventListener('click', function () { track.scrollBy({ left: -320, behavior: 'smooth' }); });
-        if (right) right.addEventListener('click', function () { track.scrollBy({ left: 320, behavior: 'smooth' }); });
-
-        console.info('[Sportlink] Prime fallback cards injected (prime.js did not populate the track).');
-      }, 900);
-    });
   </script>
 
   <!-- ====== TELEGRAM POPUP CSS ====== -->
