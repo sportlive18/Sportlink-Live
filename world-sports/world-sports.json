@@ -1,28 +1,10 @@
 {
-  "timestamp": "2026-10-26T23:45:50.897532",
-  "total_matches": 2,
-  "live_count": 1,
+  "timestamp": "2026-10-26T23:50:53.461384",
+  "total_matches": 1,
+  "live_count": 0,
   "upcoming_count": 1,
   "completed_count": 0,
   "matches": [
-    {
-      "title": "Sevilla vs CA Osasuna",
-      "teams": "Sevilla vs CA Osasuna",
-      "league": "LALIGA 2026-27",
-      "sport": "cricket",
-      "status": "live",
-      "runtime": "00h 00m 00s",
-      "viewers": "575",
-      "viewers_type": "Watching",
-      "servers": null,
-      "date": null,
-      "time": null,
-      "match_url": "live/sevilla-vs-ca-osasuna-1243",
-      "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247667_53004_SEV_OSN_FC-Web.png",
-      "match_id": "1243",
-      "server_urls": [],
-      "last_updated": "2026-10-26T23:45:50.579369"
-    },
     {
       "title": "South Africa vs Australia 3rd Test",
       "teams": "South Africa vs Australia 3rd Test",
@@ -39,7 +21,7 @@
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "match_id": "1102",
       "server_urls": [],
-      "last_updated": "2026-10-26T23:45:50.897015"
+      "last_updated": "2026-10-26T23:50:53.460921"
     }
   ]
 }
