@@ -1,32 +1,39 @@
-name: Fetch Sportzfy Data & Generate Pages
+name: Scrape World Sports
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch:
+    - cron: "*/5 * * * *"      # every 5 min — adjust as you like
+  workflow_dispatch:            # allow manual run
+
+permissions:
+  contents: write               # needed to commit output back
 
 jobs:
-  fetch-and-generate:
+  scrape:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"          # caches ~/.cache/pip between runs
 
-    - name: Fetch external JSON and generate pages
-      run: python fetch_and_generate.py
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Commit and push changes
-      run: |
-        git config --global user.name 'sportlive18'
-        git config --global user.email '271363488+sportlive18@users.noreply.github.com'
-        git add world-sports/
-        git add api/
-        git diff --staged --quiet || (git commit -m "Auto-update: Sportzfy pages $(date +'%Y-%m-%d %H:%M:%S')" && git push)
+      - name: Run scraper
+        run: python fetch_and_generate.py
+
+      - name: Commit & push updated JSON
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add api/world-sports.json world-sports/world-sports.json
+          git diff --staged --quiet || git commit -m "chore: update world-sports.json"
+          git push
