@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-  <title>Sportlink</title>
+  <title>Sportlink - India vs New Zealand Live</title>
+  <link rel="icon" href="https://sportlink10-ajp.pages.dev/sportlink.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://sportlink10-ajp.pages.dev/sportlink.png">
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
    
@@ -98,12 +100,12 @@
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background: #000000;
     }
 
-    /* ====== WHATSAPP PROMO STRIP ====== */
+    /* ====== TELEGRAM PROMO STRIP ====== */
     .wa-strip {
       width: 100%;
-      background: #0b1210;
-      border-top: 1px solid rgba(37, 211, 102, 0.18);
-      border-bottom: 1px solid rgba(37, 211, 102, 0.18);
+      background: #09101d;
+      border-top: 1px solid rgba(0, 136, 204, 0.18);
+      border-bottom: 1px solid rgba(0, 136, 204, 0.18);
       padding: clamp(10px, 1.8vh, 16px) clamp(14px, 3vw, 32px);
       display: flex;
       align-items: center;
@@ -115,8 +117,8 @@
       width: clamp(32px, 4.5vw, 44px);
       height: clamp(32px, 4.5vw, 44px);
       border-radius: 50%;
-      background: rgba(37, 211, 102, 0.12);
-      border: 1px solid rgba(37, 211, 102, 0.3);
+      background: rgba(0, 136, 204, 0.12);
+      border: 1px solid rgba(0, 136, 204, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -148,8 +150,8 @@
 
     .wa-strip .strip-cta {
       background: transparent;
-      color: #25D366;
-      border: 1.5px solid #25D366;
+      color: #0088cc;
+      border: 1.5px solid #0088cc;
       padding: clamp(7px, 1.1vh, 11px) clamp(14px, 2.2vw, 22px);
       border-radius: 30px;
       font-weight: 700;
@@ -163,9 +165,9 @@
     }
 
     .wa-strip .strip-cta:hover {
-      background: #25D366;
-      color: #06110a;
-      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.25);
+      background: #0088cc;
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 136, 204, 0.25);
     }
 
     .wa-strip .strip-close {
@@ -234,10 +236,10 @@
 
     .tab-btn .material-icons { font-size: clamp(1.6rem, 2.2vw, 2.4rem); }
     .tab-btn:hover { color: #ffffff; background: rgba(255, 255, 255, 0.03); }
-    .tab-btn.active { color: #ffffff; border-bottom-color: #4fc3f7; background: rgba(79, 195, 247, 0.06); }
-    .tab-btn.active .material-icons { color: #4fc3f7; }
-    .tab-btn[data-tab="channels"].active { border-bottom-color: #4fc3f7; color: #4fc3f7; }
-    .tab-btn[data-tab="channels"].active .material-icons { color: #4fc3f7; }
+    .tab-btn.active { color: #ffffff; border-bottom-color: #38bdf8; background: rgba(79, 195, 247, 0.06); }
+    .tab-btn.active .material-icons { color: #38bdf8; }
+    .tab-btn[data-tab="channels"].active { border-bottom-color: #38bdf8; color: #38bdf8; }
+    .tab-btn[data-tab="channels"].active .material-icons { color: #38bdf8; }
 
     .tab-content { display: none; flex: 1; min-height: 0; background: #000000; width: 100%; }
     .tab-content.active { display: flex; flex-direction: column; width: 100%; }
@@ -283,11 +285,11 @@
       justify-content: center;
       font-weight: 700;
       font-size: clamp(16px, 2vw, 24px);
-      color: #4fc3f7;
+      color: #38bdf8;
       transition: all 0.3s ease;
     }
 
-    .channel-card:hover .icon { border-color: #4fc3f7; box-shadow: 0 0 30px rgba(79, 195, 247, 0.1); }
+    .channel-card:hover .icon { border-color: #38bdf8; box-shadow: 0 0 30px rgba(79, 195, 247, 0.1); }
     .channel-card .name { font-weight: 700; font-size: clamp(0.9rem, 1.2vw, 1.2rem); color: #f0f2f5; letter-spacing: 0.01em; }
 
     .channel-card .badge {
@@ -300,8 +302,8 @@
       font-weight: 500;
     }
 
-    .channel-card.active { border-color: #4fc3f7; box-shadow: 0 0 40px rgba(79, 195, 247, 0.06); background: #0f1923; }
-    .channel-card.active .icon { border-color: #4fc3f7; box-shadow: 0 0 30px rgba(79, 195, 247, 0.15); background: rgba(79, 195, 247, 0.08); }
+    .channel-card.active { border-color: #38bdf8; box-shadow: 0 0 40px rgba(79, 195, 247, 0.06); background: #0f1923; }
+    .channel-card.active .icon { border-color: #38bdf8; box-shadow: 0 0 30px rgba(79, 195, 247, 0.15); background: rgba(79, 195, 247, 0.08); }
 
     #waOverlay {
       position: fixed;
@@ -378,7 +380,7 @@
     }
 
     #joinNow {
-      background: linear-gradient(135deg, #4fc3f7, #2196f3);
+      background: linear-gradient(135deg, #38bdf8, #2196f3);
       color: #ffffff;
       box-shadow: 0 6px 24px rgba(79, 195, 247, 0.25);
     }
@@ -472,7 +474,7 @@
       <iframe src="https://sportlink-json.pages.dev/ios?url=https://telegram-sportlink10.lovable.app/api/proxy?u=https://allinonereborn2.online/sony-new/playlists/sony_ten1_hd.m3u8" allowfullscreen loading="lazy" title="Live Match" allow="encrypted-media; fullscreen; autoplay"></iframe>
     </div>
 
-    <!-- ====== WHATSAPP PROMO STRIP ====== -->
+    <!-- ====== TELEGRAM PROMO STRIP ====== -->
     <div class="wa-strip" id="waStrip">
       <div class="strip-icon">
         <svg viewBox="0 0 24 24" fill="#0088cc" width="20" height="20">
@@ -520,7 +522,7 @@
 
   <script>
     (function() {
-      const WHATSAPP_LINK = 'https://t.me/sportlink10';
+      const TELEGRAM_LINK = 'https://t.me/sportlink10';
 
       const channels = [
         { name: 'Hindi', url: 'https://sportlink-json.pages.dev/ios?url=https://telegram-sportlink10.lovable.app/api/proxy?u=https://allinonereborn2.online/sony-new/playlists/sony_ten3_hd.m3u8', logo: 'HN' },
@@ -528,6 +530,11 @@
         { name: 'Tamil', url: 'https://sportlink-json.pages.dev/ios?url=https://telegram-sportlink10.lovable.app/api/proxy?u=https://allinonereborn2.online/sony-new/playlists/sony_ten4_hd.m3u8', logo: 'TAM' },
         { name: 'Telugu', url: 'https://sportlink-json.pages.dev/ios?url=https://telegram-sportlink10.lovable.app/api/proxy?u=https://allinonereborn2.online/sony-new/playlists/sony_ten4.m3u8', logo: 'TEL' },
         { name: 'Kanada', url: 'https://sportlink10-ajp.pages.dev/cc?id=3585', logo: 'KAN' },
+        { name: 'Hindi2', url: 'https://sportlink10-ajp.pages.dev/cc?id=892', logo: 'HIN2' },
+        { name: 'English2', url: 'https://sportlink10-ajp.pages.dev/cc?id=162', logo: 'ENG2'},
+         { name: 'Hindi2', url: 'https://sportlink10-ajp.pages.dev/cc?id=892', logo: 'HIN2' },
+        { name: 'Telugu2', url: 'https://sportlink10-ajp.pages.dev/cc?id=1773', logo: 'TEL2'},
+        { name: 'Tamil2', url: 'https://sportlink10-ajp.pages.dev/cc?id=3514', logo: 'Tam2'},
       ];
 
       const grid = document.getElementById('channelsGrid');
@@ -570,7 +577,7 @@
       }, 3000);
 
       document.getElementById('joinNow').onclick = function() {
-        window.open(WHATSAPP_LINK, '_blank');
+        window.open(TELEGRAM_LINK, '_blank');
         waOverlay.classList.remove('show');
       };
 
@@ -586,7 +593,7 @@
 
       const waStrip = document.getElementById('waStrip');
       document.getElementById('stripJoinBtn').addEventListener('click', function() {
-        window.open(WHATSAPP_LINK, '_blank');
+        window.open(TELEGRAM_LINK, '_blank');
       });
       document.getElementById('stripCloseBtn').addEventListener('click', function() {
         waStrip.style.display = 'none';
@@ -596,6 +603,5 @@
   </script>
 
   <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
-
 </body>
 </html>
