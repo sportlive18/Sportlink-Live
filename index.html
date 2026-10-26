@@ -889,6 +889,158 @@
       }
     }
 
+    /* ---------- FOOTER ---------- */
+    footer {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      background: linear-gradient(180deg, #0b0d0f 0%, #08090b 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem) 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 4rem);
+      padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .footer-brand-col .logo {
+      position: static;
+      transform: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: clamp(0.6rem, 1.5vw, 1rem);
+      text-decoration: none;
+    }
+
+    .footer-brand-col .logo:hover {
+      transform: none;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+      animation: livePulse 1.6s ease-in-out infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.8); }
+    }
+
+    .footer-brand-col p {
+      font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.45);
+      max-width: 42ch;
+      margin-bottom: clamp(0.9rem, 2vw, 1.4rem);
+    }
+
+    .footer-telegram-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: clamp(0.55rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+      background: rgba(0, 136, 204, 0.12);
+      border: 1px solid rgba(0, 136, 204, 0.35);
+      color: #4fc3f7;
+      border-radius: 40px;
+      font-size: clamp(0.75rem, 1vw, 0.85rem);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .footer-telegram-btn .material-icons {
+      font-size: 1.05em;
+    }
+
+    .footer-telegram-btn:hover {
+      background: rgba(0, 136, 204, 0.22);
+      border-color: rgba(0, 136, 204, 0.6);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 136, 204, 0.25);
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(0.5rem, 1vw, 0.8rem);
+    }
+
+    .footer-col h4 {
+      font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--golden);
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      font-size: clamp(0.78rem, 1.05vw, 0.88rem);
+      transition: color 0.25s ease, transform 0.25s ease;
+      width: fit-content;
+    }
+
+    .footer-col a:hover {
+      color: var(--golden);
+      transform: translateX(3px);
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding: clamp(1rem, 2vw, 1.4rem) 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      font-size: clamp(0.68rem, 0.9vw, 0.78rem);
+      color: rgba(255, 255, 255, 0.32);
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-brand-col {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+      }
+      .footer-bottom {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
     /* ============================================================ */
     /* ========== RESPONSIVE ========== */
     /* ============================================================ */
@@ -1311,6 +1463,42 @@
     <div id="videoSectionContainer"></div>
   </main>
 
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="#top" class="logo">
+          <span class="sport">SPORT</span><span class="link">LINK</span>
+          <span class="live-dot"></span>
+        </a>
+        <p>Your premier destination for high-speed, live sports streaming. Watch cricket, major tournaments, and global events free on SPORTLINK.</p>
+        <a href="https://t.me/sportlink10" class="footer-telegram-btn" target="_blank" rel="noopener noreferrer">
+          <span class="material-icons">send</span> Join Official Telegram
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Watch Live</h4>
+        <a href="#willowSection">Willow Cricbuzz</a>
+        <a href="#fancodeSection">FanCode Matches</a>
+        <a href="#primeSection">Prime Video Sports</a>
+        <a href="#worldSportsSection">World Sports</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>SPORTLINK</h4>
+        <a href="https://t.me/sportlink10" target="_blank" rel="noopener noreferrer">Telegram Channel</a>
+        <a href="#primeSection">Prime Video Sports</a>
+        <a href="https://t.me/sportlink10" target="_blank" rel="noopener noreferrer">Support &amp; Updates</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="current-year"></span> SPORTLINK · All rights reserved.</span>
+      <span>Ultra Low Latency Streaming Platform</span>
+    </div>
+  </footer>
+
   <!-- ====== SECTION SCRIPTS ====== -->
   <script src="/willow/willow-live.js"></script>
   <script src="/fancode/fancode.js"></script>
@@ -1355,8 +1543,8 @@
       }
     });
 
-    // ====== SMOOTH SCROLL FOR NAV LINKS ======
-    document.querySelectorAll('a.nav-scroll').forEach(function (link) {
+    // ====== SMOOTH SCROLL FOR NAV LINKS (header, mobile menu, footer) ======
+    document.querySelectorAll('a.nav-scroll, footer a[href^="#"]').forEach(function (link) {
       link.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href && href.startsWith('#')) {
@@ -1474,6 +1662,10 @@
           });
       }
     });
+
+    // ====== FOOTER YEAR ======
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
   </script>
 
   <!-- ====== TELEGRAM POPUP CSS ====== -->
