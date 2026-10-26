@@ -1,14 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-  <title>England Vs Pakistan</title>
+  <title>Sportlink</title>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
    
   <style>
-    /* ----- RESET & FULLSCREEN BLACK BACKGROUND ----- */
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +18,6 @@
       width: 100%;
       background: #000000;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      /* FIX: allow vertical scrolling on desktop */
       overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
@@ -31,7 +29,6 @@
       min-height: 100dvh;
     }
 
-    /* ----- HEADER (logo centered, with white outline) ----- */
     .header {
       position: fixed;
       top: 0;
@@ -69,25 +66,12 @@
       align-items: center;
       gap: 3px;
     }
-    .logo .match {
-      color: #7dffb3;
-      text-shadow: 0 0 60px rgba(125, 255, 179, 0.15);
-    }
-    .logo .dekho {
-      color: #ffffff;
-      text-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-    }
-    .logo .dot {
-      color: #7dffb3;
-      font-size: 0.35em;
-      margin-left: 0.05em;
-      opacity: 0.5;
-    }
+    .logo .sport { color: #f5c518; font-weight: 800; text-shadow: 0 0 30px rgba(245,197,24,0.3); }
+    .logo .link { color: #ffffff; font-weight: 700; }
+    .logo .dot { color: #f5c518; font-size: 0.35em; margin-left: 0.05em; opacity: 0.5; }
 
-    /* ----- MAIN CONTENT ----- */
     .main {
       margin-top: clamp(60px, 8vh, 80px);
-      /* FIX: use min-height instead of fixed height so content can grow and scroll */
       min-height: calc(100vh - clamp(60px, 8vh, 80px));
       min-height: calc(100dvh - clamp(60px, 8vh, 80px));
       display: flex;
@@ -96,7 +80,6 @@
       width: 100%;
     }
 
-    /* ----- 16:9 PLAYER ----- */
     .player-wrapper {
       width: 100%;
       background: #000000;
@@ -104,30 +87,115 @@
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      /* FIX: cap the player height on desktop so it doesn't consume the whole screen */
       max-height: 70vh;
     }
 
-    /* On wider screens, constrain the player using aspect-ratio + max-height */
     @media (min-width: 900px) {
-      .player-wrapper {
-        padding-bottom: 0;
-        height: min(56.25vw, 70vh);
-        max-height: 70vh;
-      }
+      .player-wrapper { padding-bottom: 0; height: min(56.25vw, 70vh); max-height: 70vh; }
     }
 
     .player-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: #000000;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background: #000000;
     }
 
-    /* ----- TABS ----- */
+    /* ====== WHATSAPP PROMO STRIP ====== */
+    .wa-strip {
+      width: 100%;
+      background: #0b1210;
+      border-top: 1px solid rgba(37, 211, 102, 0.18);
+      border-bottom: 1px solid rgba(37, 211, 102, 0.18);
+      padding: clamp(10px, 1.8vh, 16px) clamp(14px, 3vw, 32px);
+      display: flex;
+      align-items: center;
+      gap: clamp(10px, 2vw, 18px);
+      flex-shrink: 0;
+    }
+
+    .wa-strip .strip-icon {
+      width: clamp(32px, 4.5vw, 44px);
+      height: clamp(32px, 4.5vw, 44px);
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .wa-strip .strip-icon svg { width: clamp(16px, 2.2vw, 22px); height: clamp(16px, 2.2vw, 22px); }
+
+    .wa-strip .strip-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+
+    .wa-strip .strip-text .t1 {
+      font-size: clamp(0.78rem, 1.15vw, 0.98rem);
+      font-weight: 700;
+      color: #f0f2f5;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .wa-strip .strip-text .t2 {
+      font-size: clamp(0.68rem, 0.95vw, 0.82rem);
+      color: #7f9088;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .wa-strip .strip-cta {
+      background: transparent;
+      color: #25D366;
+      border: 1.5px solid #25D366;
+      padding: clamp(7px, 1.1vh, 11px) clamp(14px, 2.2vw, 22px);
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: clamp(0.7rem, 1vw, 0.88rem);
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.01em;
+      transition: all 0.2s ease;
+    }
+
+    .wa-strip .strip-cta:hover {
+      background: #25D366;
+      color: #06110a;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.25);
+    }
+
+    .wa-strip .strip-close {
+      background: transparent;
+      border: none;
+      color: #5a675f;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .wa-strip .strip-close:hover { background: rgba(255, 255, 255, 0.06); color: #f0f2f5; }
+    .wa-strip .strip-close .material-icons { font-size: 18px; }
+
+    @media (max-width: 600px) {
+      .wa-strip { padding: 9px 10px; gap: 8px; }
+      .wa-strip .strip-text .t1 { font-size: 0.72rem; }
+      .wa-strip .strip-text .t2 { display: none; }
+      .wa-strip .strip-cta { padding: 6px 12px; font-size: 0.65rem; }
+      .wa-strip .strip-icon { width: 30px; height: 30px; }
+      .wa-strip .strip-close { width: 24px; height: 24px; }
+      .wa-strip .strip-close .material-icons { font-size: 16px; }
+    }
+
     .tabs {
       display: flex;
       gap: 0;
@@ -164,57 +232,16 @@
       min-height: clamp(60px, 8vh, 90px);
     }
 
-    .tab-btn .material-icons {
-      font-size: clamp(1.6rem, 2.2vw, 2.4rem);
-    }
+    .tab-btn .material-icons { font-size: clamp(1.6rem, 2.2vw, 2.4rem); }
+    .tab-btn:hover { color: #ffffff; background: rgba(255, 255, 255, 0.03); }
+    .tab-btn.active { color: #ffffff; border-bottom-color: #4fc3f7; background: rgba(79, 195, 247, 0.06); }
+    .tab-btn.active .material-icons { color: #4fc3f7; }
+    .tab-btn[data-tab="channels"].active { border-bottom-color: #4fc3f7; color: #4fc3f7; }
+    .tab-btn[data-tab="channels"].active .material-icons { color: #4fc3f7; }
 
-    .tab-btn:hover {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.03);
-    }
+    .tab-content { display: none; flex: 1; min-height: 0; background: #000000; width: 100%; }
+    .tab-content.active { display: flex; flex-direction: column; width: 100%; }
 
-    .tab-btn.active {
-      color: #ffffff;
-      border-bottom-color: #4fc3f7;
-      background: rgba(79, 195, 247, 0.06);
-    }
-
-    .tab-btn.active .material-icons {
-      color: #4fc3f7;
-    }
-
-    .tab-btn[data-tab="channels"].active {
-      border-bottom-color: #4fc3f7;
-      color: #4fc3f7;
-    }
-    .tab-btn[data-tab="channels"].active .material-icons {
-      color: #4fc3f7;
-    }
-
-    .tab-btn[data-tab="chat"].active {
-      border-bottom-color: #ce93d8;
-      color: #ce93d8;
-    }
-    .tab-btn[data-tab="chat"].active .material-icons {
-      color: #ce93d8;
-    }
-
-    /* ----- TAB CONTENT ----- */
-    .tab-content {
-      display: none;
-      flex: 1;
-      min-height: 0;
-      background: #000000;
-      width: 100%;
-    }
-
-    .tab-content.active {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    /* ----- CHANNELS TAB ----- */
     .channels-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -226,11 +253,7 @@
       max-width: 100%;
     }
 
-    @media (min-width: 900px) {
-      .channels-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
+    @media (min-width: 900px) { .channels-grid { grid-template-columns: repeat(4, 1fr); } }
 
     .channel-card {
       background: #121821;
@@ -247,11 +270,7 @@
       width: 100%;
     }
 
-    .channel-card:hover {
-      border-color: rgba(79, 195, 247, 0.3);
-      transform: translateY(-3px);
-      background: #1a2330;
-    }
+    .channel-card:hover { border-color: rgba(79, 195, 247, 0.3); transform: translateY(-3px); background: #1a2330; }
 
     .channel-card .icon {
       width: clamp(48px, 6vw, 72px);
@@ -268,17 +287,8 @@
       transition: all 0.3s ease;
     }
 
-    .channel-card:hover .icon {
-      border-color: #4fc3f7;
-      box-shadow: 0 0 30px rgba(79, 195, 247, 0.1);
-    }
-
-    .channel-card .name {
-      font-weight: 700;
-      font-size: clamp(0.9rem, 1.2vw, 1.2rem);
-      color: #f0f2f5;
-      letter-spacing: 0.01em;
-    }
+    .channel-card:hover .icon { border-color: #4fc3f7; box-shadow: 0 0 30px rgba(79, 195, 247, 0.1); }
+    .channel-card .name { font-weight: 700; font-size: clamp(0.9rem, 1.2vw, 1.2rem); color: #f0f2f5; letter-spacing: 0.01em; }
 
     .channel-card .badge {
       font-size: 0.65rem;
@@ -290,36 +300,9 @@
       font-weight: 500;
     }
 
-    .channel-card.active {
-      border-color: #4fc3f7;
-      box-shadow: 0 0 40px rgba(79, 195, 247, 0.06);
-      background: #0f1923;
-    }
+    .channel-card.active { border-color: #4fc3f7; box-shadow: 0 0 40px rgba(79, 195, 247, 0.06); background: #0f1923; }
+    .channel-card.active .icon { border-color: #4fc3f7; box-shadow: 0 0 30px rgba(79, 195, 247, 0.15); background: rgba(79, 195, 247, 0.08); }
 
-    .channel-card.active .icon {
-      border-color: #4fc3f7;
-      box-shadow: 0 0 30px rgba(79, 195, 247, 0.15);
-      background: rgba(79, 195, 247, 0.08);
-    }
-
-    /* ----- CHAT TAB ----- */
-    .chat-container {
-      flex: 1;
-      width: 100%;
-      /* FIX: give chat a minimum height so it's visible after scrolling */
-      min-height: 70vh;
-      background: #0f141c;
-    }
-
-    .chat-container iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 70vh;
-      border: none;
-      display: block;
-    }
-
-    /* ====== TELEGRAM POPUP ====== */
     #waOverlay {
       position: fixed;
       inset: 0;
@@ -334,18 +317,16 @@
       animation: fadeInPopup 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    #waOverlay.show {
-      display: flex;
-    }
+    #waOverlay.show { display: flex; }
 
     #waCard {
       width: 100%;
       max-width: 400px;
       background: linear-gradient(160deg, #121821, #0a0c0f);
-      border: 1px solid rgba(0, 136, 204, 0.25);
+      border: 1px solid rgba(79, 195, 247, 0.15);
       border-radius: 24px;
       padding: 36px 28px 28px;
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(0, 136, 204, 0.06);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(79, 195, 247, 0.03);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -354,32 +335,20 @@
     #waCard::before {
       content: "";
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 20%, rgba(0, 136, 204, 0.06), transparent 60%);
+      top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 20%, rgba(79, 195, 247, 0.04), transparent 60%);
       pointer-events: none;
     }
 
     #waIcon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
       background: linear-gradient(135deg, #0088cc, #006aaa);
       box-shadow: 0 0 40px rgba(0, 136, 204, 0.3);
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
     }
 
-    #waIcon svg {
-      width: 36px;
-      height: 36px;
-    }
+    #waIcon svg { width: 36px; height: 36px; }
 
     #waCard h2 {
       margin: 0 0 8px;
@@ -387,8 +356,7 @@
       font-weight: 700;
       color: #ffffff;
       font-family: 'Inter', system-ui, sans-serif;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       letter-spacing: -0.01em;
     }
 
@@ -397,28 +365,16 @@
       color: #8e9baf;
       font-size: clamp(0.9rem, 1.2vw, 1.05rem);
       line-height: 1.6;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
     }
 
-    .waBtns {
-      display: flex;
-      gap: 12px;
-      position: relative;
-      z-index: 1;
-    }
+    .waBtns { display: flex; gap: 12px; position: relative; z-index: 1; }
 
     .waBtn {
-      flex: 1;
-      height: 48px;
-      border-radius: 40px;
-      font-weight: 700;
+      flex: 1; height: 48px; border-radius: 40px; font-weight: 700;
       font-size: clamp(0.85rem, 1vw, 1rem);
-      cursor: pointer;
-      transition: all 0.25s ease;
-      border: none;
-      font-family: 'Inter', sans-serif;
-      letter-spacing: 0.01em;
+      cursor: pointer; transition: all 0.25s ease; border: none;
+      font-family: 'Inter', sans-serif; letter-spacing: 0.01em;
     }
 
     #joinNow {
@@ -427,10 +383,7 @@
       box-shadow: 0 6px 24px rgba(79, 195, 247, 0.25);
     }
 
-    #joinNow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(79, 195, 247, 0.35);
-    }
+    #joinNow:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(79, 195, 247, 0.35); }
 
     #joinedBtn {
       background: rgba(255, 255, 255, 0.05);
@@ -438,250 +391,117 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    #joinedBtn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-    }
+    #joinedBtn:hover { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
 
     @keyframes fadeInPopup {
-      from {
-        opacity: 0;
-        transform: scale(0.95) translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
+      from { opacity: 0; transform: scale(0.95) translateY(12px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
     @media (max-width: 480px) {
-      #waCard {
-        padding: 24px 18px 20px;
-        border-radius: 20px;
-      }
-      #waIcon {
-        width: 60px;
-        height: 60px;
-      }
-      #waIcon svg {
-        width: 30px;
-        height: 30px;
-      }
-      #waCard h2 {
-        font-size: 1.2rem;
-      }
-      #waCard p {
-        font-size: 0.85rem;
-        margin-bottom: 18px;
-      }
-      .waBtn {
-        height: 42px;
-        font-size: 0.8rem;
-      }
+      #waCard { padding: 24px 18px 20px; border-radius: 20px; }
+      #waIcon { width: 60px; height: 60px; }
+      #waIcon svg { width: 30px; height: 30px; }
+      #waCard h2 { font-size: 1.2rem; }
+      #waCard p { font-size: 0.85rem; margin-bottom: 18px; }
+      .waBtn { height: 42px; font-size: 0.8rem; }
     }
 
-    /* ----- RESPONSIVE ----- */
     @media (max-width: 600px) {
-      .header {
-        padding: 10px 12px;
-        min-height: 48px;
-      }
-      .header::after {
-        left: 5%;
-        right: 5%;
-      }
-      .logo {
-        font-size: clamp(1rem, 4.5vw, 1.4rem);
-        gap: 1px;
-      }
-      .main {
-        margin-top: 48px;
-        min-height: calc(100vh - 48px);
-        min-height: calc(100dvh - 48px);
-      }
-      .tabs {
-        min-height: 50px;
-        top: 48px;
-      }
-      .tab-btn {
-        padding: 10px 12px;
-        font-size: 0.75rem;
-        gap: 6px;
-        min-height: 50px;
-      }
-      .tab-btn .material-icons {
-        font-size: 1rem;
-      }
-      .channels-grid {
-        gap: 8px;
-        padding: 10px;
-      }
-      .channel-card {
-        padding: 14px 10px;
-        border-radius: 12px;
-      }
-      .channel-card .icon {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-      }
-      .channel-card .name {
-        font-size: 0.75rem;
-      }
+      .header { padding: 10px 12px; min-height: 48px; }
+      .header::after { left: 5%; right: 5%; }
+      .logo { font-size: clamp(1rem, 4.5vw, 1.4rem); gap: 1px; }
+      .main { margin-top: 48px; min-height: calc(100vh - 48px); min-height: calc(100dvh - 48px); }
+      .tabs { min-height: 50px; top: 48px; }
+      .tab-btn { padding: 10px 12px; font-size: 0.75rem; gap: 6px; min-height: 50px; }
+      .tab-btn .material-icons { font-size: 1rem; }
+      .channels-grid { gap: 8px; padding: 10px; }
+      .channel-card { padding: 14px 10px; border-radius: 12px; }
+      .channel-card .icon { width: 40px; height: 40px; font-size: 14px; }
+      .channel-card .name { font-size: 0.75rem; }
     }
 
     @media (orientation: landscape) and (max-height: 500px) {
-      .header {
-        padding: 6px 16px;
-        min-height: 40px;
-      }
-      .logo {
-        font-size: clamp(0.8rem, 2.5vh, 1.2rem);
-      }
-      .main {
-        margin-top: 40px;
-        min-height: calc(100vh - 40px);
-        min-height: calc(100dvh - 40px);
-      }
-      .tabs {
-        min-height: 42px;
-        top: 40px;
-      }
-      .tab-btn {
-        padding: 6px 16px;
-        font-size: 0.7rem;
-        gap: 4px;
-        min-height: 42px;
-      }
-      .tab-btn .material-icons {
-        font-size: 0.9rem;
-      }
-      .player-wrapper {
-        padding-bottom: 50%;
-      }
-      .channels-grid {
-        gap: 6px;
-        padding: 8px 12px;
-      }
-      .channel-card {
-        padding: 10px 8px;
-        border-radius: 10px;
-      }
-      .channel-card .icon {
-        width: 32px;
-        height: 32px;
-        font-size: 11px;
-      }
-      .channel-card .name {
-        font-size: 0.65rem;
-      }
+      .header { padding: 6px 16px; min-height: 40px; }
+      .logo { font-size: clamp(0.8rem, 2.5vh, 1.2rem); }
+      .main { margin-top: 40px; min-height: calc(100vh - 40px); min-height: calc(100dvh - 40px); }
+      .tabs { min-height: 42px; top: 40px; }
+      .tab-btn { padding: 6px 16px; font-size: 0.7rem; gap: 4px; min-height: 42px; }
+      .tab-btn .material-icons { font-size: 0.9rem; }
+      .player-wrapper { padding-bottom: 50%; }
+      .wa-strip { padding: 6px 12px; }
+      .channels-grid { gap: 6px; padding: 8px 12px; }
+      .channel-card { padding: 10px 8px; border-radius: 10px; }
+      .channel-card .icon { width: 32px; height: 32px; font-size: 11px; }
+      .channel-card .name { font-size: 0.65rem; }
     }
 
     @media (min-width: 1200px) {
-      .header {
-        padding: 28px 40px;
-        min-height: 90px;
-      }
-      .header::after {
-        left: 15%;
-        right: 15%;
-      }
-      .logo {
-        font-size: 2.8rem;
-      }
-      .main {
-        margin-top: 90px;
-        min-height: calc(100vh - 90px);
-        min-height: calc(100dvh - 90px);
-      }
-      .tabs {
-        min-height: 100px;
-        top: 90px;
-      }
-      .tab-btn {
-        padding: 28px 56px;
-        font-size: 1.6rem;
-        gap: 18px;
-        min-height: 100px;
-      }
-      .tab-btn .material-icons {
-        font-size: 2.4rem;
-      }
-      .channels-grid {
-        gap: 24px;
-        padding: 32px 48px;
-      }
-      .channel-card {
-        padding: 32px 28px;
-        border-radius: 20px;
-      }
-      .channel-card .icon {
-        width: 80px;
-        height: 80px;
-        font-size: 28px;
-      }
-      .channel-card .name {
-        font-size: 1.4rem;
-      }
+      .header { padding: 28px 40px; min-height: 90px; }
+      .header::after { left: 15%; right: 15%; }
+      .logo { font-size: 2.8rem; }
+      .main { margin-top: 90px; min-height: calc(100vh - 90px); min-height: calc(100dvh - 90px); }
+      .tabs { min-height: 100px; top: 90px; }
+      .tab-btn { padding: 28px 56px; font-size: 1.6rem; gap: 18px; min-height: 100px; }
+      .tab-btn .material-icons { font-size: 2.4rem; }
+      .channels-grid { gap: 24px; padding: 32px 48px; }
+      .channel-card { padding: 32px 28px; border-radius: 20px; }
+      .channel-card .icon { width: 80px; height: 80px; font-size: 28px; }
+      .channel-card .name { font-size: 1.4rem; }
     }
 
-    /* ----- ANIMATION ----- */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .tab-content.active {
-      animation: fadeIn 0.35s ease;
-    }
+    .tab-content.active { animation: fadeIn 0.35s ease; }
   </style>
 </head>
 <body>
 
-  <!-- HEADER with centered logo -->
   <header class="header">
     <a href="/" class="logo" style="text-decoration:none;">
       <span class="sport">Sport</span><span class="link">link</span><span class="dot">•</span>
     </a>
   </header>
 
-  <!-- MAIN CONTENT -->
   <div class="main">
 
-    <!-- 16:9 PLAYER (full width, just below header) -->
     <div class="player-wrapper">
-      <iframe src="https://fifa-world-cup-live.pages.dev/lg1" allowfullscreen loading="lazy" title="Live Match" allow="encrypted-media; fullscreen; autoplay"></iframe>
+      <iframe src="https://sportlink-json.pages.dev/ios?url=https://telegram-sportlink10.lovable.app/api/proxy?u=https://allinonereborn2.online/sony-new/playlists/sony_ten1_hd.m3u8" allowfullscreen loading="lazy" title="Live Match" allow="encrypted-media; fullscreen; autoplay"></iframe>
     </div>
 
-    <!-- TABS with Google Material Icons -->
+    <!-- ====== WHATSAPP PROMO STRIP ====== -->
+    <div class="wa-strip" id="waStrip">
+      <div class="strip-icon">
+        <svg viewBox="0 0 24 24" fill="#0088cc" width="20" height="20">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 13.63l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.462c.537-.194 1.006.131.833.93z"/>
+        </svg>
+      </div>
+      <div class="strip-text">
+        <div class="t1">Join Our Telegram Channel for Live Match Links &amp; Instant Updates</div>
+        <div class="t2">Instant alerts if a stream drops or channels change</div>
+      </div>
+      <button class="strip-cta" id="stripJoinBtn">Join</button>
+      <button class="strip-close" id="stripCloseBtn" aria-label="Dismiss">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+
     <div class="tabs">
       <button class="tab-btn active" data-tab="channels">
         <span class="material-icons">live_tv</span>
         <span>Channels</span>
       </button>
-      <button class="tab-btn" data-tab="chat">
-        <span class="material-icons">chat</span>
-        <span>Live Chat</span>
-      </button>
     </div>
 
-    <!-- TAB 1: Channels -->
     <div class="tab-content active" id="channels">
-      <div class="channels-grid" id="channelsGrid">
-        <!-- injected by JS -->
-      </div>
-    </div>
-
-    <!-- TAB 2: Live Chat -->
-    <div class="tab-content" id="chat">
-      <div class="chat-container">
-        <iframe src="https://live-chat-sportlink.onrender.com" loading="lazy" title="Live Chat" allow="autoplay; encrypted-media" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
-      </div>
+      <div class="channels-grid" id="channelsGrid"></div>
     </div>
 
   </div>
 
-  <!-- ====== TELEGRAM POPUP ====== -->
   <div id="waOverlay">
     <div id="waCard">
       <div id="waIcon">
@@ -690,7 +510,7 @@
         </svg>
       </div>
       <h2>Join Telegram Channel</h2>
-      <p>Get live match links &amp; instant updates on our Telegram channel.</p>
+      <p>Get match links &amp; live updates delivered straight to your phone.</p>
       <div class="waBtns">
         <button class="waBtn" id="joinedBtn">Already Joined</button>
         <button class="waBtn" id="joinNow">Join Now</button>
@@ -700,20 +520,20 @@
 
   <script>
     (function() {
-      // ----- CHANNELS DATA -----
+      const WHATSAPP_LINK = 'https://t.me/sportlink10';
+
       const channels = [
-        { name: 'Server 1', url: 'https://fifa-world-cup-live.pages.dev/lg1', logo: 'S1' },
-        { name: 'Server 2', url: 'https://fifa-world-cup-live.pages.dev/lg2', logo: 'S2' },
-         { name: 'Server 3', url: 'https://fifa-world-cup-live.pages.dev/lg3', logo: 'S3' }
-        
-    
+        { name: 'Premier Sport', url: 'https://sportlink-json.pages.dev/drm?url=https://sportlink-10.lovable.app/api/public/proxy?url=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd&keys=1444f4235529f183f0a5a486befe9cdb:e5e3fec67a1bb3472a2089c8a0a2557f', logo: '1' },
+        { name: 'Bein Sport', url: 'https://sportlink-json.pages.dev/drm?url=https://sportlink-10.lovable.app/api/public/proxy?url=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd&keys=7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e', logo: '2' },
+        { name: 'Fancode Hd', url: 'https://sportlink-json.pages.dev/drm?url=https://sportlink-10.lovable.app/api/public/proxy?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd&keys=82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca', logo: '3' },
+        { name: 'D Sport', url: 'https://sportlink-json.pages.dev/drm?url=https://sportlink-10.lovable.app/api/public/proxy?url=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/x0srg3jjpz/out/v1/f779c49314394d61886d63f58d9d52e4/cenc.mpd&keys=4f4c3a9912ea752e88f4497864a1bc8b:278128004fe8c6ffb2cd2a0c154a241a', logo: '4' },
+        { name: 'Caze Tv', url: 'https://sportlink-json.pages.dev/drm?url=https://sportlink-10.lovable.app/api/public/proxy?url=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/3ynrpdanq2/out/v1/81fd4c26584044d2b1a1cc5b32fa9af0/cenc.mpd&keys=34475edab991ad5e92548aebd710410a:501b209cccd323ac00bf5ac15b406cb4', logo: '5' },
       ];
 
       const grid = document.getElementById('channelsGrid');
       const playerIframe = document.querySelector('.player-wrapper iframe');
       let currentIndex = 0;
 
-      // ----- RENDER CHANNELS -----
       function renderChannels(activeIndex) {
         grid.innerHTML = channels.map((ch, index) => `
           <div class="channel-card ${index === activeIndex ? 'active' : ''}" data-index="${index}">
@@ -731,7 +551,6 @@
         });
       }
 
-      // ----- SWITCH CHANNEL -----
       function switchChannel(index) {
         const ch = channels[index];
         if (!ch) return;
@@ -744,21 +563,6 @@
 
       renderChannels(0);
 
-      // ----- TABS -----
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      const tabContents = document.querySelectorAll('.tab-content');
-
-      tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const target = this.dataset.tab;
-          tabBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          tabContents.forEach(c => c.classList.remove('active'));
-          document.getElementById(target).classList.add('active');
-        });
-      });
-
-      // ====== TELEGRAM POPUP ======
       const waOverlay = document.getElementById('waOverlay');
 
       setTimeout(function() {
@@ -766,7 +570,7 @@
       }, 3000);
 
       document.getElementById('joinNow').onclick = function() {
-        window.open('https://t.me/sportlink10', '_blank');
+        window.open(WHATSAPP_LINK, '_blank');
         waOverlay.classList.remove('show');
       };
 
@@ -780,13 +584,18 @@
         }
       });
 
+      const waStrip = document.getElementById('waStrip');
+      document.getElementById('stripJoinBtn').addEventListener('click', function() {
+        window.open(WHATSAPP_LINK, '_blank');
+      });
+      document.getElementById('stripCloseBtn').addEventListener('click', function() {
+        waStrip.style.display = 'none';
+      });
+
     })();
   </script>
 
-  <!-- Ads Script -->
   <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
 
 </body>
 </html>
-
-     
