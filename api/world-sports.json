@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-26T17:35:55.962537",
+  "timestamp": "2026-10-26T17:40:58.026681",
   "total_matches": 2,
   "live_count": 0,
   "upcoming_count": 2,
@@ -12,7 +12,7 @@
       "sport": "cricket",
       "status": "upcoming",
       "runtime": "00h 00m 00s",
-      "viewers": "513",
+      "viewers": "514",
       "viewers_type": "Waiting",
       "servers": null,
       "date": null,
@@ -21,7 +21,7 @@
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/4247667_53004_SEV_OSN_FC-Web.png",
       "match_id": "1243",
       "server_urls": [],
-      "last_updated": "2026-10-26T17:35:55.961446"
+      "last_updated": "2026-10-26T17:40:58.025916"
     },
     {
       "title": "South Africa vs Australia 3rd Test",
@@ -39,7 +39,7 @@
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "match_id": "1102",
       "server_urls": [],
-      "last_updated": "2026-10-26T17:35:55.962079"
+      "last_updated": "2026-10-26T17:40:58.026374"
     }
   ]
 }
