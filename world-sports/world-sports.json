@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-27T08:15:54.299400",
+  "timestamp": "2026-10-27T08:20:56.729898",
   "total_matches": 4,
   "live_count": 4,
   "upcoming_count": 0,
@@ -12,7 +12,7 @@
       "sport": "cricket",
       "status": "live",
       "runtime": "00h 00m 00s",
-      "viewers": "71",
+      "viewers": "72",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -26,7 +26,7 @@
         "https://alixbd.com/playlistconfig/channel/35.m3u8",
         "https://live.talkoraai.com/match/seg?t=99ycm_3rBQsM-L7EP8lTnSyPhbRltQbPmEzPIQ8JjT9tGmUIW5M9a8LZE3VwVWHQ3-AXm2gydldIiSLel2wmQ6Z1c5421axWoXVzM8jky86sGNUFaA0mOJGrwGpX3gf48S8WYUZKqtde6Uz2Q4yXdo8tSCojPd5wWMfPsyBTCSwUp3P7AkF2sHwAWRpN-76txDslzRp6fCgbQ9L9uY5wzMbqDd3rLLcCQux5_CTptf5VeNOtEQSrWWo20LnASDadFgn-5zXil3nrNv5_3TgZzmnIVfQ"
       ],
-      "last_updated": "2026-10-27T08:15:52.340151"
+      "last_updated": "2026-10-27T08:20:53.700627"
     },
     {
       "title": "Pakistan vs Sri Lanka",
@@ -35,7 +35,7 @@
       "sport": "cricket",
       "status": "live",
       "runtime": "00h 00m 00s",
-      "viewers": "8",
+      "viewers": "9",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -47,7 +47,7 @@
         "https://live.talkoraai.com/match/hls?t=_OxeTdxSpcIeB9pSKuKBLz_DMXlT91P8rujRhN6Zb31_eZpugrVkW8YFjaP0wHwvlpVtuhhoV12iPJsaXK-J9tPT0ZPbH8HxzfmTS3fC1u4z-qK0TMhRfhU-nyToMkZ4FniGiBkgPU_3R6k8W2yhXbkgKD58eX3ROgasJJZspfzbPQg51nZ6Db5BBYj_RHsRka_lafY8ybZ1YLCNeyB9XTA00QKjfmbMCtGzCAmJfW4wgd8I3HruqV3HjjwXIfNM0SM6L34_-FTMen5r",
         "https://live.talkoraai.com/match/hls?t=_OxeTdxSpcIeB9pSKuKBLz_DMXlT91P8rujRhN6Zb31_eZpugrVkW8YFjaP0wHwvlpVtuhhoV12iPJsaXK-J9tPT0ZPbH8HxzfmTS3fC1u4z-qK0TMhRfhU-nyToMkZ4FniGiBkgPU_3R6k8W2yhXbkgKD58eX3ROgasJJZspfzbPQg51nZ6Db5BBYj_RHsRka_lafY8ybZ1YLCNeyB9XTA00QKjfmbMCtGzCAmJfW4wgd8I3HruqV3HjjwXIfNM0SM6L34_-FTMen5r"
       ],
-      "last_updated": "2026-10-27T08:15:52.736493"
+      "last_updated": "2026-10-27T08:20:54.056353"
     },
     {
       "title": "South Africa vs Australia 3rd Test",
@@ -56,7 +56,7 @@
       "sport": "cricket",
       "status": "live",
       "runtime": "00h 00m 00s",
-      "viewers": "522",
+      "viewers": "523",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -67,7 +67,7 @@
       "server_urls": [
         "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8"
       ],
-      "last_updated": "2026-10-27T08:15:53.589500"
+      "last_updated": "2026-10-27T08:20:54.946044"
     },
     {
       "title": "New Zealand A vs India A 1st Unofficial Test",
@@ -76,7 +76,7 @@
       "sport": "cricket",
       "status": "live",
       "runtime": "00h 00m 00s",
-      "viewers": "40",
+      "viewers": "41",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -87,7 +87,7 @@
       "server_urls": [
         "https://alixbd.com/playlistconfig/channel/36.m3u8"
       ],
-      "last_updated": "2026-10-27T08:15:53.960680"
+      "last_updated": "2026-10-27T08:20:55.290541"
     }
   ]
 }
