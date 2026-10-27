@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-27T07:10:57.403407",
+  "timestamp": "2026-10-27T07:15:50.048907",
   "total_matches": 4,
   "live_count": 2,
   "upcoming_count": 2,
@@ -12,7 +12,7 @@
       "sport": "cricket",
       "status": "live",
       "runtime": "00h 00m 00s",
-      "viewers": "6",
+      "viewers": "10",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -21,9 +21,12 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17923949181020x576.jpg",
       "match_id": "1302",
       "server_urls": [
-        "https://alixbd.com/playlistconfig/channel/36.m3u8"
+        "https://live.talkoraai.com/match/hls?t=VvjTrLRWGlfAs1TYxh3FEv1Vk1VR5iYe4aM2sGiyH18CFGcySZsxq4hn7tj1b7EwlzaA-YadqPRasYTx0yIOx7njsy94-QMiVQXi7AjJyU-XwWh7p8XAkPuQvx67ZAJaLBaE7tbxIDBs8KwLGPJ1yrc984bKvCYlMITDu5EcytaY39b7RijdOGggfYT7Ed7rL42jN33w2pefaAaxcWH_x6gL2niyL_ypl3iQqbxehIai0pCflGkQNRuZuDceU3NeWiv6HVzUTNC3eijl",
+        "https://alixbd.com/playlistconfig/channel/36.m3u8",
+        "https://alixbd.com/playlistconfig/channel/35.m3u8",
+        "https://live.talkoraai.com/match/seg?t=99ycm_3rBQsM-L7EP8lTnSyPhbRltQbPmEzPIQ8JjT9tGmUIW5M9a8LZE3VwVWHQ3-AXm2gydldIiSLel2wmQ6Z1c5421axWoXVzM8jky86sGNUFaA0mOJGrwGpX3gf48S8WYUZKqtde6Uz2Q4yXdo8tSCojPd5wWMfPsyBTCSwUp3P7AkF2sHwAWRpN-76txDslzRp6fCgbQ9L9uY5wzMbqDd3rLLcCQux5_CTptf5VeNOtEQSrWWo20LnASDadFgn-5zXil3nrNv5_3TgZzmnIVfQ"
       ],
-      "last_updated": "2026-10-27T07:10:56.687176"
+      "last_updated": "2026-10-27T07:15:49.249157"
     },
     {
       "title": "New Zealand A vs India A 1st Unofficial Test",
@@ -32,7 +35,7 @@
       "sport": "cricket",
       "status": "live",
       "runtime": "00h 00m 00s",
-      "viewers": "26",
+      "viewers": "27",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -43,7 +46,7 @@
       "server_urls": [
         "https://alixbd.com/playlistconfig/channel/36.m3u8"
       ],
-      "last_updated": "2026-10-27T07:10:57.053037"
+      "last_updated": "2026-10-27T07:15:49.712505"
     },
     {
       "title": "Pakistan vs Sri Lanka",
@@ -61,7 +64,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17925776481020x576.jpg",
       "match_id": "1303",
       "server_urls": [],
-      "last_updated": "2026-10-27T07:10:57.402674"
+      "last_updated": "2026-10-27T07:15:50.047880"
     },
     {
       "title": "South Africa vs Australia 3rd Test",
@@ -79,7 +82,7 @@
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "match_id": "1102",
       "server_urls": [],
-      "last_updated": "2026-10-27T07:10:57.403074"
+      "last_updated": "2026-10-27T07:15:50.048406"
     }
   ]
 }
