@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-10-27T05:25:48.889303",
+  "timestamp": "2026-10-27T05:30:57.696792",
   "total_matches": 3,
   "live_count": 0,
   "upcoming_count": 3,
   "completed_count": 0,
   "matches": [
     {
-      "title": "New Zealand vs India",
-      "teams": "New Zealand vs India",
-      "league": "Sports Tournament",
+      "title": "New Zealand vs India 3rd T20I",
+      "teams": "New Zealand vs India 3rd T20I",
+      "league": "India tour of New Zealand 2026",
       "sport": "cricket",
       "status": "upcoming",
       "runtime": "00h 00m 00s",
@@ -17,16 +17,16 @@
       "servers": null,
       "date": null,
       "time": null,
-      "match_url": "live/new-zealand-vs-india-1302",
+      "match_url": "live/new-zealand-vs-india-3rd-t20i-1302",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17923949181020x576.jpg",
       "match_id": "1302",
       "server_urls": [],
-      "last_updated": "2026-10-27T05:25:48.888502"
+      "last_updated": "2026-10-27T05:30:57.695039"
     },
     {
       "title": "Pakistan vs Sri Lanka",
       "teams": "Pakistan vs Sri Lanka",
-      "league": "Sports Tournament",
+      "league": "Pakistan ODI Tri-Series 2026",
       "sport": "cricket",
       "status": "upcoming",
       "runtime": "00h 00m 00s",
@@ -39,7 +39,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17925776481020x576.jpg",
       "match_id": "1303",
       "server_urls": [],
-      "last_updated": "2026-10-27T05:25:48.888865"
+      "last_updated": "2026-10-27T05:30:57.695763"
     },
     {
       "title": "South Africa vs Australia 3rd Test",
@@ -57,7 +57,7 @@
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "match_id": "1102",
       "server_urls": [],
-      "last_updated": "2026-10-27T05:25:48.889087"
+      "last_updated": "2026-10-27T05:30:57.696319"
     }
   ]
 }
