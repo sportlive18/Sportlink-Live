@@ -1447,18 +1447,89 @@
       </div>
     </section>
 
-    <!-- WORLD SPORTS SECTION -->
-    <section class="world-sports-section" id="worldSportsSection">
-      <div class="world-sports-header">
-        <h2 class="world-sports-title">World Sports</h2>
-        <span class="world-sports-badge">Live</span>
-      </div>
-      <div class="world-sports-carousel-wrapper">
-        <button class="world-sports-arrow arrow-left" id="worldSportsArrowLeft" aria-label="Scroll left">&#10094;</button>
-        <div class="world-sports-track" id="worldSportsTrack"></div>
-        <button class="world-sports-arrow arrow-right" id="worldSportsArrowRight" aria-label="Scroll right">&#10095;</button>
-      </div>
-    </section>
+   <!-- ====== WORLD SPORTS SECTION ====== -->
+<section class="world-sports-section" id="worldSportsSection">
+  <div class="world-sports-header">
+    <h2 class="world-sports-title">World Sports</h2>
+    <span class="world-sports-badge">Live</span>
+  </div>
+
+  <div class="world-sports-carousel-wrapper">
+    <button class="world-sports-arrow arrow-left" id="worldSportsArrowLeft" aria-label="Scroll left">&#10094;</button>
+    <div class="world-sports-track" id="worldSportsTrack">
+      <!-- skeleton / cards injected by JS -->
+    </div>
+    <button class="world-sports-arrow arrow-right" id="worldSportsArrowRight" aria-label="Scroll right">&#10095;</button>
+  </div>
+</section>
+    <script src="fancode.js"></script>
+    <script src="world-sports.js"></script>
+  </main>
+
+  <script>
+    // ====== HAMBURGER MENU TOGGLE ======
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (mobileMenu.classList.contains('active') && 
+          !mobileMenu.contains(e.target) && 
+          !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+   // ====== POSTER CLICK - NAVIGATE TO WATCH PAGE ======
+const posterWrapper = document.getElementById('posterWrapper');
+posterWrapper.addEventListener('click', function(e) {
+  // Don't trigger if clicking on watch button, mytod button, or slider controls
+  if (
+    e.target.closest('.watch-btn') ||
+    e.target.closest('.btn-mytod') ||
+    e.target.closest('.slider-arrow') ||
+    e.target.closest('.slider-progress')
+  ) {
+    return;
+  }
+  // Get the watch button from the active slide and navigate to its href
+  const activeSlide = document.querySelector('.poster-section.active');
+  const watchBtn = activeSlide ? activeSlide.querySelector('.watch-btn') : null;
+  if (watchBtn) {
+    const href = watchBtn.getAttribute('href');
+    if (href) {
+      window.location.href = href;
+    }
+  }
+});
+
 
     <!-- VIDEO SECTION (lazy-loaded container) -->
     <div id="videoSectionContainer"></div>
