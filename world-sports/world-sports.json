@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-27T06:45:53.515186",
+  "timestamp": "2026-10-27T06:50:49.232348",
   "total_matches": 4,
   "live_count": 1,
   "upcoming_count": 3,
@@ -12,7 +12,7 @@
       "sport": "cricket",
       "status": "live",
       "runtime": "00h 00m 00s",
-      "viewers": "19",
+      "viewers": "21",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -23,7 +23,7 @@
       "server_urls": [
         "https://alixbd.com/playlistconfig/channel/36.m3u8"
       ],
-      "last_updated": "2026-10-27T06:45:53.108897"
+      "last_updated": "2026-10-27T06:50:48.839276"
     },
     {
       "title": "New Zealand vs India 3rd T20I",
@@ -41,7 +41,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17923949181020x576.jpg",
       "match_id": "1302",
       "server_urls": [],
-      "last_updated": "2026-10-27T06:45:53.513780"
+      "last_updated": "2026-10-27T06:50:49.231516"
     },
     {
       "title": "Pakistan vs Sri Lanka",
@@ -59,7 +59,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17925776481020x576.jpg",
       "match_id": "1303",
       "server_urls": [],
-      "last_updated": "2026-10-27T06:45:53.514348"
+      "last_updated": "2026-10-27T06:50:49.231863"
     },
     {
       "title": "South Africa vs Australia 3rd Test",
@@ -77,7 +77,7 @@
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "match_id": "1102",
       "server_urls": [],
-      "last_updated": "2026-10-27T06:45:53.514755"
+      "last_updated": "2026-10-27T06:50:49.232106"
     }
   ]
 }
