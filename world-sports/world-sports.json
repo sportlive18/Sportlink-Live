@@ -1,10 +1,30 @@
 {
-  "timestamp": "2026-10-27T05:30:57.696792",
-  "total_matches": 3,
-  "live_count": 0,
+  "timestamp": "2026-10-27T05:35:51.609683",
+  "total_matches": 4,
+  "live_count": 1,
   "upcoming_count": 3,
   "completed_count": 0,
   "matches": [
+    {
+      "title": "New Zealand A vs India A 1st Unofficial Test",
+      "teams": "New Zealand A vs India A 1st Unofficial Test",
+      "league": "India A tour of New Zealand, 2026",
+      "sport": "cricket",
+      "status": "live",
+      "runtime": "00h 00m 00s",
+      "viewers": "448",
+      "viewers_type": "Watching",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/new-zealand-a-vs-india-a-1st-unofficial-test-1304",
+      "thumbnail": "https://origin-staticv2.sonyliv.com/videoasset_images/manage_file/1000027143/179275469748881_NZ_vs_IND_A_1st_test_day2_live_landscape_thumb.jpg",
+      "match_id": "1304",
+      "server_urls": [
+        "https://alixbd.com/playlistconfig/channel/36.m3u8"
+      ],
+      "last_updated": "2026-10-27T05:35:51.270318"
+    },
     {
       "title": "New Zealand vs India 3rd T20I",
       "teams": "New Zealand vs India 3rd T20I",
@@ -21,7 +41,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17923949181020x576.jpg",
       "match_id": "1302",
       "server_urls": [],
-      "last_updated": "2026-10-27T05:30:57.695039"
+      "last_updated": "2026-10-27T05:35:51.608803"
     },
     {
       "title": "Pakistan vs Sri Lanka",
@@ -39,7 +59,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17925776481020x576.jpg",
       "match_id": "1303",
       "server_urls": [],
-      "last_updated": "2026-10-27T05:30:57.695763"
+      "last_updated": "2026-10-27T05:35:51.609144"
     },
     {
       "title": "South Africa vs Australia 3rd Test",
@@ -57,7 +77,7 @@
       "thumbnail": "https://images.fancode.com/skillup-uploads/cms-media/AUS-vs-SA_Web-match-card.png",
       "match_id": "1102",
       "server_urls": [],
-      "last_updated": "2026-10-27T05:30:57.696319"
+      "last_updated": "2026-10-27T05:35:51.609429"
     }
   ]
 }
