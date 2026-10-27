@@ -1,23 +1,49 @@
-// fancode.js - FanCode Section
 
-(function() {
+// fancode.js - FanCode Section (1080p ONLY)
+
+(function () {
   'use strict';
 
-  // Configuration
+  // CONFIGURATION
   const API_URL = 'https://sportlink-fancode10.pages.dev/fan.json';
   const SKELETON_COUNT = 6;
 
-  // DOM elements
+  // DOM ELEMENTS
   const track = document.getElementById('fancodeTrack');
   const arrowLeft = document.getElementById('fancodeArrowLeft');
   const arrowRight = document.getElementById('fancodeArrowRight');
 
-  // State
+  // STATE
   let isLoading = false;
   let matches = [];
 
+  // SECURITY: ESCAPE HTML
+  function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[char]));
+  }
+
+  // VALIDATE URL
+  function safeUrl(value) {
+    try {
+      const url = new URL(value);
+      return ['https:', 'http:'].includes(url.protocol)
+        ? url.href
+        : '';
+    } catch {
+      return '';
+    }
+  }
+
+  // SKELETON CARDS
   function createSkeletonCards(count) {
     let html = '';
+
     for (let i = 0; i < count; i++) {
       html += `
         <div class="fancode-card fc-skeleton-card">
@@ -44,85 +70,222 @@
         </div>
       `;
     }
+
     return html;
   }
 
-  // Helper function to extract base match ID (remove language suffix)
+  // MATCH ID
   function getBaseMatchId(matchId) {
     if (!matchId) return '';
-    let baseId = String(matchId);
-    // If contains underscore, take the part before it
-    if (baseId.includes('_')) {
-      baseId = baseId.split('_')[0];
-    }
-    return baseId;
+    return String(matchId).split('_')[0];
   }
 
-  // ---- FETCH DATA ----
+  // GET MATCHES FROM NEW JSON
+  function extractMatches(data) {
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data?.matches)) return data.matches;
+    return [];
+  }
+
+  // GET LANGUAGE STREAM OBJECT
+  function getLanguageStreams(match) {
+    const autoStreams = match?.auto_streams;
+
+    if (!autoStreams || typeof autoStreams !== 'object') {
+      return null;
+    }
+
+    const languages = Object.keys(autoStreams);
+
+    if (!languages.length) return null;
+
+    // Prioritize match language
+    const preferredLanguage = String(
+      match.language || 'ENGLISH'
+    ).toUpperCase();
+
+    let selectedLanguage = languages.find(
+      lang => lang.toUpperCase() === preferredLanguage
+    );
+
+    // Otherwise prefer English
+    if (!selectedLanguage) {
+      selectedLanguage = languages.find(
+        lang => lang.toUpperCase() === 'ENGLISH'
+      );
+    }
+
+    // Otherwise use first available language
+    if (!selectedLanguage) {
+      selectedLanguage = languages[0];
+    }
+
+    return autoStreams[selectedLanguage]?.streams || null;
+  }
+
+  // ONLY 1080P STREAM
+  function get1080pStream(match) {
+    const streams = getLanguageStreams(match);
+
+    if (!streams) return '';
+
+    // STRICT 1080P ONLY
+    const streamUrl = streams['1080p'];
+
+    if (!streamUrl) return '';
+
+    const validUrl = safeUrl(streamUrl);
+
+    if (!validUrl) return '';
+
+    try {
+      const url = new URL(validUrl);
+
+      if (!url.pathname.toLowerCase().endsWith('.m3u8')) {
+        return '';
+      }
+
+      return validUrl;
+    } catch {
+      return '';
+    }
+  }
+
+  // TEAM NAMES FROM TITLE
+  function getTeamNames(match) {
+    if (match.team_1 && match.team_2) {
+      return [
+        String(match.team_1),
+        String(match.team_2)
+      ];
+    }
+
+    const title = String(match.title || 'Live Match');
+
+    // Example:
+    // United Arab Emirates Vs Namibia
+    const parts = title.split(/\s+vs\.?\s+/i);
+
+    if (parts.length === 2) {
+      return [parts[0].trim(), parts[1].trim()];
+    }
+
+    // Supports badminton and single-title events
+    return [title, ''];
+  }
+
+  // FORMAT TIME
+  function formatStartTime(startTime) {
+    if (!startTime) return '';
+
+    const date = new Date(startTime);
+
+    if (isNaN(date.getTime())) {
+      return String(startTime);
+    }
+
+    return date.toLocaleString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
+  // MATCH STATUS PRIORITY
+  function getStatusPriority(status) {
+    const value = String(status || '').toUpperCase();
+
+    if (value === 'LIVE') return 0;
+    if (value === 'UPCOMING') return 1;
+
+    return 2;
+  }
+
+  // FETCH DATA
   async function fetchFancodeData() {
-    if (isLoading) return;
+    if (isLoading || !track) return;
+
     isLoading = true;
 
     try {
       track.innerHTML = createSkeletonCards(SKELETON_COUNT);
 
-      const response = await fetch(API_URL);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const response = await fetch(API_URL, {
+        cache: 'no-store'
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
 
       const data = await response.json();
-      const allMatches = data.matches || data || [];
+      const allMatches = extractMatches(data);
 
-      console.log(`Found ${allMatches.length} matches`);
+      console.log('FanCode total matches:', allMatches.length);
 
-      // Filter matches that have teams
-      matches = allMatches.filter(m => {
-        // Must have team_1 and team_2
-        if (!m.team_1 || !m.team_2) return false;
-        return true;
+      // New JSON does not have team_1/team_2.
+      // Accept all valid match entries.
+      matches = allMatches.filter(match => {
+        return match &&
+          match.match_id != null &&
+          (match.title || match.team_1);
       });
 
-      console.log(`Filtered to ${matches.length} matches with teams`);
-
-      // Sort: LIVE first, then UPCOMING, then by start time
+      // LIVE FIRST, THEN UPCOMING
       matches.sort((a, b) => {
-        // Status priority: LIVE (0) > UPCOMING (1) > others (2)
-        const getPriority = (status) => {
-          if (status === 'LIVE') return 0;
-          if (status === 'UPCOMING') return 1;
-          return 2;
-        };
-        
-        const aPriority = getPriority(a.status);
-        const bPriority = getPriority(b.status);
-        
-        if (aPriority !== bPriority) return aPriority - bPriority;
-        
-        // If same status, sort by start time
-        if (a.startTime && b.startTime) {
-          return new Date(a.startTime) - new Date(b.startTime);
+        const aPriority = getStatusPriority(a.status);
+        const bPriority = getStatusPriority(b.status);
+
+        if (aPriority !== bPriority) {
+          return aPriority - bPriority;
         }
+
+        const aTime = Date.parse(a.startTime);
+        const bTime = Date.parse(b.startTime);
+
+        if (Number.isFinite(aTime) && Number.isFinite(bTime)) {
+          return aTime - bTime;
+        }
+
         return 0;
       });
+
+      console.log('FanCode filtered matches:', matches.length);
 
       renderMatches(matches);
 
     } catch (error) {
       console.error('FanCode fetch error:', error);
+
       track.innerHTML = `
-        <div style="color: rgba(255,255,255,0.4); padding: 2rem; text-align: center; width: 100%;">
-          ⚠️ Failed to load matches: ${error.message}
+        <div style="
+          color:rgba(255,255,255,0.5);
+          padding:2rem;
+          text-align:center;
+          width:100%;
+        ">
+          ⚠️ Failed to load matches
         </div>
       `;
+
     } finally {
       isLoading = false;
     }
   }
 
-  // ---- RENDER MATCH CARDS ----
+  // RENDER MATCH CARDS
   function renderMatches(matchData) {
+    if (!track) return;
+
     if (!matchData || matchData.length === 0) {
       track.innerHTML = `
-        <div style="color: rgba(255,255,255,0.3); padding: 2rem; text-align: center; width: 100%;">
+        <div style="
+          color:rgba(255,255,255,0.4);
+          padding:2rem;
+          text-align:center;
+          width:100%;
+        ">
           No matches available
         </div>
       `;
@@ -130,80 +293,124 @@
     }
 
     let html = '';
+
     matchData.forEach(match => {
-      // Get team info
-      const team1Name = match.team_1 || 'Team 1';
-      const team2Name = match.team_2 || 'Team 2';
-      
-      // Get image
-      const imageUrl = match.src || '';
-      
-      // Format status
-      let statusText = match.status || 'UPCOMING';
-      const isLive = statusText === 'LIVE';
-      const isEnded = statusText === 'ENDED' || statusText === 'FINISHED' || statusText === 'COMPLETED';
-      
-      statusText = statusText.replace(/_/g, ' ').toLowerCase();
-      statusText = statusText.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-      
+      const matchId = getBaseMatchId(match.match_id);
+      const title = match.title || 'Live Match';
+
+      // NEW JSON IMAGE FIELD
+      const imageUrl = safeUrl(match.image || match.src || '');
+
+      // NEW JSON TOURNAMENT / CATEGORY
+      const tournament =
+        match.tournament ||
+        match.category ||
+        'Live Sports';
+
+      // GET TEAM NAMES
+      const [team1Name, team2Name] = getTeamNames(match);
+
+      // STATUS
+      const rawStatus = String(
+        match.status || 'UPCOMING'
+      ).toUpperCase();
+
+      const isLive = rawStatus === 'LIVE';
+
+      const isEnded = [
+        'ENDED',
+        'FINISHED',
+        'COMPLETED'
+      ].includes(rawStatus);
+
+      const statusText = rawStatus
+        .replace(/_/g, ' ')
+        .toLowerCase()
+        .replace(/\b\w/g, c => c.toUpperCase());
+
       let statusClass = 'upcoming';
+
       if (isLive) statusClass = 'live';
       if (isEnded) statusClass = 'ended';
 
-      // Get stream URL
-      const streamUrl = match.dai_url || match.adfree_url || '';
+      // ONLY CHECK 1080P AVAILABILITY
+      const streamUrl = get1080pStream(match);
       const hasStream = !!streamUrl;
 
-      // Get base match ID (without language suffix)
-      const baseMatchId = getBaseMatchId(match.match_id);
+      const formattedTime = formatStartTime(match.startTime);
 
-      // Format start time nicely
-      let formattedTime = match.startTime || '';
-      if (formattedTime) {
-        try {
-          const date = new Date(formattedTime);
-          if (!isNaN(date)) {
-            formattedTime = date.toLocaleString('en-US', {
-              month: 'short',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit'
-            });
-          }
-        } catch (e) {
-          // Keep original format if parsing fails
-        }
-      }
+      // SUPPORT MATCHES WITHOUT VS
+      const teamsHtml = team2Name
+        ? `
+          <div class="fancode-team">
+            <span>${escapeHtml(team1Name)}</span>
+          </div>
+
+          <span class="fancode-vs">VS</span>
+
+          <div class="fancode-team">
+            <span>${escapeHtml(team2Name)}</span>
+          </div>
+        `
+        : `
+          <div class="fancode-team">
+            <span>${escapeHtml(team1Name)}</span>
+          </div>
+        `;
 
       html += `
-        <div class="fancode-card" data-match-id="${baseMatchId}" data-full-match-id="${match.match_id || ''}" data-stream-url="${streamUrl}" data-title="${match.title || match.match_name || 'Live Match'}">
+        <div
+          class="fancode-card"
+          data-match-id="${escapeHtml(matchId)}"
+          data-title="${escapeHtml(title)}"
+        >
           <div class="fancode-thumb">
-            <img 
-              src="${imageUrl}" 
-              alt="${team1Name} vs ${team2Name}"
+            <img
+              src="${escapeHtml(imageUrl)}"
+              alt="${escapeHtml(title)}"
               loading="lazy"
-              onerror="this.src='https://via.placeholder.com/400x225/1a1c1e/555?text=No+Image'"
             />
-            ${isLive ? '<span class="live-badge">● LIVE</span>' : ''}
+
+            ${isLive
+              ? '<span class="live-badge">● LIVE</span>'
+              : ''}
           </div>
+
           <div class="fancode-info">
-            <div class="fancode-tournament">${match.event_name || match.title || 'Match'}</div>
-            <div class="fancode-teams">
-              <div class="fancode-team">
-                <span>${team1Name}</span>
-              </div>
-              <span class="fancode-vs">VS</span>
-              <div class="fancode-team">
-                <span>${team2Name}</span>
-              </div>
+
+            <div class="fancode-tournament">
+              ${escapeHtml(tournament)}
             </div>
+
+            <div class="fancode-teams">
+              ${teamsHtml}
+            </div>
+
             <div class="fancode-meta">
               <div class="fancode-meta-left">
-                <span class="fancode-status ${statusClass}">${statusText}</span>
+                <span class="fancode-status ${statusClass}">
+                  ${escapeHtml(statusText)}
+                </span>
               </div>
-              <span class="fancode-time">${formattedTime || match.startTime || ''}</span>
+
+              <span class="fancode-time">
+                ${escapeHtml(formattedTime)}
+              </span>
             </div>
-            ${hasStream ? '<div class="stream-indicator available">▶ CLICK TO PLAY</div>' : '<div class="stream-indicator unavailable">NO STREAM</div>'}
+
+            ${hasStream
+              ? `
+                <div class="stream-indicator available">
+                  ▶ CLICK TO PLAY
+                </div>
+              `
+              : `
+                <div class="stream-indicator unavailable">
+                  NO 1080P STREAM
+                </div>
+              `
+            }
+
           </div>
         </div>
       `;
@@ -212,154 +419,205 @@
     track.innerHTML = html;
   }
 
-  // ---- PLAY M3U8 STREAM ----
-  async function playM3U8Stream(matchId, matchTitle, streamUrl) {
-    console.log('🔍 Playing stream for:', { matchId, matchTitle, streamUrl });
-    
+  // PLAY ONLY 1080P STREAM
+  async function playM3U8Stream(matchId, matchTitle) {
     if (!matchId) {
-      alert('No match ID available');
+      alert('Invalid match ID');
       return;
     }
 
-    // If we already have the stream URL, use it directly
-    if (streamUrl && streamUrl.includes('m3u8')) {
-      console.log('✅ Using provided stream URL:', streamUrl);
-      const encodedUrl = encodeURIComponent(streamUrl);
-      const matchName = encodeURIComponent(matchTitle || 'Live Match');
-      window.location.href = `/fc-play?url=${encodedUrl}&title=${matchName}&match_id=${matchId}`;
-      return;
-    }
+    console.log('Loading 1080p FanCode stream:', matchId);
 
-    // Otherwise, fetch fresh from JSON
     try {
-      const response = await fetch(API_URL);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      
-      const data = await response.json();
-      const allMatches = data.matches || data || [];
-      
-      // Extract base match ID
-      const baseMatchId = getBaseMatchId(matchId);
-      console.log(`🔍 Looking for match with base ID: ${baseMatchId}`);
-      
-      // Try to find match by ID
-      let match = allMatches.find(m => {
-        const mBaseId = getBaseMatchId(m.match_id);
-        return mBaseId === baseMatchId;
+      // Fresh fetch on click so signed stream
+      // URL is not taken from old card data.
+      const response = await fetch(API_URL, {
+        cache: 'no-store'
       });
-      
-      if (match) {
-        console.log(`✅ Found match by ID: ${match.match_id}`);
-      } else {
-        // Try to find by title
-        console.log(`🔍 Trying to find by title: "${matchTitle}"`);
-        match = allMatches.find(m => {
-          const mTitle = (m.match_name || m.title || '').toLowerCase();
-          const searchTitle = (matchTitle || '').toLowerCase();
-          return mTitle.includes(searchTitle) || searchTitle.includes(mTitle);
-        });
-        if (match) {
-          console.log(`✅ Found match by title: ${match.match_name || match.title}`);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+      const allMatches = extractMatches(data);
+
+      const baseMatchId = getBaseMatchId(matchId);
+
+      // FIND EXACT MATCH
+      const match = allMatches.find(item => {
+        return getBaseMatchId(item?.match_id) === baseMatchId;
+      });
+
+      if (!match) {
+        alert('Match not found. Please try again.');
+        return;
+      }
+
+      // ONLY 1080P
+      const streamUrl = get1080pStream(match);
+
+      if (!streamUrl) {
+        alert('1080p stream is not available for this match.');
+        return;
+      }
+
+      // Check token expiry if provided
+      const language = String(
+        match.language || 'ENGLISH'
+      ).toUpperCase();
+
+      const languageKey = Object.keys(
+        match.auto_streams || {}
+      ).find(key => key.toUpperCase() === language);
+
+      const expiryValue = languageKey
+        ? match.auto_streams[languageKey]?.expires
+        : null;
+
+      if (expiryValue) {
+        const expiry = Number(expiryValue);
+
+        if (Number.isFinite(expiry) && Date.now() >= expiry * 1000) {
+          alert('Stream link expired. Please try again later.');
+          return;
         }
       }
 
-      if (!match) {
-        console.error('❌ Match not found in JSON');
-        alert('Match data not found. Please try again.');
-        return;
-      }
+      console.log('1080p stream selected:', match.match_id);
 
-      const m3u8Url = match.dai_url || match.adfree_url || null;
-      
-      if (!m3u8Url) {
-        console.error('❌ No stream URL found for match');
-        alert('No stream available for this match');
-        return;
-      }
+      const params = new URLSearchParams({
+        url: streamUrl,
+        title: matchTitle || match.title || 'Live Match',
+        match_id: baseMatchId
+      });
 
-      console.log('✅ Found stream URL:', m3u8Url);
-      const encodedUrl = encodeURIComponent(m3u8Url);
-      const matchName = encodeURIComponent(matchTitle || match.match_name || 'Live Match');
-      
-      window.location.href = `/fc-play?url=${encodedUrl}&title=${matchName}&match_id=${matchId}`;
+      // KEEP EXISTING PLAYER PAGE
+      window.location.href = `/fc-play?${params.toString()}`;
 
     } catch (error) {
-      console.error('❌ Error playing stream:', error);
-      alert('Failed to load stream. Please try again.');
+      console.error('1080p playback error:', error);
+
+      alert('Failed to load 1080p stream. Please try again.');
     }
   }
 
-  // ---- SCROLL FUNCTIONS ----
+  // SCROLL AMOUNT
   function scrollAmount() {
-    const card = track.querySelector('.fancode-card, .fc-skeleton-card');
+    if (!track) return 280;
+
+    const card = track.querySelector(
+      '.fancode-card, .fc-skeleton-card'
+    );
+
     if (!card) return 280;
+
     const cardWidth = card.getBoundingClientRect().width;
     const gap = 20;
+
     return (cardWidth + gap) * 2;
   }
 
+  // SCROLL LEFT
   function scrollLeft() {
-    track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    if (!track) return;
+
+    track.scrollBy({
+      left: -scrollAmount(),
+      behavior: 'smooth'
+    });
   }
 
+  // SCROLL RIGHT
   function scrollRight() {
-    track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    if (!track) return;
+
+    track.scrollBy({
+      left: scrollAmount(),
+      behavior: 'smooth'
+    });
   }
 
-  // ---- CARD CLICK HANDLER ----
-  function handleCardClick(e) {
-    const card = e.target.closest('.fancode-card');
-    if (!card) return;
-    
-    const matchId = card.dataset.matchId || card.dataset.fullMatchId;
-    const title = card.dataset.title || 'Live Match';
-    const streamUrl = card.dataset.streamUrl || '';
-    
-    console.log('🖱️ Card clicked:', { matchId, title, streamUrl });
-    
-    if (matchId) {
-      e.preventDefault();
-      e.stopPropagation();
-      playM3U8Stream(matchId, title, streamUrl);
-    } else {
-      e.preventDefault();
-      alert('Invalid match');
+  // CARD CLICK HANDLER
+  function handleCardClick(event) {
+    const card = event.target.closest('.fancode-card');
+
+    if (!card || card.classList.contains('fc-skeleton-card')) {
+      return;
     }
+
+    const matchId = card.dataset.matchId;
+    const title = card.dataset.title || 'Live Match';
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!matchId) {
+      alert('Invalid match');
+      return;
+    }
+
+    playM3U8Stream(matchId, title);
   }
 
-  // ---- INTERSECTION OBSERVER ----
+  // LAZY LOAD
   function initLazyLoad() {
     const section = document.getElementById('fancodeSection');
-    if (!section) return;
+
+    if (!section || !track) return;
 
     const rect = section.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
+
+    if (rect.top < window.innerHeight + 200) {
       fetchFancodeData();
       return;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          fetchFancodeData();
-          observer.disconnect();
-        }
-      });
-    }, { rootMargin: '200px' });
+    if (!('IntersectionObserver' in window)) {
+      fetchFancodeData();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            observer.disconnect();
+            fetchFancodeData();
+          }
+        });
+      },
+      {
+        rootMargin: '200px'
+      }
+    );
 
     observer.observe(section);
   }
 
-  // ---- KEYBOARD NAVIGATION ----
-  function handleKeydown(e) {
-    if (e.key === 'ArrowLeft') scrollLeft();
-    if (e.key === 'ArrowRight') scrollRight();
+  // KEYBOARD NAVIGATION
+  function handleKeydown(event) {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      scrollLeft();
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      scrollRight();
+    }
   }
 
-  // ---- INIT ----
+  // INITIALIZE
   function init() {
-    if (arrowLeft) arrowLeft.addEventListener('click', scrollLeft);
-    if (arrowRight) arrowRight.addEventListener('click', scrollRight);
+    if (arrowLeft) {
+      arrowLeft.addEventListener('click', scrollLeft);
+    }
+
+    if (arrowRight) {
+      arrowRight.addEventListener('click', scrollRight);
+    }
+
     if (track) {
       track.addEventListener('click', handleCardClick);
       track.addEventListener('keydown', handleKeydown);
@@ -369,7 +627,7 @@
     initLazyLoad();
   }
 
-  // Run on DOM ready
+  // RUN ON DOM READY
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
