@@ -4,7 +4,7 @@
   'use strict';
 
   // Configuration
-  const API_URL = 'https://raw.githubusercontent.com/drmlive/fancode-live-events/refs/heads/main/fancode.json';
+  const API_URL = 'https://sportlink-fancode10.pages.dev/fan.json';
   const SKELETON_COUNT = 6;
 
   // DOM elements
