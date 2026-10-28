@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-28T08:45:52.264775",
-  "total_matches": 2,
-  "live_count": 2,
+  "timestamp": "2026-10-28T08:50:51.794779",
+  "total_matches": 3,
+  "live_count": 3,
   "upcoming_count": 0,
   "completed_count": 0,
   "matches": [
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1102",
       "runtime": "00h 00m 00s",
-      "viewers": "897",
+      "viewers": "898",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -24,10 +24,34 @@
       "match_id": "1102",
       "server_urls": [
         "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8",
-        "https://live.talkoraai.com/match/hls?t=uHyfJ1dFBi5JKCn9HB8M38vtiRbmqpgLOg3sj2iLDqmEXBIPAawIl5fi6Xq9liY1UhUE1SAHrLob6oLR1C-Xp9j76yW33VgegxA_PaepDbInslVpUCgvxc0ipvzYIfpxMQFKHHEpMaZ_b1QSCKzDi3JMHVOFlEdG28sdo3VqwxPtT8M5b236rbHMkA_pvK-A7CxzwILfdBEl326m8gxyNH97jvHUQmkS6EazbmB43SiZD290aCltA60RcKTNLI5VvbjTlvfmuFgwLe0-",
-        "https://live.talkoraai.com/match/seg?t=d2IAPLESuv90vrrS306Wuuf-j6cUQBT3oM7E85Hry-Qnfvn9nOAe3iTr9jP54TYLRcF-qliNBKIGjZXfEvgf8nIU2jvUQ6rcfHjUcUbD9IPv99SawkGztlM_SCG3YF73QwJspUTEGJ_If0sr3sAtTwOLa3e2iKNfy7ca0NDNDic_zu5QQlxuslaa9G9bOgeOrwdN63_FgqgQMVK0Wp0CA-0Iz2WJGyaHN4Rcez-Pz6sXKi1IhYAT-vzXmyj4CSSMeeeU6o0WF4j_iLP9l7s4vPFX2n0"
+        "https://live.talkoraai.com/match/hls?t=cDDHYLs9XFcvTz5skkd2ldthKvvFGdp6DNFnk5HEecZgzkW24Mpnrr8ZyFp5w8lWxiQKOcmxtup7W_PsLyV7Rlta-mL8WImM8MsfrLHSqqyGa6Dq5XM1fkV5E5DbsnyvjQR3o1eA42WYviCfPJnVJvxi99_burc5bpG7cV8c-pJDdqRpldkNvgFD1oB0ZjAKSd-2VFCTAjKvKxSLDiJQM-xuhHJMdmUw9qgwTqN5sLjNYz9UTQGPmWQBwFgGjOjewBcGDuKiHRZcHXIU",
+        "https://live.talkoraai.com/match/seg?t=XFQawEj-cK5eymK4_YNb-e9vvnnhrXQ9v5fzLftIOsSu92tvsTr0tELuZM4QZ3oE8M8FenlyiSv6XrhUPUPJo8Ho_sHZefAlsxFLF-fHnGcFhhadAMnTpHsI-17WJhQ24_JWPfRg3bs2guuV6NuIzd8pQ_Tmy0zSlxtraLD1ubIs2jO1zet7YEiA0_Lz3RfOrI9vx1Mog7qt_gLN6XBEp0_PVmH81gOXeFO4Imo-QYOi9QwNHtoQXr-GjrrNgKStrdmIIiNIYMUMhBPyZee6NV0YMlU",
+        "https://fawa.duckdns.org/api/proxy?url=http%3A%2F%2F193.47.62.44%2Fhls%2FXAXAXAAX.m3u8&headers=%7B%22Referer%22%3A%22http%3A%2F%2Fwww.fawanews.sc%2F%22%7D"
       ],
-      "last_updated": "2026-10-28T08:45:51.508586"
+      "last_updated": "2026-10-28T08:50:50.775136"
+    },
+    {
+      "title": "Bangladesh vs West Indies 1St Test (Day 1)",
+      "teams": "Bangladesh vs West Indies 1St Test (Day 1)",
+      "league": "Test Series 2026",
+      "sport": "cricket",
+      "status": "live",
+      "status_display": "LIVE",
+      "page_url": "/world-sports/player.html?id=1306",
+      "runtime": "00h 00m 00s",
+      "viewers": "2",
+      "viewers_type": "Watching",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/bangladesh-vs-west-indies-1st-test-day-1-1306",
+      "thumbnail": "https://www.fancode.com/skillup-uploads/cms-media/West-Indies-tour-of-Bangladesh-web-.jpg",
+      "match_id": "1306",
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=yhJvKrk_eooKCFO9CGOBfCIGA_AZ-37BMbZIqhbeulmWZbcPffFedrcYSDNO1_H_xDuBwKqZ0fnPBm08GyJ-n8fAjwNnqsMnITHyB8zMRHjzMBmX3CdbIp-179_uYUoS8LX30AaM1nBcaYS_XyxIi7goAyIoBZh9AlXjp0LY-iIuPxhN6PR3s5bvZhmVFYgaC7XgQHXfKI2aqelJKwAhjdf_Ofn4Tb8_iPm0awznR0FY7rMv8a7P7dWQJRJJne9ngPsU5HceTwZNa7KE",
+        "https://cinexcricket.com/proxy/universal.php/?url=https%3A%2F%2Fwww.kaizokutv.cyou%2Ffancode%2Fplayer.php%3Fserve_master%3D4250526_ENG"
+      ],
+      "last_updated": "2026-10-28T08:50:51.128680"
     },
     {
       "title": "New Zealand A vs India A 1st Unofficial Test",
@@ -38,7 +62,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1304",
       "runtime": "00h 00m 00s",
-      "viewers": "405",
+      "viewers": "406",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -49,7 +73,7 @@
       "server_urls": [
         "https://alixbd.com/playlistconfig/channel/36.m3u8"
       ],
-      "last_updated": "2026-10-28T08:45:51.892828"
+      "last_updated": "2026-10-28T08:50:51.457177"
     }
   ]
 }
