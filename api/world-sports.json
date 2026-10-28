@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-28T16:30:55.417212",
+  "timestamp": "2026-10-28T16:35:57.332608",
   "total_matches": 4,
   "live_count": 4,
   "upcoming_count": 0,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1102",
       "runtime": "00h 00m 00s",
-      "viewers": "999",
+      "viewers": "000",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -28,7 +28,7 @@
         "https://live.talkoraai.com/match/seg?t=XFQawEj-cK5eymK4_YNb-e9vvnnhrXQ9v5fzLftIOsSu92tvsTr0tELuZM4QZ3oE8M8FenlyiSv6XrhUPUPJo8Ho_sHZefAlsxFLF-fHnGcFhhadAMnTpHsI-17WJhQ24_JWPfRg3bs2guuV6NuIzd8pQ_Tmy0zSlxtraLD1ubIs2jO1zet7YEiA0_Lz3RfOrI9vx1Mog7qt_gLN6XBEp0_PVmH81gOXeFO4Imo-QYOi9QwNHtoQXr-GjrrNgKStrdmIIiNIYMUMhBPyZee6NV0YMlU",
         "https://fawa.duckdns.org/api/proxy?url=http%3A%2F%2F193.47.62.44%2Fhls%2FXAXAXAAX.m3u8&headers=%7B%22Referer%22%3A%22http%3A%2F%2Fwww.fawanews.sc%2F%22%7D"
       ],
-      "last_updated": "2026-10-28T16:30:53.336532"
+      "last_updated": "2026-10-28T16:35:55.303778"
     },
     {
       "title": "Bangladesh vs West Indies 1St Test (Day 1)",
@@ -39,7 +39,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1306",
       "runtime": "00h 00m 00s",
-      "viewers": "108",
+      "viewers": "109",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -52,7 +52,7 @@
         "https://live.talkoraai.com/match/seg?t=qvR70zFXebE4QNgBwlwnaAxJY22rfL3tYCPVp6-yb4SavljuWF0V90EAHe3OaAEXiklHpiWfK3Z2iLk2ZWmRNIZoKwUyA20wa38GjgQ9IlePD9W8qE7HEMCa5CAeW6xQNg9yhjMJ-WNoicTT0s1BuQ1OPhvbJz6O2BJyvzaLNLrb2CozGXSEOwVqFMMYmnFqc4NBz6l33Yi3IZwdzPbqe5SchYKSCNwVEUUJyDpDKaOc70Knkx51D7z7H5BkYvAMrwHwvCFsDOfU2Vc4ifdQxTqB-3s",
         "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd"
       ],
-      "last_updated": "2026-10-28T16:30:53.777614"
+      "last_updated": "2026-10-28T16:35:55.711951"
     },
     {
       "title": "New Zealand A vs India A 1st Unofficial Test",
@@ -63,7 +63,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1304",
       "runtime": "00h 00m 00s",
-      "viewers": "502",
+      "viewers": "503",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -74,7 +74,7 @@
       "server_urls": [
         "https://alixbd.com/playlistconfig/channel/36.m3u8"
       ],
-      "last_updated": "2026-10-28T16:30:54.157983"
+      "last_updated": "2026-10-28T16:35:56.511301"
     },
     {
       "title": "India Women vs Zimbabwe Women 3RD ODI",
@@ -85,7 +85,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1307",
       "runtime": "00h 00m 00s",
-      "viewers": "105",
+      "viewers": "106",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -98,7 +98,7 @@
         "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV540p.m3u8",
         "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8"
       ],
-      "last_updated": "2026-10-28T16:30:54.570710"
+      "last_updated": "2026-10-28T16:35:56.923947"
     }
   ]
 }
