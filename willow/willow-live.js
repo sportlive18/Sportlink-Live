@@ -255,7 +255,7 @@ function renderWillowMatches() {
     
     // For live matches with stream, go to player
     if (isLive && hasStream) {
-      card.href = `willow-player.html?id=${encodeURIComponent(safeId)}`;
+      card.href = `/willow/player.html?id=${encodeURIComponent(safeId)}`;
     } else {
       // For upcoming or no stream, just show info
       card.href = '#';

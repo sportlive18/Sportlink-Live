@@ -16,6 +16,19 @@ import base64
 from datetime import datetime, timedelta
 import os
 import codecs
+import sys
+
+# Ensure UTF-8 output on all platforms (prevents cp1252 encoding errors on Windows console)
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+if hasattr(sys.stderr, 'reconfigure'):
+    try:
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
 
 # ─────────────────────────────────────────────────────────────
 # Configuration
@@ -171,6 +184,8 @@ class SportzfyScraper:
             'league': None,
             'sport': None,
             'status': None,
+            'status_display': None,
+            'page_url': None,
             'runtime': None,
             'viewers': None,
             'viewers_type': None,
@@ -184,9 +199,14 @@ class SportzfyScraper:
             'last_updated': datetime.now().isoformat()
         }
 
-        match_data['match_id'] = card.get('data-match-id')
+        match_id = card.get('data-match-id')
+        match_data['match_id'] = match_id
         match_data['sport']    = card.get('data-sport')
-        match_data['status']   = card.get('data-status')
+        status = card.get('data-status')
+        match_data['status']   = status
+        match_data['status_display'] = status.upper() if status else 'UPCOMING'
+        if match_id:
+            match_data['page_url'] = f"/world-sports/player.html?id={match_id}"
 
         league_div = card.find('div', class_='league-title')
         if league_div:

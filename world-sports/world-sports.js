@@ -1,176 +1,133 @@
-/* world-sports/world-sports.js
-   - Reads your real JSON shape: title, teams, league, status,
-     viewers, thumbnail, server_urls[], match_id
-   - Splits "Pakistan vs Sri Lanka" into team1 / team2
-   - Passes ALL server URLs + HLS flag to player.html
-*/
-(function () {
-  'use strict';
+// ============================================================
+// world-sports.js - Fetch & Render World Sports
+// ============================================================
 
-  var API_URL     = '/world-sports/world-sports.json';
-  var PLAYER_PATH = '/world-sports/player.html';
+(function() {
+  const API_URL = '/world-sports/world-sports.json';
+  const track = document.getElementById('worldSportsTrack');
+  const arrowLeft = document.getElementById('worldSportsArrowLeft');
+  const arrowRight = document.getElementById('worldSportsArrowRight');
 
-  var track      = document.getElementById('worldSportsTrack');
-  var arrowLeft  = document.getElementById('worldSportsArrowLeft');
-  var arrowRight = document.getElementById('worldSportsArrowRight');
-  var section    = document.getElementById('worldSportsSection');
+  if (!track) return;
 
-  if (!track) { console.warn('[WS] #worldSportsTrack missing'); return; }
-  console.log('[WS] init');
-
-  /* ---------- tiny helpers ---------- */
-  function esc(s) {
-    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-    });
-  }
-
-  /* "Pakistan vs Sri Lanka" → {team1:"Pakistan", team2:"Sri Lanka"}
-     "South Africa vs Australia 3rd Test" → {team1:"South Africa", team2:"Australia"} */
-  function splitTeams(m) {
-    var raw = m.teams || m.title || '';
-    var parts = raw.split(/\s+vs\.?\s+/i);
-    var a = parts[0] ? parts[0].trim() : '';
-    var b = parts[1] ? parts[1].trim() : '';
-    b = b.replace(/\s+\d+(?:st|nd|rd|th)\s+(?:unofficial\s+)?(?:test|odi|t20i?|match|fixture|day\s*\d+).*/i, '').trim();
-    return { team1: a, team2: b };
-  }
-
-  /* Build /world-sports/player.html?servers=[…]&title=… */
-  function buildPlayerUrl(m) {
-    var teams    = splitTeams(m);
-    var servers  = (m.server_urls && m.server_urls.length) ? m.server_urls
-                 : (m.stream ? [m.stream] : []);
-
-    var p = new URLSearchParams();
-    p.set('servers', JSON.stringify(servers));
-    p.set('title',   m.title    || 'Live Match');
-    p.set('league',  m.league   || 'World Sports');
-    p.set('team1',   teams.team1);
-    p.set('team2',   teams.team2);
-    p.set('date',    m.date     || '');
-    p.set('time',    m.time     || '');
-    p.set('venue',   m.venue    || '');
-    p.set('viewers', m.viewers  || '');
-    return PLAYER_PATH + '?' + p.toString();
-  }
-
-  /* ---------- skeleton ---------- */
-  function renderSkeletons(n) {
-    var out = '';
-    for (var i = 0; i < (n || 6); i++) {
-      out += '<div class="ws-skeleton-card"><div class="ws-skeleton-thumb"></div><div class="ws-skeleton-info"><div class="ws-skeleton-line short"></div><div class="ws-skeleton-line long"></div></div></div>';
+  // ----- RENDER SKELETONS -----
+  function renderSkeletons(count = 6) {
+    let html = '';
+    for (let i = 0; i < count; i++) {
+      html += `
+        <div class="ws-skeleton-card">
+          <div class="ws-skeleton-thumb"></div>
+          <div class="ws-skeleton-info">
+            <div class="ws-skeleton-line short"></div>
+            <div class="ws-skeleton-line long"></div>
+            <div class="ws-skeleton-meta">
+              <div class="ws-skeleton-badge"></div>
+              <div class="ws-skeleton-time"></div>
+            </div>
+          </div>
+        </div>
+      `;
     }
-    track.innerHTML = out;
+    track.innerHTML = html;
   }
 
-  /* ---------- cards ---------- */
+  // ----- RENDER MATCH CARDS -----
   function renderMatches(matches) {
-    if (!matches || !matches.length) {
-      track.innerHTML = '<div style="color:rgba(255,255,255,.3);padding:2rem;text-align:center;width:100%">No matches available</div>';
+    if (!matches || matches.length === 0) {
+      track.innerHTML = `<div style="color:rgba(255,255,255,0.3);padding:2rem;text-align:center;">No matches available</div>`;
       return;
     }
 
-    // Sort: live → upcoming → completed
-    var order = { live: 0, upcoming: 1, completed: 2, finished: 2 };
-    matches.sort(function (a, b) {
-      return (order[(a.status || '').toLowerCase()] || 9) -
-             (order[(b.status || '').toLowerCase()] || 9);
+    let html = '';
+    matches.forEach(match => {
+      const statusClass = (match.status || '').toLowerCase();
+      const statusDisplay = match.status_display || match.status || 'Upcoming';
+      const thumbnail = match.thumbnail || '';
+      const league = match.league || 'World Sports';
+      const title = match.title || match.teams || 'Match';
+      const dateTime = match.date || '';
+      const viewers = match.viewers ? `${match.viewers} watching` : '';
+
+      html += `
+        <a href="${match.page_url || '#'}" class="world-sports-card" data-match-id="${match.match_id || ''}">
+          <div class="world-sports-thumb">
+            <img src="${thumbnail}" alt="${title}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22270%22%3E%3Crect fill=%22%231a1c1e%22 width=%22480%22 height=%22270%22/%3E%3Ctext x=%2250%%22 y=%2250%%22 font-family=%22Inter,sans-serif%22 font-size=%2220%22 fill=%22%23333%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+          </div>
+          <div class="world-sports-info">
+            <div class="world-sports-league">${league}</div>
+            <div class="world-sports-title-text">${title}</div>
+            <div class="world-sports-meta">
+              <span class="world-sports-status ${statusClass}">${statusDisplay}</span>
+              <span class="world-sports-time">${dateTime}</span>
+            </div>
+            ${viewers ? `<div style="font-size:clamp(0.5rem,0.6vw,0.7rem);color:rgba(255,255,255,0.25);margin-top:2px;">${viewers}</div>` : ''}
+          </div>
+        </a>
+      `;
     });
 
-    var out = '';
-    matches.forEach(function (m) {
-      var status     = (m.status || 'upcoming').toLowerCase();
-      var statusText = status.charAt(0).toUpperCase() + status.slice(1);
-      var title      = m.title || m.teams || 'Match';
-      var league     = m.league || 'World Sports';
-      var viewers    = m.viewers ? (m.viewers + ' ' + (m.viewers_type || 'watching')) : '';
-      var thumb      = m.thumbnail || '';
-
-      out +=
-        '<a class="world-sports-card" href="' + esc(buildPlayerUrl(m)) + '" data-id="' + esc(m.match_id || '') + '">' +
-          '<div class="world-sports-thumb">' +
-            (thumb
-              ? '<img src="' + esc(thumb) + '" alt="' + esc(title) + '" loading="lazy" ' +
-                'onerror="this.onerror=null;this.style.display=\'none\'" />'
-              : '') +
-            '<span class="world-sports-status ' + esc(status) + '">' + esc(statusText) + '</span>' +
-            '<span class="ws-card-play">▶</span>' +
-          '</div>' +
-          '<div class="world-sports-info">' +
-            '<div class="world-sports-league">' + esc(league) + '</div>' +
-            '<div class="world-sports-title-text">' + esc(title) + '</div>' +
-            (viewers
-              ? '<div class="world-sports-meta"><span class="world-sports-time">👁 ' + esc(viewers) + '</span></div>'
-              : '') +
-          '</div>' +
-        '</a>';
-    });
-
-    track.innerHTML = out;
-    requestAnimationFrame(updateArrows);
+    track.innerHTML = html;
   }
 
-  /* ---------- fetch ---------- */
-  function load() {
+  // ----- FETCH DATA -----
+  function fetchWorldSports() {
     renderSkeletons(6);
-    fetch(API_URL, { cache: 'no-store' })
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
+
+    fetch(API_URL)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
       })
-      .then(function (data) {
-        var list = (data && data.matches) || [];
-        console.log('[WS] loaded', list.length, 'matches');
-        renderMatches(list.slice(0, 30));
+      .then(data => {
+        const matches = data.matches || [];
+        // Optional: filter only live + upcoming, or show all
+        // For now, show all matches (limit to 20 to keep carousel clean)
+        const displayMatches = matches.slice(0, 20);
+        renderMatches(displayMatches);
       })
-      .catch(function (err) {
-        console.error('[WS] fetch failed:', err);
-        track.innerHTML = '<div style="color:rgba(255,255,255,.3);padding:2rem;text-align:center;width:100%">Failed to load matches</div>';
+      .catch(err => {
+        console.error('World Sports fetch error:', err);
+        track.innerHTML = `<div style="color:rgba(255,255,255,0.3);padding:2rem;text-align:center;">Failed to load matches</div>`;
       });
   }
 
-  /* ---------- arrows ---------- */
-  function scrollAmount() {
-    var card = track.querySelector('.world-sports-card, .ws-skeleton-card');
+  // ----- CAROUSEL SCROLL -----
+  function getScrollAmount() {
+    const card = track.querySelector('.world-sports-card, .ws-skeleton-card');
     if (!card) return 320;
-    var gap = parseFloat(getComputedStyle(track).gap || '16') || 16;
+    const gap = parseFloat(getComputedStyle(track).gap || '20');
     return (card.getBoundingClientRect().width + gap) * 2;
   }
-  function updateArrows() {
-    if (!arrowLeft || !arrowRight) return;
-    var max = track.scrollWidth - track.clientWidth;
-    arrowLeft.classList.toggle('is-disabled', track.scrollLeft <= 2);
-    arrowRight.classList.toggle('is-disabled', track.scrollLeft >= max - 2);
-  }
-  if (arrowLeft && !arrowLeft.dataset.bound) {
-    arrowLeft.dataset.bound = '1';
-    arrowLeft.addEventListener('click', function (e) {
-      e.preventDefault(); e.stopPropagation();
-      track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+
+  if (arrowRight) {
+    arrowRight.addEventListener('click', function(e) {
+      e.stopPropagation();
+      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     });
-  }
-  if (arrowRight && !arrowRight.dataset.bound) {
-    arrowRight.dataset.bound = '1';
-    arrowRight.addEventListener('click', function (e) {
-      e.preventDefault(); e.stopPropagation();
-      track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-    });
-  }
-  if (!track.dataset.bound) {
-    track.dataset.bound = '1';
-    track.addEventListener('scroll', updateArrows, { passive: true });
-    window.addEventListener('resize', updateArrows);
   }
 
-  /* ---------- init (lazy) ---------- */
-  if (!section) { load(); }
-  else if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { obs.disconnect(); load(); }
+  if (arrowLeft) {
+    arrowLeft.addEventListener('click', function(e) {
+      e.stopPropagation();
+      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+  }
+
+  // ----- INIT -----
+  // Use Intersection Observer to load only when visible
+  const section = document.getElementById('worldSportsSection');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          fetchWorldSports();
+          observer.disconnect();
+        }
       });
-    }, { rootMargin: '300px' });
-    obs.observe(section);
-  } else { load(); }
+    }, { rootMargin: '200px' });
+    observer.observe(section);
+  } else {
+    // Fallback: load immediately
+    fetchWorldSports();
+  }
 })();
