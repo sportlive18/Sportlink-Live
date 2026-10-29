@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-29T22:15:25.468948",
+  "timestamp": "2026-10-29T22:20:25.541215",
   "total_matches": 3,
   "live_count": 3,
   "upcoming_count": 0,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1102",
       "runtime": "00h 00m 00s",
-      "viewers": "405",
+      "viewers": "406",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -28,7 +28,7 @@
         "https://live.talkoraai.com/match/seg?t=XFQawEj-cK5eymK4_YNb-e9vvnnhrXQ9v5fzLftIOsSu92tvsTr0tELuZM4QZ3oE8M8FenlyiSv6XrhUPUPJo8Ho_sHZefAlsxFLF-fHnGcFhhadAMnTpHsI-17WJhQ24_JWPfRg3bs2guuV6NuIzd8pQ_Tmy0zSlxtraLD1ubIs2jO1zet7YEiA0_Lz3RfOrI9vx1Mog7qt_gLN6XBEp0_PVmH81gOXeFO4Imo-QYOi9QwNHtoQXr-GjrrNgKStrdmIIiNIYMUMhBPyZee6NV0YMlU",
         "https://fawa.duckdns.org/api/proxy?url=http%3A%2F%2F193.47.62.44%2Fhls%2FXAXAXAAX.m3u8&headers=%7B%22Referer%22%3A%22http%3A%2F%2Fwww.fawanews.sc%2F%22%7D"
       ],
-      "last_updated": "2026-10-29T22:15:24.475002"
+      "last_updated": "2026-10-29T22:20:23.896163"
     },
     {
       "title": "Bangladesh vs West Indies 1St Test (Day 2)",
@@ -39,7 +39,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1306",
       "runtime": "00h 00m 00s",
-      "viewers": "526",
+      "viewers": "527",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -52,7 +52,7 @@
         "https://live.talkoraai.com/match/hls?t=tINVwn5CDcL_eG1wqDfoTy3xDIpu6B5OpzAH_zp-0VspvSHFuu_WzgiHCdmAQx2xu7Np93E26reVMG6jPPzTDqXcTlafYGJfmX6uQHEk7CG3HF36FqBrbSVk2v1sVMmtPxfRe_vpjGYuJxQPvTxkEH_BSYXD6y5CF7Cj9lneMejq0BnwXpTSS-NSH9q6gHm1JZajYxbOGyK1_-v_aTEAW5098bCLxgJWI9LCM6MgTmMnY-3SJRVez3nTMsOvZXXixKonUmpS5UqYR5pa",
         "https://live.talkoraai.com/match/seg?t=pIrqKufSEpJwKlEz0ItZ97ja0RbMxvy49RwSGKy5SOZolxgxAFT14Is0JZAi_UikbIoX-hPuN2GAa6YMekd2jgxdbydzc5h17sKrL9WFVMsRaxHOXbnY-73xd7od3TCGIwTZ6A0ra-5KQ9VrnMA8dpbPC0vAri0JlBQ1906XyAymexGxNV9KM_s_tUSuXw9I0D3Ese_jatmFAIgxMjc8rxpaao6TKuNcKtG-KbzlF_8oNzYcCVAVPckrSV0WOA197FaGLUSlXjA7L6nP8Qc2m_SGA2M"
       ],
-      "last_updated": "2026-10-29T22:15:24.815235"
+      "last_updated": "2026-10-29T22:20:24.280063"
     },
     {
       "title": "New Zealand A vs India A 1st Unofficial Test",
@@ -63,7 +63,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1304",
       "runtime": "00h 00m 00s",
-      "viewers": "891",
+      "viewers": "892",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -74,7 +74,7 @@
       "server_urls": [
         "https://alixbd.com/playlistconfig/channel/38.m3u8"
       ],
-      "last_updated": "2026-10-29T22:15:25.141966"
+      "last_updated": "2026-10-29T22:20:24.664015"
     }
   ]
 }
