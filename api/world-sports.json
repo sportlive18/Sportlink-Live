@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-02T08:10:48.450694",
-  "total_matches": 1,
+  "timestamp": "2026-11-02T08:15:54.450408",
+  "total_matches": 2,
   "live_count": 1,
-  "upcoming_count": 0,
+  "upcoming_count": 1,
   "completed_count": 0,
   "matches": [
     {
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1312",
       "runtime": null,
-      "viewers": "778",
+      "viewers": "780",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -26,7 +26,27 @@
         "https://live.talkoraai.com/match/hls?t=6bSuTjfpcMs4LLd4QVaJTw2wB8-HXyOuU7_u8BViOF1_oElKsEzB4ahuuoDDBpDR5_v1ZGd1uJN-kshk6uTmXWuCZc9U32JIn9RwHwahuyP4efPEo4ow4gx4FD1M5OB67MgNq5bZXHVHfR0xlXYJg3MhYsUyNlx695NwqPdrsegwz0-TPj4mUUE0NR8c3zOhraueEK5p1fmAm1kvCG_pKQnIFIzHUq4EMl-55YDM7dIue3TLC6tUwZLyKFA9me1YDwI2b8_UCby-v-OL",
         "https://live.talkoraai.com/match/seg?t=f8hZT2-9RW2LGtUirCVZeGteKnBjgkTWv8otZmWCL2iqOeHvlDRTdo-WFhOnDmSfDasOrT5x51PQv7yFjtN4CbLTC-u6rgnmLxZFX2sCdUiLijAn9WSfac9rT9ipVETWSQbRRBjBdMtEsDk-xicK-ku9tEv8wK3bUyEtbyMYvUwFsHsMy33q4tWGGA4op42rKpjtS-aczZ-7HgHpRJUR_3v-aH4FvvXHRRYnPiwuFGfbctMZvog6QStQPSeTTtfZuUx8_NiOxpOzUhBIHf8fTaG9Tbc"
       ],
-      "last_updated": "2026-11-02T08:10:48.095153"
+      "last_updated": "2026-11-02T08:15:54.097206"
+    },
+    {
+      "title": "Melbourne Stars vs Perth Scorchers",
+      "teams": "Melbourne Stars vs Perth Scorchers",
+      "league": "Sports Tournament",
+      "sport": "cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "page_url": "/world-sports/player.html?id=1316",
+      "runtime": "00h 00m 00s",
+      "viewers": "192",
+      "viewers_type": "Waiting",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/melbourne-stars-vs-perth-scorchers-1316",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1793556681540x302.jpg",
+      "match_id": "1316",
+      "server_urls": [],
+      "last_updated": "2026-11-02T08:15:54.449933"
     }
   ]
 }
