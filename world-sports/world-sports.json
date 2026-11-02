@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02T07:37:31.135641",
+  "timestamp": "2026-11-02T07:40:44.817326",
   "total_matches": 1,
   "live_count": 1,
   "upcoming_count": 0,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1312",
       "runtime": null,
-      "viewers": "764",
+      "viewers": "766",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -26,7 +26,7 @@
         "https://live.talkoraai.com/match/hls?t=6bSuTjfpcMs4LLd4QVaJTw2wB8-HXyOuU7_u8BViOF1_oElKsEzB4ahuuoDDBpDR5_v1ZGd1uJN-kshk6uTmXWuCZc9U32JIn9RwHwahuyP4efPEo4ow4gx4FD1M5OB67MgNq5bZXHVHfR0xlXYJg3MhYsUyNlx695NwqPdrsegwz0-TPj4mUUE0NR8c3zOhraueEK5p1fmAm1kvCG_pKQnIFIzHUq4EMl-55YDM7dIue3TLC6tUwZLyKFA9me1YDwI2b8_UCby-v-OL",
         "https://live.talkoraai.com/match/seg?t=f8hZT2-9RW2LGtUirCVZeGteKnBjgkTWv8otZmWCL2iqOeHvlDRTdo-WFhOnDmSfDasOrT5x51PQv7yFjtN4CbLTC-u6rgnmLxZFX2sCdUiLijAn9WSfac9rT9ipVETWSQbRRBjBdMtEsDk-xicK-ku9tEv8wK3bUyEtbyMYvUwFsHsMy33q4tWGGA4op42rKpjtS-aczZ-7HgHpRJUR_3v-aH4FvvXHRRYnPiwuFGfbctMZvog6QStQPSeTTtfZuUx8_NiOxpOzUhBIHf8fTaG9Tbc"
       ],
-      "last_updated": "2026-11-02T07:37:30.771080"
+      "last_updated": "2026-11-02T07:40:44.464746"
     }
   ]
 }
