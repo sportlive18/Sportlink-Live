@@ -947,6 +947,157 @@
     }
 
     /* ============================================================ */
+    /* ========== SPORTS CATEGORIES (CRICKET / FOOTBALL) ========== */
+    /* ============================================================ */
+    .sports-categories-section {
+      width: 100%;
+      padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 3rem);
+      position: relative;
+      z-index: 2;
+    }
+
+    .sports-categories-header {
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .sports-categories-title {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .sports-categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .sport-category-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.2rem, 2.5vw, 2rem);
+      border-radius: clamp(12px, 1.5vw, 20px);
+      text-decoration: none;
+      color: #ffffff;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: clamp(150px, 20vw, 210px);
+      isolation: isolate;
+    }
+
+    .sport-category-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at top right,
+        rgba(255, 255, 255, 0.06),
+        transparent 60%
+      );
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Cricket — golden theme */
+    .cricket-card {
+      background:
+        linear-gradient(135deg,
+          rgba(245, 197, 24, 0.18) 0%,
+          rgba(212, 168, 0, 0.06) 50%,
+          rgba(11, 13, 15, 0.95) 100%);
+      border-color: rgba(245, 197, 24, 0.22);
+    }
+
+    .cricket-card:hover {
+      border-color: rgba(245, 197, 24, 0.55);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(245, 197, 24, 0.15);
+    }
+
+    /* Football — green theme */
+    .football-card {
+      background:
+        linear-gradient(135deg,
+          rgba(125, 255, 179, 0.15) 0%,
+          rgba(0, 200, 100, 0.05) 50%,
+          rgba(11, 13, 15, 0.95) 100%);
+      border-color: rgba(125, 255, 179, 0.22);
+    }
+
+    .football-card:hover {
+      border-color: rgba(125, 255, 179, 0.55);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(125, 255, 179, 0.12);
+    }
+
+    .sport-category-icon {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
+      display: block;
+      line-height: 1;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+    }
+
+    .sport-category-card h3 {
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      font-weight: 700;
+      margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+      letter-spacing: 0.01em;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .sport-category-card p {
+      font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: clamp(0.6rem, 1.2vw, 1rem);
+      line-height: 1.4;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .sport-category-btn {
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .sport-category-card:hover .sport-category-btn {
+      transform: translateX(6px);
+    }
+
+    .cricket-card .sport-category-btn {
+      color: var(--golden);
+    }
+
+    .football-card .sport-category-btn {
+      color: var(--green);
+    }
+
+    @media (orientation: portrait) and (max-width: 480px) {
+      .sports-categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sport-category-card {
+        min-height: 140px;
+      }
+    }
+
+    /* ============================================================ */
     /* ========== RESPONSIVE ========== */
     /* ============================================================ */
 
@@ -1196,6 +1347,8 @@
 
     <nav class="header-nav" aria-label="Main navigation">
       <a href="/">Home</a>
+      <a href="/Cricket/">Cricket</a>
+      <a href="/Football/">Football</a>
       <a href="#worldSportsSection" class="nav-scroll">Sports</a>
       <a href="#willowSection" class="nav-scroll">Willow</a>
       <a href="#fancodeSection" class="nav-scroll">Fancode</a>
@@ -1206,6 +1359,8 @@
   <!-- ====== MOBILE MENU OVERLAY ====== -->
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
     <a href="/">Home</a>
+    <a href="/Cricket/">Cricket</a>
+    <a href="/Football/">Football</a>
     <a href="#worldSportsSection" class="nav-scroll">Sports</a>
     <a href="#willowSection" class="nav-scroll">Willow</a>
     <a href="#fancodeSection" class="nav-scroll">Fancode</a>
@@ -1286,6 +1441,28 @@
 
   <!-- ====== MAIN CONTENT ====== -->
   <main role="main">
+
+    <!-- CRICKET & FOOTBALL CATEGORIES -->
+    <section class="sports-categories-section" id="sportsCategoriesSection">
+      <div class="sports-categories-header">
+        <h2 class="sports-categories-title">Explore Sports</h2>
+      </div>
+      <div class="sports-categories-grid">
+        <a href="/Cricket/" class="sport-category-card cricket-card" aria-label="Go to Cricket section">
+          <span class="sport-category-icon" aria-hidden="true">🏏</span>
+          <h3>Cricket</h3>
+          <p>Live matches, highlights & real-time scores</p>
+          <span class="sport-category-btn">Explore Cricket →</span>
+        </a>
+        <a href="/Football/" class="sport-category-card football-card" aria-label="Go to Football section">
+          <span class="sport-category-icon" aria-hidden="true">⚽</span>
+          <h3>Football</h3>
+          <p>Live matches, highlights & real-time scores</p>
+          <span class="sport-category-btn">Explore Football →</span>
+        </a>
+      </div>
+    </section>
+
     <!-- WILLOW LIVE SECTION -->
     <section class="willow-live-section" id="willowSection">
       <div class="willow-live-header">
