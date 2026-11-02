@@ -367,7 +367,6 @@
       transform: scale(1.08);
       filter: brightness(0.85) saturate(1.2);
     }
-    /* center divider (VS) */
     .sport-slide-media .flag-divider {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
@@ -389,7 +388,6 @@
       backdrop-filter: blur(4px);
     }
 
-    /* emoji watermark when no flags */
     .sport-slide-emoji {
       position: absolute; top: 50%; right: 8%;
       transform: translateY(-50%); z-index: 1;
@@ -397,7 +395,6 @@
       opacity: 0.18; pointer-events: none; line-height: 1;
     }
 
-    /* overlay for text readability */
     .sport-slide-body {
       position: absolute; inset: 0; z-index: 2;
       display: flex; flex-direction: column; justify-content: flex-end;
@@ -457,7 +454,6 @@
       text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
     }
 
-    /* loading / empty states */
     .sport-slide-skeleton {
       flex: 0 0 auto; width: clamp(190px, 24vw, 300px);
       aspect-ratio: 16 / 9; border-radius: clamp(10px, 1.2vw, 16px);
@@ -587,23 +583,23 @@
     </a>
     <nav class="header-nav" aria-label="Main navigation">
       <a href="/">Home</a>
-      <a href="/Cricket/">Cricket</a>
-      <a href="/Football/">Football</a>
-      <a href="#worldSportsSection" class="nav-scroll">Sports</a>
-      <a href="#willowSection" class="nav-scroll">Willow</a>
       <a href="#fancodeSection" class="nav-scroll">Fancode</a>
+      <a href="#footballSection" class="nav-scroll">Football</a>
+      <a href="#cricketSection" class="nav-scroll">Cricket</a>
+      <a href="#willowSection" class="nav-scroll">Willow</a>
       <a href="#primeSection" class="nav-scroll">Prime</a>
+      <a href="#worldSportsSection" class="nav-scroll">Sports</a>
     </nav>
   </header>
 
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
     <a href="/">Home</a>
-    <a href="/Cricket/">Cricket</a>
-    <a href="/Football/">Football</a>
-    <a href="#worldSportsSection" class="nav-scroll">Sports</a>
-    <a href="#willowSection" class="nav-scroll">Willow</a>
     <a href="#fancodeSection" class="nav-scroll">Fancode</a>
+    <a href="#footballSection" class="nav-scroll">Football</a>
+    <a href="#cricketSection" class="nav-scroll">Cricket</a>
+    <a href="#willowSection" class="nav-scroll">Willow</a>
     <a href="#primeSection" class="nav-scroll">Prime</a>
+    <a href="#worldSportsSection" class="nav-scroll">Sports</a>
   </nav>
 
   <div class="poster-wrapper" id="posterWrapper" aria-label="Featured match">
@@ -617,7 +613,7 @@
       <div class="gradient-overlay"></div>
 
       <div class="match-details">
-        <div class="match-title">IND VS NZ T20 SERIES, 2026</div>
+        <div class="match-title">IND VS NZ ODI SERIES, 2026</div>
         <div class="teams-row">
           <div class="team">
             <img src="https://flagpedia.net/data/flags/w1160/in.webp" alt="India" class="team-flag" loading="lazy" />
@@ -632,9 +628,9 @@
         <div class="match-info">
           <span class="tag">Today</span>
           <span class="separator">•</span>
-          <span class="date">Oct 30th</span>
+          <span class="date">Nov 4th</span>
           <span class="separator">•</span>
-          <span class="time">12:30 PM IST</span>
+          <span class="time">7:30 AM IST</span>
         </div>
         <div class="badges">
           <span class="badge badge-fulltime">T20</span>
@@ -666,20 +662,17 @@
 
   <main role="main">
 
-    <!-- CRICKET SLIDER SECTION -->
-    <section class="sport-slider-section cricket-section" id="cricketSection">
-      <div class="sport-slider-header">
-        <h2 class="sport-slider-title">Cricket</h2>
-        <a href="/Cricket/" class="sport-slider-link">View All &rarr;</a>
-      </div>
-      <div class="sport-slider-wrapper">
-        <button class="sport-slider-arrow sport-arrow-left" id="cricketArrowLeft" type="button" aria-label="Scroll cricket left">&#10094;</button>
-        <div class="sport-slider-track" id="cricketTrack" tabindex="0" role="list" aria-label="Cricket matches"></div>
-        <button class="sport-slider-arrow sport-arrow-right" id="cricketArrowRight" type="button" aria-label="Scroll cricket right">&#10095;</button>
+    <!-- 1) FANCODE SECTION -->
+    <section class="fancode-section" id="fancodeSection">
+      <div class="fancode-header"><div class="fancode-title">FanCode</div></div>
+      <div class="fancode-carousel-wrapper">
+        <button class="fancode-arrow arrow-left" id="fancodeArrowLeft" aria-label="Scroll left">&#10094;</button>
+        <div class="fancode-track" id="fancodeTrack" tabindex="0"></div>
+        <button class="fancode-arrow arrow-right" id="fancodeArrowRight" aria-label="Scroll right">&#10095;</button>
       </div>
     </section>
 
-    <!-- FOOTBALL SLIDER SECTION -->
+    <!-- 2) FOOTBALL SLIDER SECTION -->
     <section class="sport-slider-section football-section" id="footballSection">
       <div class="sport-slider-header">
         <h2 class="sport-slider-title">Football</h2>
@@ -692,7 +685,20 @@
       </div>
     </section>
 
-    <!-- WILLOW LIVE SECTION -->
+    <!-- 3) CRICKET SLIDER SECTION -->
+    <section class="sport-slider-section cricket-section" id="cricketSection">
+      <div class="sport-slider-header">
+        <h2 class="sport-slider-title">Cricket</h2>
+        <a href="/Cricket/" class="sport-slider-link">View All &rarr;</a>
+      </div>
+      <div class="sport-slider-wrapper">
+        <button class="sport-slider-arrow sport-arrow-left" id="cricketArrowLeft" type="button" aria-label="Scroll cricket left">&#10094;</button>
+        <div class="sport-slider-track" id="cricketTrack" tabindex="0" role="list" aria-label="Cricket matches"></div>
+        <button class="sport-slider-arrow sport-arrow-right" id="cricketArrowRight" type="button" aria-label="Scroll cricket right">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- 4) WILLOW LIVE SECTION -->
     <section class="willow-live-section" id="willowSection">
       <div class="willow-live-header"><h2 class="willow-live-title">Willow Live</h2></div>
       <div class="willow-live-carousel-wrapper">
@@ -702,17 +708,7 @@
       </div>
     </section>
 
-    <!-- FANCODE SECTION -->
-    <section class="fancode-section" id="fancodeSection">
-      <div class="fancode-header"><div class="fancode-title">FanCode</div></div>
-      <div class="fancode-carousel-wrapper">
-        <button class="fancode-arrow arrow-left" id="fancodeArrowLeft" aria-label="Scroll left">&#10094;</button>
-        <div class="fancode-track" id="fancodeTrack" tabindex="0"></div>
-        <button class="fancode-arrow arrow-right" id="fancodeArrowRight" aria-label="Scroll right">&#10095;</button>
-      </div>
-    </section>
-
-    <!-- PRIME SECTION -->
+    <!-- 5) PRIME SECTION -->
     <section class="prime-section" id="primeSection">
       <div class="prime-header"><h2 class="prime-title">Prime</h2><span class="prime-badge">Live</span></div>
       <div class="prime-carousel-wrapper">
@@ -722,7 +718,7 @@
       </div>
     </section>
 
-    <!-- WORLD SPORTS SECTION -->
+    <!-- 6) WORLD SPORTS SECTION -->
     <section class="world-sports-section" id="worldSportsSection">
       <div class="world-sports-header"><h2 class="world-sports-title">World Sports</h2><span class="world-sports-badge">Live</span></div>
       <div class="world-sports-carousel-wrapper">
@@ -816,12 +812,11 @@
     });
   </script>
 
-  <!-- ====== CRICKET / FOOTBALL SLIDERS (LIVE API) ====== -->
+  <!-- ====== CRICKET / FOOTBALL SLIDERS (LIVE API + DIRECT PLAYER LINKS) ====== -->
   <script>
     (function () {
       'use strict';
 
-      /* ---- Config — matches Cricket/Football page exactly ---- */
       const CRICKET_API  = 'https://allrounderlive.in/api/cricket.json';
       const FOOTBALL_API = 'https://allrounderlive.in/api/football.json';
       const PROXY_URL    = 'https://sportlink-10.lovable.app/api/public/proxy?url=';
@@ -843,7 +838,6 @@
           if (text.trim().startsWith('<')) throw new Error('HTML response');
           return JSON.parse(text);
         } catch (err) {
-          // fallback via proxy
           res = await fetch(proxyUrl(url), { cache: 'no-store' });
           if (!res.ok) throw new Error('Proxy HTTP ' + res.status);
           const text = await res.text();
@@ -915,7 +909,6 @@
         return `${m}m`;
       }
 
-      /* Normalize — same logic as the player pages */
       function normalize(data) {
         if (!Array.isArray(data)) return [];
         const events = [];
@@ -937,22 +930,15 @@
             const comp = String(info.name || info.competition || item.title || '').trim();
             const sport = String(info.category || info.sport || item.cat || 'Other').trim();
 
-            const hasStreams = (Array.isArray(item.dashStreams) && item.dashStreams.length)
-              || (Array.isArray(item.streams) && item.streams.length)
-              || (Array.isArray(item.formats) && item.formats.length);
-
             events.push({
               id: String(item.id ?? index),
-              a, b, fa, fb, comp, sport,
-              st, en,
-              hasStreams: !!hasStreams
+              a, b, fa, fb, comp, sport, st, en
             });
-          } catch (err) { /* skip */ }
+          } catch (err) {}
         });
         return events;
       }
 
-      /* Sort like the player pages: live first, then soon, then done; by start time */
       function sortEvents(events) {
         const order = { live: 0, soon: 1, done: 2 };
         return events.slice().sort((x, y) => {
@@ -963,7 +949,7 @@
         });
       }
 
-      /* ---------- CARD BUILDER ---------- */
+      /* ---------- CARD BUILDER — opens player with #watch?id=… ---------- */
       function buildCard(e, emoji) {
         const status = getStatus(e.st, e.en);
         const now = Date.now();
@@ -971,10 +957,12 @@
         const hasA = !!e.a;
         const hasB = !!e.b;
         const sameTeam = !hasB || e.a === e.b;
-
         const title = hasA && hasB ? `${e.a} vs ${e.b}` : (e.a || e.comp || 'Match');
 
-        // dual-flag media (2 cols) — exactly what the player page shows as crests
+        // 🔑 Direct player URL: /Football/#watch?id=…&stream=0
+        const basePath = emoji === '⚽' ? '/Football/' : '/Cricket/';
+        const watchUrl = `${basePath}#watch?id=${encodeURIComponent(e.id)}&stream=0`;
+
         let mediaHtml = '';
         if (hasA && !sameTeam && hasB) {
           const flagA = e.fa
@@ -1004,10 +992,7 @@
         else metaParts.push(dateString(e.st));
         const meta = metaParts.join(' · ');
 
-        // link to the section's folder — same as "View All" target
-        const url = emoji === '⚽' ? '/Football/' : '/Cricket/';
-
-        return `<a class="sport-slide" role="listitem" href="${url}" aria-label="${esc(title)}">
+        return `<a class="sport-slide" role="listitem" href="${watchUrl}" aria-label="${esc(title)}">
           <div class="sport-slide-media">${mediaHtml}</div>
           ${!hasA && !hasB ? `<span class="sport-slide-emoji" aria-hidden="true">${emoji}</span>` : ''}
           <div class="sport-slide-body">
@@ -1023,7 +1008,6 @@
         for (let i = 0; i < n; i++) html += `<div class="sport-slide-skeleton"></div>`;
         return html;
       }
-
       function buildEmpty(msg) {
         return `<div class="sport-slide-empty">${esc(msg)}</div>`;
       }
@@ -1052,7 +1036,6 @@
         track.addEventListener('scroll', updateArrows, { passive: true });
         window.addEventListener('resize', updateArrows);
 
-        /* drag-to-scroll (mouse/pen) */
         let down = false, startX = 0, startScroll = 0, moved = false;
         track.addEventListener('pointerdown', e => {
           if (e.pointerType === 'touch') return;
@@ -1074,7 +1057,6 @@
           if (moved) { e.preventDefault(); moved = false; }
         }, true);
 
-        /* keyboard */
         track.addEventListener('keydown', e => {
           if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: step(), behavior: 'smooth' }); }
           if (e.key === 'ArrowLeft')  { e.preventDefault(); track.scrollBy({ left: -step(), behavior: 'smooth' }); }
@@ -1115,8 +1097,7 @@
       async function loadCricket() {
         try {
           const raw = await fetchJson(CRICKET_API);
-          const events = sortEvents(normalize(raw)).slice(0, MAX_ITEMS);
-          cricketSlider.setItems(events);
+          cricketSlider.setItems(sortEvents(normalize(raw)).slice(0, MAX_ITEMS));
         } catch (err) {
           console.warn('[cricket]', err);
           cricketSlider.showError('Could not load cricket matches');
@@ -1126,8 +1107,7 @@
       async function loadFootball() {
         try {
           const raw = await fetchJson(FOOTBALL_API);
-          const events = sortEvents(normalize(raw)).slice(0, MAX_ITEMS);
-          footballSlider.setItems(events);
+          footballSlider.setItems(sortEvents(normalize(raw)).slice(0, MAX_ITEMS));
         } catch (err) {
           console.warn('[football]', err);
           footballSlider.showError('Could not load football matches');
@@ -1137,7 +1117,6 @@
       loadCricket();
       loadFootball();
 
-      // refresh every 60s to keep live/soon statuses accurate
       setInterval(loadCricket, 60000);
       setInterval(loadFootball, 60000);
     })();
