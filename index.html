@@ -947,154 +947,247 @@
     }
 
     /* ============================================================ */
-    /* ========== SPORTS CATEGORIES (CRICKET / FOOTBALL) ========== */
+    /* ===== SPORT SLIDER SECTIONS (CRICKET / FOOTBALL) =========== */
     /* ============================================================ */
-    .sports-categories-section {
+
+    .sport-slider-section {
       width: 100%;
-      padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 3rem);
+      padding: clamp(1.2rem, 3vw, 2.2rem) 0 clamp(0.4rem, 1vw, 0.8rem);
       position: relative;
       z-index: 2;
     }
 
-    .sports-categories-header {
-      margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    .sport-slider-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.8rem;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      margin-bottom: clamp(0.6rem, 1.4vw, 1rem);
     }
 
-    .sports-categories-title {
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    .sport-slider-title {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
       font-weight: 700;
       color: #ffffff;
       letter-spacing: 0.01em;
       font-family: 'Inter', system-ui, sans-serif;
     }
 
-    .sports-categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: clamp(1rem, 2vw, 1.5rem);
-    }
-
-    .sport-category-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.2rem, 2.5vw, 2rem);
-      border-radius: clamp(12px, 1.5vw, 20px);
+    .sport-slider-link {
+      font-size: clamp(0.6rem, 1vw, 0.82rem);
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.55);
       text-decoration: none;
-      color: #ffffff;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      min-height: clamp(150px, 20vw, 210px);
-      isolation: isolate;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      transition: color 0.25s ease;
     }
 
-    .sport-category-card::after {
-      content: '';
+    .cricket-section .sport-slider-link:hover { color: var(--golden); }
+    .football-section .sport-slider-link:hover { color: var(--green); }
+
+    /* wrapper keeps a gutter on both sides so arrows never cover cards */
+    .sport-slider-wrapper {
+      position: relative;
+      padding: 0 clamp(2rem, 4vw, 3rem);
+    }
+
+    .sport-slider-track {
+      display: flex;
+      gap: clamp(0.6rem, 1.2vw, 1rem);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: clamp(0.2rem, 0.5vw, 0.5rem) 0;
+      cursor: grab;
+    }
+
+    .sport-slider-track::-webkit-scrollbar { display: none; }
+
+    .sport-slider-track.dragging {
+      cursor: grabbing;
+      scroll-behavior: auto;
+      scroll-snap-type: none;
+    }
+
+    /* ---------- CARD ---------- */
+    .sport-slide {
+      flex: 0 0 auto;
+      width: clamp(190px, 24vw, 300px);
+      aspect-ratio: 16 / 9;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: clamp(10px, 1.2vw, 16px);
+      text-decoration: none;
+      background: #12161a;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      scroll-snap-align: start;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease;
+    }
+
+    .sport-slide:hover,
+    .sport-slide:focus-visible {
+      transform: translateY(-4px);
+      outline: none;
+    }
+
+    .cricket-section .sport-slide:hover,
+    .cricket-section .sport-slide:focus-visible {
+      border-color: rgba(245, 197, 24, 0.5);
+      box-shadow: 0 16px 34px rgba(245, 197, 24, 0.16);
+    }
+
+    .football-section .sport-slide:hover,
+    .football-section .sport-slide:focus-visible {
+      border-color: rgba(125, 255, 179, 0.5);
+      box-shadow: 0 16px 34px rgba(125, 255, 179, 0.14);
+    }
+
+    .sport-slide-media {
       position: absolute;
       inset: 0;
-      background: radial-gradient(
-        ellipse at top right,
-        rgba(255, 255, 255, 0.06),
-        transparent 60%
-      );
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.45s ease;
+    }
+
+    .cricket-section .sport-slide-media {
+      background-image: linear-gradient(135deg, rgba(245, 197, 24, 0.35) 0%, rgba(11, 13, 15, 0.95) 70%);
+    }
+
+    .football-section .sport-slide-media {
+      background-image: linear-gradient(135deg, rgba(125, 255, 179, 0.28) 0%, rgba(11, 13, 15, 0.95) 70%);
+    }
+
+    .sport-slide:hover .sport-slide-media { transform: scale(1.06); }
+
+    .sport-slide-emoji {
+      position: absolute;
+      top: 6%;
+      right: 6%;
+      z-index: 1;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      opacity: 0.2;
       pointer-events: none;
-      z-index: -1;
-    }
-
-    /* Cricket — golden theme */
-    .cricket-card {
-      background:
-        linear-gradient(135deg,
-          rgba(245, 197, 24, 0.18) 0%,
-          rgba(212, 168, 0, 0.06) 50%,
-          rgba(11, 13, 15, 0.95) 100%);
-      border-color: rgba(245, 197, 24, 0.22);
-    }
-
-    .cricket-card:hover {
-      border-color: rgba(245, 197, 24, 0.55);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(245, 197, 24, 0.15);
-    }
-
-    /* Football — green theme */
-    .football-card {
-      background:
-        linear-gradient(135deg,
-          rgba(125, 255, 179, 0.15) 0%,
-          rgba(0, 200, 100, 0.05) 50%,
-          rgba(11, 13, 15, 0.95) 100%);
-      border-color: rgba(125, 255, 179, 0.22);
-    }
-
-    .football-card:hover {
-      border-color: rgba(125, 255, 179, 0.55);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(125, 255, 179, 0.12);
-    }
-
-    .sport-category-icon {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
-      display: block;
       line-height: 1;
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
     }
 
-    .sport-category-card h3 {
-      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+    .sport-slide-body {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(0.55rem, 1.1vw, 0.95rem);
+      background: linear-gradient(
+        to top,
+        rgba(6, 8, 10, 0.96) 0%,
+        rgba(6, 8, 10, 0.6) 42%,
+        rgba(6, 8, 10, 0.1) 78%,
+        transparent 100%
+      );
+    }
+
+    .sport-slide-live {
+      align-self: flex-start;
+      margin-bottom: clamp(0.15rem, 0.4vw, 0.35rem);
+      padding: 0.18em 0.6em;
+      border-radius: 999px;
+      font-size: clamp(0.45rem, 0.7vw, 0.6rem);
       font-weight: 700;
-      margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
-      letter-spacing: 0.01em;
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-
-    .sport-category-card p {
-      font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: clamp(0.6rem, 1.2vw, 1rem);
-      line-height: 1.4;
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-
-    .sport-category-btn {
-      font-size: clamp(0.7rem, 1vw, 0.85rem);
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.85);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: transform 0.3s ease, color 0.3s ease;
-      display: inline-block;
+      letter-spacing: 0.09em;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: rgba(245, 197, 24, 0.16);
+      color: var(--golden);
+      border: 1px solid rgba(245, 197, 24, 0.28);
+    }
+
+    .football-section .sport-slide-live {
+      background: rgba(125, 255, 179, 0.14);
+      color: var(--green);
+      border-color: rgba(125, 255, 179, 0.25);
+    }
+
+    .sport-slide-title {
+      font-size: clamp(0.72rem, 1.1vw, 0.95rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      font-family: 'Inter', system-ui, sans-serif;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .sport-slide-meta {
+      font-size: clamp(0.55rem, 0.8vw, 0.72rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-family: 'Inter', system-ui, sans-serif;
     }
 
-    .sport-category-card:hover .sport-category-btn {
-      transform: translateX(6px);
+    /* ---------- ARROWS ---------- */
+    .sport-slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(30px, 3.5vw, 46px);
+      height: clamp(30px, 3.5vw, 46px);
+      border-radius: 50%;
+      background: rgba(11, 13, 15, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(0.8rem, 1.4vw, 1.1rem);
+      line-height: 1;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
     }
 
-    .cricket-card .sport-category-btn {
-      color: var(--golden);
+    .sport-slider-arrow:hover {
+      background: rgba(11, 13, 15, 0.92);
+      border-color: rgba(255, 255, 255, 0.32);
+      transform: translateY(-50%) scale(1.08);
     }
 
-    .football-card .sport-category-btn {
-      color: var(--green);
+    .sport-slider-arrow:active { transform: translateY(-50%) scale(0.92); }
+
+    .sport-slider-arrow[disabled] {
+      opacity: 0.28;
+      pointer-events: none;
     }
 
-    @media (orientation: portrait) and (max-width: 480px) {
-      .sports-categories-grid {
-        grid-template-columns: 1fr;
-      }
+    .sport-slider-arrow.sport-arrow-left { left: 0; }
+    .sport-slider-arrow.sport-arrow-right { right: 0; }
 
-      .sport-category-card {
-        min-height: 140px;
-      }
+    @media (max-width: 640px) {
+      .sport-slider-wrapper { padding: 0 clamp(1rem, 4vw, 1.6rem); }
+      .sport-slide { width: clamp(160px, 55vw, 220px); }
+      .sport-slider-arrow { width: 30px; height: 30px; font-size: 0.7rem; }
+      .sport-slider-arrow.sport-arrow-left { left: -2px; }
+      .sport-slider-arrow.sport-arrow-right { right: -2px; }
     }
 
     /* ============================================================ */
@@ -1347,8 +1440,8 @@
 
     <nav class="header-nav" aria-label="Main navigation">
       <a href="/">Home</a>
-      <a href="/Cricket/">Cricket</a>
-      <a href="/Football/">Football</a>
+      <a href="#cricketSection" class="nav-scroll">Cricket</a>
+      <a href="#footballSection" class="nav-scroll">Football</a>
       <a href="#worldSportsSection" class="nav-scroll">Sports</a>
       <a href="#willowSection" class="nav-scroll">Willow</a>
       <a href="#fancodeSection" class="nav-scroll">Fancode</a>
@@ -1359,8 +1452,8 @@
   <!-- ====== MOBILE MENU OVERLAY ====== -->
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
     <a href="/">Home</a>
-    <a href="/Cricket/">Cricket</a>
-    <a href="/Football/">Football</a>
+    <a href="#cricketSection" class="nav-scroll">Cricket</a>
+    <a href="#footballSection" class="nav-scroll">Football</a>
     <a href="#worldSportsSection" class="nav-scroll">Sports</a>
     <a href="#willowSection" class="nav-scroll">Willow</a>
     <a href="#fancodeSection" class="nav-scroll">Fancode</a>
@@ -1442,24 +1535,29 @@
   <!-- ====== MAIN CONTENT ====== -->
   <main role="main">
 
-    <!-- CRICKET & FOOTBALL CATEGORIES -->
-    <section class="sports-categories-section" id="sportsCategoriesSection">
-      <div class="sports-categories-header">
-        <h2 class="sports-categories-title">Explore Sports</h2>
+    <!-- CRICKET SLIDER SECTION -->
+    <section class="sport-slider-section cricket-section" id="cricketSection">
+      <div class="sport-slider-header">
+        <h2 class="sport-slider-title">Cricket</h2>
+        <a href="/Cricket/" class="sport-slider-link">View All &rarr;</a>
       </div>
-      <div class="sports-categories-grid">
-        <a href="/Cricket/" class="sport-category-card cricket-card" aria-label="Go to Cricket section">
-          <span class="sport-category-icon" aria-hidden="true">🏏</span>
-          <h3>Cricket</h3>
-          <p>Live matches, highlights & real-time scores</p>
-          <span class="sport-category-btn">Explore Cricket →</span>
-        </a>
-        <a href="/Football/" class="sport-category-card football-card" aria-label="Go to Football section">
-          <span class="sport-category-icon" aria-hidden="true">⚽</span>
-          <h3>Football</h3>
-          <p>Live matches, highlights & real-time scores</p>
-          <span class="sport-category-btn">Explore Football →</span>
-        </a>
+      <div class="sport-slider-wrapper">
+        <button class="sport-slider-arrow sport-arrow-left" id="cricketArrowLeft" type="button" aria-label="Scroll cricket matches left">&#10094;</button>
+        <div class="sport-slider-track" id="cricketTrack" tabindex="0" role="list" aria-label="Cricket matches"></div>
+        <button class="sport-slider-arrow sport-arrow-right" id="cricketArrowRight" type="button" aria-label="Scroll cricket matches right">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- FOOTBALL SLIDER SECTION -->
+    <section class="sport-slider-section football-section" id="footballSection">
+      <div class="sport-slider-header">
+        <h2 class="sport-slider-title">Football</h2>
+        <a href="/Football/" class="sport-slider-link">View All &rarr;</a>
+      </div>
+      <div class="sport-slider-wrapper">
+        <button class="sport-slider-arrow sport-arrow-left" id="footballArrowLeft" type="button" aria-label="Scroll football matches left">&#10094;</button>
+        <div class="sport-slider-track" id="footballTrack" tabindex="0" role="list" aria-label="Football matches"></div>
+        <button class="sport-slider-arrow sport-arrow-right" id="footballArrowRight" type="button" aria-label="Scroll football matches right">&#10095;</button>
       </div>
     </section>
 
@@ -1620,6 +1718,110 @@
       if (slides.length <= 1) return;
     })();
 
+  </script>
+
+  <!-- ====== CRICKET / FOOTBALL SLIDERS ====== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ⬇️ EDIT YOUR CARDS HERE — fill `img` with a real poster URL when ready */
+      var cricketMatches = [
+        { title: 'India vs New Zealand',      meta: 'T20I • Today • 12:30 PM',      live: true,  img: '', url: '/Cricket/' },
+        { title: 'Australia vs England',      meta: 'Ashes Test • Today • 5:30 AM', live: true,  img: '', url: '/Cricket/' },
+        { title: 'Mumbai Indians vs Chennai', meta: 'IPL • Tomorrow • 7:30 PM',     live: false, img: '', url: '/Cricket/' },
+        { title: 'Pakistan vs South Africa',  meta: 'ODI • Oct 31 • 1:30 PM',       live: false, img: '', url: '/Cricket/' },
+        { title: 'Sri Lanka vs Bangladesh',   meta: 'T20I • Nov 1 • 7:00 PM',       live: false, img: '', url: '/Cricket/' }
+      ];
+
+      var footballMatches = [
+        { title: 'Real Madrid vs Barcelona',  meta: 'La Liga • Today • 9:00 PM',         live: true,  img: '', url: '/Football/' },
+        { title: 'Man United vs Liverpool',   meta: 'Premier League • Today • 11:30 PM', live: true,  img: '', url: '/Football/' },
+        { title: 'Bayern Munich vs Dortmund', meta: 'Bundesliga • Oct 31 • 10:00 PM',    live: false, img: '', url: '/Football/' },
+        { title: 'PSG vs Marseille',          meta: 'Ligue 1 • Nov 1 • 1:00 AM',         live: false, img: '', url: '/Football/' },
+        { title: 'Juventus vs Inter Milan',   meta: 'Serie A • Nov 2 • 12:45 AM',        live: false, img: '', url: '/Football/' }
+      ];
+
+      function esc(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function buildCard(m, emoji) {
+        var media = m.img
+          ? '<div class="sport-slide-media" style="background-image:url(&quot;' + esc(m.img) + '&quot;)"></div>'
+          : '<div class="sport-slide-media"></div>';
+        return '<a class="sport-slide" role="listitem" href="' + esc(m.url) + '" aria-label="' + esc(m.title) + '">' +
+            media +
+            '<span class="sport-slide-emoji" aria-hidden="true">' + emoji + '</span>' +
+            '<div class="sport-slide-body">' +
+              (m.live ? '<span class="sport-slide-live">Live</span>' : '') +
+              '<h3 class="sport-slide-title">' + esc(m.title) + '</h3>' +
+              '<p class="sport-slide-meta">' + esc(m.meta) + '</p>' +
+            '</div>' +
+          '</a>';
+      }
+
+      function initSlider(trackId, leftId, rightId, items, emoji) {
+        var track = document.getElementById(trackId);
+        var left  = document.getElementById(leftId);
+        var right = document.getElementById(rightId);
+        if (!track || !left || !right) return;
+
+        track.innerHTML = items.map(function (m) { return buildCard(m, emoji); }).join('');
+
+        function step() {
+          var card = track.querySelector('.sport-slide');
+          var gap = parseFloat(getComputedStyle(track).columnGap) || 12;
+          return card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+        }
+
+        function updateArrows() {
+          var max = track.scrollWidth - track.clientWidth - 2;
+          left.disabled  = track.scrollLeft <= 2;
+          right.disabled = track.scrollLeft >= max;
+        }
+
+        left.addEventListener('click',  function () { track.scrollBy({ left: -step() * 2, behavior: 'smooth' }); });
+        right.addEventListener('click', function () { track.scrollBy({ left:  step() * 2, behavior: 'smooth' }); });
+        track.addEventListener('scroll', updateArrows, { passive: true });
+        window.addEventListener('resize', updateArrows);
+
+        /* drag to scroll (mouse / pen only — touch already swipes natively) */
+        var down = false, startX = 0, startScroll = 0, moved = false;
+        track.addEventListener('pointerdown', function (e) {
+          if (e.pointerType === 'touch') return;
+          down = true; moved = false;
+          startX = e.clientX; startScroll = track.scrollLeft;
+          track.classList.add('dragging');
+        });
+        track.addEventListener('pointermove', function (e) {
+          if (!down) return;
+          var dx = e.clientX - startX;
+          if (Math.abs(dx) > 4) moved = true;
+          track.scrollLeft = startScroll - dx;
+        });
+        function endDrag() { down = false; track.classList.remove('dragging'); }
+        track.addEventListener('pointerup', endDrag);
+        track.addEventListener('pointercancel', endDrag);
+        track.addEventListener('pointerleave', endDrag);
+        track.addEventListener('click', function (e) {
+          if (moved) { e.preventDefault(); moved = false; }
+        }, true);
+
+        /* keyboard */
+        track.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left:  step(), behavior: 'smooth' }); }
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); track.scrollBy({ left: -step(), behavior: 'smooth' }); }
+        });
+
+        updateArrows();
+      }
+
+      initSlider('cricketTrack',  'cricketArrowLeft',  'cricketArrowRight',  cricketMatches,  '🏏');
+      initSlider('footballTrack', 'footballArrowLeft', 'footballArrowRight', footballMatches, '⚽');
+    })();
   </script>
 
   <!-- ====== TELEGRAM POPUP CSS ====== -->
