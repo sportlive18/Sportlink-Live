@@ -516,9 +516,7 @@ img{display:block;max-width:100%}
    CONFIG
    ============================================================ */
 const DATA_URL  = "https://allrounderlive.in/api/football.json";
-const PROXY_URL = "https://sportlink-10.lovable.app/api/public/proxy?url=";
 const LOG  = (...a) => console.log("[Sportlink]", ...a);
-const WARN = (...a) => console.warn("[Sportlink]", ...a);
 const ERR  = (...a) => console.error("[Sportlink]", ...a);
 
 const $ = id => document.getElementById(id);
@@ -531,16 +529,6 @@ const state = {
   currentStreams: [],
   currentIndex: 0
 };
-
-/* ============================================================
-   PROXY HELPER
-   ============================================================ */
-function proxyUrl(url){
-  if(!url) return url;
-  const raw = String(url).trim();
-  if(raw.startsWith(PROXY_URL)) return raw;
-  return PROXY_URL + encodeURIComponent(raw);
-}
 
 /* ============================================================
    TIER / DEVICE PROFILE
@@ -661,17 +649,11 @@ function crest(url, name){
 }
 
 /* ============================================================
-   FETCH & NORMALIZE (with proxy fallback)
+   FETCH & NORMALIZE
    ============================================================ */
 async function fetchJson(url){
   LOG("Fetching:", url);
-  let res;
-  try{
-    res = await fetch(url, {cache:"no-store"});
-  }catch(err){
-    WARN("Direct fetch failed, retrying via proxy:", err.message);
-    res = await fetch(proxyUrl(url), {cache:"no-store"});
-  }
+  const res = await fetch(url, {cache:"no-store"});
   if(!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
   const text = await res.text();
   if(text.trim().startsWith("<")) throw new Error("Server returned HTML instead of JSON.");
@@ -1169,15 +1151,6 @@ async function mountPlayer(record, token){
   // ---- Base config ----
   player.configure(buildCfg());
 
-  // ---- Proxy routing: ALL requests ----
-  player.getNetworkingEngine().registerRequestFilter((type, request) => {
-    const uri = request.uris && request.uris[0];
-    if(!uri) return;
-    if(uri.startsWith(PROXY_URL)) return;
-    if(!/^https?:\/\//i.test(uri)) return;
-    request.uris = [proxyUrl(uri)];
-  });
-
   // ---- Thermal guard ----
   sessionStart = Date.now();
   thermalTimer = setInterval(() => {
@@ -1194,25 +1167,16 @@ async function mountPlayer(record, token){
   }, 60000);
 
   // ---- Stream info ----
-  const streamInfo = { url: proxyUrl(record.link), type: record.type };
+  const streamInfo = { url: record.link, type: record.type };
   currentStreamInfo = streamInfo;
 
   /* =========================================
      RELIABLE RECONNECT
-
-     - `refreshing` is the ONLY gate. No cooldown timer that can
-       block the first retry.
-     - Exponential backoff: 1s, 2s, 4s, 8s, 8s
-     - `retries` is reset only on a successful reload.
-     - Stale retries (after switching streams) bail out via token check.
-     - `edgeTried` only resets on a successful reload — so a stream
-       that briefly plays then stalls falls back to reload instead of
-       looping goToLive() forever.
      ========================================= */
   async function reload(){
-    if(refreshing) return;                 // one at a time
-    if(token !== playbackToken) return;    // stream was switched away
-    if(!player) return;                    // player was destroyed
+    if(refreshing) return;
+    if(token !== playbackToken) return;
+    if(!player) return;
 
     if(retries >= 5){
       toast("Stream Unavailable. Please Try Again Later.", "err", 0);
@@ -1241,7 +1205,6 @@ async function mountPlayer(record, token){
     }catch(err){
       LOG(`Reload attempt ${attempt} failed:`, err);
       const delay = Math.min(1000 * Math.pow(2, attempt - 1), 8000);
-      // refreshing stays true during the backoff wait — no duplicate reloads
       setTimeout(() => {
         refreshing = false;
         reload();
@@ -1314,8 +1277,6 @@ async function mountPlayer(record, token){
     started = true;
     if(stallTmr){ clearTimeout(stallTmr); stallTmr = null; }
     if(!refreshing) toast("Live", "live", 3000);
-    // NOTE: edgeTried is NOT reset here. If the stream briefly resumes
-    // then stalls again, we go to reload() instead of looping goToLive().
   });
 
   vid.addEventListener("error", () => {
@@ -1371,7 +1332,6 @@ async function mountPlayer(record, token){
     ERR("Initial load failed:", e);
     loadEl.hidden = true;
     toast("Connection Error — Retrying…", "warn", 0);
-    // Short delay so the user can see the message, then start retries
     setTimeout(reload, 800);
   }
 }
@@ -1497,6 +1457,8 @@ loadData();
 setInterval(() => { if(window.__booted) renderHub(); }, 30000);
 setInterval(() => { if(window.__booted && !location.hash.includes("watch")) loadData(); }, 120000);
 </script>
+
 <script async src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
+
 </body>
 </html>
