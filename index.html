@@ -658,7 +658,7 @@
 
     /* ============================================================
        SPORT SLIDER — Cricket & Football cards
-       Sizes tuned to match typical FanCode/Willow carousels
+       Size is synced at runtime with FanCode / Willow cards
        ============================================================ */
     .sport-slider-track {
       display: flex;
@@ -680,12 +680,13 @@
       scroll-snap-type: none;
     }
 
-    /* Shared card width across sections */
+    /* Shared card size — synced at runtime with FanCode / Willow cards */
     .sport-slide,
     .sport-slide-skeleton {
       flex: 0 0 auto;
-      width: clamp(240px, 26vw, 360px);
-      aspect-ratio: 16 / 9;
+      width: var(--sport-card-w, clamp(240px, 26vw, 360px));
+      aspect-ratio: var(--sport-card-ratio, 16 / 9);
+      height: auto;
       border-radius: var(--radius);
       scroll-snap-align: start;
     }
@@ -981,10 +982,6 @@
     }
 
     @media (max-width: 640px) {
-      .sport-slide,
-      .sport-slide-skeleton {
-        width: clamp(210px, 62vw, 280px);
-      }
       .carousel-arrow,
       .fancode-arrow,
       .prime-arrow,
@@ -1526,6 +1523,59 @@
     })();
   </script>
 
+  <!-- ====== CARD SIZE SYNC — Football/Cricket follow FanCode/Willow ====== -->
+  <script>
+    (function () {
+      'use strict';
+      var root = document.documentElement;
+      var lastW = 0, lastH = 0;
+
+      function findRef() {
+        var ids = ['fancodeTrack', 'willowLiveTrack', 'primeTrack', 'worldSportsTrack'];
+        for (var i = 0; i < ids.length; i++) {
+          var track = document.getElementById(ids[i]);
+          if (!track) continue;
+          var card = track.firstElementChild;
+          if (!card) continue;
+          var r = card.getBoundingClientRect();
+          if (r.width > 80 && r.height > 40) return r;
+        }
+        return null;
+      }
+
+      function sync() {
+        var r = findRef();
+        if (!r) return;
+        var w = Math.round(r.width);
+        var h = Math.round(r.height);
+        if (Math.abs(w - lastW) < 1 && Math.abs(h - lastH) < 1) return;
+        lastW = w; lastH = h;
+        root.style.setProperty('--sport-card-w', w + 'px');
+        root.style.setProperty('--sport-card-ratio', w + ' / ' + h);
+      }
+
+      // Watch for cards being injected by fancode.js / willow-live.js etc.
+      if ('MutationObserver' in window) {
+        var mo = new MutationObserver(function () { requestAnimationFrame(sync); });
+        ['fancodeTrack','willowLiveTrack','primeTrack','worldSportsTrack'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) mo.observe(el, { childList: true, subtree: true });
+        });
+      }
+
+      window.addEventListener('resize', function () { requestAnimationFrame(sync); });
+      window.addEventListener('load', sync);
+      document.addEventListener('DOMContentLoaded', sync);
+
+      // Safety poll for the first few seconds in case the tracks fill late
+      var tries = 0;
+      var iv = setInterval(function () {
+        sync();
+        if (lastW || ++tries > 30) clearInterval(iv);
+      }, 400);
+    })();
+  </script>
+
   <!-- ====== TELEGRAM POPUP ====== -->
   <style>
     #tgOverlay {
@@ -1629,7 +1679,6 @@
       });
     })();
   </script>
-
   <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
 </body>
 </html>
