@@ -7,31 +7,14 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta name="theme-color" content="#05070E" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="bingbot" content="index, follow" />
 
   <title>Sportlink - Live Sports Streaming, Match Highlights & Scores</title>
   <meta name="description" content="Watch live sports streaming, match highlights, and real-time scores on Sportlink. Free access to football, cricket, and all major sports events." />
   <link rel="canonical" href="https://sportlink.in/" />
 
-  <meta property="og:title" content="Sportlink - Live Sports Streaming & Match Highlights" />
-  <meta property="og:description" content="Watch live sports, match highlights, and real-time scores." />
-  <meta property="og:url" content="https://sportlink.in/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Sportlink" />
-  <meta property="og:image" content="https://sportlink.in/images/og-image.jpg" />
-  <meta property="og:locale" content="en_IN" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sportlink - Live Sports Streaming & Match Highlights" />
-  <meta name="twitter:description" content="Watch live sports, match highlights, and real-time scores." />
-  <meta name="twitter:image" content="https://sportlink.in/images/og-image.jpg" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://allrounderlive.in" crossorigin />
-  <link rel="dns-prefetch" href="https://img.tod.tv" />
-  <link rel="dns-prefetch" href="https://flagpedia.net" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/willow/willow-live.css">
@@ -40,900 +23,216 @@
   <link rel="stylesheet" href="/prime/prime.css">
 
   <style>
-    /* ============================================================
-       THEME — "Aurora Nebula"
-       ============================================================ */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --bg: #05070E;
-      --bg-2: #080C16;
       --surface: #0F1420;
       --surface-2: #161E30;
-      --surface-3: #1F2940;
-
       --text: #F5F8FC;
       --text-dim: #97A3B8;
       --text-muted: #5D6B80;
-
       --border: rgba(255,255,255,0.07);
       --border-strong: rgba(255,255,255,0.12);
-
       --cyan: #00E0FF;
       --purple: #A855F7;
       --pink: #FF2D95;
       --mint: #00F5A0;
       --amber: #FFB547;
-
       --grad-primary: linear-gradient(135deg, #00E0FF 0%, #A855F7 100%);
       --grad-live: linear-gradient(135deg, #00F5A0 0%, #00E0FF 100%);
-      --grad-warm: linear-gradient(135deg, #FFB547 0%, #FF2D95 100%);
-
-      --glow-cyan: 0 0 30px rgba(0,224,255,0.35);
-      --glow-purple: 0 0 30px rgba(168,85,247,0.35);
-
       --radius: 16px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
     }
 
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
-      width: 100%;
-      min-height: 100vh;
-      min-height: 100dvh;
+      width: 100%; min-height: 100vh; min-height: 100dvh;
       background: var(--bg);
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       color: var(--text);
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-      position: relative;
+      display: flex; flex-direction: column;
+      overflow-x: hidden; position: relative;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Aurora background orbs */
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      pointer-events: none;
-      z-index: 0;
-      border-radius: 50%;
-      filter: blur(120px);
+    body::before, body::after {
+      content: ""; position: fixed; pointer-events: none; z-index: 0;
+      border-radius: 50%; filter: blur(120px);
     }
-    body::before {
-      top: -20%;
-      left: -10%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(168,85,247,0.16), transparent 65%);
-    }
-    body::after {
-      bottom: -20%;
-      right: -10%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(0,224,255,0.12), transparent 65%);
-    }
+    body::before { top: -20%; left: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(168,85,247,0.16), transparent 65%); }
+    body::after { bottom: -20%; right: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,224,255,0.12), transparent 65%); }
 
-    /* ---------- HEADER ---------- */
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       padding: clamp(0.6rem, 1.4vw, 1rem) clamp(1rem, 4vw, 3rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       z-index: 1000;
       background: linear-gradient(180deg, rgba(5,7,14,0.85) 0%, rgba(5,7,14,0) 100%);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     }
 
-    .logo {
-      text-decoration: none;
-      font-size: clamp(1rem, 2.4vw, 1.5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      display: inline-flex;
-      align-items: center;
-      transition: transform 0.2s ease;
-      z-index: 1001;
-    }
+    .logo { text-decoration: none; font-size: clamp(1rem, 2.4vw, 1.5rem); font-weight: 800; letter-spacing: -0.02em; display: inline-flex; align-items: center; transition: transform 0.2s ease; z-index: 1001; }
     .logo:hover { transform: scale(1.03); }
-    .logo .sport {
-      background: var(--grad-primary);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-weight: 900;
-    }
-    .logo .link {
-      color: var(--text);
-      font-weight: 700;
-      margin-left: 1px;
-    }
+    .logo .sport { background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 900; }
+    .logo .link { color: var(--text); font-weight: 700; margin-left: 1px; }
 
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(0.4rem, 1.4vw, 1.3rem);
-    }
-    .header-nav a {
-      color: rgba(245,248,252,0.7);
-      text-decoration: none;
-      font-size: clamp(0.65rem, 1.1vw, 0.85rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      padding: 0.35em 0.5em;
-      border-radius: 8px;
-      transition: all 0.25s ease;
-    }
-    .header-nav a:hover {
-      color: var(--cyan);
-      background: rgba(0,224,255,0.08);
-    }
+    .header-nav { display: flex; align-items: center; gap: clamp(0.4rem, 1.4vw, 1.3rem); }
+    .header-nav a { color: rgba(245,248,252,0.7); text-decoration: none; font-size: clamp(0.65rem, 1.1vw, 0.85rem); font-weight: 600; padding: 0.35em 0.5em; border-radius: 8px; transition: all 0.25s ease; }
+    .header-nav a:hover { color: var(--cyan); background: rgba(0,224,255,0.08); }
 
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px;
-      z-index: 1001;
-      background: transparent;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 26px;
-      height: 2.5px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 1001; background: transparent; border: none; }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--text); border-radius: 2px; transition: all 0.3s ease; }
     .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(5,7,14,0.98);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      z-index: 999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 2rem;
-      animation: fadeIn 0.3s ease;
-    }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(5,7,14,0.98); backdrop-filter: blur(20px); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; padding: 2rem; }
     .mobile-menu.active { display: flex; }
-    .mobile-menu a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: clamp(1.2rem, 5vw, 1.6rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      padding: 0.5rem 1.5rem;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-    .mobile-menu a:hover {
-      color: var(--cyan);
-      background: rgba(0,224,255,0.08);
-    }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .mobile-menu a { color: var(--text); text-decoration: none; font-size: clamp(1.2rem, 5vw, 1.6rem); font-weight: 600; padding: 0.5rem 1.5rem; border-radius: 12px; }
+    .mobile-menu a:hover { color: var(--cyan); background: rgba(0,224,255,0.08); }
 
-    /* ---------- HERO / POSTER ---------- */
-    .poster-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      height: 100dvh;
-      overflow: hidden;
-      cursor: pointer;
-      z-index: 1;
-    }
-    .poster-section {
-      position: absolute;
-      inset: 0;
-      min-height: 100vh;
-      min-height: 100dvh;
-      background: var(--bg);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.7s ease;
-      z-index: 1;
-    }
-    .poster-section.active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      z-index: 2;
-    }
-    .poster-section picture {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .poster-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-    }
+    .poster-wrapper { position: relative; width: 100%; height: 100vh; height: 100dvh; overflow: hidden; cursor: pointer; z-index: 1; }
+    .poster-section { position: absolute; inset: 0; min-height: 100vh; min-height: 100dvh; background: var(--bg); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.7s ease; z-index: 1; }
+    .poster-section.active { opacity: 1; visibility: visible; pointer-events: auto; z-index: 2; }
+    .poster-section picture { position: absolute; inset: 0; z-index: 0; }
+    .poster-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 
-    .gradient-left {
-      position: absolute;
-      top: 0; left: 0; bottom: 0;
-      width: clamp(40%, 55%, 70%);
-      background: linear-gradient(to right,
-        var(--bg) 0%,
-        rgba(5,7,14,0.95) 15%,
-        rgba(5,7,14,0.75) 35%,
-        rgba(5,7,14,0.35) 60%,
-        transparent 100%);
-      pointer-events: none;
-      z-index: 2;
-    }
-    .gradient-overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: clamp(30%, 40%, 50%);
-      background: linear-gradient(to top,
-        var(--bg) 0%,
-        rgba(5,7,14,0.95) 20%,
-        rgba(5,7,14,0.75) 40%,
-        rgba(5,7,14,0.35) 65%,
-        transparent 100%);
-      pointer-events: none;
-      z-index: 2;
-    }
-    /* Aurora glow accents on hero */
-    .poster-section::after {
-      content: "";
-      position: absolute;
-      top: 20%; right: 5%;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(168,85,247,0.2), transparent 65%);
-      filter: blur(80px);
-      pointer-events: none;
-      z-index: 2;
-    }
+    .gradient-left { position: absolute; top: 0; left: 0; bottom: 0; width: clamp(40%, 55%, 70%); background: linear-gradient(to right, var(--bg) 0%, rgba(5,7,14,0.95) 15%, rgba(5,7,14,0.75) 35%, rgba(5,7,14,0.35) 60%, transparent 100%); pointer-events: none; z-index: 2; }
+    .gradient-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: clamp(30%, 40%, 50%); background: linear-gradient(to top, var(--bg) 0%, rgba(5,7,14,0.95) 20%, rgba(5,7,14,0.75) 40%, rgba(5,7,14,0.35) 65%, transparent 100%); pointer-events: none; z-index: 2; }
 
-    .match-details {
-      position: absolute;
-      bottom: clamp(8%, 14vh, 18%);
-      left: clamp(4%, 6vw, 8%);
-      z-index: 10;
-      max-width: clamp(320px, 55vw, 650px);
-      pointer-events: none;
-    }
-
-    .match-title {
-      display: inline-block;
-      font-size: clamp(0.6rem, 1.1vw, 0.85rem);
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: clamp(0.4rem, 0.8vw, 0.8rem);
-      font-weight: 700;
-      padding: 0.35em 0.9em;
-      background: rgba(0,224,255,0.1);
-      border: 1px solid rgba(0,224,255,0.25);
-      border-radius: 999px;
-      backdrop-filter: blur(8px);
-    }
-
-    .teams-row {
-      display: flex;
-      align-items: center;
-      gap: clamp(1rem, 2.4vw, 2rem);
-      margin-bottom: clamp(0.5rem, 1vw, 1rem);
-    }
-    .team {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .team-flag {
-      width: clamp(60px, 7vw, 100px);
-      height: clamp(42px, 4.8vw, 65px);
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1.5px solid rgba(255,255,255,0.15);
-      box-shadow:
-        0 8px 24px rgba(0,0,0,0.6),
-        0 0 20px rgba(0,224,255,0.15);
-      transition: all 0.3s ease;
-    }
-    .team-flag:hover {
-      transform: scale(1.05);
-      box-shadow:
-        0 12px 30px rgba(0,0,0,0.7),
-        0 0 30px rgba(0,224,255,0.3);
-    }
-    .team-name {
-      font-size: clamp(0.7rem, 1.2vw, 1rem);
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: 0.08em;
-      text-align: center;
-    }
-
-    .vs-score {
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      font-weight: 900;
-      background: var(--grad-primary);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      line-height: 1;
-      margin-top: 1.5rem;
-      filter: drop-shadow(0 4px 16px rgba(0,224,255,0.3));
-    }
-
-    .match-info {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: clamp(0.5rem, 1vw, 1rem);
-      font-size: clamp(0.6rem, 1vw, 0.85rem);
-      color: var(--text-dim);
-      font-weight: 500;
-    }
-    .match-info .tag {
-      color: var(--cyan);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
+    .match-details { position: absolute; bottom: clamp(8%, 14vh, 18%); left: clamp(4%, 6vw, 8%); z-index: 10; max-width: clamp(320px, 55vw, 650px); pointer-events: none; }
+    .match-title { display: inline-block; font-size: clamp(0.6rem, 1.1vw, 0.85rem); color: var(--cyan); text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: clamp(0.4rem, 0.8vw, 0.8rem); font-weight: 700; padding: 0.35em 0.9em; background: rgba(0,224,255,0.1); border: 1px solid rgba(0,224,255,0.25); border-radius: 999px; backdrop-filter: blur(8px); }
+    .teams-row { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); margin-bottom: clamp(0.5rem, 1vw, 1rem); }
+    .team { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .team-flag { width: clamp(60px, 7vw, 100px); height: clamp(42px, 4.8vw, 65px); object-fit: cover; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.15); box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 20px rgba(0,224,255,0.15); }
+    .team-name { font-size: clamp(0.7rem, 1.2vw, 1rem); font-weight: 700; color: var(--text); letter-spacing: 0.08em; text-align: center; }
+    .vs-score { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 900; background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1; margin-top: 1.5rem; filter: drop-shadow(0 4px 16px rgba(0,224,255,0.3)); }
+    .match-info { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-bottom: clamp(0.5rem, 1vw, 1rem); font-size: clamp(0.6rem, 1vw, 0.85rem); color: var(--text-dim); font-weight: 500; }
+    .match-info .tag { color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
     .match-info .separator { color: var(--text-muted); }
+    .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: clamp(0.6rem, 1.2vw, 1.2rem); }
+    .badge { padding: 0.35em 0.9em; border-radius: 999px; font-size: clamp(0.55rem, 0.8vw, 0.72rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
+    .badge-fulltime { background: var(--grad-live); color: var(--bg); box-shadow: 0 4px 16px rgba(0,245,160,0.35); }
+    .badge-4k, .badge-hdr { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px); }
 
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: clamp(0.6rem, 1.2vw, 1.2rem);
-    }
-    .badge {
-      padding: 0.35em 0.9em;
-      border-radius: 999px;
-      font-size: clamp(0.55rem, 0.8vw, 0.72rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .badge-fulltime {
-      background: var(--grad-live);
-      color: var(--bg);
-      box-shadow: 0 4px 16px rgba(0,245,160,0.35);
-    }
-    .badge-4k, .badge-hdr {
-      background: rgba(255,255,255,0.08);
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(8px);
-    }
+    .action-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; pointer-events: auto; position: relative; z-index: 11; }
+    .watch-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: clamp(0.8rem, 1.5vw, 1.1rem) clamp(1.6rem, 3vw, 2.5rem); background: var(--grad-primary); color: var(--bg); font-size: clamp(0.85rem, 1.4vw, 1.1rem); font-weight: 800; border: none; border-radius: 999px; cursor: pointer; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 30px rgba(0,224,255,0.4), 0 4px 20px rgba(168,85,247,0.3); }
+    .watch-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 12px 40px rgba(0,224,255,0.55), 0 6px 28px rgba(168,85,247,0.45); }
+    .btn-mytod { display: inline-flex; align-items: center; padding: clamp(0.7rem, 1.3vw, 1rem) clamp(1.2rem, 2vw, 1.6rem); background: rgba(255,255,255,0.06); color: var(--text); font-size: clamp(0.7rem, 1.1vw, 0.9rem); font-weight: 700; border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; cursor: pointer; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(12px); transition: all 0.3s ease; }
+    .btn-mytod:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); }
 
-    .action-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem;
-      pointer-events: auto;
-      position: relative;
-      z-index: 11;
-    }
-    .watch-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: clamp(0.8rem, 1.5vw, 1.1rem) clamp(1.6rem, 3vw, 2.5rem);
-      background: var(--grad-primary);
-      color: var(--bg);
-      font-size: clamp(0.85rem, 1.4vw, 1.1rem);
-      font-weight: 800;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow:
-        0 8px 30px rgba(0,224,255,0.4),
-        0 4px 20px rgba(168,85,247,0.3);
-    }
-    .watch-btn:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow:
-        0 12px 40px rgba(0,224,255,0.55),
-        0 6px 28px rgba(168,85,247,0.45);
-    }
-    .watch-btn:active { transform: scale(0.97); }
-    .watch-btn .icon { font-size: 1rem; }
-
-    .btn-mytod {
-      display: inline-flex;
-      align-items: center;
-      padding: clamp(0.7rem, 1.3vw, 1rem) clamp(1.2rem, 2vw, 1.6rem);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      font-size: clamp(0.7rem, 1.1vw, 0.9rem);
-      font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 999px;
-      cursor: pointer;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
-    }
-    .btn-mytod:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.25);
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      color: var(--text-dim);
-      pointer-events: none;
-      animation: scrollBounce 2s ease-in-out infinite;
-    }
-    .scroll-indicator span {
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
+    .scroll-indicator { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--text-dim); pointer-events: none; animation: scrollBounce 2s ease-in-out infinite; }
+    .scroll-indicator span { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
     .scroll-indicator svg { width: 16px; height: 16px; }
-    @keyframes scrollBounce {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, 8px); }
-    }
+    @keyframes scrollBounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
-    /* ---------- MAIN ---------- */
-    main {
-      flex: 1;
-      width: 100%;
-      position: relative;
-      z-index: 1;
-      background: transparent;
-      padding-top: clamp(1rem, 3vw, 2rem);
-      padding-bottom: 4rem;
-    }
+    main { flex: 1; width: 100%; position: relative; z-index: 1; padding-top: clamp(1rem, 3vw, 2rem); padding-bottom: 4rem; }
 
-    /* ---------- SECTION OVERRIDES (consistency) ---------- */
-    /* Headers for all sections */
-    .willow-live-header,
-    .fancode-header,
-    .prime-header,
-    .world-sports-header,
-    .sport-slider-header {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 0.8rem !important;
-      padding: 0 clamp(1rem, 4vw, 3rem) !important;
-      margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem) !important;
-    }
+    .willow-live-header, .fancode-header, .prime-header, .world-sports-header, .sport-slider-header { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 0.8rem !important; padding: 0 clamp(1rem, 4vw, 3rem) !important; margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem) !important; }
 
-    /* Section titles */
-    .willow-live-title,
-    .fancode-title,
-    .prime-title,
-    .world-sports-title,
-    .sport-slider-title {
-      font-size: clamp(1.15rem, 2.3vw, 1.65rem) !important;
-      font-weight: 800 !important;
-      color: var(--text) !important;
-      letter-spacing: -0.01em !important;
-      margin: 0 !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 0.6rem !important;
-    }
+    .willow-live-title, .fancode-title, .prime-title, .world-sports-title, .sport-slider-title { font-size: clamp(1.15rem, 2.3vw, 1.65rem) !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin: 0 !important; display: flex !important; align-items: center !important; gap: 0.6rem !important; }
 
-    /* Live badge on section titles */
-    .prime-badge,
-    .world-sports-badge {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 0.35rem !important;
-      padding: 0.25em 0.7em !important;
-      border-radius: 999px !important;
-      font-size: 0.55rem !important;
-      font-weight: 800 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.1em !important;
-      background: var(--grad-live) !important;
-      color: var(--bg) !important;
-      box-shadow: 0 4px 14px rgba(0,245,160,0.4) !important;
-    }
+    .prime-badge, .world-sports-badge { display: inline-flex !important; align-items: center !important; gap: 0.35rem !important; padding: 0.25em 0.7em !important; border-radius: 999px !important; font-size: 0.55rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; background: var(--grad-live) !important; color: var(--bg) !important; box-shadow: 0 4px 14px rgba(0,245,160,0.4) !important; }
 
-    /* Section containers */
-    .willow-live-section,
-    .fancode-section,
-    .prime-section,
-    .world-sports-section,
-    .sport-slider-section {
-      width: 100% !important;
-      padding: clamp(1.2rem, 2.8vw, 2rem) 0 clamp(0.4rem, 1vw, 0.8rem) !important;
-      position: relative !important;
-      z-index: 2 !important;
-      background: transparent !important;
-    }
+    .willow-live-section, .fancode-section, .prime-section, .world-sports-section, .sport-slider-section { width: 100% !important; padding: clamp(1.2rem, 2.8vw, 2rem) 0 clamp(0.4rem, 1vw, 0.8rem) !important; position: relative !important; z-index: 2 !important; background: transparent !important; }
 
-    /* ---------- ALL ARROWS (consistent) ---------- */
-    .carousel-arrow,
-    .fancode-arrow,
-    .prime-arrow,
-    .world-sports-arrow,
-    .sport-slider-arrow {
-      position: absolute !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      width: clamp(34px, 3.8vw, 48px) !important;
-      height: clamp(34px, 3.8vw, 48px) !important;
-      border-radius: 50% !important;
-      background: rgba(15,20,32,0.9) !important;
+    .carousel-arrow, .fancode-arrow, .prime-arrow, .world-sports-arrow, .sport-slider-arrow {
+      position: absolute !important; top: 50% !important; transform: translateY(-50%) !important;
+      width: clamp(34px, 3.8vw, 48px) !important; height: clamp(34px, 3.8vw, 48px) !important;
+      border-radius: 50% !important; background: rgba(15,20,32,0.9) !important;
       backdrop-filter: blur(12px) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
       border: 1px solid rgba(255,255,255,0.12) !important;
-      color: var(--text) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      font-size: clamp(0.85rem, 1.3vw, 1.05rem) !important;
-      line-height: 1 !important;
-      cursor: pointer !important;
-      z-index: 10 !important;
-      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      user-select: none !important;
-      padding: 0 !important;
+      color: var(--text) !important; display: flex !important; align-items: center !important; justify-content: center !important;
+      font-size: clamp(0.85rem, 1.3vw, 1.05rem) !important; cursor: pointer !important; z-index: 10 !important;
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important; user-select: none !important; padding: 0 !important;
     }
-    .carousel-arrow:hover,
-    .fancode-arrow:hover,
-    .prime-arrow:hover,
-    .world-sports-arrow:hover,
-    .sport-slider-arrow:hover {
-      background: var(--grad-primary) !important;
-      color: var(--bg) !important;
-      border-color: transparent !important;
-      transform: translateY(-50%) scale(1.1) !important;
-      box-shadow: 0 6px 24px rgba(0,224,255,0.4) !important;
+    .carousel-arrow:hover, .fancode-arrow:hover, .prime-arrow:hover, .world-sports-arrow:hover, .sport-slider-arrow:hover {
+      background: var(--grad-primary) !important; color: var(--bg) !important; border-color: transparent !important;
+      transform: translateY(-50%) scale(1.1) !important; box-shadow: 0 6px 24px rgba(0,224,255,0.4) !important;
     }
-    .sport-slider-arrow:active,
-    .carousel-arrow:active { transform: translateY(-50%) scale(0.94) !important; }
-    .sport-slider-arrow[disabled] {
-      opacity: 0.25 !important;
-      pointer-events: none !important;
-    }
-    .arrow-left,
-    .sport-arrow-left {
-      left: clamp(0.4rem, 1.2vw, 0.9rem) !important;
-    }
-    .arrow-right,
-    .sport-arrow-right {
-      right: clamp(0.4rem, 1.2vw, 0.9rem) !important;
-    }
+    .sport-slider-arrow[disabled] { opacity: 0.25 !important; pointer-events: none !important; }
+    .arrow-left, .sport-arrow-left { left: clamp(0.4rem, 1.2vw, 0.9rem) !important; }
+    .arrow-right, .sport-arrow-right { right: clamp(0.4rem, 1.2vw, 0.9rem) !important; }
 
-    /* Wrappers - consistent padding */
-    .willow-live-carousel-wrapper,
-    .fancode-carousel-wrapper,
-    .prime-carousel-wrapper,
-    .world-sports-carousel-wrapper,
-    .sport-slider-wrapper {
-      position: relative !important;
-      padding: 0 clamp(1.4rem, 3.5vw, 2.8rem) !important;
-    }
+    .willow-live-carousel-wrapper, .fancode-carousel-wrapper, .prime-carousel-wrapper, .world-sports-carousel-wrapper, .sport-slider-wrapper { position: relative !important; padding: 0 clamp(1.4rem, 3.5vw, 2.8rem) !important; }
 
     /* ============================================================
-       SPORT SLIDER — Cricket & Football cards
-       Size is synced at runtime with FanCode / Willow cards
+       SPORT SLIDER — cards synced to FanCode/Willow via CSS vars
        ============================================================ */
     .sport-slider-track {
       display: flex;
       gap: clamp(0.8rem, 1.4vw, 1.15rem);
-      overflow-x: auto;
-      overflow-y: hidden;
+      overflow-x: auto; overflow-y: hidden;
       scroll-behavior: smooth;
       scroll-snap-type: x proximity;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      scrollbar-width: none; -ms-overflow-style: none;
       padding: 0.35rem 0;
       cursor: grab;
     }
     .sport-slider-track::-webkit-scrollbar { display: none; }
-    .sport-slider-track.dragging {
-      cursor: grabbing;
-      scroll-behavior: auto;
-      scroll-snap-type: none;
-    }
+    .sport-slider-track.dragging { cursor: grabbing; scroll-behavior: auto; scroll-snap-type: none; }
 
-    /* Shared card size — synced at runtime with FanCode / Willow cards */
+    /* Synced card size — width AND height, both configurable via CSS vars.
+       If FanCode/Willow loads and reports size, we override. Otherwise, fallback. */
     .sport-slide,
     .sport-slide-skeleton {
       flex: 0 0 auto;
       width: var(--sport-card-w, clamp(240px, 26vw, 360px));
+      height: var(--sport-card-h, auto);
       aspect-ratio: var(--sport-card-ratio, 16 / 9);
-      height: auto;
       border-radius: var(--radius);
       scroll-snap-align: start;
     }
 
     .sport-slide {
-      position: relative;
-      display: block;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      text-decoration: none;
-      transition:
-        transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+      position: relative; display: block; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border); text-decoration: none;
+      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .sport-slide:hover,
-    .sport-slide:focus-visible {
-      transform: translateY(-5px);
-      outline: none;
+    .sport-slide:hover, .sport-slide:focus-visible {
+      transform: translateY(-5px); outline: none;
       border-color: rgba(0,224,255,0.45);
-      box-shadow:
-        0 20px 45px rgba(0,0,0,0.5),
-        0 0 30px rgba(0,224,255,0.18);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.5), 0 0 30px rgba(0,224,255,0.18);
     }
-    .football-section .sport-slide:hover,
-    .football-section .sport-slide:focus-visible {
+    .football-section .sport-slide:hover, .football-section .sport-slide:focus-visible {
       border-color: rgba(0,245,160,0.45);
-      box-shadow:
-        0 20px 45px rgba(0,0,0,0.5),
-        0 0 30px rgba(0,245,160,0.18);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.5), 0 0 30px rgba(0,245,160,0.18);
     }
 
-    /* Media area - dual flags */
-    .sport-slide-media {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-    }
-    .cricket-section .sport-slide-media {
-      background: linear-gradient(135deg, #2a2410 0%, #0F1420 55%, #0b0f18 100%);
-    }
-    .football-section .sport-slide-media {
-      background: linear-gradient(135deg, #0e2a1e 0%, #0F1420 55%, #0b0f18 100%);
-    }
-    .sport-slide-media .flag-cell {
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .sport-slide-media .flag-cell img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(0.65) saturate(1.2);
-      transition: transform 0.6s ease, filter 0.4s ease;
-      display: block;
-    }
-    .sport-slide:hover .sport-slide-media .flag-cell img {
-      transform: scale(1.1);
-      filter: brightness(0.82) saturate(1.3);
-    }
+    .sport-slide-media { position: absolute; inset: 0; z-index: 0; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .cricket-section .sport-slide-media { background: linear-gradient(135deg, #2a2410 0%, #0F1420 55%, #0b0f18 100%); }
+    .football-section .sport-slide-media { background: linear-gradient(135deg, #0e2a1e 0%, #0F1420 55%, #0b0f18 100%); }
+    .sport-slide-media .flag-cell { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .sport-slide-media .flag-cell img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.65) saturate(1.2); transition: transform 0.6s ease, filter 0.4s ease; display: block; }
+    .sport-slide:hover .sport-slide-media .flag-cell img { transform: scale(1.1); filter: brightness(0.82) saturate(1.3); }
 
-    /* VS divider */
-    .sport-slide-media .flag-divider {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 1;
-      background: linear-gradient(90deg,
-        rgba(5,7,14,0.2) 0%,
-        rgba(5,7,14,0.6) 50%,
-        rgba(5,7,14,0.2) 100%);
-    }
-    .sport-slide-media .flag-divider span {
-      font-size: clamp(0.65rem, 1.1vw, 0.9rem);
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      color: var(--text);
-      background: rgba(5,7,14,0.9);
-      padding: 0.3em 0.7em;
-      border-radius: 8px;
-      border: 1px solid rgba(0,224,255,0.35);
-      box-shadow: 0 0 20px rgba(0,224,255,0.2);
-      backdrop-filter: blur(8px);
-    }
+    .sport-slide-media .flag-divider { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 1; background: linear-gradient(90deg, rgba(5,7,14,0.2) 0%, rgba(5,7,14,0.6) 50%, rgba(5,7,14,0.2) 100%); }
+    .sport-slide-media .flag-divider span { font-size: clamp(0.65rem, 1.1vw, 0.9rem); font-weight: 900; letter-spacing: 0.18em; color: var(--text); background: rgba(5,7,14,0.9); padding: 0.3em 0.7em; border-radius: 8px; border: 1px solid rgba(0,224,255,0.35); box-shadow: 0 0 20px rgba(0,224,255,0.2); backdrop-filter: blur(8px); }
 
-    .sport-slide-emoji {
-      position: absolute;
-      top: 50%;
-      right: 8%;
-      transform: translateY(-50%);
-      z-index: 1;
-      font-size: clamp(2.4rem, 4.5vw, 4rem);
-      opacity: 0.15;
-      pointer-events: none;
-      line-height: 1;
-    }
+    .sport-slide-emoji { position: absolute; top: 50%; right: 8%; transform: translateY(-50%); z-index: 1; font-size: clamp(2.4rem, 4.5vw, 4rem); opacity: 0.15; pointer-events: none; line-height: 1; }
 
-    /* Body overlay */
-    .sport-slide-body {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(0.7rem, 1.3vw, 1.1rem);
-      background: linear-gradient(
-        to top,
-        rgba(5,7,14,0.97) 0%,
-        rgba(5,7,14,0.75) 40%,
-        rgba(5,7,14,0.15) 80%,
-        transparent 100%
-      );
-    }
+    .sport-slide-body { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(0.7rem, 1.3vw, 1.1rem); background: linear-gradient(to top, rgba(5,7,14,0.97) 0%, rgba(5,7,14,0.75) 40%, rgba(5,7,14,0.15) 80%, transparent 100%); }
 
-    /* Live badge */
-    .sport-slide-live {
-      align-self: flex-start;
-      margin-bottom: 0.4rem;
-      padding: 0.22em 0.7em;
-      border-radius: 999px;
-      font-size: clamp(0.48rem, 0.75vw, 0.62rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      background: var(--grad-live);
-      color: var(--bg);
-      box-shadow: 0 4px 14px rgba(0,245,160,0.45);
-      animation: livePulse 2s ease-in-out infinite;
-    }
-    .football-section .sport-slide-live {
-      background: var(--grad-live);
-    }
-    @keyframes livePulse {
-      0%, 100% { box-shadow: 0 4px 14px rgba(0,245,160,0.45); }
-      50% { box-shadow: 0 4px 22px rgba(0,245,160,0.75); }
-    }
+    .sport-slide-live { align-self: flex-start; margin-bottom: 0.4rem; padding: 0.22em 0.7em; border-radius: 999px; font-size: clamp(0.48rem, 0.75vw, 0.62rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; background: var(--grad-live); color: var(--bg); box-shadow: 0 4px 14px rgba(0,245,160,0.45); animation: livePulse 2s ease-in-out infinite; }
+    @keyframes livePulse { 0%, 100% { box-shadow: 0 4px 14px rgba(0,245,160,0.45); } 50% { box-shadow: 0 4px 22px rgba(0,245,160,0.75); } }
 
-    /* Soon badge */
-    .sport-slide-soon {
-      align-self: flex-start;
-      margin-bottom: 0.4rem;
-      padding: 0.22em 0.7em;
-      border-radius: 999px;
-      font-size: clamp(0.48rem, 0.75vw, 0.62rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      background: rgba(255,181,71,0.15);
-      color: var(--amber);
-      border: 1px solid rgba(255,181,71,0.35);
-      backdrop-filter: blur(8px);
-    }
+    .sport-slide-soon { align-self: flex-start; margin-bottom: 0.4rem; padding: 0.22em 0.7em; border-radius: 999px; font-size: clamp(0.48rem, 0.75vw, 0.62rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(255,181,71,0.15); color: var(--amber); border: 1px solid rgba(255,181,71,0.35); backdrop-filter: blur(8px); }
 
-    .sport-slide-title {
-      font-size: clamp(0.78rem, 1.1vw, 0.98rem);
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.3;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.95);
-      margin-bottom: 0.15rem;
-    }
+    .sport-slide-title { font-size: clamp(0.78rem, 1.1vw, 0.98rem); font-weight: 800; color: var(--text); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-shadow: 0 2px 10px rgba(0,0,0,0.95); margin-bottom: 0.15rem; }
+    .sport-slide-meta { font-size: clamp(0.58rem, 0.8vw, 0.75rem); font-weight: 600; color: rgba(245,248,252,0.7); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 6px rgba(0,0,0,0.9); }
 
-    .sport-slide-meta {
-      font-size: clamp(0.58rem, 0.8vw, 0.75rem);
-      font-weight: 600;
-      color: rgba(245,248,252,0.7);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
-    }
+    .sport-slide-skeleton { background: linear-gradient(90deg, var(--surface) 0%, var(--surface-2) 50%, var(--surface) 100%); background-size: 200% 100%; animation: skeletonShimmer 1.6s ease-in-out infinite; }
+    @keyframes skeletonShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
-    /* Skeleton */
-    .sport-slide-skeleton {
-      background: linear-gradient(90deg,
-        var(--surface) 0%,
-        var(--surface-2) 50%,
-        var(--surface) 100%);
-      background-size: 200% 100%;
-      animation: skeletonShimmer 1.6s ease-in-out infinite;
-    }
-    @keyframes skeletonShimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
+    .sport-slide-empty { flex: 0 0 auto; width: 100%; max-width: 380px; aspect-ratio: 16 / 9; border-radius: var(--radius); background: var(--surface); border: 1px dashed var(--border-strong); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75rem; text-align: center; padding: 1rem; font-weight: 500; }
 
-    .sport-slide-empty {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 380px;
-      aspect-ratio: 16 / 9;
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px dashed var(--border-strong);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      text-align: center;
-      padding: 1rem;
-      font-weight: 500;
-    }
+    .sport-slider-link { font-size: clamp(0.65rem, 0.95vw, 0.8rem); font-weight: 700; color: var(--text-dim); text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; transition: color 0.25s ease; padding: 0.35em 0.8em; border-radius: 8px; border: 1px solid var(--border); }
+    .sport-slider-link:hover { color: var(--cyan); background: rgba(0,224,255,0.08); border-color: rgba(0,224,255,0.3); }
+    .football-section .sport-slider-link:hover { color: var(--mint); background: rgba(0,245,160,0.08); border-color: rgba(0,245,160,0.3); }
 
-    /* View All link */
-    .sport-slider-link {
-      font-size: clamp(0.65rem, 0.95vw, 0.8rem);
-      font-weight: 700;
-      color: var(--text-dim);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      transition: color 0.25s ease;
-      padding: 0.35em 0.8em;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-    .sport-slider-link:hover {
-      color: var(--cyan);
-      background: rgba(0,224,255,0.08);
-      border-color: rgba(0,224,255,0.3);
-    }
-    .football-section .sport-slider-link:hover {
-      color: var(--mint);
-      background: rgba(0,245,160,0.08);
-      border-color: rgba(0,245,160,0.3);
-    }
-
-    /* ---------- RESPONSIVE ---------- */
     @media (orientation: portrait) and (max-width: 768px) {
       header { padding: 0.6rem 1rem; }
       .logo { font-size: 1.35rem; position: absolute; left: 50%; transform: translateX(-50%); }
@@ -941,78 +240,32 @@
       .header-nav { display: none; }
       .hamburger { display: flex; }
       .gradient-left { display: none; }
-      .match-details {
-        bottom: clamp(12%, 18vh, 22%);
-        left: 6%;
-        max-width: 85vw;
-      }
-      .poster-section::after { width: 300px; height: 300px; opacity: 0.7; }
+      .match-details { bottom: clamp(12%, 18vh, 22%); left: 6%; max-width: 85vw; }
     }
-
-    @media (orientation: portrait) and (max-width: 480px) {
-      header { padding: 0.5rem 0.8rem; }
-      .logo { font-size: 1.15rem; }
-      .hamburger span { width: 22px; height: 2px; }
-    }
-
-    @media (orientation: portrait) and (min-width: 769px) and (max-width: 1024px) {
-      .logo { position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.6rem; }
-      .logo:hover { transform: translateX(-50%) scale(1.03); }
-      .header-nav { display: none; }
-      .hamburger { display: flex; }
-      .gradient-left { display: none; }
-    }
-
     @media (min-width: 769px) {
       .hamburger { display: none; }
       .header-nav { display: flex; }
-      .poster-wrapper {
-        height: auto;
-        aspect-ratio: 16 / 9;
-        max-height: 100vh;
-        max-height: 100dvh;
-      }
+      .poster-wrapper { height: auto; aspect-ratio: 16 / 9; max-height: 100vh; max-height: 100dvh; }
       .poster-section { min-height: 0; height: 100%; }
       .scroll-indicator { display: none; }
     }
-
     @media (max-width: 1024px) {
       .poster-wrapper { height: 70vh; height: 70dvh; }
       .poster-section { min-height: 70vh; min-height: 70dvh; }
     }
-
     @media (max-width: 640px) {
-      .carousel-arrow,
-      .fancode-arrow,
-      .prime-arrow,
-      .world-sports-arrow,
-      .sport-slider-arrow {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 0.75rem !important;
-      }
-      .willow-live-carousel-wrapper,
-      .fancode-carousel-wrapper,
-      .prime-carousel-wrapper,
-      .world-sports-carousel-wrapper,
-      .sport-slider-wrapper {
-        padding: 0 clamp(1rem, 4vw, 1.6rem) !important;
-      }
+      .carousel-arrow, .fancode-arrow, .prime-arrow, .world-sports-arrow, .sport-slider-arrow { width: 32px !important; height: 32px !important; font-size: 0.75rem !important; }
+      .willow-live-carousel-wrapper, .fancode-carousel-wrapper, .prime-carousel-wrapper, .world-sports-carousel-wrapper, .sport-slider-wrapper { padding: 0 clamp(1rem, 4vw, 1.6rem) !important; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
 <body id="top">
 
   <header>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <a href="/" class="logo" aria-label="Sportlink home">
@@ -1039,16 +292,13 @@
     <a href="#worldSportsSection" class="nav-scroll">Sports</a>
   </nav>
 
-  <div class="poster-wrapper" id="posterWrapper" aria-label="Featured match">
+  <div class="poster-wrapper" id="posterWrapper">
     <section class="poster-section active" data-slide="0">
       <picture>
-        <img src="https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.99ec681a-3141-49d1-8feb-512b02667fca/2/BOXART-16X9/en-US._UR1920,1080_.jpeg"
-          alt="India vs New Zealand T20 match poster"
-          class="poster-image" loading="eager" decoding="async" fetchpriority="high" />
+        <img src="https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.99ec681a-3141-49d1-8feb-512b02667fca/2/BOXART-16X9/en-US._UR1920,1080_.jpeg" alt="India vs New Zealand T20 match poster" class="poster-image" loading="eager" decoding="async" fetchpriority="high" />
       </picture>
       <div class="gradient-left"></div>
       <div class="gradient-overlay"></div>
-
       <div class="match-details">
         <span class="match-title">IND VS NZ · T20 Series 2026</span>
         <div class="teams-row">
@@ -1063,10 +313,8 @@
           </div>
         </div>
         <div class="match-info">
-          <span class="tag">● Live</span>
-          <span class="separator">•</span>
-          <span>Today</span>
-          <span class="separator">•</span>
+          <span class="tag">● Live</span><span class="separator">•</span>
+          <span>Today</span><span class="separator">•</span>
           <span>12:30 PM IST</span>
         </div>
         <div class="badges">
@@ -1075,26 +323,18 @@
           <span class="badge badge-hdr">HDR</span>
         </div>
         <div class="action-buttons">
-          <a href="/live/ind-vs-nz.html" class="watch-btn">
-            <span class="icon">▶</span>
-            <span>Watch Now</span>
-          </a>
+          <a href="/live/ind-vs-nz.html" class="watch-btn"><span class="icon">▶</span><span>Watch Now</span></a>
           <a href="#" class="btn-mytod">+ My List</a>
         </div>
       </div>
     </section>
-
     <div class="scroll-indicator" aria-hidden="true">
       <span>Scroll</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </div>
   </div>
 
   <main role="main">
-
-    <!-- 1) FANCODE -->
     <section class="fancode-section" id="fancodeSection">
       <div class="fancode-header"><div class="fancode-title">FanCode</div></div>
       <div class="fancode-carousel-wrapper">
@@ -1104,7 +344,6 @@
       </div>
     </section>
 
-    <!-- 2) FOOTBALL -->
     <section class="sport-slider-section football-section" id="footballSection">
       <div class="sport-slider-header">
         <h2 class="sport-slider-title">Football</h2>
@@ -1117,7 +356,6 @@
       </div>
     </section>
 
-    <!-- 3) CRICKET -->
     <section class="sport-slider-section cricket-section" id="cricketSection">
       <div class="sport-slider-header">
         <h2 class="sport-slider-title">Cricket</h2>
@@ -1130,7 +368,6 @@
       </div>
     </section>
 
-    <!-- 4) WILLOW -->
     <section class="willow-live-section" id="willowSection">
       <div class="willow-live-header"><h2 class="willow-live-title">Willow Live</h2></div>
       <div class="willow-live-carousel-wrapper">
@@ -1140,7 +377,6 @@
       </div>
     </section>
 
-    <!-- 5) PRIME -->
     <section class="prime-section" id="primeSection">
       <div class="prime-header"><h2 class="prime-title">Prime</h2><span class="prime-badge">Live</span></div>
       <div class="prime-carousel-wrapper">
@@ -1150,7 +386,6 @@
       </div>
     </section>
 
-    <!-- 6) WORLD SPORTS -->
     <section class="world-sports-section" id="worldSportsSection">
       <div class="world-sports-header"><h2 class="world-sports-title">World Sports</h2><span class="world-sports-badge">Live</span></div>
       <div class="world-sports-carousel-wrapper">
@@ -1159,7 +394,6 @@
         <button class="world-sports-arrow arrow-right" id="worldSportsArrowRight" aria-label="Scroll right">&#10095;</button>
       </div>
     </section>
-
   </main>
 
   <script src="/willow/willow-live.js"></script>
@@ -1186,19 +420,10 @@
       mobileMenu.classList.remove('active');
       document.body.style.overflow = '';
     }
-
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMobileMenu();
-    });
-
+    document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMobileMenu(); });
     document.addEventListener('click', e => {
-      if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        closeMobileMenu();
-      }
+      if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMobileMenu();
     });
 
     // ====== SMOOTH SCROLL ======
@@ -1208,8 +433,7 @@
         if (href && href.startsWith('#')) {
           const target = document.querySelector(href);
           if (target) {
-            e.preventDefault();
-            closeMobileMenu();
+            e.preventDefault(); closeMobileMenu();
             const headerHeight = document.querySelector('header')?.offsetHeight || 0;
             const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
             window.scrollTo({ top, behavior: 'smooth' });
@@ -1222,33 +446,20 @@
     document.getElementById('posterWrapper').addEventListener('click', function (e) {
       if (e.target.closest('.watch-btn') || e.target.closest('.btn-mytod')) return;
       const watchBtn = document.querySelector('.poster-section.active .watch-btn');
-      if (watchBtn) {
-        const href = watchBtn.getAttribute('href');
-        if (href) window.location.href = href;
-      }
+      if (watchBtn) { const href = watchBtn.getAttribute('href'); if (href) window.location.href = href; }
     });
-
-    document.querySelectorAll('.watch-btn').forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        if (href) window.location.href = href;
-      });
-    });
-
-    document.querySelectorAll('.btn-mytod').forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        alert('Added to My List!');
-      });
-    });
+    document.querySelectorAll('.watch-btn').forEach(btn => btn.addEventListener('click', function (e) {
+      e.preventDefault(); const href = this.getAttribute('href'); if (href) window.location.href = href;
+    }));
+    document.querySelectorAll('.btn-mytod').forEach(btn => btn.addEventListener('click', function (e) {
+      e.preventDefault(); alert('Added to My List!');
+    }));
   </script>
 
-  <!-- ====== CRICKET / FOOTBALL SLIDERS — live API + #watch links ====== -->
+  <!-- ====== CRICKET / FOOTBALL SLIDERS — live API ====== -->
   <script>
     (function () {
       'use strict';
-
       const CRICKET_API  = 'https://allrounderlive.in/api/cricket.json';
       const FOOTBALL_API = 'https://allrounderlive.in/api/football.json';
       const PROXY_URL    = 'https://sportlink-10.lovable.app/api/public/proxy?url=';
@@ -1260,7 +471,6 @@
         if (raw.startsWith(PROXY_URL)) return raw;
         return PROXY_URL + encodeURIComponent(raw);
       }
-
       async function fetchJson(url) {
         let res;
         try {
@@ -1277,45 +487,34 @@
           return JSON.parse(text);
         }
       }
-
-      function esc(v) {
-        return String(v ?? '').replace(/[&<>"']/g, c => ({
-          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-        }[c]));
-      }
+      function esc(v) { return String(v ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
 
       function parseDate(value) {
         if (!value) return null;
         let s = String(value).trim();
         if (!s || s === 'null' || s === 'undefined') return null;
-
         const isIST = /\bIST\b/i.test(s);
         if (isIST) s = s.replace(/\s*IST\s*$/i, '').trim();
-
         let m = s.match(/^(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})[T\s](\d{1,2}):(\d{2})(?::(\d{2}))?(?:\.\d+)?\s*([+-]\d{2}:?\d{2}|Z)?$/);
         if (m) {
           const [, y, mo, d, h, mi, se = '00', off] = m;
           let offset = '+0000';
-          if (off) offset = off === 'Z' ? '+0000' : (off.includes(':') ? off.replace(':', '') : off);
+          if (off) offset = off === 'Z' ? '+0000' : (off.includes(':') ? off.replace(':','') : off);
           else if (isIST) offset = '+0530';
           const iso = `${y}-${mo.padStart(2,'0')}-${d.padStart(2,'0')}T${h.padStart(2,'0')}:${mi}:${se}${offset.slice(0,3)}:${offset.slice(3)}`;
           const dt = new Date(iso);
           if (!isNaN(dt.getTime())) return dt;
         }
-
         const MONTHS = { jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11 };
         m = s.match(/^(\d{1,2})\s+([A-Za-z]{3,})\s+(\d{4})[,\s]+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)?\s*([+-]\d{2}:?\d{2})?$/i);
         if (m) {
           const [, d, mon, y, h, mi, se = '00', ampm, off] = m;
-          const mi2 = MONTHS[mon.toLowerCase().slice(0, 3)];
+          const mi2 = MONTHS[mon.toLowerCase().slice(0,3)];
           if (mi2 !== undefined) {
             let hour = parseInt(h, 10);
-            if (ampm) {
-              if (ampm.toUpperCase() === 'PM' && hour < 12) hour += 12;
-              if (ampm.toUpperCase() === 'AM' && hour === 12) hour = 0;
-            }
-            const offset = off ? (off.includes(':') ? off.replace(':', '') : off) : (isIST ? '+0530' : '+0000');
-            const iso = `${y}-${String(mi2 + 1).padStart(2,'0')}-${d.padStart(2,'0')}T${String(hour).padStart(2,'0')}:${mi}:${se}${offset.slice(0,3)}:${offset.slice(3)}`;
+            if (ampm) { if (ampm.toUpperCase() === 'PM' && hour < 12) hour += 12; if (ampm.toUpperCase() === 'AM' && hour === 12) hour = 0; }
+            const offset = off ? (off.includes(':') ? off.replace(':','') : off) : (isIST ? '+0530' : '+0000');
+            const iso = `${y}-${String(mi2+1).padStart(2,'0')}-${d.padStart(2,'0')}T${String(hour).padStart(2,'0')}:${mi}:${se}${offset.slice(0,3)}:${offset.slice(3)}`;
             const dt = new Date(iso);
             if (!isNaN(dt.getTime())) return dt;
           }
@@ -1324,22 +523,10 @@
         return isNaN(dt.getTime()) ? null : dt;
       }
 
-      function getStatus(st, en) {
-        const now = Date.now();
-        if (now < st) return 'soon';
-        if (now <= en) return 'live';
-        return 'done';
-      }
-
+      function getStatus(st, en) { const now = Date.now(); if (now < st) return 'soon'; if (now <= en) return 'live'; return 'done'; }
       function timeString(d) { return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); }
       function dateString(d) { return d.toLocaleDateString([], { day: 'numeric', month: 'short' }); }
-      function duration(ms) {
-        const mins = Math.max(0, Math.round(ms / 60000));
-        const h = Math.floor(mins / 60), m = mins % 60;
-        if (h >= 24) { const dd = Math.floor(h / 24); return `${dd}d ${h % 24}h`; }
-        if (h > 0) return `${h}h ${m}m`;
-        return `${m}m`;
-      }
+      function duration(ms) { const mins = Math.max(0, Math.round(ms/60000)); const h = Math.floor(mins/60), m = mins%60; if (h >= 24) { const dd = Math.floor(h/24); return `${dd}d ${h%24}h`; } if (h > 0) return `${h}h ${m}m`; return `${m}m`; }
 
       function normalize(data) {
         if (!Array.isArray(data)) return [];
@@ -1347,13 +534,10 @@
         data.forEach((item, index) => {
           try {
             const info = item.event || item.eventInfo || {};
-            const st = parseDate(info.startTimeUTC) || parseDate(info.startTime)
-                    || parseDate(info.startTimeIST) || parseDate(item.startTime);
+            const st = parseDate(info.startTimeUTC) || parseDate(info.startTime) || parseDate(info.startTimeIST) || parseDate(item.startTime);
             if (!st) return;
-            let en = parseDate(info.endTimeUTC) || parseDate(info.endTime)
-                  || parseDate(info.endTimeIST) || parseDate(item.endTime);
-            if (!en || en <= st) en = new Date(st.getTime() + 3 * 3600000);
-
+            let en = parseDate(info.endTimeUTC) || parseDate(info.endTime) || parseDate(info.endTimeIST) || parseDate(item.endTime);
+            if (!en || en <= st) en = new Date(st.getTime() + 3*3600000);
             events.push({
               id: String(item.id ?? index),
               a: info.teamA || info.home || '',
@@ -1385,7 +569,6 @@
         const hasA = !!e.a, hasB = !!e.b;
         const sameTeam = !hasB || e.a === e.b;
         const title = hasA && hasB ? `${e.a} vs ${e.b}` : (e.a || e.comp || 'Match');
-
         const basePath = emoji === '⚽' ? '/Football/' : '/Cricket/';
         const watchUrl = `${basePath}#watch?id=${encodeURIComponent(e.id)}&stream=0`;
 
@@ -1420,11 +603,7 @@
         </a>`;
       }
 
-      function buildSkeleton(n) {
-        let html = '';
-        for (let i = 0; i < n; i++) html += `<div class="sport-slide-skeleton"></div>`;
-        return html;
-      }
+      function buildSkeleton(n) { let html = ''; for (let i = 0; i < n; i++) html += `<div class="sport-slide-skeleton"></div>`; return html; }
       function buildEmpty(msg) { return `<div class="sport-slide-empty">${esc(msg)}</div>`; }
 
       function initSlider(trackId, leftId, rightId, emoji) {
@@ -1440,20 +619,18 @@
         }
         function updateArrows() {
           const max = track.scrollWidth - track.clientWidth - 2;
-          left.disabled  = track.scrollLeft <= 2;
+          left.disabled = track.scrollLeft <= 2;
           right.disabled = track.scrollLeft >= max;
         }
-
-        left.addEventListener('click',  () => track.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
-        right.addEventListener('click', () => track.scrollBy({ left:  step() * 2, behavior: 'smooth' }));
+        left.addEventListener('click', () => track.scrollBy({ left: -step()*2, behavior: 'smooth' }));
+        right.addEventListener('click', () => track.scrollBy({ left: step()*2, behavior: 'smooth' }));
         track.addEventListener('scroll', updateArrows, { passive: true });
         window.addEventListener('resize', updateArrows);
 
         let down = false, startX = 0, startScroll = 0, moved = false;
         track.addEventListener('pointerdown', e => {
           if (e.pointerType === 'touch') return;
-          down = true; moved = false;
-          startX = e.clientX; startScroll = track.scrollLeft;
+          down = true; moved = false; startX = e.clientX; startScroll = track.scrollLeft;
           track.classList.add('dragging');
         });
         track.addEventListener('pointermove', e => {
@@ -1466,192 +643,168 @@
         track.addEventListener('pointerup', endDrag);
         track.addEventListener('pointercancel', endDrag);
         track.addEventListener('pointerleave', endDrag);
-        track.addEventListener('click', e => {
-          if (moved) { e.preventDefault(); moved = false; }
-        }, true);
-
+        track.addEventListener('click', e => { if (moved) { e.preventDefault(); moved = false; } }, true);
         track.addEventListener('keydown', e => {
           if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: step(), behavior: 'smooth' }); }
-          if (e.key === 'ArrowLeft')  { e.preventDefault(); track.scrollBy({ left: -step(), behavior: 'smooth' }); }
+          if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -step(), behavior: 'smooth' }); }
         });
 
         updateArrows();
 
         return {
           setItems(items) {
-            if (!items || !items.length) {
-              track.innerHTML = buildEmpty('No matches available right now');
-              updateArrows(); return;
-            }
+            if (!items || !items.length) { track.innerHTML = buildEmpty('No matches available right now'); updateArrows(); return; }
             track.innerHTML = items.map(e => buildCard(e, emoji)).join('');
             updateArrows();
           },
-          showLoading() {
-            track.innerHTML = buildSkeleton(4);
-            left.disabled = right.disabled = true;
-          },
-          showError(msg) {
-            track.innerHTML = buildEmpty(msg || 'Could not load matches');
-            left.disabled = right.disabled = true;
-          }
+          showLoading() { track.innerHTML = buildSkeleton(4); left.disabled = right.disabled = true; },
+          showError(msg) { track.innerHTML = buildEmpty(msg || 'Could not load matches'); left.disabled = right.disabled = true; }
         };
       }
 
-      const cricketSlider  = initSlider('cricketTrack',  'cricketArrowLeft',  'cricketArrowRight',  '🏏');
+      const cricketSlider  = initSlider('cricketTrack', 'cricketArrowLeft', 'cricketArrowRight', '🏏');
       const footballSlider = initSlider('footballTrack', 'footballArrowLeft', 'footballArrowRight', '⚽');
-
-      cricketSlider.showLoading();
-      footballSlider.showLoading();
+      cricketSlider.showLoading(); footballSlider.showLoading();
 
       async function loadCricket() {
-        try {
-          const raw = await fetchJson(CRICKET_API);
-          cricketSlider.setItems(sortEvents(normalize(raw)).slice(0, MAX_ITEMS));
-        } catch (err) { console.warn('[cricket]', err); cricketSlider.showError('Could not load cricket matches'); }
+        try { const raw = await fetchJson(CRICKET_API); cricketSlider.setItems(sortEvents(normalize(raw)).slice(0, MAX_ITEMS)); }
+        catch (err) { console.warn('[cricket]', err); cricketSlider.showError('Could not load cricket matches'); }
       }
       async function loadFootball() {
-        try {
-          const raw = await fetchJson(FOOTBALL_API);
-          footballSlider.setItems(sortEvents(normalize(raw)).slice(0, MAX_ITEMS));
-        } catch (err) { console.warn('[football]', err); footballSlider.showError('Could not load football matches'); }
+        try { const raw = await fetchJson(FOOTBALL_API); footballSlider.setItems(sortEvents(normalize(raw)).slice(0, MAX_ITEMS)); }
+        catch (err) { console.warn('[football]', err); footballSlider.showError('Could not load football matches'); }
       }
-
-      loadCricket();
-      loadFootball();
+      loadCricket(); loadFootball();
       setInterval(loadCricket, 60000);
       setInterval(loadFootball, 60000);
     })();
   </script>
 
-  <!-- ====== CARD SIZE SYNC — Football/Cricket follow FanCode/Willow ====== -->
+  <!-- ========= CARD SIZE SYNC — Football/Cricket follow FanCode/Willow size ========= -->
   <script>
     (function () {
       'use strict';
       var root = document.documentElement;
-      var lastW = 0, lastH = 0;
+      var target = { w: 0, h: 0 };
+      var applied = { w: 0, h: 0 };
 
-      function findRef() {
-        var ids = ['fancodeTrack', 'willowLiveTrack', 'primeTrack', 'worldSportsTrack'];
-        for (var i = 0; i < ids.length; i++) {
-          var track = document.getElementById(ids[i]);
+      var TRACKS = ['fancodeTrack', 'willowLiveTrack', 'primeTrack', 'worldSportsTrack'];
+
+      // Find a measurable reference card from any of the sibling tracks
+      function findCard() {
+        for (var i = 0; i < TRACKS.length; i++) {
+          var track = document.getElementById(TRACKS[i]);
           if (!track) continue;
-          var card = track.firstElementChild;
-          if (!card) continue;
-          var r = card.getBoundingClientRect();
-          if (r.width > 80 && r.height > 40) return r;
+          var children = track.children;
+          for (var j = 0; j < children.length; j++) {
+            var card = children[j];
+            var cs = getComputedStyle(card);
+            if (cs.display === 'none' || cs.visibility === 'hidden') continue;
+            var r = card.getBoundingClientRect();
+            // Sanity: reject skeletons with 0 size or bogus dimensions
+            if (r.width >= 100 && r.height >= 60 && r.width < 1200 && r.height < 900) {
+              return { w: Math.round(r.width), h: Math.round(r.height) };
+            }
+          }
         }
         return null;
       }
 
-      function sync() {
-        var r = findRef();
-        if (!r) return;
-        var w = Math.round(r.width);
-        var h = Math.round(r.height);
-        if (Math.abs(w - lastW) < 1 && Math.abs(h - lastH) < 1) return;
-        lastW = w; lastH = h;
-        root.style.setProperty('--sport-card-w', w + 'px');
-        root.style.setProperty('--sport-card-ratio', w + ' / ' + h);
+      // Apply the target size to all Football/Cricket cards — via CSS var + inline style
+      function applyToCards() {
+        if (!target.w || !target.h) return;
+        var same = (target.w === applied.w && target.h === applied.h);
+
+        // Always (re)write the CSS vars on :root — cheap, idempotent, cascades to future cards
+        root.style.setProperty('--sport-card-w', target.w + 'px');
+        root.style.setProperty('--sport-card-h', target.h + 'px');
+        root.style.setProperty('--sport-card-ratio', 'auto'); // disable aspect-ratio so height wins
+
+        if (same) return;
+        applied.w = target.w; applied.h = target.h;
+
+        // Inline !important — defeats any external CSS specificity issues
+        var cards = document.querySelectorAll('.sport-slide, .sport-slide-skeleton');
+        for (var i = 0; i < cards.length; i++) {
+          var el = cards[i];
+          el.style.setProperty('width',        target.w + 'px', 'important');
+          el.style.setProperty('height',       target.h + 'px', 'important');
+          el.style.setProperty('min-width',    target.w + 'px', 'important');
+          el.style.setProperty('max-width',    target.w + 'px', 'important');
+          el.style.setProperty('min-height',   target.h + 'px', 'important');
+          el.style.setProperty('max-height',   target.h + 'px', 'important');
+          el.style.setProperty('aspect-ratio', 'auto',         'important');
+        }
       }
 
-      // Watch for cards being injected by fancode.js / willow-live.js etc.
-      if ('MutationObserver' in window) {
+      function sync() {
+        var found = findCard();
+        if (found) {
+          target.w = found.w;
+          target.h = found.h;
+          applyToCards();
+        }
+      }
+
+      // MutationObserver — fires when FanCode/Willow JS injects its cards
+      if (typeof MutationObserver !== 'undefined') {
         var mo = new MutationObserver(function () { requestAnimationFrame(sync); });
-        ['fancodeTrack','willowLiveTrack','primeTrack','worldSportsTrack'].forEach(function (id) {
+        TRACKS.forEach(function (id) {
           var el = document.getElementById(id);
-          if (el) mo.observe(el, { childList: true, subtree: true });
+          if (el) mo.observe(el, { childList: true, subtree: true, attributes: true });
         });
       }
 
-      window.addEventListener('resize', function () { requestAnimationFrame(sync); });
-      window.addEventListener('load', sync);
-      document.addEventListener('DOMContentLoaded', sync);
+      // ResizeObserver — fires when FanCode/Willow cards get laid out / resized
+      if (typeof ResizeObserver !== 'undefined') {
+        var ro = new ResizeObserver(function () { requestAnimationFrame(sync); });
+        TRACKS.forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) ro.observe(el);
+        });
+      }
 
-      // Safety poll for the first few seconds in case the tracks fill late
-      var tries = 0;
-      var iv = setInterval(function () {
+      // Aggressive polling for first 10 seconds — beats any late-loading cards
+      var start = Date.now();
+      var poll = setInterval(function () {
         sync();
-        if (lastW || ++tries > 30) clearInterval(iv);
-      }, 400);
+        if (Date.now() - start > 10000) clearInterval(poll);
+      }, 250);
+
+      // Keep re-applying to newly-rendered Football/Cricket cards (they re-render every 60s)
+      setInterval(applyToCards, 800);
+
+      window.addEventListener('resize', function () {
+        applied.w = 0; applied.h = 0; // force re-apply
+        sync();
+        setTimeout(applyToCards, 50);
+      });
+      window.addEventListener('load', function () { sync(); setTimeout(applyToCards, 100); });
+      document.addEventListener('DOMContentLoaded', function () { sync(); setTimeout(applyToCards, 200); });
+
+      // Run once immediately
+      sync();
     })();
   </script>
 
-  <!-- ====== TELEGRAM POPUP ====== -->
+  <!-- ========= TELEGRAM POPUP ========= -->
   <style>
-    #tgOverlay {
-      position: fixed; inset: 0; background: rgba(5,7,14,0.85);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      display: none; align-items: center; justify-content: center;
-      z-index: 999999; padding: 20px;
-      animation: tgFadeIn 0.4s cubic-bezier(0.25,0.8,0.25,1);
-    }
+    #tgOverlay { position: fixed; inset: 0; background: rgba(5,7,14,0.85); backdrop-filter: blur(20px); display: none; align-items: center; justify-content: center; z-index: 999999; padding: 20px; }
     #tgOverlay.show { display: flex; }
-    #tgCard {
-      width: 100%; max-width: 400px;
-      background: linear-gradient(160deg, #161E30, #0A0F1A);
-      border: 1px solid rgba(0,224,255,0.2);
-      border-radius: 24px; padding: 36px 28px 28px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 60px rgba(0,224,255,0.08);
-      text-align: center; position: relative; overflow: hidden;
-    }
-    #tgCard::before {
-      content: ""; position: absolute; top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle at 30% 20%, rgba(168,85,247,0.1), transparent 60%);
-      pointer-events: none;
-    }
-    #tgIcon {
-      width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--grad-primary);
-      box-shadow: 0 0 40px rgba(0,224,255,0.35);
-      position: relative; z-index: 1;
-    }
-    #tgCard h2 {
-      margin: 0 0 8px; font-size: clamp(1.3rem,2.5vw,1.8rem); font-weight: 800;
-      color: var(--text); position: relative; z-index: 1; letter-spacing: -0.01em;
-    }
-    #tgCard p {
-      margin: 0 0 24px; color: var(--text-dim); font-size: clamp(0.9rem,1.2vw,1.05rem);
-      line-height: 1.6; position: relative; z-index: 1;
-    }
-    .tgBtns { display: flex; gap: 12px; position: relative; z-index: 1; }
-    .tgBtn {
-      flex: 1; height: 48px; border-radius: 999px; font-weight: 800;
-      font-size: clamp(0.85rem,1vw,1rem); cursor: pointer;
-      transition: all 0.25s ease; border: none;
-      letter-spacing: 0.04em; text-transform: uppercase;
-    }
-    #tgJoinNow {
-      background: var(--grad-primary);
-      color: var(--bg);
-      box-shadow: 0 6px 24px rgba(0,224,255,0.35);
-    }
-    #tgJoinNow:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,224,255,0.5); }
-    #tgJoinedBtn {
-      background: rgba(255,255,255,0.06); color: var(--text-dim);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    #tgJoinedBtn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
-    @keyframes tgFadeIn {
-      from { opacity: 0; transform: scale(0.95) translateY(12px); }
-      to   { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @media (max-width: 480px) {
-      #tgCard { padding: 24px 18px 20px; border-radius: 20px; }
-      #tgIcon { width: 60px; height: 60px; }
-      #tgCard h2 { font-size: 1.2rem; }
-      #tgCard p  { font-size: 0.85rem; margin-bottom: 18px; }
-      .tgBtn { height: 42px; font-size: 0.78rem; }
-    }
+    #tgCard { width: 100%; max-width: 400px; background: linear-gradient(160deg, #161E30, #0A0F1A); border: 1px solid rgba(0,224,255,0.2); border-radius: 24px; padding: 36px 28px 28px; box-shadow: 0 40px 80px rgba(0,0,0,0.8); text-align: center; }
+    #tgIcon { width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--grad-primary); }
+    #tgCard h2 { margin: 0 0 8px; font-size: 1.4rem; font-weight: 800; color: var(--text); }
+    #tgCard p { margin: 0 0 24px; color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+    .tgBtns { display: flex; gap: 12px; }
+    .tgBtn { flex: 1; height: 48px; border-radius: 999px; font-weight: 800; font-size: 0.9rem; cursor: pointer; border: none; text-transform: uppercase; }
+    #tgJoinNow { background: var(--grad-primary); color: var(--bg); }
+    #tgJoinedBtn { background: rgba(255,255,255,0.06); color: var(--text-dim); border: 1px solid rgba(255,255,255,0.1); }
   </style>
 
-  <div id="tgOverlay" role="dialog" aria-modal="true" aria-label="Join our Telegram channel">
+  <div id="tgOverlay" role="dialog" aria-modal="true">
     <div id="tgCard">
       <div id="tgIcon">
-        <svg viewBox="0 0 24 24" fill="#05070E" width="36" height="36" aria-hidden="true">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 13.63l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.462c.537-.194 1.006.131.833.93z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="#05070E" width="36" height="36"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 13.63l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.462c.537-.194 1.006.131.833.93z"/></svg>
       </div>
       <h2>Join Our Telegram Channel</h2>
       <p>Get live match links &amp; instant updates straight on Telegram.</p>
@@ -1664,19 +817,12 @@
 
   <script>
     (function () {
-      var tgOverlay = document.getElementById('tgOverlay');
-      if (!tgOverlay) return;
-      setTimeout(function () { tgOverlay.classList.add('show'); }, 4000);
-      document.getElementById('tgJoinNow').onclick = function () {
-        window.open('https://t.me/sportlink10', '_blank');
-        tgOverlay.classList.remove('show');
-      };
-      document.getElementById('tgJoinedBtn').onclick = function () {
-        tgOverlay.classList.remove('show');
-      };
-      tgOverlay.addEventListener('click', function (e) {
-        if (e.target === tgOverlay) tgOverlay.classList.remove('show');
-      });
+      var o = document.getElementById('tgOverlay');
+      if (!o) return;
+      setTimeout(function () { o.classList.add('show'); }, 4000);
+      document.getElementById('tgJoinNow').onclick = function () { window.open('https://t.me/sportlink10', '_blank'); o.classList.remove('show'); };
+      document.getElementById('tgJoinedBtn').onclick = function () { o.classList.remove('show'); };
+      o.addEventListener('click', function (e) { if (e.target === o) o.classList.remove('show'); });
     })();
   </script>
   <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
