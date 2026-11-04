@@ -1,8 +1,29 @@
 {
-  "timestamp": "2026-11-04T21:01:01.220416",
-  "total_matches": 0,
+  "timestamp": "2026-11-04T21:06:01.730929",
+  "total_matches": 1,
   "live_count": 0,
-  "upcoming_count": 0,
+  "upcoming_count": 1,
   "completed_count": 0,
-  "matches": []
+  "matches": [
+    {
+      "title": "Bangladesh vs West Indies",
+      "teams": "Bangladesh vs West Indies",
+      "league": "Sports Tournament",
+      "sport": "cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "page_url": "/world-sports/player.html?id=1317",
+      "runtime": "00h 00m 00s",
+      "viewers": "229",
+      "viewers_type": "Waiting",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/bangladesh-vs-west-indies-1317",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17936115231020x576.jpg",
+      "match_id": "1317",
+      "server_urls": [],
+      "last_updated": "2026-11-04T21:06:01.730147"
+    }
+  ]
 }
