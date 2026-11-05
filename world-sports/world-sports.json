@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-05T03:25:42.576793",
+  "timestamp": "2026-11-05T03:30:41.690125",
   "total_matches": 1,
-  "live_count": 0,
-  "upcoming_count": 1,
+  "live_count": 1,
+  "upcoming_count": 0,
   "completed_count": 0,
   "matches": [
     {
@@ -10,20 +10,22 @@
       "teams": "Bangladesh vs West Indies 2nd Test(Day 1)",
       "league": "West indies Tour of Bangladesh 2026",
       "sport": "cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "status": "live",
+      "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1317",
       "runtime": "00h 00m 00s",
-      "viewers": "6",
-      "viewers_type": "Waiting",
+      "viewers": "9",
+      "viewers_type": "Watching",
       "servers": null,
       "date": null,
       "time": null,
       "match_url": "live/bangladesh-vs-west-indies-2nd-test-day-1-1317",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17936115231020x576.jpg",
       "match_id": "1317",
-      "server_urls": [],
-      "last_updated": "2026-11-05T03:25:42.575867"
+      "server_urls": [
+        "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8"
+      ],
+      "last_updated": "2026-11-05T03:30:40.450936"
     }
   ]
 }
