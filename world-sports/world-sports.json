@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-05T08:40:41.331857",
+  "timestamp": "2026-11-05T08:45:37.648074",
   "total_matches": 1,
   "live_count": 1,
   "upcoming_count": 0,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1317",
       "runtime": "00h 00m 00s",
-      "viewers": "150",
+      "viewers": "153",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -23,9 +23,11 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17936115231020x576.jpg",
       "match_id": "1317",
       "server_urls": [
-        "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8"
+        "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
+        "https://live.talkoraai.com/match/hls?t=LwKXzeMQebeB30bFyxq1V4bY0QMfRxGYXUwjYnRRzE6kI4ES3aKrAgPFdsdjf_KomETVLFWA1aFQ92Tl7AddT0JE8k6rtj2EQ_Im_1zrSI_ShmSd9oq07P4G2pjri4OC1_dD6uMTV6-vjrl_2NdRZswpD4_A_iMk2rGkMIzRCZ94vRq2D0VGTCykNkLzUc0hTuX0cCLSrnFSeJViBaJDRvFdREE7FruwRRKqFf5S59mFu6RLHCC6PCfqkCRuG_iaZOAA6WUP9zg4KVeo_sVBQMgVF4zQaYdbA4U",
+        "https://live.talkoraai.com/match/seg?t=2_s9pmCe0ntGyBJLmhnOxqZ-qKw6V_JLisAehppD8qrErf6PptxAwQURiGb77_6Y-OJlxeyUt3NgFS_PYPE1LKjSASURJu_4WuGYAWatZS2oE489d7olhfpsCCeHxy0_EysFldeIuXuufeKH-kxrxsBxpjFr26Ub-pJSJEoXj2JoumKTD1UqRM75JA9ncRy-ySeoDRGHMTY2oCQHsIGe-eEMjcx6nqbRK5TXnFd22XzO3In1lmdErb3PzTKZNX2i_zRSiMOOORPUmi4TaGU-2SRU8yMHRGJL4GPgVryg1IzaWQ"
       ],
-      "last_updated": "2026-11-05T08:40:40.878659"
+      "last_updated": "2026-11-05T08:45:37.091925"
     }
   ]
 }
