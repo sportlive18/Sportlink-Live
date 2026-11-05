@@ -200,19 +200,105 @@
       box-shadow: 0 20px 45px rgba(0,0,0,0.5), 0 0 30px rgba(0,245,160,0.18);
     }
 
-    .sport-slide-media { position: absolute; inset: 0; z-index: 0; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    /* ============================================================
+       OLD THUMBNAIL STYLE — dual crest + VS badge
+       ============================================================ */
+    .sport-slide-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 12px;
+      overflow: hidden;
+    }
     .cricket-section .sport-slide-media { background: linear-gradient(135deg, #2a2410 0%, #0F1420 55%, #0b0f18 100%); }
     .football-section .sport-slide-media { background: linear-gradient(135deg, #0e2a1e 0%, #0F1420 55%, #0b0f18 100%); }
-    .sport-slide-media .flag-cell { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .sport-slide-media .flag-cell img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.65) saturate(1.2); transition: transform 0.6s ease, filter 0.4s ease; display: block; }
-    .sport-slide:hover .sport-slide-media .flag-cell img { transform: scale(1.1); filter: brightness(0.82) saturate(1.3); }
 
-    .sport-slide-media .flag-divider { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 1; background: linear-gradient(90deg, rgba(5,7,14,0.2) 0%, rgba(5,7,14,0.6) 50%, rgba(5,7,14,0.2) 100%); }
-    .sport-slide-media .flag-divider span { font-size: clamp(0.65rem, 1.1vw, 0.9rem); font-weight: 900; letter-spacing: 0.18em; color: var(--text); background: rgba(5,7,14,0.9); padding: 0.3em 0.7em; border-radius: 8px; border: 1px solid rgba(0,224,255,0.35); box-shadow: 0 0 20px rgba(0,224,255,0.2); backdrop-filter: blur(8px); }
+    .sport-slide-media .team-crest {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .sport-slide-media .crest-circle {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #1a2330;
+      border: 2px solid rgba(255,255,255,0.15);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 20px rgba(0,224,255,0.12);
+      transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      font-size: 14px;
+      font-weight: 800;
+      color: #6E7E94;
+      flex-shrink: 0;
+    }
+
+    .sport-slide-media .crest-circle img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      background: #1a2330;
+    }
+
+    .sport-slide:hover .sport-slide-media .crest-circle {
+      transform: scale(1.06);
+      border-color: rgba(0,224,255,0.5);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 30px rgba(0,224,255,0.25);
+    }
+    .football-section .sport-slide:hover .sport-slide-media .crest-circle {
+      border-color: rgba(0,245,160,0.5);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 30px rgba(0,245,160,0.25);
+    }
+
+    .sport-slide-media .crest-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #cbd5e1;
+      text-align: center;
+      max-width: 88px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+    }
+
+    .sport-slide-media .vs-mid {
+      font-size: 11px;
+      font-weight: 900;
+      color: #00E0FF;
+      background: rgba(0,224,255,0.15);
+      border: 1px solid rgba(0,224,255,0.35);
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.15em;
+      flex: 0 0 auto;
+      box-shadow: 0 0 20px rgba(0,224,255,0.2);
+      backdrop-filter: blur(8px);
+    }
+    .football-section .sport-slide-media .vs-mid {
+      color: #00F5A0;
+      background: rgba(0,245,160,0.15);
+      border-color: rgba(0,245,160,0.35);
+      box-shadow: 0 0 20px rgba(0,245,160,0.2);
+    }
 
     .sport-slide-emoji { position: absolute; top: 50%; right: 8%; transform: translateY(-50%); z-index: 1; font-size: clamp(2.4rem, 4.5vw, 4rem); opacity: 0.15; pointer-events: none; line-height: 1; }
 
-    .sport-slide-body { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(0.7rem, 1.3vw, 1.1rem); background: linear-gradient(to top, rgba(5,7,14,0.97) 0%, rgba(5,7,14,0.75) 40%, rgba(5,7,14,0.15) 80%, transparent 100%); }
+    .sport-slide-body { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(0.7rem, 1.3vw, 1.1rem); background: linear-gradient(to top, rgba(5,7,14,0.97) 0%, rgba(5,7,14,0.55) 35%, rgba(5,7,14,0.15) 65%, transparent 100%); }
 
     .sport-slide-live { align-self: flex-start; margin-bottom: 0.4rem; padding: 0.22em 0.7em; border-radius: 999px; font-size: clamp(0.48rem, 0.75vw, 0.62rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; background: var(--grad-live); color: var(--bg); box-shadow: 0 4px 14px rgba(0,245,160,0.45); animation: livePulse 2s ease-in-out infinite; }
     @keyframes livePulse { 0%, 100% { box-shadow: 0 4px 14px rgba(0,245,160,0.45); } 50% { box-shadow: 0 4px 22px rgba(0,245,160,0.75); } }
@@ -232,9 +318,7 @@
     .football-section .sport-slider-link:hover { color: var(--mint); background: rgba(0,245,160,0.08); border-color: rgba(0,245,160,0.3); }
 
     /* ============================================================
-       UNIFIED CARD SIZE
-       Every carousel (FanCode, Willow, Prime, WorldSports, Football,
-       Cricket) now uses the same fixed card dimensions.
+       UNIFIED CARD SIZE across all six carousels
        ============================================================ */
     :root {
       --unified-card-w: clamp(240px, 24vw, 340px);
@@ -261,7 +345,6 @@
       box-sizing: border-box !important;
     }
 
-    /* Ensure every track aligns its cards to stretch vertically */
     #fancodeTrack,
     #willowLiveTrack,
     #primeTrack,
@@ -271,7 +354,6 @@
       align-items: stretch !important;
     }
 
-    /* Keep the .sport-slide-empty placeholder from being stretched oddly */
     #footballTrack > .sport-slide-empty,
     #cricketTrack > .sport-slide-empty {
       width: auto !important;
@@ -503,7 +585,7 @@
     }));
   </script>
 
-  <!-- ====== CRICKET / FOOTBALL SLIDERS — live API ====== -->
+  <!-- ====== CRICKET / FOOTBALL SLIDERS — live API + OLD THUMBNAIL STYLE ====== -->
   <script>
     (function () {
       'use strict';
@@ -535,6 +617,17 @@
         }
       }
       function esc(v) { return String(v ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+
+      function getInitials(name) {
+        return String(name || '?')
+          .replace(/[^A-Za-z0-9 ]/g, '')
+          .split(/\s+/)
+          .filter(Boolean)
+          .map(x => x[0])
+          .join('')
+          .slice(0, 3)
+          .toUpperCase() || '?';
+      }
 
       function parseDate(value) {
         if (!value) return null;
@@ -610,24 +703,50 @@
         });
       }
 
+      /* OLD THUMBNAIL STYLE — two circular crests + VS badge */
+      function buildCrestHtml(e) {
+        const hasA = !!e.a, hasB = !!e.b;
+        const sameTeam = !hasB || e.a === e.b;
+
+        if (hasA && hasB && !sameTeam) {
+          const initA = getInitials(e.a);
+          const initB = getInitials(e.b);
+          const imgA = e.fa ? `<img src="${esc(e.fa)}" alt="${esc(e.a)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
+          const imgB = e.fb ? `<img src="${esc(e.fb)}" alt="${esc(e.b)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
+          return `
+            <div class="team-crest">
+              <div class="crest-circle"><span>${esc(initA)}</span>${imgA}</div>
+              <div class="crest-name">${esc(e.a)}</div>
+            </div>
+            <span class="vs-mid">VS</span>
+            <div class="team-crest">
+              <div class="crest-circle"><span>${esc(initB)}</span>${imgB}</div>
+              <div class="crest-name">${esc(e.b)}</div>
+            </div>
+          `;
+        }
+        if (hasA) {
+          const initA = getInitials(e.a);
+          const imgA = e.fa ? `<img src="${esc(e.fa)}" alt="${esc(e.a)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
+          return `
+            <div class="team-crest">
+              <div class="crest-circle"><span>${esc(initA)}</span>${imgA}</div>
+              <div class="crest-name">${esc(e.a)}</div>
+            </div>
+          `;
+        }
+        return '';
+      }
+
       function buildCard(e, emoji) {
         const status = getStatus(e.st, e.en);
         const now = Date.now();
         const hasA = !!e.a, hasB = !!e.b;
-        const sameTeam = !hasB || e.a === e.b;
         const title = hasA && hasB ? `${e.a} vs ${e.b}` : (e.a || e.comp || 'Match');
         const basePath = emoji === '⚽' ? '/Football/' : '/Cricket/';
         const watchUrl = `${basePath}#watch?id=${encodeURIComponent(e.id)}&stream=0`;
 
-        let mediaHtml = '';
-        if (hasA && !sameTeam && hasB) {
-          const fA = e.fa ? `<div class="flag-cell"><img src="${esc(e.fa)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>` : `<div class="flag-cell"></div>`;
-          const fB = e.fb ? `<div class="flag-cell"><img src="${esc(e.fb)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>` : `<div class="flag-cell"></div>`;
-          mediaHtml = fA + fB + `<div class="flag-divider"><span>VS</span></div>`;
-        } else if (hasA) {
-          const fA = e.fa ? `<div class="flag-cell" style="grid-column:1/-1"><img src="${esc(e.fa)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>` : '';
-          mediaHtml = fA || '<div class="flag-cell" style="grid-column:1/-1"></div>';
-        }
+        const mediaHtml = buildCrestHtml(e);
 
         let statusBadge = '';
         if (status === 'live') statusBadge = `<span class="sport-slide-live">● Live</span>`;
@@ -765,6 +884,6 @@
       o.addEventListener('click', function (e) { if (e.target === o) o.classList.remove('show'); });
     })();
   </script>
-  <script src="https://pl31358401.profitabliteratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
+  <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
 </body>
 </html>
