@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-05T08:20:39.555403",
+  "timestamp": "2026-11-05T08:25:41.580289",
   "total_matches": 1,
   "live_count": 1,
   "upcoming_count": 0,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1317",
       "runtime": "00h 00m 00s",
-      "viewers": "136",
+      "viewers": "139",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -25,7 +25,7 @@
       "server_urls": [
         "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8"
       ],
-      "last_updated": "2026-11-05T08:20:39.247571"
+      "last_updated": "2026-11-05T08:25:41.242443"
     }
   ]
 }
