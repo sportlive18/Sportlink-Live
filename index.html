@@ -174,8 +174,6 @@
     .sport-slider-track::-webkit-scrollbar { display: none; }
     .sport-slider-track.dragging { cursor: grabbing; scroll-behavior: auto; scroll-snap-type: none; }
 
-    /* Synced card size — width AND height, both configurable via CSS vars.
-       If FanCode/Willow loads and reports size, we override. Otherwise, fallback. */
     .sport-slide,
     .sport-slide-skeleton {
       flex: 0 0 auto;
@@ -232,6 +230,55 @@
     .sport-slider-link { font-size: clamp(0.65rem, 0.95vw, 0.8rem); font-weight: 700; color: var(--text-dim); text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; transition: color 0.25s ease; padding: 0.35em 0.8em; border-radius: 8px; border: 1px solid var(--border); }
     .sport-slider-link:hover { color: var(--cyan); background: rgba(0,224,255,0.08); border-color: rgba(0,224,255,0.3); }
     .football-section .sport-slider-link:hover { color: var(--mint); background: rgba(0,245,160,0.08); border-color: rgba(0,245,160,0.3); }
+
+    /* ============================================================
+       UNIFIED CARD SIZE
+       Every carousel (FanCode, Willow, Prime, WorldSports, Football,
+       Cricket) now uses the same fixed card dimensions.
+       ============================================================ */
+    :root {
+      --unified-card-w: clamp(240px, 24vw, 340px);
+      --unified-card-h: calc(var(--unified-card-w) * 9 / 16);
+    }
+
+    #fancodeTrack > *,
+    #willowLiveTrack > *,
+    #primeTrack > *,
+    #worldSportsTrack > *,
+    #footballTrack > .sport-slide,
+    #footballTrack > .sport-slide-skeleton,
+    #cricketTrack > .sport-slide,
+    #cricketTrack > .sport-slide-skeleton {
+      flex: 0 0 var(--unified-card-w) !important;
+      width: var(--unified-card-w) !important;
+      min-width: var(--unified-card-w) !important;
+      max-width: var(--unified-card-w) !important;
+      height: var(--unified-card-h) !important;
+      min-height: var(--unified-card-h) !important;
+      max-height: var(--unified-card-h) !important;
+      aspect-ratio: auto !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Ensure every track aligns its cards to stretch vertically */
+    #fancodeTrack,
+    #willowLiveTrack,
+    #primeTrack,
+    #worldSportsTrack,
+    #footballTrack,
+    #cricketTrack {
+      align-items: stretch !important;
+    }
+
+    /* Keep the .sport-slide-empty placeholder from being stretched oddly */
+    #footballTrack > .sport-slide-empty,
+    #cricketTrack > .sport-slide-empty {
+      width: auto !important;
+      min-width: var(--unified-card-w) !important;
+      max-width: var(--unified-card-w) !important;
+      height: var(--unified-card-h) !important;
+    }
 
     @media (orientation: portrait) and (max-width: 768px) {
       header { padding: 0.6rem 1rem; }
@@ -680,113 +727,6 @@
     })();
   </script>
 
-  <!-- ========= CARD SIZE SYNC — Football/Cricket follow FanCode/Willow size ========= -->
-  <script>
-    (function () {
-      'use strict';
-      var root = document.documentElement;
-      var target = { w: 0, h: 0 };
-      var applied = { w: 0, h: 0 };
-
-      var TRACKS = ['fancodeTrack', 'willowLiveTrack', 'primeTrack', 'worldSportsTrack'];
-
-      // Find a measurable reference card from any of the sibling tracks
-      function findCard() {
-        for (var i = 0; i < TRACKS.length; i++) {
-          var track = document.getElementById(TRACKS[i]);
-          if (!track) continue;
-          var children = track.children;
-          for (var j = 0; j < children.length; j++) {
-            var card = children[j];
-            var cs = getComputedStyle(card);
-            if (cs.display === 'none' || cs.visibility === 'hidden') continue;
-            var r = card.getBoundingClientRect();
-            // Sanity: reject skeletons with 0 size or bogus dimensions
-            if (r.width >= 100 && r.height >= 60 && r.width < 1200 && r.height < 900) {
-              return { w: Math.round(r.width), h: Math.round(r.height) };
-            }
-          }
-        }
-        return null;
-      }
-
-      // Apply the target size to all Football/Cricket cards — via CSS var + inline style
-      function applyToCards() {
-        if (!target.w || !target.h) return;
-        var same = (target.w === applied.w && target.h === applied.h);
-
-        // Always (re)write the CSS vars on :root — cheap, idempotent, cascades to future cards
-        root.style.setProperty('--sport-card-w', target.w + 'px');
-        root.style.setProperty('--sport-card-h', target.h + 'px');
-        root.style.setProperty('--sport-card-ratio', 'auto'); // disable aspect-ratio so height wins
-
-        if (same) return;
-        applied.w = target.w; applied.h = target.h;
-
-        // Inline !important — defeats any external CSS specificity issues
-        var cards = document.querySelectorAll('.sport-slide, .sport-slide-skeleton');
-        for (var i = 0; i < cards.length; i++) {
-          var el = cards[i];
-          el.style.setProperty('width',        target.w + 'px', 'important');
-          el.style.setProperty('height',       target.h + 'px', 'important');
-          el.style.setProperty('min-width',    target.w + 'px', 'important');
-          el.style.setProperty('max-width',    target.w + 'px', 'important');
-          el.style.setProperty('min-height',   target.h + 'px', 'important');
-          el.style.setProperty('max-height',   target.h + 'px', 'important');
-          el.style.setProperty('aspect-ratio', 'auto',         'important');
-        }
-      }
-
-      function sync() {
-        var found = findCard();
-        if (found) {
-          target.w = found.w;
-          target.h = found.h;
-          applyToCards();
-        }
-      }
-
-      // MutationObserver — fires when FanCode/Willow JS injects its cards
-      if (typeof MutationObserver !== 'undefined') {
-        var mo = new MutationObserver(function () { requestAnimationFrame(sync); });
-        TRACKS.forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) mo.observe(el, { childList: true, subtree: true, attributes: true });
-        });
-      }
-
-      // ResizeObserver — fires when FanCode/Willow cards get laid out / resized
-      if (typeof ResizeObserver !== 'undefined') {
-        var ro = new ResizeObserver(function () { requestAnimationFrame(sync); });
-        TRACKS.forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) ro.observe(el);
-        });
-      }
-
-      // Aggressive polling for first 10 seconds — beats any late-loading cards
-      var start = Date.now();
-      var poll = setInterval(function () {
-        sync();
-        if (Date.now() - start > 10000) clearInterval(poll);
-      }, 250);
-
-      // Keep re-applying to newly-rendered Football/Cricket cards (they re-render every 60s)
-      setInterval(applyToCards, 800);
-
-      window.addEventListener('resize', function () {
-        applied.w = 0; applied.h = 0; // force re-apply
-        sync();
-        setTimeout(applyToCards, 50);
-      });
-      window.addEventListener('load', function () { sync(); setTimeout(applyToCards, 100); });
-      document.addEventListener('DOMContentLoaded', function () { sync(); setTimeout(applyToCards, 200); });
-
-      // Run once immediately
-      sync();
-    })();
-  </script>
-
   <!-- ========= TELEGRAM POPUP ========= -->
   <style>
     #tgOverlay { position: fixed; inset: 0; background: rgba(5,7,14,0.85); backdrop-filter: blur(20px); display: none; align-items: center; justify-content: center; z-index: 999999; padding: 20px; }
@@ -825,6 +765,6 @@
       o.addEventListener('click', function (e) { if (e.target === o) o.classList.remove('show'); });
     })();
   </script>
-  <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
+  <script src="https://pl31358401.profitabliteratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
 </body>
 </html>
