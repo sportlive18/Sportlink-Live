@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-06T07:45:44.666653",
+  "timestamp": "2026-11-06T07:50:39.233149",
   "total_matches": 3,
   "live_count": 2,
   "upcoming_count": 1,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1317",
       "runtime": "00h 00m 00s",
-      "viewers": "685",
+      "viewers": "687",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -27,7 +27,7 @@
         "https://live.talkoraai.com/match/hls?t=RqT-AM_G5hUBU6sBeudBsJMphG7EmweZ9cGyEcplcEPV3i4dxn5x8uB4w5WX1-C7byka33v0StyzSn03p7bOlrQ2yd4VRaupB3JyL9idrxaIbFpdgPtOvOVihlR4jJ0K1eFzYzwxCOSmkO1W7C81vGhtVDNpDOJnVYOEPASLpXqkcJvuUfrihqgVr8woWWyBUkOXDclWAXNN0fwU6Rz0QTBvm-ek0BM0jFquGT-DK5x_goMAT4vZDRBEkBN6-XE97kHkcAvUAFwoq4N90jSCaD8k3VyQoN7ZscU",
         "https://live.talkoraai.com/match/seg?t=6MrkbkswBDNSl7FhXmzhLqX9vtSJO_RCrsh1lrOU22uIZ7-KGBzQSKnvKtUTvQ84LCE0ehhYZrZuSZB4YJsr-PTPyzxU20txIQEr1O-AE43jI0Tgxte0dqJioTt4ZAtzNdVDKew2Wve-gOmwc1VMBXg96x6VWi0fTzetSeziH-hzcKLUqrNze1-VyVktlP55tT6SCf91x4LwIStBIP251wURR1ua6NcdI1PT_D-_cgF9z8ODfnUCF8GaDzW5x9e7rSuv-mEc72bGGn4xfnX6fvHr8WYOWHgGR0TOIhLn255IDw"
       ],
-      "last_updated": "2026-11-06T07:45:43.729662"
+      "last_updated": "2026-11-06T07:50:38.270767"
     },
     {
       "title": "Afghanistan vs Zimbabwe 1st Test (Day1)",
@@ -38,7 +38,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1319",
       "runtime": "00h 00m 00s",
-      "viewers": "520",
+      "viewers": "522",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -51,7 +51,7 @@
         "https://live.talkoraai.com/match/seg?t=HwBdMJmMrbw1mvEv0aTis1SUjPMWw5UTNOBZuyjCuPiyEMMpRma4zPjd8j6NxfujmlYoVUwgCexsYV4K1BinxKbTxRTT1QY5d7IJeUT6BwPlWZYQuAshtYEGwkOfUPLLXlADtq8L-issTHjv-JvXsZqj4d5SYhjJIV__vEHZZAqooFOfgcP-bboa_Xf7yr50dnE8dgHG4o9oxprdaGH3uNz_4niKikBIA6fz9YC1ECNduid37zM-tstXbah4EicjCxDXGBZdS5uvADago3e0Y6KamV0sGuEGSorKvLl9K4WdFg",
         "https://live.talkoraai.com/match/seg?t=vdkMR9ctC7DQBK60vA9bbOTKvl5A7KjY4Pt3_6NouOLNy_6RmX_yoHDoOyymlR_1ZecYV0yBU6Aft28Pmj-b32NCI0RgkpREZvU-HVJcQWS3zpMAtvrAKq6_T8cZ6uK_QVNL1ENMVszGGdDWk9VLh37asUMxKjeORB98Vx-1VXGR6OIsEvTO4-mHlGF5wXOMaeTuiwuxgdC20fKfBBu57ENDKcu_f7nJ5jVND9EdKO8bwKLegp7rrZquX0giH5Tj-qKutgKDG0rLihcad3aJbiTSfNnQEgL2i-5KwxV_ysKXsA"
       ],
-      "last_updated": "2026-11-06T07:45:44.230544"
+      "last_updated": "2026-11-06T07:50:38.644153"
     },
     {
       "title": "Melbourne Stars vs Sydney Sixers",
@@ -71,7 +71,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1793784586540x302.jpg",
       "match_id": "1320",
       "server_urls": [],
-      "last_updated": "2026-11-06T07:45:44.665922"
+      "last_updated": "2026-11-06T07:50:39.232688"
     }
   ]
 }
