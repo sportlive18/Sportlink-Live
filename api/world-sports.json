@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-06T07:25:42.167562",
-  "total_matches": 2,
+  "timestamp": "2026-11-06T07:30:43.103862",
+  "total_matches": 3,
   "live_count": 2,
-  "upcoming_count": 0,
+  "upcoming_count": 1,
   "completed_count": 0,
   "matches": [
     {
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1317",
       "runtime": "00h 00m 00s",
-      "viewers": "675",
+      "viewers": "678",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -24,10 +24,10 @@
       "match_id": "1317",
       "server_urls": [
         "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
-        "https://live.talkoraai.com/match/hls?t=LwKXzeMQebeB30bFyxq1V4bY0QMfRxGYXUwjYnRRzE6kI4ES3aKrAgPFdsdjf_KomETVLFWA1aFQ92Tl7AddT0JE8k6rtj2EQ_Im_1zrSI_ShmSd9oq07P4G2pjri4OC1_dD6uMTV6-vjrl_2NdRZswpD4_A_iMk2rGkMIzRCZ94vRq2D0VGTCykNkLzUc0hTuX0cCLSrnFSeJViBaJDRvFdREE7FruwRRKqFf5S59mFu6RLHCC6PCfqkCRuG_iaZOAA6WUP9zg4KVeo_sVBQMgVF4zQaYdbA4U",
-        "https://live.talkoraai.com/match/seg?t=2_s9pmCe0ntGyBJLmhnOxqZ-qKw6V_JLisAehppD8qrErf6PptxAwQURiGb77_6Y-OJlxeyUt3NgFS_PYPE1LKjSASURJu_4WuGYAWatZS2oE489d7olhfpsCCeHxy0_EysFldeIuXuufeKH-kxrxsBxpjFr26Ub-pJSJEoXj2JoumKTD1UqRM75JA9ncRy-ySeoDRGHMTY2oCQHsIGe-eEMjcx6nqbRK5TXnFd22XzO3In1lmdErb3PzTKZNX2i_zRSiMOOORPUmi4TaGU-2SRU8yMHRGJL4GPgVryg1IzaWQ"
+        "https://live.talkoraai.com/match/hls?t=RqT-AM_G5hUBU6sBeudBsJMphG7EmweZ9cGyEcplcEPV3i4dxn5x8uB4w5WX1-C7byka33v0StyzSn03p7bOlrQ2yd4VRaupB3JyL9idrxaIbFpdgPtOvOVihlR4jJ0K1eFzYzwxCOSmkO1W7C81vGhtVDNpDOJnVYOEPASLpXqkcJvuUfrihqgVr8woWWyBUkOXDclWAXNN0fwU6Rz0QTBvm-ek0BM0jFquGT-DK5x_goMAT4vZDRBEkBN6-XE97kHkcAvUAFwoq4N90jSCaD8k3VyQoN7ZscU",
+        "https://live.talkoraai.com/match/seg?t=6MrkbkswBDNSl7FhXmzhLqX9vtSJO_RCrsh1lrOU22uIZ7-KGBzQSKnvKtUTvQ84LCE0ehhYZrZuSZB4YJsr-PTPyzxU20txIQEr1O-AE43jI0Tgxte0dqJioTt4ZAtzNdVDKew2Wve-gOmwc1VMBXg96x6VWi0fTzetSeziH-hzcKLUqrNze1-VyVktlP55tT6SCf91x4LwIStBIP251wURR1ua6NcdI1PT_D-_cgF9z8ODfnUCF8GaDzW5x9e7rSuv-mEc72bGGn4xfnX6fvHr8WYOWHgGR0TOIhLn255IDw"
       ],
-      "last_updated": "2026-11-06T07:25:41.256152"
+      "last_updated": "2026-11-06T07:30:42.243541"
     },
     {
       "title": "Afghanistan vs Zimbabwe 1st Test (Day1)",
@@ -38,7 +38,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1319",
       "runtime": "00h 00m 00s",
-      "viewers": "510",
+      "viewers": "514",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -47,10 +47,31 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1793865686540x302.jpg",
       "match_id": "1319",
       "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=7W6n3fHxd8PHgOHyzPK2wR_nA5Cr8LUufU0PFvFquRW3nRc_g88td_owSfyXv0NrLgKSpgFEgfCdl5FPVy8q9Ja_dDv4AEiz-4GitXGTzhABcJxg_-2fmLqpqmc99ZmjzCyJxXeroGpY9_Gm7_eBLOytkUP8KZsGvgl3-qgqoi2kMsBIsw_A0XQ2HMXt0CgzjAxn4DI6B9x8BzIPkVKCpPQwgJJV0xolcfZ_UBcwd8ECLKUbZtnyGIcEySPNV69k8F1jgb5-QOzL2PPJQCsN7zOvyHLOvCJ4ggY",
-        "https://live.talkoraai.com/match/seg?t=XdQEMIz_R6Xw024311PE7VblX8AKNFgslAHz5y0sf1P39sWlIlUEDRBAAa87a6Eb9lDda8JITKvutQO7-kue8iv01jBth1vF4WHoWreqoHvWfUWaRAFVIAjXEzpUOkTulY-y69AQkiGPcpDGEGYYpl47NBgj5niafwUdw4EBztW7dj_JNyxF-BHpj1HQQydn7m1wEvwRptwLPBZAKTct_L8dF0_w8gMFsSR5Ums7pY42afaJFFICtoJ1jJ-cO3AoyBTUXhRnFblyZBi9LZ2jgefywn9VOLo-bZ0wjlnMcE1T7g"
+        "https://live.talkoraai.com/match/hls?t=U4SaC58yHTP-szg_4NEVYkhRlzI6jf2jABR-itD9oLGFwLJGRdV2zVaTAfaV89jsAzWuR63Ti0-7__0he0DYc9R1cPYPTnedBV7j2CP8_B0G3tib_oQY_Oe-fq1O7oC_f_wVsVby5CsuUV96cSUgNPD7sPd8u_KUjwUHpzzqGnIAY770U7MLrwOIw5C-7VyLUhyOjgql5FIk6ZM5PnVz3IWXE2PH15GIBd0exvXuIDsbpzXO1JKFI9ANIOBtINgaQAIMcS0NdQXEv1reoaZ6ZbQlyA_mSoyTssU",
+        "https://live.talkoraai.com/match/seg?t=HwBdMJmMrbw1mvEv0aTis1SUjPMWw5UTNOBZuyjCuPiyEMMpRma4zPjd8j6NxfujmlYoVUwgCexsYV4K1BinxKbTxRTT1QY5d7IJeUT6BwPlWZYQuAshtYEGwkOfUPLLXlADtq8L-issTHjv-JvXsZqj4d5SYhjJIV__vEHZZAqooFOfgcP-bboa_Xf7yr50dnE8dgHG4o9oxprdaGH3uNz_4niKikBIA6fz9YC1ECNduid37zM-tstXbah4EicjCxDXGBZdS5uvADago3e0Y6KamV0sGuEGSorKvLl9K4WdFg",
+        "https://live.talkoraai.com/match/seg?t=vdkMR9ctC7DQBK60vA9bbOTKvl5A7KjY4Pt3_6NouOLNy_6RmX_yoHDoOyymlR_1ZecYV0yBU6Aft28Pmj-b32NCI0RgkpREZvU-HVJcQWS3zpMAtvrAKq6_T8cZ6uK_QVNL1ENMVszGGdDWk9VLh37asUMxKjeORB98Vx-1VXGR6OIsEvTO4-mHlGF5wXOMaeTuiwuxgdC20fKfBBu57ENDKcu_f7nJ5jVND9EdKO8bwKLegp7rrZquX0giH5Tj-qKutgKDG0rLihcad3aJbiTSfNnQEgL2i-5KwxV_ysKXsA"
       ],
-      "last_updated": "2026-11-06T07:25:41.747592"
+      "last_updated": "2026-11-06T07:30:42.686384"
+    },
+    {
+      "title": "Melbourne Stars vs Sydney Sixers",
+      "teams": "Melbourne Stars vs Sydney Sixers",
+      "league": "Sports Tournament",
+      "sport": "cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "page_url": "/world-sports/player.html?id=1320",
+      "runtime": "00h 00m 00s",
+      "viewers": "340",
+      "viewers_type": "Waiting",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/melbourne-stars-vs-sydney-sixers-1320",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1793784586540x302.jpg",
+      "match_id": "1320",
+      "server_urls": [],
+      "last_updated": "2026-11-06T07:30:43.103176"
     }
   ]
 }
