@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-07T23:35:40.655120",
+  "timestamp": "2026-11-07T23:40:39.419157",
   "total_matches": 3,
   "live_count": 3,
   "upcoming_count": 0,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1317",
       "runtime": "00h 00m 00s",
-      "viewers": "490",
+      "viewers": "492",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -27,7 +27,7 @@
         "https://live.talkoraai.com/match/hls?t=RqT-AM_G5hUBU6sBeudBsJMphG7EmweZ9cGyEcplcEPV3i4dxn5x8uB4w5WX1-C7byka33v0StyzSn03p7bOlrQ2yd4VRaupB3JyL9idrxaIbFpdgPtOvOVihlR4jJ0K1eFzYzwxCOSmkO1W7C81vGhtVDNpDOJnVYOEPASLpXqkcJvuUfrihqgVr8woWWyBUkOXDclWAXNN0fwU6Rz0QTBvm-ek0BM0jFquGT-DK5x_goMAT4vZDRBEkBN6-XE97kHkcAvUAFwoq4N90jSCaD8k3VyQoN7ZscU",
         "https://live.talkoraai.com/match/seg?t=6MrkbkswBDNSl7FhXmzhLqX9vtSJO_RCrsh1lrOU22uIZ7-KGBzQSKnvKtUTvQ84LCE0ehhYZrZuSZB4YJsr-PTPyzxU20txIQEr1O-AE43jI0Tgxte0dqJioTt4ZAtzNdVDKew2Wve-gOmwc1VMBXg96x6VWi0fTzetSeziH-hzcKLUqrNze1-VyVktlP55tT6SCf91x4LwIStBIP251wURR1ua6NcdI1PT_D-_cgF9z8ODfnUCF8GaDzW5x9e7rSuv-mEc72bGGn4xfnX6fvHr8WYOWHgGR0TOIhLn255IDw"
       ],
-      "last_updated": "2026-11-07T23:35:39.684875"
+      "last_updated": "2026-11-07T23:40:38.426705"
     },
     {
       "title": "Valencia vs Real Madrid",
@@ -38,7 +38,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1321",
       "runtime": "00h 00m 00s",
-      "viewers": "110",
+      "viewers": "112",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -49,7 +49,7 @@
       "server_urls": [
         "https://live.talkoraai.com/match/hls?t=8n8mjNN8N8_WDMH_Pb1n5GKLflWvX752TDKt9scdqQAALg7ONbJt2h7gPruf9CWGZm1JkoP-e-a9ju7_Gjomh8qKL3Kcpmf1vP90FtU03oQ9XO6nwk_OS4mV9MkIHWS6oiJ90nV34psDG93uF4r98aY4-tDYVZbkucECC4paJ1XXzBxW4ebk-Wad3yVKZHwxP3-10QZjl0BxT9i1MI2SC3gCEGO9X9rGRyIOSSe6fPoO9ey03SDQMPIXNzzRX_95wBbtnmHIETJuS4chyWiv-52qVEezloHT93CPpmo2TfQJ9b8atgK3oS9bkvzeVxbR80xrEQ"
       ],
-      "last_updated": "2026-11-07T23:35:40.006633"
+      "last_updated": "2026-11-07T23:40:38.756357"
     },
     {
       "title": "Afghanistan vs Zimbabwe 1st Test (Day1)",
@@ -60,7 +60,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1319",
       "runtime": "00h 00m 00s",
-      "viewers": "308",
+      "viewers": "310",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -74,7 +74,7 @@
         "https://live.talkoraai.com/match/seg?t=vdkMR9ctC7DQBK60vA9bbOTKvl5A7KjY4Pt3_6NouOLNy_6RmX_yoHDoOyymlR_1ZecYV0yBU6Aft28Pmj-b32NCI0RgkpREZvU-HVJcQWS3zpMAtvrAKq6_T8cZ6uK_QVNL1ENMVszGGdDWk9VLh37asUMxKjeORB98Vx-1VXGR6OIsEvTO4-mHlGF5wXOMaeTuiwuxgdC20fKfBBu57ENDKcu_f7nJ5jVND9EdKO8bwKLegp7rrZquX0giH5Tj-qKutgKDG0rLihcad3aJbiTSfNnQEgL2i-5KwxV_ysKXsA",
         "https://seriealeague.akamaized.net/hls/live/2107107/tap-BK-PSL-D1-E/master.m3u8"
       ],
-      "last_updated": "2026-11-07T23:35:40.325986"
+      "last_updated": "2026-11-07T23:40:39.086193"
     }
   ]
 }
