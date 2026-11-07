@@ -1,58 +1,8 @@
 {
-  "timestamp": "2026-11-07T09:40:41.418753",
-  "total_matches": 2,
-  "live_count": 2,
+  "timestamp": "2026-11-07T09:45:39.085038",
+  "total_matches": 0,
+  "live_count": 0,
   "upcoming_count": 0,
   "completed_count": 0,
-  "matches": [
-    {
-      "title": "Bangladesh vs West Indies 2nd Test(Day 1)",
-      "teams": "Bangladesh vs West Indies 2nd Test(Day 1)",
-      "league": "West indies Tour of Bangladesh 2026",
-      "sport": "cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "page_url": "/world-sports/player.html?id=1317",
-      "runtime": "00h 00m 00s",
-      "viewers": "152",
-      "viewers_type": "Watching",
-      "servers": null,
-      "date": null,
-      "time": null,
-      "match_url": "live/bangladesh-vs-west-indies-2nd-test-day-1-1317",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/mobile_large/17936115231020x576.jpg",
-      "match_id": "1317",
-      "server_urls": [
-        "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
-        "https://live.talkoraai.com/match/hls?t=RqT-AM_G5hUBU6sBeudBsJMphG7EmweZ9cGyEcplcEPV3i4dxn5x8uB4w5WX1-C7byka33v0StyzSn03p7bOlrQ2yd4VRaupB3JyL9idrxaIbFpdgPtOvOVihlR4jJ0K1eFzYzwxCOSmkO1W7C81vGhtVDNpDOJnVYOEPASLpXqkcJvuUfrihqgVr8woWWyBUkOXDclWAXNN0fwU6Rz0QTBvm-ek0BM0jFquGT-DK5x_goMAT4vZDRBEkBN6-XE97kHkcAvUAFwoq4N90jSCaD8k3VyQoN7ZscU",
-        "https://live.talkoraai.com/match/seg?t=6MrkbkswBDNSl7FhXmzhLqX9vtSJO_RCrsh1lrOU22uIZ7-KGBzQSKnvKtUTvQ84LCE0ehhYZrZuSZB4YJsr-PTPyzxU20txIQEr1O-AE43jI0Tgxte0dqJioTt4ZAtzNdVDKew2Wve-gOmwc1VMBXg96x6VWi0fTzetSeziH-hzcKLUqrNze1-VyVktlP55tT6SCf91x4LwIStBIP251wURR1ua6NcdI1PT_D-_cgF9z8ODfnUCF8GaDzW5x9e7rSuv-mEc72bGGn4xfnX6fvHr8WYOWHgGR0TOIhLn255IDw"
-      ],
-      "last_updated": "2026-11-07T09:40:40.402405"
-    },
-    {
-      "title": "Afghanistan vs Zimbabwe 1st Test (Day1)",
-      "teams": "Afghanistan vs Zimbabwe 1st Test (Day1)",
-      "league": "Afghanistan vs Zimbabwe 2026",
-      "sport": "cricket",
-      "status": "live",
-      "status_display": "LIVE",
-      "page_url": "/world-sports/player.html?id=1319",
-      "runtime": "00h 00m 00s",
-      "viewers": "972",
-      "viewers_type": "Watching",
-      "servers": null,
-      "date": null,
-      "time": null,
-      "match_url": "live/afghanistan-vs-zimbabwe-1st-test-day1-1319",
-      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1793865686540x302.jpg",
-      "match_id": "1319",
-      "server_urls": [
-        "https://live.talkoraai.com/match/hls?t=U4SaC58yHTP-szg_4NEVYkhRlzI6jf2jABR-itD9oLGFwLJGRdV2zVaTAfaV89jsAzWuR63Ti0-7__0he0DYc9R1cPYPTnedBV7j2CP8_B0G3tib_oQY_Oe-fq1O7oC_f_wVsVby5CsuUV96cSUgNPD7sPd8u_KUjwUHpzzqGnIAY770U7MLrwOIw5C-7VyLUhyOjgql5FIk6ZM5PnVz3IWXE2PH15GIBd0exvXuIDsbpzXO1JKFI9ANIOBtINgaQAIMcS0NdQXEv1reoaZ6ZbQlyA_mSoyTssU",
-        "https://live.talkoraai.com/match/seg?t=HwBdMJmMrbw1mvEv0aTis1SUjPMWw5UTNOBZuyjCuPiyEMMpRma4zPjd8j6NxfujmlYoVUwgCexsYV4K1BinxKbTxRTT1QY5d7IJeUT6BwPlWZYQuAshtYEGwkOfUPLLXlADtq8L-issTHjv-JvXsZqj4d5SYhjJIV__vEHZZAqooFOfgcP-bboa_Xf7yr50dnE8dgHG4o9oxprdaGH3uNz_4niKikBIA6fz9YC1ECNduid37zM-tstXbah4EicjCxDXGBZdS5uvADago3e0Y6KamV0sGuEGSorKvLl9K4WdFg",
-        "https://live.talkoraai.com/match/seg?t=vdkMR9ctC7DQBK60vA9bbOTKvl5A7KjY4Pt3_6NouOLNy_6RmX_yoHDoOyymlR_1ZecYV0yBU6Aft28Pmj-b32NCI0RgkpREZvU-HVJcQWS3zpMAtvrAKq6_T8cZ6uK_QVNL1ENMVszGGdDWk9VLh37asUMxKjeORB98Vx-1VXGR6OIsEvTO4-mHlGF5wXOMaeTuiwuxgdC20fKfBBu57ENDKcu_f7nJ5jVND9EdKO8bwKLegp7rrZquX0giH5Tj-qKutgKDG0rLihcad3aJbiTSfNnQEgL2i-5KwxV_ysKXsA",
-        "https://seriealeague.akamaized.net/hls/live/2107107/tap-BK-PSL-D1-E/master.m3u8"
-      ],
-      "last_updated": "2026-11-07T09:40:40.919629"
-    }
-  ]
+  "matches": []
 }
