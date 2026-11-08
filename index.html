@@ -151,28 +151,56 @@
       background: var(--grad-primary) !important; color: var(--bg) !important; border-color: transparent !important;
       transform: translateY(-50%) scale(1.1) !important; box-shadow: 0 6px 24px rgba(0,224,255,0.4) !important;
     }
-    .sport-slider-arrow[disabled] { opacity: 0.25 !important; pointer-events: none !important; }
+
+    /* arrows in a disabled state (start / end of track) */
+    .carousel-arrow[disabled], .fancode-arrow[disabled], .prime-arrow[disabled],
+    .world-sports-arrow[disabled], .sport-slider-arrow[disabled] {
+      opacity: 0.25 !important; pointer-events: none !important;
+    }
+
     .arrow-left, .sport-arrow-left { left: clamp(0.4rem, 1.2vw, 0.9rem) !important; }
     .arrow-right, .sport-arrow-right { right: clamp(0.4rem, 1.2vw, 0.9rem) !important; }
 
     .willow-live-carousel-wrapper, .fancode-carousel-wrapper, .prime-carousel-wrapper, .world-sports-carousel-wrapper, .sport-slider-wrapper { position: relative !important; padding: 0 clamp(1.4rem, 3.5vw, 2.8rem) !important; }
 
     /* ============================================================
-       SPORT SLIDER — cards synced to FanCode/Willow via CSS vars
+       SHARED CAROUSEL TRACK BEHAVIOUR — every section uses the same
+       flex / scroll / snap engine, so cards never stack vertically
        ============================================================ */
-    .sport-slider-track {
-      display: flex;
-      gap: clamp(0.8rem, 1.4vw, 1.15rem);
-      overflow-x: auto; overflow-y: hidden;
+    .sport-slider-track,
+    .fancode-track,
+    .willow-live-track,
+    .prime-track,
+    .world-sports-track {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      align-items: stretch !important;
+      gap: clamp(0.8rem, 1.4vw, 1.15rem) !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
       scroll-behavior: smooth;
       scroll-snap-type: x proximity;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
       scrollbar-width: none; -ms-overflow-style: none;
-      padding: 0.35rem 0;
+      padding: 0.35rem 0 !important;
       cursor: grab;
     }
-    .sport-slider-track::-webkit-scrollbar { display: none; }
-    .sport-slider-track.dragging { cursor: grabbing; scroll-behavior: auto; scroll-snap-type: none; }
+    .sport-slider-track::-webkit-scrollbar,
+    .fancode-track::-webkit-scrollbar,
+    .willow-live-track::-webkit-scrollbar,
+    .prime-track::-webkit-scrollbar,
+    .world-sports-track::-webkit-scrollbar { display: none; }
+
+    .sport-slider-track.dragging,
+    .fancode-track.dragging,
+    .willow-live-track.dragging,
+    .prime-track.dragging,
+    .world-sports-track.dragging {
+      cursor: grabbing !important;
+      scroll-behavior: auto !important;
+      scroll-snap-type: none !important;
+    }
 
     .sport-slide,
     .sport-slide-skeleton {
@@ -325,10 +353,10 @@
       --unified-card-h: calc(var(--unified-card-w) * 9 / 16);
     }
 
-    #fancodeTrack > *,
-    #willowLiveTrack > *,
-    #primeTrack > *,
-    #worldSportsTrack > *,
+    #fancodeTrack > :not(.sport-slide-empty),
+    #willowLiveTrack > :not(.sport-slide-empty),
+    #primeTrack > :not(.sport-slide-empty),
+    #worldSportsTrack > :not(.sport-slide-empty),
     #footballTrack > .sport-slide,
     #footballTrack > .sport-slide-skeleton,
     #cricketTrack > .sport-slide,
@@ -342,6 +370,8 @@
       max-height: var(--unified-card-h) !important;
       aspect-ratio: auto !important;
       overflow: hidden !important;
+      border-radius: var(--radius) !important;
+      scroll-snap-align: start;
       box-sizing: border-box !important;
     }
 
@@ -354,12 +384,20 @@
       align-items: stretch !important;
     }
 
+    #fancodeTrack > .sport-slide-empty,
+    #willowLiveTrack > .sport-slide-empty,
+    #primeTrack > .sport-slide-empty,
+    #worldSportsTrack > .sport-slide-empty,
     #footballTrack > .sport-slide-empty,
     #cricketTrack > .sport-slide-empty {
       width: auto !important;
       min-width: var(--unified-card-w) !important;
       max-width: var(--unified-card-w) !important;
       height: var(--unified-card-h) !important;
+      min-height: var(--unified-card-h) !important;
+      max-height: var(--unified-card-h) !important;
+      border-radius: var(--radius) !important;
+      scroll-snap-align: start;
     }
 
     @media (orientation: portrait) and (max-width: 768px) {
@@ -467,9 +505,9 @@
     <section class="fancode-section" id="fancodeSection">
       <div class="fancode-header"><div class="fancode-title">FanCode</div></div>
       <div class="fancode-carousel-wrapper">
-        <button class="fancode-arrow arrow-left" id="fancodeArrowLeft" aria-label="Scroll left">&#10094;</button>
-        <div class="fancode-track" id="fancodeTrack" tabindex="0"></div>
-        <button class="fancode-arrow arrow-right" id="fancodeArrowRight" aria-label="Scroll right">&#10095;</button>
+        <button class="fancode-arrow arrow-left" id="fancodeArrowLeft" type="button" aria-label="Scroll Fancode left">&#10094;</button>
+        <div class="fancode-track" id="fancodeTrack" tabindex="0" role="list" aria-label="Fancode matches"></div>
+        <button class="fancode-arrow arrow-right" id="fancodeArrowRight" type="button" aria-label="Scroll Fancode right">&#10095;</button>
       </div>
     </section>
 
@@ -500,27 +538,27 @@
     <section class="willow-live-section" id="willowSection">
       <div class="willow-live-header"><h2 class="willow-live-title">Willow Live</h2></div>
       <div class="willow-live-carousel-wrapper">
-        <button class="carousel-arrow arrow-left" id="willowLiveArrowLeft" aria-label="Scroll left">&#10094;</button>
-        <div class="willow-live-track" id="willowLiveTrack"></div>
-        <button class="carousel-arrow arrow-right" id="willowLiveArrowRight" aria-label="Scroll right">&#10095;</button>
+        <button class="carousel-arrow arrow-left" id="willowLiveArrowLeft" type="button" aria-label="Scroll Willow left">&#10094;</button>
+        <div class="willow-live-track" id="willowLiveTrack" tabindex="0" role="list" aria-label="Willow live matches"></div>
+        <button class="carousel-arrow arrow-right" id="willowLiveArrowRight" type="button" aria-label="Scroll Willow right">&#10095;</button>
       </div>
     </section>
 
     <section class="prime-section" id="primeSection">
       <div class="prime-header"><h2 class="prime-title">Prime</h2><span class="prime-badge">Live</span></div>
       <div class="prime-carousel-wrapper">
-        <button class="prime-arrow arrow-left" id="primeArrowLeft" type="button" aria-label="Scroll left">&#10094;</button>
-        <div class="prime-track" id="primeTrack" tabindex="0"></div>
-        <button class="prime-arrow arrow-right" id="primeArrowRight" type="button" aria-label="Scroll right">&#10095;</button>
+        <button class="prime-arrow arrow-left" id="primeArrowLeft" type="button" aria-label="Scroll Prime left">&#10094;</button>
+        <div class="prime-track" id="primeTrack" tabindex="0" role="list" aria-label="Prime matches"></div>
+        <button class="prime-arrow arrow-right" id="primeArrowRight" type="button" aria-label="Scroll Prime right">&#10095;</button>
       </div>
     </section>
 
     <section class="world-sports-section" id="worldSportsSection">
       <div class="world-sports-header"><h2 class="world-sports-title">World Sports</h2><span class="world-sports-badge">Live</span></div>
       <div class="world-sports-carousel-wrapper">
-        <button class="world-sports-arrow arrow-left" id="worldSportsArrowLeft" aria-label="Scroll left">&#10094;</button>
-        <div class="world-sports-track" id="worldSportsTrack"></div>
-        <button class="world-sports-arrow arrow-right" id="worldSportsArrowRight" aria-label="Scroll right">&#10095;</button>
+        <button class="world-sports-arrow arrow-left" id="worldSportsArrowLeft" type="button" aria-label="Scroll World Sports left">&#10094;</button>
+        <div class="world-sports-track" id="worldSportsTrack" tabindex="0" role="list" aria-label="World sports matches"></div>
+        <button class="world-sports-arrow arrow-right" id="worldSportsArrowRight" type="button" aria-label="Scroll World Sports right">&#10095;</button>
       </div>
     </section>
   </main>
@@ -843,6 +881,120 @@
       loadCricket(); loadFootball();
       setInterval(loadCricket, 60000);
       setInterval(loadFootball, 60000);
+    })();
+  </script>
+
+  <!-- ====== FANCODE / WILLOW / PRIME / WORLD SPORTS SLIDERS ======
+       Shared carousel engine: arrows, drag, keyboard, arrow states,
+       and auto-resync whenever the section bundles re-render cards. -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* Replace a button with a clone so any listener another bundle
+         attached to it is dropped — a click always scrolls exactly once. */
+      function rebind(btn) {
+        if (!btn || !btn.parentNode) return btn;
+        var clone = btn.cloneNode(true);
+        btn.parentNode.replaceChild(clone, btn);
+        return clone;
+      }
+
+      function initCarousel(cfg) {
+        var track = document.getElementById(cfg.track);
+        if (!track) return;
+
+        var left  = rebind(document.getElementById(cfg.left));
+        var right = rebind(document.getElementById(cfg.right));
+        if (!left || !right) return;
+
+        function gapPx() {
+          var cs = getComputedStyle(track);
+          return parseFloat(cs.columnGap || cs.gap) || 12;
+        }
+        function step() {
+          var first = track.firstElementChild;
+          return first ? first.getBoundingClientRect().width + gapPx()
+                       : Math.max(160, track.clientWidth * 0.8);
+        }
+
+        var raf = 0;
+        function updateArrows() {
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(function () {
+            var max = track.scrollWidth - track.clientWidth;
+            left.disabled  = track.scrollLeft <= 2;
+            right.disabled = track.scrollLeft >= max - 2;
+          });
+        }
+
+        left.addEventListener('click', function () {
+          track.scrollBy({ left: -step() * 2, behavior: 'smooth' });
+        });
+        right.addEventListener('click', function () {
+          track.scrollBy({ left: step() * 2, behavior: 'smooth' });
+        });
+
+        track.addEventListener('scroll', updateArrows, { passive: true });
+        window.addEventListener('resize', updateArrows);
+
+        /* pointer drag (desktop) */
+        var down = false, startX = 0, startScroll = 0, moved = false;
+        track.addEventListener('pointerdown', function (e) {
+          if (e.pointerType === 'touch') return;
+          down = true; moved = false;
+          startX = e.clientX; startScroll = track.scrollLeft;
+          track.classList.add('dragging');
+        });
+        track.addEventListener('pointermove', function (e) {
+          if (!down) return;
+          var dx = e.clientX - startX;
+          if (Math.abs(dx) > 4) moved = true;
+          track.scrollLeft = startScroll - dx;
+        });
+        function endDrag() { down = false; track.classList.remove('dragging'); }
+        track.addEventListener('pointerup', endDrag);
+        track.addEventListener('pointercancel', endDrag);
+        track.addEventListener('pointerleave', endDrag);
+        track.addEventListener('click', function (e) {
+          if (moved) { e.preventDefault(); moved = false; }
+        }, true);
+
+        track.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: step(), behavior: 'smooth' }); }
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); track.scrollBy({ left: -step(), behavior: 'smooth' }); }
+        });
+
+        /* keep arrow states in sync when the section bundle (re)renders */
+        var emptyEl = null;
+        function refresh() {
+          if (emptyEl && emptyEl.parentNode === track && track.children.length > 1) {
+            emptyEl.remove(); emptyEl = null;
+          }
+          updateArrows();
+        }
+        if ('MutationObserver' in window) {
+          new MutationObserver(refresh).observe(track, { childList: true });
+        }
+
+        /* graceful empty state if a feed never delivers */
+        setTimeout(function () {
+          if (!track.children.length) {
+            emptyEl = document.createElement('div');
+            emptyEl.className = 'sport-slide-empty';
+            emptyEl.textContent = 'No matches available right now';
+            track.appendChild(emptyEl);
+          }
+          updateArrows();
+        }, 6000);
+
+        updateArrows();
+      }
+
+      initCarousel({ track: 'fancodeTrack',     left: 'fancodeArrowLeft',     right: 'fancodeArrowRight' });
+      initCarousel({ track: 'willowLiveTrack',  left: 'willowLiveArrowLeft',  right: 'willowLiveArrowRight' });
+      initCarousel({ track: 'primeTrack',       left: 'primeArrowLeft',       right: 'primeArrowRight' });
+      initCarousel({ track: 'worldSportsTrack', left: 'worldSportsArrowLeft', right: 'worldSportsArrowRight' });
     })();
   </script>
 
