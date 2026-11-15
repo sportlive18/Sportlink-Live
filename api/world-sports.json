@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-15T07:35:33.405958",
-  "total_matches": 1,
-  "live_count": 0,
-  "upcoming_count": 1,
+  "timestamp": "2026-11-15T07:40:34.128644",
+  "total_matches": 2,
+  "live_count": 2,
+  "upcoming_count": 0,
   "completed_count": 0,
   "matches": [
     {
@@ -10,20 +10,45 @@
       "teams": "Australia vs England",
       "league": "England Tour of Australia 2026",
       "sport": "cricket",
-      "status": "upcoming",
-      "status_display": "UPCOMING",
+      "status": "live",
+      "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1322",
       "runtime": "00h 00m 00s",
-      "viewers": "414",
-      "viewers_type": "Waiting",
+      "viewers": "1",
+      "viewers_type": "Watching",
       "servers": null,
       "date": null,
       "time": null,
       "match_url": "live/australia-vs-england-1322",
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1794471319540x302.jpg",
       "match_id": "1322",
-      "server_urls": [],
-      "last_updated": "2026-11-15T07:35:33.405116"
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=NObDNi9EEvDLJj4kWUUixxbVGw9VGjnP_t_9ponzSsJhXeDUFcaSZlsYAavVFBllxBAM1XM9GuCrnkKB7hAaqhyzXvgDRBETx6JEAPS3wXw6vJ6fF9YUSYGoR45yxqXkvzqQuUW3HV9lAPKyLQ6k5b53xVdSDjHEEiBJOlFPPWphVJNUAM9xBUgbEl_DG-4OY1bqJL9bmkQKs-vlM1Y2JlcWx2TzfZf5jTA5kx-AfkTv99t-BZ4KgyA8lG_gKOxBFiOAGott2KN-51ngJLAx3UHYLCVLC8Rwl3cxav-gaxl7eE_H-5qFGI-pEP_2ot9JnHjH4eM_s1qC",
+        "https://live.talkoraai.com/match/hls?t=QkhvLJFe_zGkkqlLsqNIGMII8zeB6KBvwB9A5FN_kwypDdeISS6v87QXPFMlrGiKvNysXBAvoYIUGrfCiwZRLNHvepmXJ0zJaT3BvWUyq190F5fzm27LedWl8n51_ngkjl7-SuItqnKLx3F9PEnDc6-6fdqHvJS9u32q5CCK_srMyLUCU8w5IMJqoL-P89v9nqazsNmn997_jEOCjeVBYgKlYb77hQHr8rtKf4dFoRS8WKnseWtnRmMsOMrz-zD0pCfqjrV77IBw3dHy8AMR10lWFlUZMZRgHNNOCFs8lKtJBmigiuy7kHIrVjqaaYLETMfyRr_SXs0P"
+      ],
+      "last_updated": "2026-11-15T07:40:33.449226"
+    },
+    {
+      "title": "Afghanistan vs Zimbabwe",
+      "teams": "Afghanistan vs Zimbabwe",
+      "league": "Afghanistan vs Zimbabwe 2026 TEST",
+      "sport": "cricket",
+      "status": "live",
+      "status_display": "LIVE",
+      "page_url": "/world-sports/player.html?id=1323",
+      "runtime": "00h 00m 00s",
+      "viewers": "451",
+      "viewers_type": "Watching",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/afghanistan-vs-zimbabwe-1323",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1793865704540x302.jpg",
+      "match_id": "1323",
+      "server_urls": [
+        "https://live.talkoraai.com/match/hls?t=-eSKHxr4RfV4iWRAsG8B3B8xDqqq5UzsMH-xEX8NX0OfYeQ13a68q_Jd9nqNA5De6LuHtzACx3n2kV-AZ9iLcbmPiIWLOAhg0J8nim2EBephMyWZHFrmQN5phqd9p7HBp7Yi9wJxtKaF84RUS27_83-nMLfucfRdNjro-gCztGmFSGcHcdGUeeTVGulpGzJK7BJaaR7v7eWccKu70tNRrj3GlrMDIcJ2QzSQezPPtN7qWACROhdVYLWMgK1I2Umfx-FszFpxSMHn1pSp-z-35LM6b1nXffPj6_zq6AFBz4dOOzkCYZRjhyaOy_Gxts3GoT2RPqhAVy_DkZrMb0z8fQKIDA76Z5Lg6Mjy7oll2jw"
+      ],
+      "last_updated": "2026-11-15T07:40:33.789489"
     }
   ]
 }
