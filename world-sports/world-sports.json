@@ -1,8 +1,29 @@
 {
-  "timestamp": "2026-11-15T07:30:32.923252",
-  "total_matches": 0,
+  "timestamp": "2026-11-15T07:35:33.405958",
+  "total_matches": 1,
   "live_count": 0,
-  "upcoming_count": 0,
+  "upcoming_count": 1,
   "completed_count": 0,
-  "matches": []
+  "matches": [
+    {
+      "title": "Australia vs England",
+      "teams": "Australia vs England",
+      "league": "England Tour of Australia 2026",
+      "sport": "cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "page_url": "/world-sports/player.html?id=1322",
+      "runtime": "00h 00m 00s",
+      "viewers": "414",
+      "viewers_type": "Waiting",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/australia-vs-england-1322",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1794471319540x302.jpg",
+      "match_id": "1322",
+      "server_urls": [],
+      "last_updated": "2026-11-15T07:35:33.405116"
+    }
+  ]
 }
