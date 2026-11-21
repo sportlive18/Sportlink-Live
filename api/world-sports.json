@@ -1,8 +1,29 @@
 {
-  "timestamp": "2026-11-21T08:05:56.222587",
-  "total_matches": 0,
+  "timestamp": "2026-11-21T08:10:53.174615",
+  "total_matches": 1,
   "live_count": 0,
-  "upcoming_count": 0,
+  "upcoming_count": 1,
   "completed_count": 0,
-  "matches": []
+  "matches": [
+    {
+      "title": "Sydney Sixers vs Perth Scorchers",
+      "teams": "Sydney Sixers vs Perth Scorchers",
+      "league": "Sports Tournament",
+      "sport": "cricket",
+      "status": "upcoming",
+      "status_display": "UPCOMING",
+      "page_url": "/world-sports/player.html?id=1326",
+      "runtime": "00h 00m 00s",
+      "viewers": "212",
+      "viewers_type": "Waiting",
+      "servers": null,
+      "date": null,
+      "time": null,
+      "match_url": "live/sydney-sixers-vs-perth-scorchers-1326",
+      "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1794829865540x302.jpg",
+      "match_id": "1326",
+      "server_urls": [],
+      "last_updated": "2026-11-21T08:10:53.174069"
+    }
+  ]
 }
