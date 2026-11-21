@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-21T12:11:16.246575",
+  "timestamp": "2026-11-21T12:16:08.347633",
   "total_matches": 1,
   "live_count": 1,
   "upcoming_count": 0,
@@ -14,7 +14,7 @@
       "status_display": "LIVE",
       "page_url": "/world-sports/player.html?id=1326",
       "runtime": "00h 00m 00s",
-      "viewers": "28",
+      "viewers": "29",
       "viewers_type": "Watching",
       "servers": null,
       "date": null,
@@ -23,7 +23,7 @@
       "thumbnail": "https://d34080pnh6e62j.cloudfront.net/images/channels/ChannelFeaturedAppthumb/1794829865540x302.jpg",
       "match_id": "1326",
       "server_urls": [],
-      "last_updated": "2026-11-21T12:11:15.923650"
+      "last_updated": "2026-11-21T12:16:07.974384"
     }
   ]
 }
