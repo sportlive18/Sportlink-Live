@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,183 +6,88 @@
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Shaka Player v4.16.2 -->
+    <!-- HLS.js (primary engine for .ts segment streams) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+    <!-- Shaka Player v4.16.2 (UI + DRM fallback) -->
     <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.16.2/dist/shaka-player.ui.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.16.2/dist/controls.css">
 
     <style>
-        /* Reset & Fullscreen */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
-            width: 100%;
-            height: 100%;
-            background: #000;
-            overflow: hidden;
+            width: 100%; height: 100%;
+            background: #000; overflow: hidden;
             font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         .shaka-video-container {
-            position: fixed;
-            inset: 0;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: fixed; inset: 0; background: #000;
+            display: flex; align-items: center; justify-content: center;
         }
 
         video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background: #000;
+            width: 100%; height: 100%;
+            object-fit: contain; background: #000;
         }
 
-        /* Custom watermark */
         .custom-watermark {
-            position: absolute;
-            z-index: 40;
-            pointer-events: none;
-            bottom: 80px;
-            right: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.10);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            position: absolute; z-index: 40; pointer-events: none;
+            bottom: 80px; right: 20px;
+            font-size: 11px; font-weight: 600;
+            color: rgba(255,255,255,0.10);
+            letter-spacing: 0.5px; text-transform: uppercase;
         }
 
-        /* Loading overlay */
         .loading-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
             flex-direction: column;
-            background: #000;
-            color: #fff;
-            z-index: 2000;
-            font-size: 18px;
-            pointer-events: none;
+            background: #000; color: #fff;
+            z-index: 2000; font-size: 18px; pointer-events: none;
         }
         .spinner {
-            border: 4px solid rgba(255, 255, 255, .15);
+            border: 4px solid rgba(255,255,255,.15);
             border-top: 4px solid #3b82f6;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin-bottom: 12px;
+            border-radius: 50%; width: 40px; height: 40px;
+            animation: spin 1s linear infinite; margin-bottom: 12px;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
 
         /* ---- Shaka UI overrides ---- */
-        .shaka-controls-container {
-            background: transparent !important;
-        }
+        .shaka-controls-container { background: transparent !important; box-shadow: none !important; filter: none !important; }
+        .shaka-bottom-controls { padding: 10px 16px; display: flex !important; flex-direction: column !important; box-shadow: none !important; filter: none !important; }
 
-        .shaka-bottom-controls {
-            padding: 10px 16px;
-            display: flex !important;
-            flex-direction: column !important;
-        }
-
-        /* PROGRESS BAR */
         .shaka-seek-bar-container {
-            display: block !important;
-            width: 100% !important;
-            height: 8px !important;
-            margin: 0 0 10px 0 !important;
-            padding: 0 !important;
-            order: -1 !important;
-            position: relative !important;
+            display: block !important; width: 100% !important; height: 8px !important;
+            margin: 0 0 10px 0 !important; padding: 0 !important;
+            order: -1 !important; position: relative !important;
         }
-
         .shaka-seek-bar {
-            width: 100% !important;
-            height: 8px !important;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.15) !important;
-            position: relative !important;
+            width: 100% !important; height: 8px !important;
+            border-radius: 50px; background: rgba(255,255,255,0.15) !important; position: relative !important;
         }
-
         .shaka-seek-bar .shaka-range-element {
-            width: 100% !important;
-            height: 8px !important;
-            border-radius: 50px;
-            background: transparent !important;
-            position: relative !important;
-            -webkit-appearance: none !important;
-            appearance: none !important;
-            outline: none !important;
+            width: 100% !important; height: 8px !important; border-radius: 50px;
+            background: transparent !important; position: relative !important;
+            -webkit-appearance: none !important; appearance: none !important; outline: none !important;
         }
-
         .shaka-seek-bar .shaka-range-element::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: #ff3b30;
-            cursor: pointer;
-            box-shadow: 0 0 12px rgba(255, 59, 48, 0.6);
-            border: 2px solid #fff;
-            margin-top: -5px;
-            position: relative;
-            z-index: 10;
+            -webkit-appearance: none; appearance: none;
+            width: 18px; height: 18px; border-radius: 50%;
+            background: #ff3b30; cursor: pointer;
+            box-shadow: 0 0 12px rgba(255,59,48,0.6);
+            border: 2px solid #fff; margin-top: -5px; position: relative; z-index: 10;
         }
+        .shaka-seek-bar .shaka-range-element::-webkit-slider-runnable-track { height: 8px !important; border-radius: 50px; background: transparent !important; }
+        .shaka-seek-bar .shaka-range-element::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #ff3b30; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 12px rgba(255,59,48,0.6); }
+        .shaka-seek-bar .shaka-range-element::-moz-range-track { height: 8px !important; border-radius: 50px; background: transparent !important; }
 
-        .shaka-seek-bar .shaka-range-element::-webkit-slider-runnable-track {
-            height: 8px !important;
-            border-radius: 50px;
-            background: transparent !important;
-        }
+        .shaka-current-time, .shaka-time-duration { font-size: 14px; font-weight: 600; color: #fff; padding: 0 8px; }
+        .shaka-bottom-controls > div { display: flex !important; align-items: center !important; gap: 4px !important; }
 
-        .shaka-seek-bar .shaka-range-element::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: #ff3b30;
-            cursor: pointer;
-            border: 2px solid #fff;
-            box-shadow: 0 0 12px rgba(255, 59, 48, 0.6);
-        }
-
-        .shaka-seek-bar .shaka-range-element::-moz-range-track {
-            height: 8px !important;
-            border-radius: 50px;
-            background: transparent !important;
-        }
-
-        /* Time & duration */
-        .shaka-current-time,
-        .shaka-time-duration {
-            font-size: 14px;
-            font-weight: 600;
-            color: #fff;
-            padding: 0 8px;
-        }
-
-        .shaka-bottom-controls > div {
-            display: flex !important;
-            align-items: center !important;
-            gap: 4px !important;
-        }
-
-        /* Remove oval shadow from all buttons and controls */
         .shaka-controls-container button,
         .shaka-controls-container .shaka-play-button,
         .shaka-controls-container .shaka-mute-button,
@@ -195,77 +100,67 @@
         .shaka-controls-container .shaka-volume-slider,
         .shaka-controls-container .shaka-spacer,
         .shaka-controls-container .shaka-seek-bar-container,
-        .shaka-controls-container .shaka-play-button-container {
-            box-shadow: none !important;
-            filter: drop-shadow(0 0 0 transparent) !important;
-            text-shadow: none !important;
+        .shaka-controls-container .shaka-play-button-container { box-shadow: none !important; filter: drop-shadow(0 0 0 transparent) !important; text-shadow: none !important; }
+
+        .shaka-overflow-menu, .shaka-settings-menu {
+            border-radius: 12px; backdrop-filter: blur(18px);
+            background: rgba(20,20,20,0.92); border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: none !important; filter: none !important;
+        }
+        .shaka-volume-slider { width: 60px; box-shadow: none !important; filter: none !important; }
+
+        /* Quality badge (HLS.js mode) */
+        #hls-quality-btn {
+            position: absolute; top: 14px; right: 14px; z-index: 100;
+            background: rgba(20,20,20,0.75); color: #fff;
+            border: 1px solid rgba(255,255,255,0.18); border-radius: 8px;
+            padding: 5px 12px; font-size: 12px; font-weight: 700;
+            cursor: pointer; font-family: inherit; display: none;
+            backdrop-filter: blur(10px); letter-spacing: 0.5px;
+        }
+        #hls-quality-menu {
+            position: absolute; top: 48px; right: 14px; z-index: 101;
+            background: rgba(20,20,20,0.92); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px; padding: 6px; min-width: 110px;
+            backdrop-filter: blur(18px); display: none; flex-direction: column; gap: 2px;
+        }
+        #hls-quality-menu.open { display: flex; }
+        .hls-q-item {
+            padding: 8px 14px; border-radius: 7px; font-size: 13px; font-weight: 600;
+            color: rgba(255,255,255,0.6); cursor: pointer; transition: background 0.1s;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .hls-q-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+        .hls-q-item.active { color: #fff; background: rgba(255,59,48,0.18); }
+        .hls-q-item.active::after { content: '✓'; font-size: 12px; }
+
+        /* Error overlay */
+        #error-overlay {
+            position: absolute; inset: 0; z-index: 3000;
+            background: rgba(0,0,0,0.88); display: none;
+            align-items: center; justify-content: center; flex-direction: column; gap: 14px;
+        }
+        #error-overlay.show { display: flex; }
+        #error-overlay p { color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 500; }
+        #error-retry {
+            padding: 9px 24px; border-radius: 9px;
+            background: #3b82f6; color: #fff; border: none;
+            font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit;
         }
 
-        /* Also remove any potential background shadows on containers */
-        .shaka-controls-container {
-            box-shadow: none !important;
-            filter: none !important;
-        }
-
-        .shaka-bottom-controls {
-            box-shadow: none !important;
-            filter: none !important;
-        }
-
-        .shaka-overflow-menu,
-        .shaka-settings-menu {
-            border-radius: 12px;
-            backdrop-filter: blur(18px);
-            background: rgba(20, 20, 20, 0.92);
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: none !important;
-            filter: none !important;
-        }
-
-        
-        .shaka-volume-slider {
-            width: 60px;
-            box-shadow: none !important;
-            filter: none !important;
-        }
-
-        /* Completely remove telegram popup */
-        #telegramModal,
-        .modal,
-        .modal-content,
-        #joinButton,
-        #closeButton,
-        .btn {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-            width: 0 !important;
-            height: 0 !important;
-            overflow: hidden !important;
-            position: absolute !important;
-            z-index: -9999 !important;
-            border: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
+        /* Telegram popup — hidden */
+        #telegramModal, .modal, .modal-content, #joinButton, #closeButton, .btn {
+            display: none !important; visibility: hidden !important; opacity: 0 !important;
+            pointer-events: none !important; width: 0 !important; height: 0 !important;
+            overflow: hidden !important; position: absolute !important;
+            z-index: -9999 !important; border: 0 !important; padding: 0 !important; margin: 0 !important;
         }
 
         @media (max-width: 700px) {
-            .custom-watermark {
-                font-size: 9px;
-                bottom: 70px;
-                right: 14px;
-            }
-            .shaka-seek-bar-container {
-                height: 6px !important;
-            }
-            .shaka-seek-bar {
-                height: 6px !important;
-            }
-            .shaka-seek-bar .shaka-range-element::-webkit-slider-thumb {
-                width: 14px;
-                height: 14px;
-            }
+            .custom-watermark { font-size: 9px; bottom: 70px; right: 14px; }
+            .shaka-seek-bar-container { height: 6px !important; }
+            .shaka-seek-bar { height: 6px !important; }
+            .shaka-seek-bar .shaka-range-element::-webkit-slider-thumb { width: 14px; height: 14px; }
         }
     </style>
 </head>
@@ -274,187 +169,524 @@
 <div class="shaka-video-container" id="player-container">
     <video id="video" autoplay muted playsinline preload="metadata"></video>
     <div class="custom-watermark">LIVE · FANCODE</div>
+    <div id="loading" class="loading-overlay"><div class="spinner"></div></div>
 
-    <!-- Loading overlay -->
-    <div id="loading" class="loading-overlay">
-        <div class="spinner"></div>
+    <!-- HLS.js quality switcher (shown when HLS.js is the active engine) -->
+    <button id="hls-quality-btn" title="Quality">Auto ▾</button>
+    <div id="hls-quality-menu"></div>
+
+    <!-- Error overlay -->
+    <div id="error-overlay">
+        <p id="error-msg">Stream unavailable. Please try again.</p>
+        <button id="error-retry">↻ Retry</button>
     </div>
 </div>
 
-<!-- Telegram popup - COMPLETELY REMOVED -->
 <div id="telegramModal" class="modal hidden"></div>
 
 <script>
-    (function() {
-        /* ========== CONFIG ========== */
-        // Get m3u8 from URL param ?url=, fallback to hardcoded stream
-        const params = new URLSearchParams(window.location.search);
-        let STREAM_URL = params.get('url');
-        if (!STREAM_URL) {
-            STREAM_URL = "https://in-mc-flive.fancode.com/mumbai/4248054_english_hls_03789dd60351500_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786008364~_GO=Generated~acl=/mumbai/4248054_english_hls_03789dd60351500_1ta-di_h264/*~Signature=AYCJ36RBkKa9suXDt3v_dBrYV76a2_n2HGxw1ulUTe4iL7cevkpSQZHJeuXe8-hAxt2OfXJ1dFiK-ZmcUoyQm8od_W0D";
+(function () {
+    'use strict';
+
+    /* ===================== CONFIG ===================== */
+    var params      = new URLSearchParams(window.location.search);
+    var STREAM_URL  = params.get('url') || params.get('play') || '';
+    if (!STREAM_URL) {
+        // hardcoded fallback
+        STREAM_URL = "https://in-mc-flive.fancode.com/mumbai/4248054_english_hls_03789dd60351500_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786008364~_GO=Generated~acl=/mumbai/4248054_english_hls_03789dd60351500_1ta-di_h264/*~Signature=AYCJ36RBkKa9suXDt3v_dBrYV76a2_n2HGxw1ulUTe4iL7cevkpSQZHJeuXe8-hAxt2OfXJ1dFiK-ZmcUoyQm8od_W0D";
+    }
+
+    /* Proxy pool — tried in order on network failures */
+    var PROXIES = [
+        'https://stream-through-spark.lovable.app/api/proxy?u=',
+        'https://asp1.lovable.app/api/proxy?u='
+    ];
+
+    /* ===================== DOM ===================== */
+    var video        = document.getElementById('video');
+    var container    = document.getElementById('player-container');
+    var loadingEl    = document.getElementById('loading');
+    var errOverlay   = document.getElementById('error-overlay');
+    var errMsg       = document.getElementById('error-msg');
+    var errRetry     = document.getElementById('error-retry');
+    var hlsQBtn      = document.getElementById('hls-quality-btn');
+    var hlsQMenu     = document.getElementById('hls-quality-menu');
+
+    /* ===================== STATE ===================== */
+    var hlsInst       = null;
+    var shakaPlayer   = null;
+    var shakaUI       = null;
+    var currentProxyIdx = 0;
+    var streamGen     = 0;      // guards stale callbacks after reload
+    var userPaused    = false;
+    var lastUrl       = STREAM_URL;
+    var usingHlsJs    = false;  // true when HLS.js is the active engine
+    var isQMenuOpen   = false;
+
+    /* ===================== HELPERS ===================== */
+    function cleanUrl(u) {
+        return String(u || '').trim().split('|')[0].trim().replace(/[,\s]+$/, '');
+    }
+    function isDirectCors(u) {
+        return /in-mc-vod\.fancode\.com|dai-fancode\.pages\.dev/i.test(String(u || ''));
+    }
+    function unwrapProxy(u) {
+        var cur = cleanUrl(u), guard = 0;
+        while (guard++ < 4 && cur) {
+            var m = cur.match(/https?:\/\/[^/]+(?:\/api)?(?:\/public)?\/(?:proxy|px)(?:\/[^?]*)?\?(?:u|url)=(.+)$/i);
+            if (!m) break;
+            try { cur = cleanUrl(decodeURIComponent(m[1])); } catch (_) { cur = cleanUrl(m[1]); }
         }
+        return cur;
+    }
+    function toProxy(u, idx) {
+        if (!u) return '';
+        var clean = unwrapProxy(u);
+        var px = PROXIES[typeof idx === 'number' ? idx : currentProxyIdx] || PROXIES[0];
+        return px + encodeURIComponent(clean);
+    }
+    function hideLoading() { loadingEl.style.display = 'none'; }
+    function showLoading() { loadingEl.style.display = 'flex'; errOverlay.classList.remove('show'); }
+    function showError(msg) {
+        hideLoading();
+        errMsg.textContent = msg || 'Stream unavailable. Please try again.';
+        errOverlay.classList.add('show');
+    }
+    function destroyPlayers() {
+        if (hlsInst) { try { hlsInst.destroy(); } catch (e) {} hlsInst = null; }
+        if (shakaPlayer) { try { shakaPlayer.destroy(); } catch (e) {} shakaPlayer = null; shakaUI = null; }
+        try { video.pause(); video.removeAttribute('src'); video.src = ''; video.load(); } catch (e) {}
+        hlsQBtn.style.display = 'none';
+        hlsQMenu.classList.remove('open');
+        hlsQMenu.style.display = 'none';
+        usingHlsJs = false;
+    }
 
-        /* ========== PLAYER INIT ========== */
-        async function initPlayer() {
-            const video = document.getElementById('video');
-            const container = document.getElementById('player-container');
-            const loading = document.getElementById('loading');
+    /* ===================== AUTO-RESUME ===================== */
+    /*
+     * Keeps live streams playing after buffering pauses.
+     * Respects user-initiated pauses via Shaka's play button or HLS.js controls.
+     */
+    document.addEventListener('click', function (e) {
+        var btn = e.target.closest('.shaka-play-button') || e.target.closest('[aria-label="Pause"]') || e.target.closest('[aria-label="Play"]');
+        if (btn) {
+            // flip userPaused based on current state at click time
+            userPaused = !video.paused;
+        }
+    });
 
-            shaka.polyfill.installAll();
-            if (!shaka.Player.isBrowserSupported()) {
-                alert('Browser not supported for Shaka Player');
-                return;
-            }
+    video.addEventListener('play',  function () { userPaused = false; });
+    video.addEventListener('pause', function () {
+        if (video.ended) return;
+        if (!userPaused) {
+            // buffering / autoplay block — try to resume
+            setTimeout(function () {
+                if (video.paused && !video.ended && !userPaused) video.play().catch(function () {});
+            }, 600);
+        }
+    });
 
-            try {
-                const player = new shaka.Player();
-                await player.attach(video);
+    setInterval(function () {
+        if (video.paused && !video.ended && !userPaused && !errOverlay.classList.contains('show')) {
+            video.play().catch(function () {});
+        }
+    }, 3000);
 
-                const ui = new shaka.ui.Overlay(player, container, video);
+    document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && video.paused && !video.ended && !userPaused) {
+            video.play().catch(function () {});
+        }
+    });
 
-                ui.configure({
-                    addBigPlayButton: true,
-                    addSeekBar: true,
-                    controlPanelElements: [
-                        "mute",
-                        "play_pause",
-                        "time_and_duration",
-                        "spacer",
-                        "quality",
-                        "picture_in_picture",
-                        "fullscreen"
-                    ],
-                    seekBarColors: {
-                        base: "rgba(255,255,255,0.2)",
-                        buffered: "rgba(255,255,255,0.4)",
-                        played: "#ff3b30"
-                    }
-                });
+    /* ===================== STALE VOD / LIVE EXTENSION ===================== */
+    /*
+     * When a live CDN stops refreshing the playlist, this re-constructs
+     * future segment entries from the last known sequence + timestamp,
+     * so the player doesn't stall with 404s on new segments.
+     */
+    var vodSafetyMs   = 8000;
+    var vodExtendOff  = false;
+    var vod404Count   = 0;
 
-                player.configure({
-                    streaming: {
-                        bufferingGoal: 10,
-                        rebufferingGoal: 2,
-                        safeSeekOffset: 5,
-                        lowLatencyMode: true
-                    }
-                });
+    function extendStalePlaylist(text) {
+        if (vodExtendOff || !text) return text;
+        if (text.indexOf('#EXTINF:') === -1) return text;
+        if (text.indexOf('#EXT-X-ENDLIST') !== -1) return text;  // VOD — don't touch
 
-                await player.load(STREAM_URL);
+        var lines = text.split('\n');
+        var entries = [], headerLines = [], inHeader = true;
+        var curDur = '4.000', curPdt = '';
 
-                // Auto-unmute: try to unmute and play with sound
-                video.muted = false;
-                try {
-                    await video.play();
-                } catch (e) {
-                    // If autoplay with sound fails, try muted then unmute
-                    video.muted = true;
-                    await video.play();
-                    // Try to unmute after user interaction or after a delay
-                    setTimeout(() => {
-                        video.muted = false;
-                        video.play().catch(() => {});
-                    }, 1000);
-                }
-
-                video.addEventListener('playing', () => {
-                    loading.style.display = 'none';
-                });
-
-                // FIX: Properly handle pause/resume
-                // Remove any conflicting event listeners
-                video.removeEventListener('pause', null);
-
-                // Only handle pause if it's not user-initiated (like buffering)
-                // We'll use a flag to track user interaction
-                let userPaused = false;
-
-                // When user clicks pause button, set flag
-                document.addEventListener('click', function(e) {
-                    const pauseBtn = e.target.closest('.shaka-play-button');
-                    if (pauseBtn) {
-                        // Check if video is currently playing
-                        if (!video.paused) {
-                            userPaused = true;
-                        } else {
-                            userPaused = false;
-                        }
-                    }
-                });
-
-                // Handle pause event
-                video.addEventListener('pause', function() {
-                    // If video is paused and it's not the end
-                    if (!video.ended && !userPaused) {
-                        // This is an automatic pause (buffering, etc.)
-                        // Try to resume after a short delay
-                        setTimeout(() => {
-                            if (video.paused && !video.ended) {
-                                video.play().catch(() => {});
-                            }
-                        }, 500);
-                    }
-                    // Reset flag after pause
-                    setTimeout(() => {
-                        userPaused = false;
-                    }, 100);
-                });
-
-                // Also handle play button clicks through Shaka UI
-                // Listen for play event to reset userPaused
-                video.addEventListener('play', function() {
-                    userPaused = false;
-                });
-
-                // Fallback: check every 2 seconds if video is stuck paused
-                setInterval(() => {
-                    if (video.paused && !video.ended && !userPaused) {
-                        // Check if it's been paused for more than 3 seconds
-                        video.play().catch(() => {});
-                    }
-                }, 3000);
-
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                }, 6000);
-
-                setTimeout(() => {
-                    const seekBar = document.querySelector('.shaka-seek-bar-container');
-                    if (seekBar) {
-                        seekBar.style.display = 'block !important';
-                        seekBar.style.visibility = 'visible !important';
-                        seekBar.style.opacity = '1 !important';
-                    }
-                }, 500);
-
-            } catch (e) {
-                console.warn('Shaka error, falling back to native HLS:', e);
-                video.src = STREAM_URL;
-                video.muted = false;
-                video.play().catch(() => {
-                    video.muted = true;
-                    video.play();
-                });
-                video.addEventListener('playing', () => {
-                    loading.style.display = 'none';
-                });
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                }, 6000);
+        for (var i = 0; i < lines.length; i++) {
+            var l = lines[i].trim();
+            if (!l) continue;
+            if (l.indexOf('#EXTINF:') === 0) {
+                inHeader = false;
+                var dm = l.match(/#EXTINF:([0-9.]+)/);
+                if (dm) curDur = dm[1];
+            } else if (l.indexOf('#EXT-X-PROGRAM-DATE-TIME:') === 0) {
+                inHeader = false;
+                curPdt = l.substring(25).trim();
+            } else if (l.charAt(0) === '#') {
+                if (inHeader && l.indexOf('#EXT-X-MEDIA-SEQUENCE:') !== 0) headerLines.push(l);
+            } else {
+                inHeader = false;
+                entries.push({ dur: curDur, pdt: curPdt, uri: l });
+                curPdt = '';
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const loading = document.getElementById('loading');
-            if (loading) loading.style.display = 'flex';
-            initPlayer();
+        if (!entries.length) return text;
+        var last = entries[entries.length - 1];
+        if (!last.pdt) return text;
+        var lastMs = Date.parse(last.pdt);
+        if (!lastMs || isNaN(lastMs)) return text;
+
+        var seg = last.uri.match(/^(.*-)(\d+)(\.ts.*)$/i);
+        if (!seg) return text;
+        var prefix = seg[1], lastSeq = parseInt(seg[2], 10), suffix = seg[3];
+        var segDurMs = Math.max(1000, Math.round((parseFloat(last.dur) || 4) * 1000));
+        var elapsed  = Math.floor((Date.now() - lastMs - vodSafetyMs) / segDurMs);
+        if (elapsed <= 0 || elapsed > 10800) return text;
+
+        var windowSize = 75;
+        var seqMatch = text.match(/#EXT-X-MEDIA-SEQUENCE:(\d+)/);
+        var baseSeq  = seqMatch ? parseInt(seqMatch[1], 10) : 0;
+        var startOff = Math.max(1, elapsed - (windowSize - 1));
+        var totalV   = entries.length + elapsed;
+        var newBase  = baseSeq + Math.max(0, totalV - windowSize);
+
+        var finals = [];
+        if (startOff === 1) {
+            var keep = Math.max(0, entries.length - (windowSize - elapsed));
+            finals = entries.slice(keep);
+        }
+        for (var k = startOff; k <= elapsed; k++) {
+            finals.push({ dur: last.dur, pdt: new Date(lastMs + k * segDurMs).toISOString(), uri: prefix + (lastSeq + k) + suffix });
+        }
+
+        var out = headerLines.slice();
+        out.push('#EXT-X-MEDIA-SEQUENCE:' + newBase);
+        for (var j = 0; j < finals.length; j++) {
+            out.push('#EXTINF:' + finals[j].dur + ',');
+            if (finals[j].pdt) out.push('#EXT-X-PROGRAM-DATE-TIME:' + finals[j].pdt);
+            out.push(finals[j].uri);
+        }
+        return out.join('\n') + '\n';
+    }
+
+    /* ===================== CUSTOM NO-CACHE PLAYLIST LOADER ===================== */
+    /*
+     * Fetches HLS playlists without browser cache (keeps live streams fresh)
+     * and runs the stale-extension transform on direct CDN playlists.
+     */
+    function NoCacheLoader() { this._aborted = false; }
+    NoCacheLoader.prototype.destroy = function () { this._aborted = true; };
+    NoCacheLoader.prototype.abort   = function () { this._aborted = true; };
+    NoCacheLoader.prototype.load    = function (ctx, cfg, cb) {
+        var self = this, t0 = performance.now();
+        fetch(ctx.url, { cache: 'no-store' })
+            .then(function (r) {
+                if (self._aborted) return;
+                if (!r.ok) { cb.onError({ code: r.status, text: 'HTTP ' + r.status }, ctx, r, {}); return; }
+                return r.text().then(function (data) {
+                    if (self._aborted) return;
+                    var isDirect = isDirectCors(ctx.url);
+                    var final = isDirect ? extendStalePlaylist(data) : data;
+                    var now = performance.now();
+                    cb.onSuccess(
+                        { url: ctx.url, data: final },
+                        { trequest: t0, tfirst: now, tload: now, loaded: final.length, total: final.length,
+                          retry: 0, chunkCount: 0, bwEstimate: 0, aborted: false,
+                          loading: { start: t0, first: now, end: now }, parsing: { start: 0, end: 0 }, buffering: { start: 0, end: 0 } },
+                        ctx, r
+                    );
+                });
+            })
+            .catch(function (e) {
+                if (!self._aborted) cb.onError({ code: 0, text: (e && e.message) || 'Network error' }, ctx, null, {});
+            });
+    };
+
+    /* ===================== HLS.js QUALITY MENU ===================== */
+    function buildHlsQMenu() {
+        hlsQMenu.innerHTML = '';
+        if (!hlsInst) return;
+
+        var items = [{ name: 'Auto', level: -1 }];
+        (hlsInst.levels || []).forEach(function (l, i) {
+            items.push({ name: (l.height ? l.height + 'p' : 'Level ' + (i + 1)), level: i });
+        });
+        items.sort(function (a, b) {
+            if (a.level === -1) return -1;
+            var ah = hlsInst.levels[a.level] ? hlsInst.levels[a.level].height || 0 : 0;
+            var bh = hlsInst.levels[b.level] ? hlsInst.levels[b.level].height || 0 : 0;
+            return bh - ah;
         });
 
-    })();
-</script>
+        items.forEach(function (item) {
+            var div = document.createElement('div');
+            var active = (item.level === hlsInst.currentLevel || (item.level === -1 && hlsInst.autoLevelEnabled));
+            div.className = 'hls-q-item' + (active ? ' active' : '');
+            div.textContent = item.name;
+            div.onclick = function (e) {
+                e.stopPropagation();
+                hlsInst.currentLevel = item.level;
+                isQMenuOpen = false;
+                hlsQMenu.classList.remove('open');
+                hlsQMenu.style.display = 'none';
+                updateQBadge();
+                buildHlsQMenu();
+            };
+            hlsQMenu.appendChild(div);
+        });
+    }
+    function updateQBadge() {
+        if (!hlsInst) return;
+        var lvl = hlsInst.currentLevel;
+        var label = (lvl === -1 || hlsInst.autoLevelEnabled) ? 'Auto' : ((hlsInst.levels[lvl] && hlsInst.levels[lvl].height) ? hlsInst.levels[lvl].height + 'p' : 'Level ' + lvl);
+        hlsQBtn.textContent = label + ' ▾';
+    }
 
-<script>(function(s){s.dataset.zone='10603308',s.src='https://llvpn.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    hlsQBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        isQMenuOpen = !isQMenuOpen;
+        hlsQMenu.style.display = isQMenuOpen ? 'flex' : 'none';
+        hlsQMenu.classList.toggle('open', isQMenuOpen);
+        if (isQMenuOpen) buildHlsQMenu();
+    });
+    document.addEventListener('click', function (e) {
+        if (isQMenuOpen && !hlsQMenu.contains(e.target) && e.target !== hlsQBtn) {
+            isQMenuOpen = false;
+            hlsQMenu.classList.remove('open');
+            hlsQMenu.style.display = 'none';
+        }
+    });
+
+    /* ===================== HLS.js LOADER ===================== */
+    function tryUnmute() {
+        video.muted = false;
+        video.play().catch(function () { video.muted = true; video.play().catch(function () {}); });
+    }
+
+    function loadWithHls(rawUrl, proxyIdx, gen, networkRetries, mediaRecovered) {
+        if (streamGen !== gen) return;
+
+        var isDirect = isDirectCors(rawUrl);
+        var url = (isDirect || proxyIdx === -1) ? rawUrl : toProxy(rawUrl, proxyIdx);
+
+        if (!window.Hls || !Hls.isSupported()) {
+            /* Safari native HLS fallback */
+            video.src = url;
+            video.load();
+            tryUnmute();
+            video.addEventListener('loadedmetadata', function () { hideLoading(); }, { once: true });
+            video.addEventListener('error', function () { showError('Stream unavailable. Please try again.'); }, { once: true });
+            return;
+        }
+
+        if (hlsInst) { try { hlsInst.destroy(); } catch (e) {} hlsInst = null; }
+
+        hlsInst = new Hls({
+            enableWorker: true,
+            lowLatencyMode: false,
+            liveSyncDurationCount: 3,
+            liveMaxLatencyDurationCount: 10,
+            maxBufferLength: 30,
+            maxMaxBufferLength: 60,
+            pLoader: NoCacheLoader,
+            xhrSetup: function (xhr) { xhr.withCredentials = false; }
+        });
+
+        usingHlsJs = true;
+
+        hlsInst.on(Hls.Events.MANIFEST_PARSED, function () {
+            if (streamGen !== gen) return;
+            networkRetries = 0;
+            hideLoading();
+            tryUnmute();
+
+            /* Show quality switcher if multiple levels */
+            if (hlsInst.levels && hlsInst.levels.length > 1) {
+                hlsQBtn.style.display = 'block';
+                hlsQMenu.style.display = 'none';
+                updateQBadge();
+            }
+        });
+
+        hlsInst.on(Hls.Events.LEVEL_SWITCHED, function () { updateQBadge(); buildHlsQMenu(); });
+        hlsInst.on(Hls.Events.FRAG_LOADED, function () { networkRetries = 0; hideLoading(); });
+
+        hlsInst.on(Hls.Events.FRAG_LOAD_ERROR, function (ev, data) {
+            if (data && data.response && data.response.code === 404) {
+                vod404Count++;
+                vodSafetyMs = Math.min(60000, vodSafetyMs + 8000);
+                if (vod404Count >= 5) vodExtendOff = true;
+            }
+        });
+
+        hlsInst.on(Hls.Events.ERROR, function (ev, data) {
+            if (streamGen !== gen || !data.fatal) return;
+
+            if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                /* try next proxy */
+                var next = proxyIdx + 1;
+                if (!isDirect && next < PROXIES.length) {
+                    var alt = toProxy(rawUrl, next);
+                    hlsInst.loadSource(alt);
+                    hlsInst.startLoad();
+                    proxyIdx = next;
+                    return;
+                }
+                /* one network retry */
+                if (networkRetries < 1) {
+                    networkRetries++;
+                    try { hlsInst.startLoad(); } catch (e) {}
+                    return;
+                }
+                /* try Shaka as last resort */
+                if (!isDirect) {
+                    fallbackToShaka(rawUrl, gen);
+                } else {
+                    showError('Stream unavailable. Please try again.');
+                }
+
+            } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR && !mediaRecovered) {
+                mediaRecovered = true;
+                try { hlsInst.recoverMediaError(); } catch (e) {
+                    fallbackToShaka(rawUrl, gen);
+                }
+            } else {
+                fallbackToShaka(rawUrl, gen);
+            }
+        });
+
+        hlsInst.loadSource(url);
+        hlsInst.attachMedia(video);
+    }
+
+    /* ===================== SHAKA FALLBACK (also used for DRM/.mpd) ===================== */
+    function fallbackToShaka(rawUrl, gen) {
+        if (streamGen !== gen) return;
+        if (hlsInst) { try { hlsInst.destroy(); } catch (e) {} hlsInst = null; }
+        usingHlsJs = false;
+        hlsQBtn.style.display = 'none';
+        hlsQMenu.style.display = 'none';
+
+        showLoading();
+
+        if (!window.shaka || !shaka.Player) {
+            /* absolute fallback: native video src */
+            video.src = rawUrl;
+            video.load(); tryUnmute();
+            video.addEventListener('loadedmetadata', hideLoading, { once: true });
+            return;
+        }
+
+        shaka.polyfill.installAll();
+        if (!shaka.Player.isBrowserSupported()) {
+            video.src = rawUrl; video.load(); tryUnmute();
+            video.addEventListener('loadedmetadata', hideLoading, { once: true });
+            return;
+        }
+
+        var player = new shaka.Player();
+        shakaPlayer = player;
+
+        player.attach(video).then(function () {
+            if (streamGen !== gen) return;
+
+            /* Shaka UI only on first load */
+            if (!shakaUI) {
+                try {
+                    shakaUI = new shaka.ui.Overlay(player, container, video);
+                    shakaUI.configure({
+                        addBigPlayButton: true,
+                        addSeekBar: true,
+                        controlPanelElements: ['mute', 'play_pause', 'time_and_duration', 'spacer', 'quality', 'picture_in_picture', 'fullscreen'],
+                        seekBarColors: { base: 'rgba(255,255,255,0.2)', buffered: 'rgba(255,255,255,0.4)', played: '#ff3b30' }
+                    });
+                } catch (uiErr) { /* UI optional */ }
+            }
+
+            player.configure({
+                streaming: { bufferingGoal: 10, rebufferingGoal: 2, safeSeekOffset: 5, lowLatencyMode: false }
+            });
+
+            var net = player.getNetworkingEngine();
+            if (net) net.registerRequestFilter(function (type, req) {
+                req.headers = req.headers || {};
+                req.headers.Accept = req.headers.Accept || '*/*';
+            });
+
+            var urlToLoad = toProxy(rawUrl, 0);
+            return player.load(urlToLoad);
+        }).then(function () {
+            if (streamGen !== gen) return;
+            hideLoading();
+            tryUnmute();
+        }).catch(function (e) {
+            if (streamGen !== gen) return;
+            /* absolute last resort: native src */
+            video.src = rawUrl; video.load(); tryUnmute();
+            video.addEventListener('loadedmetadata', hideLoading, { once: true });
+            setTimeout(hideLoading, 6000);
+        });
+
+        player.addEventListener('error', function (ev) {
+            if (streamGen !== gen) return;
+            var detail = ev.detail;
+            if (detail && detail.severity === shaka.util.Error.Severity.CRITICAL) {
+                /* retry with native */
+                video.src = rawUrl; video.load(); tryUnmute();
+                video.addEventListener('loadedmetadata', hideLoading, { once: true });
+                setTimeout(hideLoading, 6000);
+            }
+        });
+    }
+
+    /* ===================== MAIN LOAD ===================== */
+    function loadStream(url) {
+        var gen = ++streamGen;
+        lastUrl = url;
+        currentProxyIdx = 0;
+
+        destroyPlayers();
+        showLoading();
+
+        var raw = cleanUrl(url);
+        if (!raw) { showError('No stream URL provided.'); return; }
+
+        /* DRM / DASH → Shaka only */
+        if (raw.indexOf('.mpd') !== -1) {
+            fallbackToShaka(raw, gen);
+            return;
+        }
+
+        /* HLS → try HLS.js first (handles .ts segments, proxy rotation, stale extension) */
+        loadWithHls(raw, isDirectCors(raw) ? -1 : 0, gen, 0, false);
+    }
+
+    /* ===================== RETRY BUTTON ===================== */
+    errRetry.addEventListener('click', function () {
+        errOverlay.classList.remove('show');
+        loadStream(lastUrl);
+    });
+
+    /* ===================== BOOT ===================== */
+    document.addEventListener('DOMContentLoaded', function () {
+        showLoading();
+        loadStream(STREAM_URL);
+    });
+
+    /* safety timeout — hide loading after 10s even if no event fires */
+    setTimeout(function () {
+        if (loadingEl.style.display !== 'none') hideLoading();
+    }, 10000);
+
+})();
+</script>
 
 <script src="https://pl31358401.profitableratecpmnetwork.com/a3/81/41/a38141b4ff99f6ef8dbf9dc5f76bd86b.js"></script>
 </body>
-  </html>
+</html>
